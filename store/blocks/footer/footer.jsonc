@@ -36,29 +36,34 @@
       "flex-layout.col#footer-1-desktop",
       "flex-layout.col#footer-2-desktop",
       "flex-layout.col#footer-3-desktop",
-      "flex-layout.col#footer-4-desktop"
+      "flex-layout.col#footer-4-desktop",
+      "flex-layout.col#footer-5-desktop"
     ]
   },
   "flex-layout.col#footer-1-desktop": {
-    "children": ["rich-text#footerTitle1", "vtex.menu@2.x:menu#about"]
+    "children": ["rich-text#footerTitle1", "vtex.menu@2.x:menu#shops"]
   },
   "flex-layout.col#footer-2-desktop": {
-    "children": ["rich-text#footerTitle2", "vtex.menu@2.x:menu#costumer"]
+    "children": ["rich-text#footerTitle2", "vtex.menu@2.x:menu#about-us"]
   },
   "flex-layout.col#footer-3-desktop": {
+    "children": ["rich-text#footerTitle3", "vtex.menu@2.x:menu#costumer"]
+  },
+  "flex-layout.col#footer-4-desktop": {
     "props": {
       "preventVerticalStretch": true
     },
-    "children": ["rich-text#footerTitle3", "link#call", "link#mail"]
+    "children": ["rich-text#footerTitle4", "link#call", "link#mail"]
   },
-  "flex-layout.col#footer-4-desktop": {
+  "flex-layout.col#footer-5-desktop": {
     "children": [
-      "rich-text#footerTitle4",
+      "rich-text#footerTitle5",
       "flex-layout.row#paymentImagesDesktop",
       "rich-text#followTitle",
       "flex-layout.row#networks"
     ],
     "props": {
+      "blockClass":"paymentContainer",
       "preventVerticalStretch": true,
       "preventHorizontalStretch": true
     }
@@ -71,23 +76,29 @@
   },
   "rich-text#footerTitle1": {
     "props": {
-      "text": "About us",
+      "text": "Shop",
       "blockClass": "footerTitle"
     }
   },
   "rich-text#footerTitle2": {
     "props": {
-      "text": "Costumer Service",
+      "text": "About Us",
       "blockClass": "footerTitle"
     }
   },
   "rich-text#footerTitle3": {
     "props": {
-      "text": "Contact Us",
+      "text": "Customer Services",
       "blockClass": "footerTitle"
     }
   },
   "rich-text#footerTitle4": {
+    "props": {
+      "text": "Contact Us",
+      "blockClass": "footerTitle"
+    }
+  },
+  "rich-text#footerTitle5": {
     "props": {
       "text": "Pay with credit card",
       "blockClass": "footerTitle"
