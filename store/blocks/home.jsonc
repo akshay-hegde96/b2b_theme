@@ -109,114 +109,114 @@
   "link#shoBy1": {
     "children": ["image#shoBy1", "rich-text#cat1"],
     "props": {
-      "href": "/apparel",
+      "href": "/merchandise",
       "blockClass": "shopByLink"
     }
   },
   "link#shoBy2": {
     "children": ["image#shoBy2", "rich-text#cat2"],
     "props": {
-      "href": "/beverage",
+      "href": "nismo",
       "blockClass": "shopByLink"
     }
   },
   "link#shoBy3": {
     "children": ["image#shoBy3", "rich-text#cat3"],
     "props": {
-      "href": "/sporting",
+      "href": "car-parts",
       "blockClass": "shopByLink"
     }
   },
   "link#shoBy4": {
     "children": ["image#shoBy4", "rich-text#cat4"],
     "props": {
-      "href": "/Agribusiness",
+      "href": "/major-appliances",
       "blockClass": "shopByLink"
     }
   },
   "link#shoBy5": {
     "children": ["image#shoBy5", "rich-text#cat5"],
     "props": {
-      "href": "/home-appliance",
+      "href": "/small-appliances",
       "blockClass": "shopByLink"
     }
   },
   "link#shoBy6": {
     "children": ["image#shoBy6", "rich-text#cat6"],
     "props": {
-      "href": "/computer",
+      "href": "/electronics",
       "blockClass": "shopByLink"
     }
   },
   "image#shoBy1": {
     "props": {
-      "src": "assets/placeholders/apparelPlaceholder.png",
+      "src": "https://dulick.nissan.ie/sites/default/files/home_promo_images/NISMO021.jpg",
       "blockClass": "shoByImage"
     }
   },
   "image#shoBy2": {
     "props": {
-      "src": "assets/placeholders/beveragePlaceholder.png",
+      "src": "https://img.joomcdn.net/1039cf936a38448e7f9b96879f73cc1a6b4d4993_original.jpeg",
       "blockClass": "shoByImage"
     }
   },
   "image#shoBy3": {
     "props": {
-      "src": "assets/placeholders/sportingPlaceholder.png",
+      "src": "https://westsideautomotivegroup.com/wp-content/uploads/2019/11/Used-Car-Parts.jpg",
       "blockClass": "shoByImage"
     }
   },
   "image#shoBy4": {
     "props": {
-      "src": "assets/placeholders/agribusinessPlaceholder.png",
+      "src": "https://d12mivgeuoigbq.cloudfront.net/magento-media/members/dmar1-martinharris/whirlpool-appliance-showcase.png",
       "blockClass": "shoByImage"
     }
   },
   "image#shoBy5": {
     "props": {
-      "src": "assets/placeholders/homeAppliancePlaceholder.png",
+      "src": "https://us.123rf.com/450wm/maxxyustas/maxxyustas1601/maxxyustas160100054/52181001-metallic-kitchen-appliances-blender-toaster-coffee-machine-meat-ginder-and-kettle-isolated-on-white-.jpg?ver=6",
       "blockClass": "shoByImage"
     }
   },
   "image#shoBy6": {
     "props": {
-      "src": "assets/placeholders/computerPlaceholder.png",
+      "src": "https://2.imimg.com/data2/UP/MK/MY-3812101/electronics-500x500.jpg",
       "blockClass": "shoByImage"
     }
   },
   "rich-text#cat1": {
     "props": {
-      "text": "Apparel",
+      "text": "Merchandise",
       "blockClass": "shopByCategory"
     }
   },
   "rich-text#cat2": {
     "props": {
-      "text": "Beverage",
+      "text": "Nismo",
       "blockClass": "shopByCategory"
     }
   },
   "rich-text#cat3": {
     "props": {
-      "text": "Sporting",
+      "text": "Car Parts",
       "blockClass": "shopByCategory"
     }
   },
   "rich-text#cat4": {
     "props": {
-      "text": "Agribusiness",
+      "text": "Major Appliances",
       "blockClass": "shopByCategory"
     }
   },
   "rich-text#cat5": {
     "props": {
-      "text": "Home Appliance",
+      "text": "Small Appliance",
       "blockClass": "shopByCategory"
     }
   },
   "rich-text#cat6": {
     "props": {
-      "text": "Computer",
+      "text": "Electronics",
       "blockClass": "shopByCategory"
     }
   },
