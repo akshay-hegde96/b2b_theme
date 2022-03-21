@@ -753,3 +753,31 @@
     width: 100%;
   }
 }
+
+/* Sales Page---------------------------------------------- */
+
+.flexRow--banner {
+  margin-bottom: 3rem;
+  background: #101723;
+}
+
+.flexRowContent--combo-discount {
+  justify-content: space-around !important;
+  align-items: center !important;
+}
+
+.flexRowContent--combo-discount .stretchChildrenWidth {
+  width: 330px !important;
+}
+.flexColChild--combo-discount-list1,
+.flexColChild--combo-discount-list2 {
+  width: 330px !important;
+}
+
+@media screen and (max-width: 640px) {
+  .flexRow--banner {
+    margin-bottom: 2rem;
+  }
+}
+
+/* ---------------------------------- */
