@@ -304,3 +304,9 @@
     font-weight: 500;
   }
 }
+
+.productNameContainer.nameWrapper
+{
+  min-height: 46px;
+  margin-bottom: 0;
+}
