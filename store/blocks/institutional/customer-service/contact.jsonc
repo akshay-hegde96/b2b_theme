@@ -7,24 +7,144 @@
   },
 
   "flex-layout.row#institutional--contact": {
-    "children": ["image#mobile-phone", "flex-layout.col#text--contact"]
+    "children": ["flex-layout.row#formcontact"]
   },
 
-  "flex-layout.col#text--contact": {
-    "children": [
-      "rich-text#title--contact",
-      "rich-text#institutional-placeholder"
-    ],
+  // "flex-layout.col#text--contact": {
+  //   "children": [
+  //     "rich-text#title--contact",
+  //     "rich-text#institutional-placeholder"
+  //   ],
+  //   "props": {
+  //     "blockclass": "textColumn",
+  //     "preventVerticalStretch": true
+  //   }
+  // },
+
+  // "rich-text#title--contact": {
+  //   "props": {
+  //     "text": "# Contact Us",
+  //     "blockClass": "title"
+  //   }
+  // },
+
+  //-------------------ContactUs------------------------------------------------
+
+  "flex-layout.row#formcontact": {
+    "children": ["flex-layout.col#formcontact"],
     "props": {
-      "blockclass": "textColumn",
-      "preventVerticalStretch": true
+      "blockClass": "contact-us-form"
+    }
+  },
+  "flex-layout.col#formcontact": {
+    "children": ["form#contact-us"],
+    "props": {
+      "blockClass": "contact-us-form"
+    }
+  },
+  "form#contact-us": {
+    "props": {
+      "entity": "ContactUs",
+      "schema": "user",
+      "blockClass": "contact-form"
+    },
+    "children": [
+      "rich-text#contactUsformTitle",
+      "form-input.text#userName",
+      "rich-text#input-spacer",
+      "form-input.text#userEmail",
+      "rich-text#input-spacer",
+      "form-input.text#userPhone",
+      "rich-text#input-spacer",
+      "form-input.text#subject",
+      "rich-text#input-spacer",
+      "form-input.textarea#question",
+      "rich-text#input-spacer",
+      "form-submit#contactUsform"
+    ],
+    "blocks": ["form-success#contactUs"]
+  },
+  "form-success#contactUs": {
+    "children": ["rich-text#successSubmit"]
+  },
+  "rich-text#successSubmit": {
+    "props": {
+      "text": "Thank You, we will reach you shortly!",
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "blockClass": "contact-us-submit"
     }
   },
 
-  "rich-text#title--contact": {
+  "rich-text#contactUsformTitle": {
     "props": {
-      "text": "# Contact Us",
-      "blockClass": "title"
+      "text": "Contact Us",
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "blockClass": "contact-us"
+    }
+  },
+  "rich-text#spacer": {
+    "props": {
+      "text": "Agree to continue ",
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "height": "10px",
+      "blockClass": "contact-us-spacer"
+    }
+  },
+
+  "form-input.text#userName": {
+    "props": {
+      "pointer": "#/properties/name",
+      "label": "Name",
+      "blockClass": "contact-us"
+    }
+  },
+  "form-input.text#userEmail": {
+    "props": {
+      "pointer": "#/properties/email",
+      "label": "Email",
+      "blockClass": "contact-us"
+    }
+  },
+  "form-input.text#userPhone": {
+    "props": {
+      "pointer": "#/properties/phone",
+      "label": "Phone No.",
+      "blockClass": "contact-us"
+    }
+  },
+
+  "form-input.text#subject": {
+    "props": {
+      "pointer": "#/properties/subject",
+      "label": "Subject",
+      "blockClass": "contact-us"
+    }
+  },
+  "form-input.textarea#question": {
+    "props": {
+      "pointer": "#/properties/question",
+      "label": "Question",
+      "blockClass": "contact-us"
+    }
+  },
+
+  "form-submit#contactUsform": {
+    "props": {
+      "label": "Submit",
+      "blockClass": "contact-form-submit"
+    }
+  },
+  "rich-text#input-spacer": {
+    "props": {
+      "text": "input spacer ",
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "height": "8px",
+      "blockClass": "contact-us-input-spacer"
     }
   }
+  //
 }
