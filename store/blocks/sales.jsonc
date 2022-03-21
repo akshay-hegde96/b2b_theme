@@ -1,0 +1,245 @@
+{
+  "store.custom#sales-page": {
+    "blocks": [
+      "slider-layout#top-sales-header",
+      "flex-layout.row#top-sales-banner",
+      "rich-text#promotion-1-title",
+      "flex-layout.row#festival-discount",
+      "rich-text#promotion-3-title",
+      "flex-layout.row#more-for-less-discount",
+      "rich-text#promotion-4-title",
+      "flex-layout.row#progressive-discount",
+      "rich-text#promotion-2-title",
+      "flex-layout.row#regular-discount",
+      "rich-text#promotion-5-title",
+      "flex-layout.row#Combo-discount",
+      "back-to-top-button"
+    ]
+  },
+
+  "slider-layout#top-sales-header": {
+    "title": "SLIDER TEXT BANNER",
+    "props": {
+      "itemsPerPage": {
+        "desktop": 1,
+        "tablet": 1,
+        "phone": 1
+      },
+      "autoplay": {
+        "timeout": 4000
+      },
+      "infinite": true,
+      "showPaginationDots": "never",
+      "showNavigationArrows": "never",
+      "blockClass": "carousel-top-discount"
+    },
+    "children": [
+      "rich-text#header-top-sales",
+      "rich-text#header-top-sales-message"
+    ]
+  },
+  "rich-text#header-top-sales": {
+    "title": "SLIDER TEXT 01",
+    "props": {
+      "text": "FREE SHIPPING: Applies to USA orders over $2000+ | excluding HI, PR, AK, and CAN",
+      "blockClass": "header-top-discount"
+    }
+  },
+  "rich-text#header-top-sales-message": {
+    "title": "SLIDER TEXT 02",
+    "props": {
+      "text": "SAVE UP TO 50%",
+      "blockClass": "header-top-discount"
+    }
+  },
+  "flex-layout.row#top-sales-banner": {
+    "title": "HERO BANNER",
+    "children": ["list-context.image-list#top-sales-banner"],
+    "props": {
+      "blockClass": "banner"
+    }
+  },
+  "list-context.image-list#top-sales-banner": {
+    "children": ["slider-layout#top-sales-banner"],
+    "props": {
+      "height": 310,
+      "width": "100%",
+      "images": [
+        {
+          "link": "/",
+          "image": "https://echidna.vteximg.com.br/arquivos/offerBanner1.PNG",
+          "mobileImage": "https://echidna.vteximg.com.br/arquivos/bannermobile.PNG"
+        },
+        {
+          "link": "/",
+          "image": "https://echidna.vteximg.com.br/arquivos/offerBanner2.PNG",
+          "mobileImage": "https://echidna.vteximg.com.br/arquivos/bannermobile2.PNG"
+        }
+      ]
+    }
+  },
+  "slider-layout#top-sales-banner": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 1,
+        "tablet": 1,
+        "phone": 1
+      },
+      "infinite": true,
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "hero-carousel",
+      "autoplay": {
+        "timeout": 4000
+      }
+    }
+  },
+  //---------promotions-------------------------------------------------
+
+  "rich-text#promotion-1-title": {
+    "title": "Festival Offers",
+    "props": {
+      "text": "## FESTIVAL OFFERS ",
+      "blockClass": "discount-title"
+    }
+  },
+
+  "flex-layout.row#festival-discount": {
+    "children": ["list-context.product-list#festival-discount"]
+  },
+  "list-context.product-list#festival-discount": {
+    "blocks": ["product-summary.shelf#complete"],
+    "children": ["slider-layout#products"],
+    "props": {
+      "collection": "147"
+    }
+  },
+  "rich-text#promotion-2-title": {
+    "title": "Regular discount",
+    "props": {
+      "text": "## REGULAR DISCOUNTS",
+      "blockClass": "discount-title"
+    }
+  },
+
+  "flex-layout.row#regular-discount": {
+    "children": ["list-context.product-list#regular-discount"]
+  },
+  "list-context.product-list#regular-discount": {
+    "blocks": ["product-summary.shelf#complete"],
+    "children": ["slider-layout#products"],
+    "props": {
+      "collection": "149"
+    }
+  },
+  "rich-text#promotion-3-title": {
+    "title": "Buy More For Less",
+    "props": {
+      "text": "## BUY MORE FOR LESS",
+      "blockClass": "discount-title"
+    }
+  },
+
+  "flex-layout.row#more-for-less-discount": {
+    "children": ["list-context.product-list#more-for-less-discount"]
+  },
+  "list-context.product-list#more-for-less-discount": {
+    "blocks": ["product-summary.shelf#complete"],
+    "children": ["slider-layout#products"],
+    "props": {
+      "collection": "148"
+    }
+  },
+
+  "rich-text#promotion-4-title": {
+    "title": "Progressive Discount",
+    "props": {
+      "text": "## BUY 1 WITH 5% OFF, BUY 2 WITH 10% OFF",
+      "blockClass": "discount-title"
+    }
+  },
+
+  "flex-layout.row#progressive-discount": {
+    "children": ["list-context.product-list#progressive-discount"]
+  },
+  "list-context.product-list#progressive-discount": {
+    "blocks": ["product-summary.shelf#complete"],
+    "children": ["slider-layout#products"],
+    "props": {
+      "collection": "150"
+    }
+  },
+
+  "rich-text#promotion-5-title": {
+    "title": "Combo Discount",
+    "props": {
+      "text": "## COMBO DISCOUNT",
+      "blockClass": "discount-title"
+    }
+  },
+
+  "flex-layout.row#Combo-discount": {
+    "props": {
+      "blockClass": "combo-discount"
+    },
+    "children": ["flex-layout.col#list1", "flex-layout.col#list2"]
+  },
+  "flex-layout.col#list1": {
+    "children": ["list-context.product-list#combo-discount-list1"],
+    "props": {
+      "blockClass": "combo-discount-list1",
+      "preventHorizontalStretch": "true"
+    }
+  },
+  "list-context.product-list#combo-discount-list1": {
+    "blocks": ["product-summary.shelf#complete"],
+    "children": ["slider-layout#combo-discount-list1"],
+    "props": {
+      "collection": "151",
+      "blockClass": "combo-discount-list1"
+    }
+  },
+
+  "flex-layout.col#list2": {
+    "children": ["list-context.product-list#combo-discount-list2"],
+    "props": {
+      "blockClass": "combo-discount-list2",
+      "preventHorizontalStretch": "true"
+    }
+  },
+  "list-context.product-list#combo-discount-list2": {
+    "blocks": ["product-summary.shelf#complete"],
+
+    "children": ["slider-layout#combo-discount-list2"],
+    "props": {
+      "collection": "152",
+      "blockClass": "combo-discount-list2"
+    }
+  },
+
+  "slider-layout#combo-discount-list1": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 1,
+        "tablet": 1,
+        "phone": 1
+      },
+      "infinite": false,
+      "fullWidth": false,
+      "showPaginationDots": "never",
+      "blockClass": "combo-discount-list1"
+    }
+  },
+  "slider-layout#combo-discount-list2": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 1,
+        "tablet": 1,
+        "phone": 1
+      },
+      "infinite": false,
+      "fullWidth": false,
+      "showPaginationDots": "never",
+      "blockClass": "combo-discount-list2"
+    }
+  }
+}

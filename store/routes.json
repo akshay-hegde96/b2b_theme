@@ -70,5 +70,8 @@
   },
   "store.custom#returns": {
     "path": "/returns"
+  },
+  "store.custom#sales-page": {
+    "path": "/sales"
   }
 }
