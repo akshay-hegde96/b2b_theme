@@ -62,6 +62,9 @@
   "store.custom#help-center": {
     "path": "/help-center"
   },
+  "store.custom#category-landing-page": {
+    "path": "/clp/:clp_id"
+  },
   "store.custom#pickup": {
     "path": "/pickup"
   },
