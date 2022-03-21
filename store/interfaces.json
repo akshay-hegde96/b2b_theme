@@ -5,6 +5,9 @@
   "store.custom.product-comparison": {
     "around": ["comparison-context-wrapper"]
   },
+  "b2b-department": {
+    "component": "B2BDepartment"
+  },
   "search-result-layout.desktop.product-comparison": {
     "allowed": ["product-comparison-drawer"]
   }

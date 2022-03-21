@@ -18,7 +18,8 @@
     "children": [
       "vtex.store-components:product-brand#brand-and-rating",
       "flex-layout.col#spacer",
-      "product-rating-summary"
+      //"product-rating-summary",
+      "product-rating-inline"
     ],
     "props": {
       "blockClass": ["items-center", "brand-and-rating"],

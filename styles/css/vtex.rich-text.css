@@ -610,3 +610,87 @@
 .wrapper--product-summary-price-message {
   width: 100%;
 }
+
+/* --------------------------------------Contact-Us page----------------------------- */
+.container--contact-us {
+  font-weight: bold;
+  font-size: 1.4rem;
+  font-variant-caps: petite-caps;
+  color: #3f3f40;
+}
+
+.container--contact-us-submit {
+  font-size: 1.5rem;
+  color: #424244;
+  margin: 3rem auto;
+  padding: 3rem 2rem;
+}
+.paragraph--contact-us {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.container--contact-us-spacer {
+  font-size: 2px;
+  color: transparent;
+  margin-top: 1rem;
+}
+.container--contact-us-input-spacer {
+  font-size: 2px;
+  color: transparent;
+  margin-top: 0.4rem;
+}
+.dropdown--contact-us {
+  margin: 5px auto;
+}
+@media only screen and (max-width: 560px) {
+  .container--contact-us-submit {
+    font-size: 1.3rem;
+    color: #424244;
+    margin: 2rem auto;
+    padding: 0.5rem 1rem;
+  }
+}
+/* -------------------------------------------------------- */
+/*----------------------------------------- Sales Page ------------------------------*/
+
+.paragraph--discount {
+  margin: 0 auto;
+  font-size: 14px;
+  font-variant: small-caps;
+  font-family: "NissanBrand", sans-serif;
+  border: 1px solid #c23232;
+  border-radius: 22px;
+  background-color: #c23232;
+  padding: 4px 7px;
+  color: white;
+}
+.container--discount {
+  margin-top: 0;
+  margin-bottom: 8px;
+  justify-content: flex-end;
+}
+
+.container--discount-title {
+  justify-content: center;
+  margin-top: 0;
+  font-variant: normal;
+}
+
+.heading--discount-title {
+  text-align: center;
+}
+.paragraph--discount-title {
+  text-align: center;
+}
+
+.paragraph--header-top-discount {
+  color: white;
+  font-variant: small-caps;
+  font-family: "NissanBrand", sans-serif;
+}
+.paragraph--omniparts-text {
+  color: black;
+}
+
+/* -------------------------------------------------------------- */
