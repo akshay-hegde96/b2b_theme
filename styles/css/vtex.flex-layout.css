@@ -441,9 +441,9 @@
   outline: 0;
 }
 
-.flexColChild--assembly-options {
-  /* max-width: 80%; */
-}
+/* .flexColChild--assembly-options {
+   max-width: 80%; s
+} */
 
 .flexColChild--assembly-options :first-child {
   font-size: 14px;
@@ -718,6 +718,7 @@
   color: #fff;
 }
 
+
 /* -------------------------Contact Us Page--------------------------------- */
 
 .flexRow--contact-us-form {
@@ -781,3 +782,4 @@
 }
 
 /* ---------------------------------- */
+
