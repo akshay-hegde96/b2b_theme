@@ -1,10 +1,111 @@
 {
-  "vtex.menu@2.x:menu#about": {
+  "vtex.menu@2.x:menu#shops": {
+    "props": {
+      "blockClass": "flexCol",
+      "orientation": "vertical",
+      "items": [
+        {
+          "id": "footerItem-nismo",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/nismo",
+            "noFollow": false,
+            "tagTitle": "Shop",
+            "text": "NISMO"
+          }
+        },
+        {
+          "id": "footerItem-electronics",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/electronics",
+            "noFollow": false,
+            "tagTitle": "Shop",
+            "text": "Electronics"
+          }
+        },
+        {
+          "id": "footerItem-majorAppliances",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/major-appliances",
+            "noFollow": false,
+            "tagTitle": "Shop",
+            "text": "Major Appliances"
+          }
+        },
+        {
+          "id": "footerItem-smallAppliances",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/small-appliances",
+            "noFollow": false,
+            "tagTitle": "Shop",
+            "text": "Small Appliances"
+          }
+        },
+        {
+          "id": "footerItem-quickOrder",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/quickOrder",
+            "noFollow": false,
+            "tagTitle": "Shop",
+            "text": "Quick Order"
+          }
+        },
+        {
+          "id": "footerItem-orderQuote",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/orderquote",
+            "noFollow": false,
+            "tagTitle": "Shop",
+            "text": "Order Quote"
+          }
+        },
+        {
+          "id": "footerItem-merchandise",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/merchandise",
+            "noFollow": false,
+            "tagTitle": "Shop",
+            "text": "Merchandise"
+          }
+        }
+
+
+      ]
+    }
+  },
+  "vtex.menu@2.x:menu#about-us": {
     "props": {
       "blockClass": "flexCol",
       "items": [
         {
-          "id": "footerItem-company",
+          "id": "footerItem-ourcompnay",
           "type": "custom",
           "iconId": null,
           "highlight": false,
@@ -12,7 +113,7 @@
             "type": "internal",
             "href": "/company",
             "noFollow": false,
-            "tagTitle": "Shop",
+            "tagTitle": "about-us",
             "text": "Our Company"
           }
         },
@@ -30,7 +131,7 @@
           }
         },
         {
-          "id": "footerItem-sell",
+          "id": "footerItem-Sellwithvtex",
           "type": "custom",
           "iconId": null,
           "highlight": false,
@@ -39,11 +140,11 @@
             "href": "/sell",
             "noFollow": false,
             "tagTitle": "about-us",
-            "text": "Sell with VTEX"
+            "text": "Sell With VTEX"
           }
         },
         {
-          "id": "footerItem-investor",
+          "id": "footerItem-investerRelations",
           "type": "custom",
           "iconId": null,
           "highlight": false,
@@ -52,11 +153,11 @@
             "href": "/investors",
             "noFollow": false,
             "tagTitle": "about-us",
-            "text": "Investor Relations"
+            "text": "Invester Relations"
           }
         },
         {
-          "id": "footerItem-advertise",
+          "id": "footerItem-advertisewithus",
           "type": "custom",
           "iconId": null,
           "highlight": false,
@@ -169,4 +270,5 @@
       ]
     }
   }
+
 }
