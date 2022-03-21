@@ -115,3 +115,19 @@
   border-width: 1px;
   color: var(--black-medium);
 }
+.summaryContainer{
+  display: block;
+    width: 100%;
+}
+.stars{
+  display: inherit;
+}
+.summaryTotalReviews{
+  margin-top: 8px;
+}
+.summaryButtonContainer{
+  margin-top: 5px;
+}
+:global(.vtex-reviews-and-ratings-2-x-summaryButtonContainer) .vtex-button{
+  width: 100%;
+}
