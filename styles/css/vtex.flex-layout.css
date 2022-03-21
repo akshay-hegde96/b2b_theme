@@ -441,9 +441,9 @@
   outline: 0;
 }
 
-.flexColChild--assembly-options {
-  /* max-width: 80%; */
-}
+/* .flexColChild--assembly-options {
+   max-width: 80%; s
+} */
 
 .flexColChild--assembly-options :first-child {
   font-size: 14px;
@@ -716,4 +716,11 @@
 .flexRow--c-on-base--inverted,
 .flexCol--c-on-base--inverted {
   color: #fff;
+}
+
+@media (min-width: 768px) {
+  .flexRowContent--specification{
+    width: 1100px;
+
+  }
 }

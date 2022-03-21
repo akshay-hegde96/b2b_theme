@@ -18,7 +18,7 @@
       "flex-layout.row#box",
       "product-kit#buy-together",
       "flex-layout.row#description-and-gallery",
-      "flex-layout.row#features",
+     "flex-layout.row#features",
       "flex-layout.row#specification",
       "check-permission#sticky-buy",
       "flex-layout.row#reviews-and-ratings",

@@ -4,7 +4,7 @@
   border-width: 0.0625rem;
   margin: 0 -0.5rem -0.0625rem;
   padding: 0.5rem 1rem;
-}
+ }
 
 .skuContentWrapper:focus {
   outline: none;
@@ -25,6 +25,16 @@
 .itemHighlight,
 .priceContainer,
 .inventoryContainer,
-.highlightContent {
-  padding: 0;
+.highlightContent,
+.quantitySelectorStepper
+{
+  padding-top: 12px;
 }
+
+.skuName{
+  color: rgb(65, 73, 185);
+  font-size: 15px;
+  padding-top: 0;
+}
+
+
