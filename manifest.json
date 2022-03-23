@@ -81,7 +81,8 @@
     "vtex.condition-layout": "2.x",
     "vtex.seller-selector": "0.x",
     "vtex.store-newsletter": "1.x",
-    "vtex.challenge-tp-condition": "0.x"
+    "vtex.challenge-tp-condition": "0.x",
+    "vtex.order-configuration": "2.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

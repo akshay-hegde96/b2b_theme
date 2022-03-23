@@ -1,0 +1,27 @@
+.titleWrapper--orderConfig-title{
+  color: #fff;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  position: relative;
+  z-index: 999;
+  top: 20px;
+  }
+
+.wrapper :global(.vtex-button) {
+  border: 1px solid white;
+  padding-top: 5px;
+  width: 160px;
+  height: 100%;
+  display: flex;
+  justify-content: right;
+  background-color: #1b3255;
+  border: none;
+ }
+
+.titleValues--orderConfig-title{
+  display: none;
+}
