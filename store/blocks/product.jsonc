@@ -25,6 +25,8 @@
       "flex-layout.row#alsoView"
     ]
   },
+
+
   "responsive-layout.desktop#product": {
     "children": ["flex-layout.row#product", "flex-layout.row#alsoView"]
   },
@@ -42,4 +44,5 @@
       "flex-layout.row#reviews-and-ratings"
     ]
   }
+  
 }
