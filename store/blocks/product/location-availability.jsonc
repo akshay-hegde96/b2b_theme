@@ -26,6 +26,8 @@
     }
   },
 
+  
+
   "product-location-shipping-options#desktop": {
     "props": {
       "blockClass": "desktop"

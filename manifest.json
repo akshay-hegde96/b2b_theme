@@ -65,7 +65,6 @@
     "vtex.modal-layout": "0.x",
     "vtex.product-comparison": "0.x",
     "vtex.store-link": "0.x",
-    "vtex.shopper-location": "0.x",
     "vtex.address-locator": "2.x",
     "vtex.checkout-summary": "0.x",
     "vtex.product-availability": "0.x",
@@ -83,6 +82,7 @@
     "vtex.seller-selector": "0.x",
     "vtex.store-newsletter": "1.x",
     "vtex.challenge-tp-condition": "0.x",
+    "vtex.shopper-location": "0.x",
     "vtex.order-configuration": "2.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
