@@ -34,5 +34,13 @@
   },
   "modal-content#address": {
     "children": ["change-location"]
-  }
+  },
+  "change-location": {
+		"props":{
+      "postalCode": "first",
+			"autocomplete": true,
+      "notRequired": ["street", "number", "city", "state"],
+      "hideFields": ["complement", "neighborhood", "receiverName", "reference"]
+    }
+	}
 }

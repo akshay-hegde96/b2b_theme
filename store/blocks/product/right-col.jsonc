@@ -5,7 +5,8 @@
       "flex-layout.row#product-name",
       "flex-layout.row#product-identifier",
       "condition-layout.product#sku-selector-or-list",
-      "flex-layout.row#assembly-options"
+      "flex-layout.row#assembly-options",
+       "location-context"
       // "flex-layout.row#link-seller"
     ],
     "props": {
@@ -54,5 +55,25 @@
     "props": {
       "blockClass": ["product-identifier"]
     }
-  }
+  },
+  "location-context": {
+    "children": [
+        "modal-trigger#location-availability",
+        "flex-layout.row#location-availability"
+      ]
+    },
+    "flex-layout.row#location-availability": {
+      "children": [
+        "product-location-pickup-options",
+        "product-location-shipping-options"
+      ]
+    },
+    "modal-trigger#location-availability": {
+      "children": ["product-location-availability-header", "modal-layout#address"]
+    },
+    "product-location-availability-header": {
+      "props": {
+        "styleAsLink": true
+      }
+    }
 }

@@ -67,6 +67,7 @@
       "flex-layout.row#stackSavings",
       "product-summary-brand",
       "product-summary-name",
+      "product-location-availability",
       // "product-rating-summary",
       "product-rating-inline",
       "check-permission#product-summary-price",
@@ -75,6 +76,17 @@
       "modal-trigger#quickview"
     ]
   },
+
+  "product-location-availability": {
+        "props": {
+          "maxItems": 3,
+          "orderBy": "cheaper",
+          "pickupFirst": false,
+          "showDistance": "miles",
+          "showAddressInfo": true
+        }
+      },
+
   "product-summary.shelf#searchBar": {
     "props": {
       "blockClass": "summarySearch"
