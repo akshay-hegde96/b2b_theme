@@ -1,5 +1,5 @@
 {
-  "check-permission#sticky-buy": {
+  "challenge-permission#sticky-buy": {
     "props": {
       "roles": [
         "store-admin",
@@ -9,11 +9,10 @@
         "customer-admin",
         "customer-approver",
         "customer-buyer"
-      ]
+      ],
+      "permissions": [{ "name": "add-to-cart" }]
     },
-    "blocks": [
-      "allowed-content#sticky-buy"
-    ]
+    "blocks": ["allowed-content#sticky-buy"]
   },
   "allowed-content#sticky-buy": {
     "children": ["sticky-layout#stickyBuy"]
