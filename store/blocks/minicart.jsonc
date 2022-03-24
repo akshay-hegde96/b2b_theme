@@ -101,10 +101,10 @@
   },
 
   "flex-layout.col#minicart-footer": {
-    "children": ["minicart-summary", "check-permission#minicart"]
+    "children": ["minicart-summary", "challenge-permission#minicart"]
   },
 
-  "check-permission#minicart": {
+  "challenge-permission#minicart": {
     "props": {
       "roles": [
         "store-admin",
@@ -113,30 +113,25 @@
         "sales-representative",
         "customer-admin",
         "customer-approver"
-      ]
+      ],
+      "permissions": [{ "name": "minicart_checkout_button" }]
     },
-    "blocks": [
-      "allowed-content#minicart",
-      "disallowed-content#minicart"
-    ]
+    "blocks": ["allowed-content#minicart", "disallowed-content#minicart"]
   },
   "allowed-content#minicart": {
-    "children": [
-      "minicart-checkout-button",
-      "link#quote"
-    ]
+    "children": ["minicart-checkout-button", "link#quote"]
   },
   "disallowed-content#minicart": {
-    "children": [
-      "link#quote"
-    ]
+    "children": ["link#quote"]
   },
   "link#quote": {
     "props": {
-      "label": "Create a Quote",
+      "label": "Checkout",
       "displayMode": "button",
-      "blockClass": ["vtex-button","order-quote"],
-      "href": "/b2b-quotes/create"
+      "blockClass": ["vtex-button", "order-quote"],
+      "href": "/checkout"
+
+      // "href": "/b2b-quotes/create"
     }
   },
 

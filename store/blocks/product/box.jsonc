@@ -21,14 +21,14 @@
     "children": [
       "flex-layout.row#fake-summary",
       "flex-layout.row#seller-name",
-      "check-permission#product-price"
+      "challenge-permission#product-price"
     ],
     "props": {
       "blockClass": ["box"],
       "preventVerticalStretch": true
     }
   },
-  "check-permission#product-price": {
+  "challenge-permission#product-price": {
     "props": {
       "roles": [
         "store-admin",
@@ -38,7 +38,8 @@
         "customer-admin",
         "customer-approver",
         "customer-buyer"
-      ]
+      ],
+      "permissions": [{ "name": "view_prices" }]
     },
     "blocks": [
       "allowed-content#product-price",

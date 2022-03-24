@@ -1,5 +1,5 @@
 {
-  "check-permission#reseller": {
+  "challenge-permission#reseller": {
     "props": {
       "roles": [
         "store-admin",
@@ -9,30 +9,24 @@
         "customer-admin",
         "customer-approver",
         "customer-buyer"
-      ]
+      ],
+      "permissions": [{ "name": "reseller" }]
     },
-    "blocks": [
-      "allowed-content#reseller",
-      "disallowed-content#reseller"
-    ]
+    "blocks": ["allowed-content#reseller", "disallowed-content#reseller"]
   },
   "allowed-content#reseller": {
-    "children": [
-      "link#orderQuote"
-    ],
+    "children": ["link#orderQuote"],
     "props": {
       "blockClass": "resellerChallengeContent"
     }
   },
   "disallowed-content#reseller": {
-    "children": [
-      "link#reseller"
-    ],
+    "children": ["link#reseller"],
     "props": {
       "blockClass": "resellerChallengeFallback"
     }
   },
-  "check-permission#login": {
+  "challenge-permission#login": {
     "props": {
       "roles": [
         "store-admin",
@@ -42,25 +36,19 @@
         "customer-admin",
         "customer-approver",
         "customer-buyer"
-      ]
+      ],
+      "permissions": [{ "name": "user_login" }]
     },
-    "blocks": [
-      "allowed-content#reseller",
-      "disallowed-content#reseller"
-    ]
+    "blocks": ["allowed-content#reseller", "disallowed-content#reseller"]
   },
   "allowed-content#login": {
-    "children": [
-      "link#profile"
-    ],
+    "children": ["link#profile"],
     "props": {
       "blockClass": "loginChallengeContent"
     }
   },
   "disallowed-content#login": {
-    "children": [
-      "login#mobile"
-    ],
+    "children": ["login#mobile"],
     "props": {
       "blockClass": "loginChallengeFallback"
     }
