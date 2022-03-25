@@ -10,5 +10,8 @@
   },
   "search-result-layout.desktop.product-comparison": {
     "allowed": ["product-comparison-drawer"]
-  }
+  },
+"blogsList":{
+  "component" : "BlogsListing"
 }
+  }

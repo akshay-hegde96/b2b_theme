@@ -25,11 +25,21 @@
   },
 
   "flex-layout.col#blogPosts": {
-    "children": ["blog-category-preview.wordpress-category-preview"],
+    // "children": ["blog-category-preview.wordpress-category-preview"],
+    // "props": {
+    //   "width": "grow"
+    // }
+     "children": ["blogsList"]
+  },
+
+  "custom-blog-listing": {
     "props": {
-      "width": "grow"
+        "accountName": "echidna",
+        "entityIdAcronym": "CB",
+        "schemaName": "CustomBlog"
     }
   },
+
 
   "blog-category-preview.wordpress-category-preview": {
     "props": {
