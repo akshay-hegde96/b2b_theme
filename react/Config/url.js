@@ -13,4 +13,4 @@ export const contactUsURL =
 export const categoryURL =
   "/api/dataentities/BC/search?_fields=_all&_schema=categorybb";
 
-//export const blogpostURL = "/api/dataentities/CB/search?_fields=_all&_schema=CustomBlog";
+  export const blogAPI = "/api/dataentities/CB/search?_fields=_all&_schema=CustomBlog"
