@@ -12,3 +12,5 @@ export const contactUsURL =
 // export const categoryURL ="api/dataentities/CA/search?_schema=category&_fields=category_id,banner_link,sub_category";
 export const categoryURL =
   "/api/dataentities/BC/search?_fields=_all&_schema=categorybb";
+
+  export const blogAPI = "/api/dataentities/CB/search?_fields=_all&_schema=CustomBlog"

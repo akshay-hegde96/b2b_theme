@@ -9,6 +9,10 @@
   align-items: center;
 }
 
+.flexRowContent--blog{
+  display: flex;
+  justify-content: flex-start;
+}
 .flexRow--headerStripe {
   background: var(--b2b-blue-darkest);
 }
