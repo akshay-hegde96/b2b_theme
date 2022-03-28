@@ -288,7 +288,8 @@
   "link#orderQuote": {
     "props": {
       "label": "My Quotes",
-      "href": "/b2b-quotes",
+      "href": "/orderquote",
+      // "href": "/b2b-quotes",
       "blockClass": "orderQuote"
     }
   },

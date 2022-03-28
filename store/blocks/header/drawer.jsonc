@@ -19,8 +19,8 @@
       // "locale-switcher#drawer",
       "rich-text#explore",
       "menu#drawer",
-       "flex-layout.row#quickOrder"
-      // "flex-layout.row#OrderQuote"
+       "flex-layout.row#quickOrder",
+      "flex-layout.row#OrderQuote"
     ],
     "props": {
       "blockClass": "drawerInnerCol"
@@ -42,9 +42,9 @@
   "flex-layout.row#quickOrder": {
     "children": ["link#quickOrder"]
   },
-  // "flex-layout.row#OrderQuote": {
-  //   "children": ["link#menu-order-quote"]
-  // },
+  "flex-layout.row#OrderQuote": {
+    "children": ["link#menu-order-quote"]
+  },
   "link#quickOrder": {
     "children": ["rich-text#quickTitle", "rich-text#quickText"],
     "props": {
@@ -64,13 +64,14 @@
       "blockClass": "quickText"
     }
   },
-  // "link#menu-order-quote": {
-  //   "props": {
-  //     "label": "My Quotes",
-  //     "href": "/b2b-quotes",
-  //     "blockClass": "menu-order-quote"
-  //   }
-  // },
+  "link#menu-order-quote": {
+    "props": {
+      "label": "My Quotes",
+      "href": "/orderquote",
+      // "href": "/b2b-quotes",
+      "blockClass": "menu-order-quote"
+    }
+  },
   "login#drawer": {
     "props": {
       "blockClass": "loginDrawer",
@@ -114,7 +115,7 @@
         "categoryId": "101"
       },
       "iconProps": {
-       // "id": "nav-thin-caret--right",
+      //  "id": "nav-thin-caret--right",
         "size": 12,
         "viewBox": "0 0 16 16",
         "activeClassName": "active",
