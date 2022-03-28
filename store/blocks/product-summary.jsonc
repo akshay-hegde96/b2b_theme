@@ -13,7 +13,7 @@
       "challenge-permission#product-summary-buy-button",
       "add-to-list-btn",
       "modal-trigger#quickview",
-      "check-permission#product-comparison-block",
+      //"check-permission#product-comparison-block",
       "responsive-layout.desktop#productSummaryList",
       "product-summary-space",
       "challenge-permission#product-comparison-block"
