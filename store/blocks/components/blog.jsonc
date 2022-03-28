@@ -1,6 +1,6 @@
 {
   "flex-layout.row#blog": {
-    "children": ["flex-layout.col#blogSEO", "flex-layout.col#blogPosts"],
+    "children": ["flex-layout.col#blogpost", "flex-layout.col#blogSEO"],
     "props": {
       "blockClass": "blog",
       "colSizing": "auto",
@@ -24,7 +24,7 @@
     }
   },
 
-  "flex-layout.col#blogPosts": {
+  "flex-layout.col#blogpost": {
     // "children": ["blog-category-preview.wordpress-category-preview"],
     // "props": {
     //   "width": "grow"
@@ -34,6 +34,7 @@
 
   "custom-blog-listing": {
     "props": {
+        "width": "grow",
         "accountName": "echidna",
         "entityIdAcronym": "CB",
         "schemaName": "CustomBlog"
@@ -63,7 +64,8 @@
       "search-title.v2",
       "rich-text#blogSEO",
       "rich-text#blogSecondarySEO",
-      "blog-category-preview.wordpress-category-preview#mobile"
+      "blog-category-preview.wordpress-category-preview#mobile",
+      "blogsList"
     ]
   },
 
