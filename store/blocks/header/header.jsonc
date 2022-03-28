@@ -71,7 +71,7 @@
       "rich-text#headStripe5",
       "flex-layout.col#orderConfig",
       "flex-layout.col#spacer",
-      "check-permission#reseller"
+      "challenge-permission#reseller"
     ]
   },
 
@@ -110,26 +110,20 @@
     }
   },
 
-
   //============== Order Configuration Starts =============
 
-  "flex-layout.col#orderConfig":{
-    "children":[
-      "order-config#header"
-    ],
-    "props":{
-      "blockClass":"orderConfig"
+  "flex-layout.col#orderConfig": {
+    "children": ["order-config#header"],
+    "props": {
+      "blockClass": "orderConfig"
     }
   },
 
   "order-config#header": {
-    "children": [
-      "order-config.title#header",
-      "order-config.modal#header"
-    ],
-    "props":{
-      "showInTitle":false,
-      "blockClass":"orderConfigForm",
+    "children": ["order-config.title#header", "order-config.modal#header"],
+    "props": {
+      "showInTitle": false,
+      "blockClass": "orderConfigForm",
       "formFields": [
         {
           "name": "orderType",
@@ -203,31 +197,24 @@
           "showInTitle": false
         }
       ]
-
     }
- },
+  },
 
- "order-config.title#header":{
-  "props": {
-    "formTitle": "Order Configuration",
-    "blockClass":"orderConfig-title"
+  "order-config.title#header": {
+    "props": {
+      "formTitle": "Order Configuration",
+      "blockClass": "orderConfig-title"
+    }
+  },
 
-  }
- },
+  "order-config.modal#header": {
+    "children": ["order-config.form"],
+    "props": {
+      "blockClass": "modal"
+    }
+  },
 
- "order-config.modal#header":{
-  "children": [
-    "order-config.form"
-  ],
-  "props":{
-    "blockClass":"modal"
-  }
- },
-
-
-
-//========== Order Configuration Ends============
-
+  //========== Order Configuration Ends============
 
   "flex-layout.col#logo-desktop": {
     "props": {
@@ -289,7 +276,7 @@
   },
 
   "flex-layout.row#mobile": {
-    "children": ["drawer", "logo", "check-permission#login", "minicart.v2"],
+    "children": ["drawer", "logo", "challenge-permission#login", "minicart.v2"],
     "props": {
       "preventHorizontalStretch": true,
       "preserveLayoutOnMobile": true,
@@ -340,5 +327,4 @@
       "iconLabel": "Sign in"
     }
   }
-
 }

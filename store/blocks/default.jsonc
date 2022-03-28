@@ -21,7 +21,7 @@
       "product-summary-name",
       "product-rating-inline",
       "product-summary-space",
-      "check-permission#product-summary-price",
+      "challenge-permission#product-summary-price",
       "product-identifier.summary",
       "add-to-cart-button"
     ]
