@@ -101,7 +101,6 @@
     },
     "children": [
       // "add-to-cart-button"
-      "viewdetails-button"
       //"flex-layout.row#buyNowButton"
     ]
   },

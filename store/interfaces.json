@@ -1,9 +1,13 @@
 {
   "store.search.product-comparison": {
-    "around": ["comparison-context-wrapper"]
+    "around": [
+      "comparison-context-wrapper"
+    ]
   },
   "store.custom.product-comparison": {
-    "around": ["comparison-context-wrapper"]
+    "around": [
+      "comparison-context-wrapper"
+    ]
   },
   "b2b-department": {
     "component": "B2BDepartment"
@@ -12,9 +16,11 @@
     "component": "DropdownButtonWrapper"
   },
   "search-result-layout.desktop.product-comparison": {
-    "allowed": ["product-comparison-drawer"]
+    "allowed": [
+      "product-comparison-drawer"
+    ]
   },
-  "viewdetails-button": {
-    "component": "ViewdetailButtonWrapper"
+  "blog-post": {
+    "component": "BlogPost"
   }
 }

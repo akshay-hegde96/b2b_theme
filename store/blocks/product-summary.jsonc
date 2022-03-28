@@ -15,8 +15,7 @@
       "modal-trigger#quickview",
       "check-permission#product-comparison-block",
       "responsive-layout.desktop#productSummaryList",
-      "product-summary-space",
-      "viewdetails-button"
+      "product-summary-space"
     ]
   },
   "responsive-layout.desktop#productSummaryList": {
