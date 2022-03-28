@@ -9,15 +9,6 @@
   align-items: center;
 }
 
-.flexRowContent--blog{
-  display: flex;
-  justify-content: flex-start;
-}
-
-.flexRow--headerStripe {
-  background: var(--b2b-blue-darkest);
-}
-
 .flexCol--drawerInnerCol :global(.vtex-login-2-x-buttonLink) {
   display: flex;
   align-items: center;

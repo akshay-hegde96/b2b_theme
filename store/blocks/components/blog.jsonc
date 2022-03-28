@@ -8,18 +8,18 @@
       "preventHorizontalStretch": true
     }
   },
-  "flex-layout.col#blogpost": {
-    "children": ["blog-post"]
-  },
+  //"flex-layout.col#blogpost": {
+  //  "children": ["blog-post"]
+  //}
 
-  "custom-blog-listing": {
-    "props": {
-        "width": "grow",
-        "accountName": "echidna",
-        "entityIdAcronym": "CB",
-        "schemaName": "CustomBlog"
-    }
-  },
+ // "custom-blog-listing": {
+    //"props": {
+      //  "width": "grow",
+       // "accountName": "echidna",
+       // "entityIdAcronym": "CB",
+      //  "schemaName": "CustomBlog"
+   // }
+  //},
 
   "flex-layout.col#blogSEO": {
     "children": ["search-title.v2", "rich-text#blogSEO"],
@@ -57,8 +57,8 @@
       "search-title.v2",
       "rich-text#blogSEO",
       "rich-text#blogSecondarySEO",
-      "blog-category-preview.wordpress-category-preview#mobile",
-      "blog-post"
+      "blog-category-preview.wordpress-category-preview#mobile"
+     // "blog-post"
     ]
   },
 

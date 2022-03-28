@@ -83,7 +83,6 @@
     "vtex.challenge-tp-condition": "0.x",
     "vtex.shopper-location": "0.x",
     "vtex.order-configuration": "2.x",
-    "echidna.custom-blog-listing": "0.x",
     "vtex.organizations-challenge": "1.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"

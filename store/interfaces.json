@@ -19,8 +19,5 @@
     "allowed": [
       "product-comparison-drawer"
     ]
-  },
-  "blog-post": {
-    "component": "BlogPost"
   }
 }

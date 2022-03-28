@@ -76,8 +76,5 @@
   },
   "store.custom#sales-page": {
     "path": "/sales"
-  },
-  "store.custom#blog-listing-page": {
-    "path": "/blogs"
   }
 }
