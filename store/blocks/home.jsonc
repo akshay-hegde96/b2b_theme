@@ -116,14 +116,14 @@
   "link#shoBy2": {
     "children": ["image#shoBy2", "rich-text#cat2"],
     "props": {
-      "href": "nismo",
+      "href": "/nismo",
       "blockClass": "shopByLink"
     }
   },
   "link#shoBy3": {
     "children": ["image#shoBy3", "rich-text#cat3"],
     "props": {
-      "href": "car-parts",
+      "href": "/car-parts",
       "blockClass": "shopByLink"
     }
   },
