@@ -45,6 +45,7 @@
       },
 
   "product-summary.shelf#searchBar": {
+    
     "props": {
       "blockClass": "summarySearch"
     },
