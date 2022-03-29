@@ -119,19 +119,20 @@
     "blocks": ["allowed-content#minicart", "disallowed-content#minicart"]
   },
   "allowed-content#minicart": {
-    "children": ["minicart-checkout-button", "link#quote"]
+    "children": [
+      // "minicart-checkout-button",
+      "link#quote"
+    ]
   },
   "disallowed-content#minicart": {
     "children": ["link#quote"]
   },
   "link#quote": {
     "props": {
-      "label": "Checkout",
+      "label": "Create Quote",
       "displayMode": "button",
       "blockClass": ["vtex-button", "order-quote"],
-      "href": "/checkout"
-
-      // "href": "/b2b-quotes/create"
+      "href": "/orderquote/create"
     }
   },
 

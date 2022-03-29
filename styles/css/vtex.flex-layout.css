@@ -718,7 +718,6 @@
   color: #fff;
 }
 
-
 /* -------------------------Contact Us Page--------------------------------- */
 
 .flexRow--contact-us-form {
@@ -775,11 +774,21 @@
   width: 330px !important;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 680px) {
   .flexRow--banner {
     margin-bottom: 2rem;
+  }
+  .flexRow--combo-discount {
+    display: block;
+    justify-content: center;
+  }
+  .flexRowContent--combo-discount .stretchChildrenWidth {
+    justify-content: center;
+  }
+  .flexColChild--combo-discount-list1,
+  .flexColChild--combo-discount-list2 {
+    width: 380px !important;
   }
 }
 
 /* ---------------------------------- */
-

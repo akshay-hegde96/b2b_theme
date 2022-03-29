@@ -219,5 +219,30 @@
 .sliderLayoutContainer--combo-discount-list2 {
   width: 400px;
 }
+@media only screen and (max-width: 680px) {
+  .slideChildrenContainer--carousel-top-discount {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 
+@media only screen and (max-width: 780px) {
+  .sliderLayoutContainer--combo-discount-list1 {
+    width: 380px;
+  }
+  .sliderLayoutContainer--combo-discount-list2 {
+    width: 380px;
+  }
+  .slide--combo-discount-list1 {
+    margin-bottom: 5px;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+
+  .slide--combo-discount-list2 {
+    margin-bottom: 5px;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+}
 /* ---------------------------------------------------------------- */

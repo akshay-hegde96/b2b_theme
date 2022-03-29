@@ -8,3 +8,10 @@
 .form--contact-form {
   width: 500px;
 }
+@media only screen and (max-width: 560px) {
+  .formSubmitButton--contact-form-submit {
+    display: flex;
+    justify-content: center;
+    margin: 0.7rem auto;
+  }
+}
