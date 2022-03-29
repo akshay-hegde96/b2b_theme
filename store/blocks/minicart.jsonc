@@ -126,11 +126,10 @@
   },
   "link#quote": {
     "props": {
-      "label": "Checkout",
+      "label": "Create Quote",
       "displayMode": "button",
       "blockClass": ["vtex-button", "order-quote"],
-      "href": "/checkout"
-
+      "href": "/orderquote/create"
       // "href": "/b2b-quotes/create"
     }
   },

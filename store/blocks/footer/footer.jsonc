@@ -285,42 +285,42 @@
   },
   "link#footerLink1": {
     "props": {
-      "href": "/about",
+      "href": "/company",
       "label": "About us",
       "blockClass": "footerLink"
     }
   },
   "link#footerLink2": {
     "props": {
-      "href": "/policy",
+      "href": "/returns",
       "label": "Return Policy",
       "blockClass": "footerLink"
     }
   },
   "link#footerLink3": {
     "props": {
-      "href": "/orders",
+      "href": "/account#/orders",
       "label": "Your orders",
       "blockClass": "footerLink"
     }
   },
   "link#footerLink4": {
     "props": {
-      "href": "/service",
+      "href": "/contact",
       "label": "Costumer service",
       "blockClass": "footerLink"
     }
   },
   "link#footerLink5": {
     "props": {
-      "href": "/shipping",
+      "href": "/account#/addresses",
       "label": "Shipping info",
       "blockClass": "footerLink"
     }
   },
   "link#footerLink6": {
     "props": {
-      "href": "/support",
+      "href": "/contact",
       "label": "Contact & Support",
       "blockClass": "footerLink"
     }
