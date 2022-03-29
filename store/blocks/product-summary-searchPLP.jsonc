@@ -4,10 +4,11 @@
       "stack-layout#prodsum",
       "product-summary-name",
       "product-rating-inline",
-      "product-selling-price#summary",
+      "challenge-permission#product-summary-price",
       "flex-layout.row#nissanModelNo",
-      "product-summary-space"
+      "product-summary-space",
       // "add-to-cart-button"
+      "challenge-permission#product-summary-buy-button"
     ],
     "props": {
       "blockClass": "searchSummaryCard",
@@ -29,8 +30,8 @@
     "props": {
       "showBadge": true,
       "aspectRatio": "1:1",
-      "height": 250,
-      "width": 100,
+      "height": 150,
+      "width": 150,
       "blockClass": "productImage"
     }
   },

@@ -43,13 +43,13 @@
 }
 
 .priceContainer {
-  align-items: flex-start;
+  align-items: center;
 }
 
 .nameWrapper,
 .price_sellingPriceContainer,
 .price_listPriceContainer {
-  text-align: left;
+  text-align: center;
   padding-bottom: 0;
   margin-bottom: 4px;
 }
@@ -72,7 +72,7 @@
   color: #0067c7;
   font-weight: 500;
   line-height: 20px;
-  text-align: left;
+  text-align: center;
 }
 
 .container--summaryComplete .nameContainer {
@@ -80,7 +80,7 @@
 }
 
 .container--summaryComplete .productNameContainer {
-  text-align: left;
+  text-align: center;
   font-size: 16px;
   line-height: 22px;
   color: #000;
@@ -111,7 +111,7 @@
 }
 
 .element--summaryComplete .priceContainer {
-  align-items: flex-start;
+  align-items: center;
   padding: 0;
 }
 
@@ -254,7 +254,7 @@
 }
 
 .element--summarySearch .productBrandContainer {
-  text-align: left;
+  text-align: center;
 }
 
 .element--summarySearch .productBrandContainer .productBrandName {
@@ -294,7 +294,7 @@
   }
 
   .element--minimumSummary .priceContainer {
-    align-items: flex-start;
+    align-items: center;
   }
 
   .element--summaryComplete .price_sellingPrice {
@@ -307,4 +307,16 @@
 
 .productNameContainer.nameWrapper {
   margin-bottom: 0;
+}
+.clearLink--searchSummaryCard{
+  margin: 0px 20px;
+}
+
+.containerNormal--searchSummaryCard:hover{
+  box-shadow: 0px 0px 10px 0px grey;
+}
+
+.nameContainer--productSummaryName{
+  padding: 0;
+
 }

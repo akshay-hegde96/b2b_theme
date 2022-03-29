@@ -233,3 +233,6 @@
 .orderByOptionsContainer {
   z-index: 9;
 }
+.buttonShowMore--layout{
+  margin: 20px 0px;
+}
