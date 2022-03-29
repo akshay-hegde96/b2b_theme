@@ -1,5 +1,5 @@
 export async function makeAPICall(appURL, method, reqData) {
-  if (method == "GET") {
+   if (method == "GET") {
     try {
       let header = new Headers();
       header.append("Content-Type", "application/json");
@@ -17,6 +17,23 @@ export async function makeAPICall(appURL, method, reqData) {
       console.log(e);
     }
   } else if (method == "POST") {
+    try {
+      let header = new Headers();
+      header.append("Content-Type", "application/json");
+      header.append("Access-Control-Allow-Methods", "GET, OPTIONS, POST, PUT");
+      const response = await fetch(appURL, {
+        mode: "cors",
+        credentials: "include",
+        method: method,
+        headers: header,
+        body: JSON.stringify(reqData),
+      });
+      const data = await response.status;
+      //   console.log({ data });
+      return data;
+    } catch (e) {
+      console.log(e);
+    }
   } else {
     /* Do Nothing */
   }
