@@ -305,8 +305,6 @@
   }
 }
 
-.productNameContainer.nameWrapper
-{
-  min-height: 46px;
+.productNameContainer.nameWrapper {
   margin-bottom: 0;
 }

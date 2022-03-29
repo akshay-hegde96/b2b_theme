@@ -9,12 +9,55 @@
       "product-summary-name",
       //"product-rating-summary",
       "product-rating-inline",
-      "check-permission#product-summary-price",
-      "check-permission#product-summary-buy-button",
+      "challenge-permission#product-summary-price",
+      "challenge-permission#product-summary-buy-button",
       "add-to-list-btn",
       "modal-trigger#quickview",
-      "check-permission#product-comparison-block"
+      //"check-permission#product-comparison-block",
+      "responsive-layout.desktop#productSummaryList",
+      "product-summary-space",
+      "challenge-permission#product-comparison-block"
     ]
+  },
+  "responsive-layout.desktop#productSummaryList": {
+    "children": ["flex-layout.row#summaryListDesktop"]
+  },
+  "flex-layout.row#summaryListDesktop": {
+    "props": {
+      "fullWidth": true,
+      "colSizing": "auto",
+      "blockClass": "summaryListDesktop"
+    },
+    "children": [
+      "flex-layout.row#summaryLeftListDesktop"
+      // "flex-layout.col#summaryRightListDesktop"
+    ]
+  },
+  "flex-layout.row#summaryLeftListDesktop": {
+    "props": {
+      "blockClass": "summaryLeftListDesktop",
+      "colSizing": "auto",
+      "colGap": 7
+    },
+    "children": [
+      "flex-layout.col#summaryDetailsListDesktop"
+    ]
+  },
+  "flex-layout.col#summaryDetailsListDesktop": {
+    "props": {
+      "preventVerticalStretch": true,
+      "blockClass":"priceAndViewDetailsCol"
+    }
+  },
+  "product-selling-price#summary": {
+    "props": {
+      "blockClass": "summary"
+    }
+  },
+  "product-list-price#summary": {
+    "props": {
+      "blockClass": "summary"
+    }
   },
   "product-summary.shelf#complete": {
     "props": {
@@ -27,22 +70,22 @@
       "product-location-availability",
       // "product-rating-summary",
       "product-rating-inline",
-      "check-permission#product-summary-price",
-      "check-permission#product-summary-buy-button",
+      "challenge-permission#product-summary-price",
+      "challenge-permission#product-summary-buy-button",
       "add-to-list-btn",
       "modal-trigger#quickview"
     ]
   },
 
   "product-location-availability": {
-        "props": {
-          "maxItems": 3,
-          "orderBy": "cheaper",
-          "pickupFirst": false,
-          "showDistance": "miles",
-          "showAddressInfo": true
-        }
-      },
+    "props": {
+      "maxItems": 3,
+      "orderBy": "cheaper",
+      "pickupFirst": false,
+      "showDistance": "miles",
+      "showAddressInfo": true
+    }
+  },
 
   "product-summary.shelf#searchBar": {
     
@@ -104,7 +147,7 @@
     }
   },
 
-  "check-permission#product-summary-buy-button": {
+  "challenge-permission#product-summary-buy-button": {
     "props": {
       "roles": [
         "store-admin",
@@ -114,7 +157,8 @@
         "customer-admin",
         "customer-approver",
         "customer-buyer"
-      ]
+      ],
+      "permissions": [{ "name": "add-to-cart" }]
     },
     "blocks": ["allowed-content#product-summary-buy-button"]
   },
@@ -160,7 +204,8 @@
       "product-summary-name",
       // "product-rating-summary",
       "product-rating-inline",
-      "check-permission#product-summary-price"
+      "challenge-permission#product-summary-price",
+      "challenge-permission#product-summary-buy-button"
     ],
     "props": {
       "preventVerticalStretch": true
@@ -190,7 +235,7 @@
       "product-summary-name#trending",
       //"product-rating-summary",
       "product-rating-inline",
-      "check-permission#product-summary-price",
+      "challenge-permission#product-summary-price",
       "product-availability"
     ]
   },
@@ -225,7 +270,8 @@
       "product-summary-image",
       //"product-rating-summary",
       "product-rating-inline",
-      "check-permission#product-summary-price"
+      "challenge-permission#product-summary-price",
+      "challenge-permission#product-summary-buy-button"
     ],
     "props": {
       "blockClass": "minimumSummary"
@@ -237,7 +283,7 @@
     }
   },
 
-  "check-permission#product-comparison-block": {
+  "challenge-permission#product-comparison-block": {
     "props": {
       "roles": [
         "store-admin",
@@ -247,7 +293,8 @@
         "customer-admin",
         "customer-approver",
         "customer-buyer"
-      ]
+      ],
+      "permissions": [{ "name": "product_comparison_block" }]
     },
     "blocks": ["allowed-content#product-comparison-block"]
   },
