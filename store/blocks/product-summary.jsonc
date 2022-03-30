@@ -14,8 +14,8 @@
       "add-to-list-btn",
       "modal-trigger#quickview",
       //"check-permission#product-comparison-block",
-      "responsive-layout.desktop#productSummaryList",
-      "product-summary-space",
+      // "responsive-layout.desktop#productSummaryList",
+      // "product-summary-space",
       "challenge-permission#product-comparison-block"
     ]
   },
@@ -88,7 +88,7 @@
   },
 
   "product-summary.shelf#searchBar": {
-    
+
     "props": {
       "blockClass": "summarySearch"
     },
