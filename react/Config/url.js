@@ -14,3 +14,6 @@ export const categoryURL =
   "/api/dataentities/BC/search?_fields=_all&_schema=categorybb";
 
   export const blogAPI = "/api/dataentities/CB/search?_fields=_all&_schema=CustomBlog"
+
+  export const OrderConfigAPI = "/api/checkout/pvt/configuration/orderForm"
+
