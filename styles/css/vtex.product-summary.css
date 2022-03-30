@@ -308,6 +308,13 @@
 .productNameContainer.nameWrapper {
   margin-bottom: 0;
 }
+
+.nameContainer--summaryListDesktop{
+  padding-right: 33px;
+}
+.brandName--summaryListDesktop{
+  font-weight: bold;
+}
 .clearLink--searchSummaryCard{
   margin: 0px 20px;
 }

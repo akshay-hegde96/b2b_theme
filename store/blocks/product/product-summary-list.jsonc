@@ -120,7 +120,10 @@
     }
   },
   "flex-layout.col#priceSummaryListDesktop": {
-    "children": ["product-selling-price#summary", "product-list-price#summary"]
+    "children": ["product-selling-price#summary", "product-list-price#summary"],
+    "props":{
+      "blockClass":"priceListDetails"
+    }
   },
   "stack-layout#summaryListDesktop": {
     "children": [
