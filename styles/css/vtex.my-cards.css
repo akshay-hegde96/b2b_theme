@@ -1,0 +1,14 @@
+.boxContainerBody {
+  background-color: rgb(252, 249, 249);
+}
+
+.boxContainerFooter {
+  background-color: #041d42;
+  color: white;
+}
+
+@media only screen and (max-width: 340px) {
+  .paymentsList {
+    width: 80%;
+  }
+}

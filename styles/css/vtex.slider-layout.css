@@ -124,6 +124,9 @@
 .sliderRightArrow--shelfStyle1 {
   background-position: 11px center !important;
   background-image: url("assets/icons/chevronRightBlue.svg") !important;
+  top: 150px;
+  margin-left: 15px;
+  margin-right: 10px;
 }
 
 .sliderLeftArrow--shelfAlsoView,
@@ -131,6 +134,8 @@
 .sliderLeftArrow--shelfStyle1 {
   background-position: 9px center !important;
   background-image: url("assets/icons/chevronLeftBlue.svg") !important;
+  top: 150px;
+  margin-right: 25px;
 }
 
 .sliderLayoutContainer--categorySlider {
@@ -245,4 +250,10 @@
     padding-right: 0.2rem;
   }
 }
-/* ---------------------------------------------------------------- */
+/* wishlist---------------------------------------------------------------- */
+.sliderTrackContainer--shelfStyle1 {
+  padding: 16px 16px;
+  width: 95%;
+  align-items: center;
+  justify-content: space-evenly;
+}
