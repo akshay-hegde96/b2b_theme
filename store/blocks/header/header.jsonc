@@ -148,6 +148,7 @@
           "fieldType": "select",
           "label": "State",
           "showInTitle": true,
+          "defaultValue": "US",
           "options": [
             {
               "label": "United State",
@@ -187,14 +188,6 @@
               "value": "mestro"
             }
           ]
-        },
-        {
-          "name": "remarks",
-          "label": "Remarks",
-          "fieldType": "text",
-          "type": "string",
-          "required": false,
-          "showInTitle": false
         }
       ]
     }
@@ -213,6 +206,47 @@
       "blockClass": "modal"
     }
   },
+
+  "order-config.form":{
+    "children":[
+      "flex-layout.row#state-and-payment-method",
+      //"order-config.text#some-text-input",
+      "submitButton"
+      //"order-config.submit"
+    ]
+  },
+
+
+  "flex-layout.row#state-and-payment-method": {
+    "children": [
+      "order-config.radiogroup#orderType",
+      "order-config.dropdown#state",
+      "order-config.radiogroup#payment-method"
+    ],
+    "props": {
+      "blockClass": "stateAndPaymentMethod"
+    }
+  },
+  "order-config.radiogroup#orderType":{
+    "props":{
+      "pointer": "#/properties/orderType"
+    }
+  },
+
+
+  "order-config.dropdown#state": {
+    "props": {
+      "pointer": "#/properties/state"
+    }
+  },
+
+  "order-config.radiogroup#payment-method": {
+    "props": {
+      "pointer": "#/properties/paymentMethod",
+      "blockClass":"payment"
+    }
+  },
+
 
   //========== Order Configuration Ends============
 
@@ -288,7 +322,8 @@
   "link#orderQuote": {
     "props": {
       "label": "My Quotes",
-      "href": "/b2b-quotes",
+      "href": "/orderquote",
+      // "href": "/b2b-quotes",
       "blockClass": "orderQuote"
     }
   },

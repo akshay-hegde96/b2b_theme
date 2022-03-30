@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-.flexRowContent--blog{
+.flexRowContent--blog {
   display: flex;
   justify-content: flex-start;
 }
@@ -796,3 +796,10 @@
 }
 
 /* ---------------------------------- */
+
+.flexColChild--priceListDetails {
+  text-align: initial;
+  color: red;
+  font-weight: 500;
+  margin-top: 5px;
+}

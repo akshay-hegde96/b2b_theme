@@ -318,7 +318,7 @@
   "slider-layout#products": {
     "props": {
       "itemsPerPage": {
-        "desktop": 6,
+        "desktop": 4,
         "tablet": 3,
         "phone": 1
       },

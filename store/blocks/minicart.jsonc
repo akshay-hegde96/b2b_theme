@@ -133,6 +133,7 @@
       "displayMode": "button",
       "blockClass": ["vtex-button", "order-quote"],
       "href": "/orderquote/create"
+      // "href": "/b2b-quotes/create"
     }
   },
 

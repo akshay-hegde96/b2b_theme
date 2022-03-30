@@ -20,5 +20,9 @@
   },
   "blogsList": {
     "component": "BlogsListing"
+  },
+
+  "submitButton":{
+    "component":"OrderConfig"
   }
 }
