@@ -233,3 +233,12 @@
 .orderByOptionsContainer {
   z-index: 9;
 }
+
+.galleryItem--list{
+  flex-basis: 100%;
+    max-width: 100%;
+    padding-top: 25px;
+    padding-bottom: 51px;
+    border-bottom: 2px solid gray;
+    margin-bottom: 33px;
+}
