@@ -226,7 +226,8 @@
   },
   "search-result-layout.mobile": {
     "children": [
-      "flex-layout.row#banner-one",
+      "flex-layout.row#imageList--mobile",
+      // "flex-layout.row#banner-one",
       "flex-layout.row#searchbread",
       "flex-layout.row#searchtitle",
       "flex-layout.row#SEOText",
@@ -325,7 +326,7 @@
           "itemsPerRow": 1
         }
       ],
-      "ListSummary": "product-summary.shelf#listView",
+      "ListSummary": "product-summary.shelf#normal",
       "GridSummary": "product-summary.shelf.product-comparison#complete"
     }
   },

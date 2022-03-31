@@ -5,6 +5,7 @@
   border-radius: 8px;
   padding: 20px;
   transition: all 0.3s ease;
+  
 }
 
 .containerNormal--minimumSummary {
@@ -335,4 +336,8 @@
 
  :global(.vtex-product-summary-2-x-containerNormal--listViewTotalRow){
 max-width:inherit !important;
+}
+
+.containerNormal--summaryComplete{
+  max-width: 500px !important;
 }
