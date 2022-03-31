@@ -84,7 +84,10 @@
     "vtex.shopper-location": "0.x",
     "vtex.order-configuration": "2.x",
     "vtex.organizations-challenge": "1.x",
-    "echidna.custom-blog-listing": "0.x"
+    "echidna.custom-blog-listing": "0.x",
+    "vtex.my-authentication": "1.x",
+    "vtex.my-orders-app": "3.x",
+    "vtex.my-cards": "1.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

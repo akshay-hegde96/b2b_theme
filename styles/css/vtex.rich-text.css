@@ -644,32 +644,25 @@
   margin: 5px auto;
 }
 @media only screen and (max-width: 560px) {
+  .container--contact-us {
+    font-size: 1.2rem;
+  }
+  .container--contact-us-spacer {
+    font-size: 1.8px;
+    margin-top: 0.8rem;
+  }
+  .container--contact-us-input-spacer {
+    font-size: 1.8px;
+    margin-top: 0.4rem;
+  }
   .container--contact-us-submit {
-    font-size: 1.3rem;
-    color: #424244;
+    font-size: 1.1rem;
     margin: 2rem auto;
     padding: 0.5rem 1rem;
   }
 }
 /* -------------------------------------------------------- */
 /*----------------------------------------- Sales Page ------------------------------*/
-
-.paragraph--discount {
-  margin: 0 auto;
-  font-size: 14px;
-  font-variant: small-caps;
-  font-family: "NissanBrand", sans-serif;
-  border: 1px solid #c23232;
-  border-radius: 22px;
-  background-color: #c23232;
-  padding: 4px 7px;
-  color: white;
-}
-.container--discount {
-  margin-top: 0;
-  margin-bottom: 8px;
-  justify-content: flex-end;
-}
 
 .container--discount-title {
   justify-content: center;
@@ -689,8 +682,18 @@
   font-variant: small-caps;
   font-family: "NissanBrand", sans-serif;
 }
-.paragraph--omniparts-text {
-  color: black;
+
+@media only screen and (max-width: 680px) {
+  .paragraph--header-top-discount {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .heading--discount-title {
+    font-size: 26px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 /* -------------------------------------------------------------- */

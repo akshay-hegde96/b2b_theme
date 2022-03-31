@@ -1,0 +1,23 @@
+.maskedPassword_title,
+.loginSessionsBox_title {
+  color: #0f3e99;
+  font-weight: 700;
+}
+
+.maskedPassword_content,
+.loginSessionsBox_content {
+  color: black;
+}
+
+.box_footer {
+  background-color: #e3e6eb;
+}
+
+@media only screen and (max-width: 320px) {
+  .box_content {
+    padding: 16px;
+  }
+  .box_container {
+    margin: 5px;
+  }
+}
