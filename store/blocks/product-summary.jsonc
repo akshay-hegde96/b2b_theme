@@ -192,11 +192,51 @@
       "displayMode": "text"
     }
   },
+  "product-summary.shelf#listView":{
+    "children":[
+      "flex-layout.row#listView"
+    ],
+    "props":{
+      "blockClass":"listViewTotalRow",
+      "horizontalAlign": "center"
+    }
+  },
+
+  "flex-layout.row#listView":{
+    "children":[
+      "flex-layout.col#listView-img",
+      "flex-layout.col#listView-details"
+    ],
+    "props":{
+      "blockClass":"listViewDivision",
+       "colGap":1,
+      "colSizing":"auto"
+    }
+  },
+
+  "flex-layout.col#listView-img":{
+    "children":[
+      "flex-layout.row#stackSavings"
+    ],
+    "props":{
+      "blockClass":"listView-img"
+    }
+  },
+
+  "flex-layout.col#listView-details":{
+    "children":[
+      "flex-layout.col#summaryInfo"
+    ],
+    "props":{
+      "blockClass":"listView-details"
+    }
+  },
+
   "product-summary.shelf#normal": {
     "props": {
       "blockClass": "summaryComplete"
     },
-    "children": ["flex-layout.row#stackSavings", "flex-layout.col#summaryInfo"]
+    "children": ["flex-layout.row#stackSavings","flex-layout.col#summaryInfo"]
   },
   "flex-layout.col#summaryInfo": {
     "children": [

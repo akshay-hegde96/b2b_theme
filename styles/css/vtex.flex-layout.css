@@ -803,3 +803,12 @@
   font-weight: 500;
   margin-top: 5px;
 }
+
+.flexColChild--listView-img{
+  width: 300px;
+    height: 300px;
+    padding: 0 50px;
+} 
+.flexRowContent--listViewDivision{
+  justify-content: inherit !important;
+}
