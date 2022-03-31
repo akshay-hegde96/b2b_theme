@@ -812,3 +812,7 @@
 .flexRowContent--listViewDivision{
   justify-content: inherit !important;
 }
+
+.flexCol--productNameCol{
+  margin: 50px 100px;
+}
