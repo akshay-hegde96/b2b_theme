@@ -309,7 +309,7 @@
           "itemsPerRow": 1
         }
       ],
-      "ListSummary": "product-summary.shelf#normal",
+      "ListSummary": "product-summary.shelf#listView",
       "GridSummary": "product-summary.shelf.product-comparison#complete"
     }
   },

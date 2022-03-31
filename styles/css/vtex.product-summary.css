@@ -42,9 +42,7 @@
   border-radius: 4px;
 }
 
-.priceContainer {
-  align-items: center;
-}
+
 
 .nameWrapper,
 .price_sellingPriceContainer,
@@ -326,4 +324,15 @@
 .nameContainer--productSummaryName{
   padding: 0;
 
+}
+/* .productBrandName{
+  font-weight: bold;
+}
+.priceContainer {
+  align-items: center;
+  width: max-content;
+} */
+
+ :global(.vtex-product-summary-2-x-containerNormal--listViewTotalRow){
+max-width:inherit !important;
 }
