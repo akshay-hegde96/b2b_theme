@@ -251,6 +251,8 @@
       "product-summary-name",
       // "product-rating-summary",
       "product-rating-inline",
+      "add-to-list-btn",
+      "modal-trigger#quickview",
       "challenge-permission#product-summary-price",
       "challenge-permission#product-summary-buy-button"
     ],
