@@ -22,7 +22,7 @@
     "component": "BlogsListing"
   },
 
-  "submitButton":{
+  "orderConfigForm":{
     "component":"OrderConfig"
   }
 }
