@@ -816,3 +816,7 @@
 .flexCol--productNameCol{
   margin: 50px 100px;
 }
+
+.flexColChild--wishlist{
+  align-items: center;
+}
