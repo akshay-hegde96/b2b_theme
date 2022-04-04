@@ -27,9 +27,9 @@
   right: 16px;
 }
 
-.paginationDotsContainer {
+/* .paginationDotsContainer {
   bottom: 16px;
-}
+} */
 
 .paginationDotsContainer--dotsCustom {
   display: flex;
@@ -37,7 +37,7 @@
   left: 50%;
   right: initial;
   transform: translateX(-50%);
-  bottom: 16px;
+  /* bottom: 16px; */
   background: #fff;
   border-radius: 40px;
   padding: 2px 6px;
@@ -106,7 +106,10 @@
 
 .sliderRightArrow--shelfAlsoView,
 .sliderRightArrow--shelfPopular,
-.sliderRightArrow--shelfStyle1 {
+.sliderRightArrow--shelfStyle1,
+.sliderLeftArrow--shelfAlsoView,
+.sliderLeftArrow--shelfPopular,
+.sliderLeftArrow--shelfStyle1 {
   border-color: #0067c7;
 }
 
@@ -124,6 +127,9 @@
 .sliderRightArrow--shelfStyle1 {
   background-position: 11px center !important;
   background-image: url("assets/icons/chevronRightBlue.svg") !important;
+  top: 150px;
+  margin-left: 15px;
+  margin-right: 10px;
 }
 
 .sliderLeftArrow--shelfAlsoView,
@@ -131,6 +137,8 @@
 .sliderLeftArrow--shelfStyle1 {
   background-position: 9px center !important;
   background-image: url("assets/icons/chevronLeftBlue.svg") !important;
+  top: 150px;
+  margin-right: 25px;
 }
 
 .sliderLayoutContainer--categorySlider {
@@ -219,5 +227,36 @@
 .sliderLayoutContainer--combo-discount-list2 {
   width: 400px;
 }
+@media only screen and (max-width: 680px) {
+  .slideChildrenContainer--carousel-top-discount {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 
-/* ---------------------------------------------------------------- */
+@media only screen and (max-width: 780px) {
+  .sliderLayoutContainer--combo-discount-list1 {
+    width: 380px;
+  }
+  .sliderLayoutContainer--combo-discount-list2 {
+    width: 380px;
+  }
+  .slide--combo-discount-list1 {
+    margin-bottom: 5px;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+
+  .slide--combo-discount-list2 {
+    margin-bottom: 5px;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+}
+/* wishlist---------------------------------------------------------------- */
+.sliderTrackContainer--shelfStyle1 {
+  padding: 16px 16px;
+  width: 95%;
+  align-items: center;
+  justify-content: space-evenly;
+}

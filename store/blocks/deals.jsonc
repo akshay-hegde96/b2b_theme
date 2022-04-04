@@ -11,7 +11,7 @@
       "querySchema": {
         "orderByField": "OrderByBestDiscountDESC",
         "hideUnavailableItems": true,
-        "maxItemsPerPage": 10,
+        "maxItemsPerPage": 9,
         "skusFilter": "ALL",
         "simulationBehavior": "skip"
       }
@@ -36,8 +36,8 @@
     "children": ["flex-layout.col#pageContent--deals"],
     "props": {
       "colSizing": "auto",
-      "fullWidth": true,
-      "marginBottom": 9
+      "fullWidth": false,
+      "marginBottom": 10
     }
   },
   "flex-layout.col#pageContent--deals": {
@@ -57,8 +57,8 @@
       "flex-layout.row#fetchmore"
     ],
     "props": {
-      "paddingLeft": 7,
-      "paddingRight": 7
+      "paddingLeft": 10,
+      "paddingRight": 10
     }
   },
 

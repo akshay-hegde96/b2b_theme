@@ -123,7 +123,6 @@
     "children": ["order-config.title#header", "order-config.modal#header"],
     "props": {
       "showInTitle": false,
-      "blockClass": "orderConfigForm",
       "formFields": [
         {
           "name": "orderType",
@@ -141,61 +140,9 @@
               "value": "consumption"
             }
           ]
-        },
-        {
-          "name": "state",
-          "type": "string",
-          "fieldType": "select",
-          "label": "State",
-          "showInTitle": true,
-          "options": [
-            {
-              "label": "United State",
-              "value": "US"
-            },
-            {
-              "label": "Russia",
-              "value": "RUS"
-            },
-            {
-              "label": "Brazil",
-              "value": "BRZ"
-            }
-          ]
-        },
-        {
-          "name": "paymentMethod",
-          "type": "string",
-          "fieldType": "radio",
-          "label": "Payment Method",
-          "defaultValue": "Visa",
-          "options": [
-            {
-              "label": "Visa",
-              "value": "visa"
-            },
-            {
-              "label": "Master Card",
-              "value": "masterCard"
-            },
-            {
-              "label": "American Express",
-              "value": "americanExpress"
-            },
-            {
-              "label": "Mestro",
-              "value": "mestro"
-            }
-          ]
-        },
-        {
-          "name": "remarks",
-          "label": "Remarks",
-          "fieldType": "text",
-          "type": "string",
-          "required": false,
-          "showInTitle": false
         }
+
+
       ]
     }
   },
@@ -208,10 +155,14 @@
   },
 
   "order-config.modal#header": {
-    "children": ["order-config.form"],
-    "props": {
-      "blockClass": "modal"
-    }
+    "children": ["order-config.form"]
+
+  },
+
+  "order-config.form":{
+    "children":[
+         "orderConfigForm"
+         ]
   },
 
   //========== Order Configuration Ends============
@@ -288,7 +239,8 @@
   "link#orderQuote": {
     "props": {
       "label": "My Quotes",
-      "href": "/b2b-quotes",
+      "href": "/orderquote",
+      // "href": "/b2b-quotes",
       "blockClass": "orderQuote"
     }
   },

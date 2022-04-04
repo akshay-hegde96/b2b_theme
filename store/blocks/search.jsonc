@@ -1,5 +1,5 @@
 {
-  "store.search": {
+  "store.search.product-comparison": {
     "blocks": ["search-result-layout", "flex-layout.row#newsletter"],
     "props": {
       "context": {
@@ -8,20 +8,19 @@
       }
     }
   },
-  "store.search#brand": {
+  "store.search.product-comparison#brand": {
     "blocks": ["search-result-layout", "flex-layout.row#newsletter"],
     "props": {
       "context": {
         "orderByField": "OrderByReleaseDateDESC",
         "hideUnavailableItems": true,
-        "maxItemsPerPage": 12,
+        "maxItemsPerPage": 10,
         "skusFilter": "ALL",
-        "simulationBehavior": "skip",
-        "brands":"false"
+        "simulationBehavior": "skip"
       }
     }
   },
-  "store.search#department": {
+  "store.search.product-comparison#department": {
     "blocks": ["search-result-layout", "flex-layout.row#newsletter"],
     "props": {
       "context": {
@@ -32,7 +31,7 @@
       "fullWidth": true
     }
   },
-  "store.search#category": {
+  "store.search.product-comparison#category": {
     "blocks": ["search-result-layout", "flex-layout.row#newsletter"],
     "props": {
       "context": {
@@ -43,7 +42,7 @@
       "fullWidth": true
     }
   },
-  "store.search#subcategory": {
+  "store.search.product-comparison#subcategory": {
     "blocks": ["search-result-layout", "flex-layout.row#newsletter"],
     "props": {
       "context": {
@@ -56,7 +55,7 @@
   },
   "search-result-layout": {
     "blocks": [
-      "search-result-layout.desktop",
+      "search-result-layout.desktop.product-comparison",
       "search-result-layout.mobile",
       "search-not-found-layout"
     ],
@@ -64,7 +63,7 @@
       "fullWidth": true
     }
   },
-  "search-result-layout.desktop": {
+  "search-result-layout.desktop.product-comparison": {
     "children": [
       "flex-layout.row#searchLayout",
       "product-comparison-drawer",
@@ -77,21 +76,7 @@
         "mode1": "small",
         "mode2": "normal"
       },
-      "fullWidth": true,
-      "defaultGalleryLayout": "grid"
-    }
-  },
-  "flex-layout.row#banner-one": {
-    "children": ["search-banner#one"],
-    "props": {
-      "blockClass": "banner-image"
-    }
-  },
-  "search-banner#one": {
-    "props": {
-      "area": "one",
-      "blockClass": "myBanner",
-      "horizontalAlignment": "center"
+      "fullWidth": true
     }
   },
   "flex-layout.row#searchLayout": {
@@ -102,10 +87,25 @@
     }
   },
   "flex-layout.col#pageContent": {
-    "children": [/*"flex-layout.row#imageList"*/"flex-layout.row#banner-one", "flex-layout.col#search-content"],
+    "children": [ "flex-layout.row#banner-one", "flex-layout.col#search-content"],
     "props": {
       "blockClass": "pageContent",
       "preventVerticalStretch": true
+    }
+  },
+
+  // ====dynamic banners============
+  "search-banner#one": {
+    "props": {
+      "area": "one",
+      "blockClass": "myBanner",
+      "horizontalAlignment": "center"
+    }
+  },
+  "flex-layout.row#banner-one": {
+    "children": ["search-banner#one"],
+    "props": {
+      "blockClass": "banner-image"
     }
   },
   "flex-layout.col#search-content": {
@@ -198,7 +198,7 @@
     }
   },
   "flex-layout.col#orderby": {
-    "children": ["order-by.v2"],
+    "children": ["order-by.v2", "gallery-layout-switcher"],
     "props": {
       "blockClass": "orderByCol"
     }
@@ -219,99 +219,7 @@
     "children": ["search-content"]
   },
   "search-content": {
-    "blocks": ["gallery#desktop", "not-found"]
-  },
-  "gallery#desktop": {
-    "props": {
-      "layouts": [
-        {
-          "name": "grid",
-          "component": "GridSummary",
-          "itemsPerRow": {
-            "(min-width:1400px)": 4,
-            "desktop": 3,
-            "tablet": 2,
-            "phone": 1
-          }
-        },
-        {
-          "name": "list",
-          "component": "ListSummary",
-          "itemsPerRow": 1
-        }
-      ],
-      "ListSummary": "product-summary.shelf#listLayout",
-      "GridSummary": "product-summary.shelf#summary"
-    }
-  },
-  "gallery-layout-switcher#desktop": {
-    "children": [
-      /*
-       * For accessbility to work properly,
-       * It's important to define the options in the same order as the layouts
-       */
-      "gallery-layout-option#grid",
-      "gallery-layout-option#list"
-      //"rich-text#viewText"  //view-richtext
-    ]
-  },
-  "gallery-layout-option#grid#desktop": {
-    "props": {
-      "name": "grid"
-    },
-    "children": ["icon-grid", "responsive-layout.desktop#textOptionGrid"]
-  },
-  "gallery-layout-option#list#desktop": {
-    "props": {
-      "name": "list"
-    },
-    "children": ["icon-inline-grid", "responsive-layout.desktop#textOptionList"]
-  },
-  /* "rich-text#viewText" : {
-    "props": {
-      "text": "View",
-      "textColor": "c-auto",
-      "blockClass": "layout-option"
-    }
-  },*/
-
-  "responsive-layout.desktop#textOptionGrid#desktop": {
-    "children": ["rich-text#option-grid"]
-  },
-  "responsive-layout.desktop#textOptionList#desktop": {
-    "children": ["rich-text#option-list"]
-  },
-  "rich-text#option-grid#desktop": {
-    "props": {
-      "text": "Grid",
-      "textColor": "c-auto",
-      "blockClass": "layout-option"
-    }
-  },
-  "rich-text#option-list#desktop": {
-    "props": {
-      "text": "List",
-      "textColor": "c-auto",
-      "blockClass": "layout-option"
-    }
-  },
-  "flex-layout.row#searchinfo#desktop": {
-    "children": ["flex-layout.col#productCount", "flex-layout.row#orderByAndSwitcher"]
-  },
-  "flex-layout.row#orderByAndSwitcher": {
-    "children": ["order-by.v2", "gallery-layout-switcher"],
-    "props": {
-      "horizontalAlign": "right",
-      "preventHorizontalStretch": true,
-      "blockClass": "orderByAndSwitcher",
-      "colGap": 3
-    }
-  },
-  "flex-layout.col#switcherDesktop": {
-    "children": ["gallery-layout-switcher"],
-    "props": {
-      "verticalAlign": "middle"
-    }
+    "blocks": ["gallery", "not-found"]
   },
   "search-content#mobile": {
     "blocks": ["gallery#mobile", "not-found"]
@@ -319,8 +227,8 @@
   "search-result-layout.mobile": {
     "children": [
       "flex-layout.row#imageList--mobile",
+      // "flex-layout.row#banner-one",
       "flex-layout.row#searchbread",
-      "flex-layout.row#banner-one",
       "flex-layout.row#searchtitle",
       "flex-layout.row#SEOText",
       // Deprecated
@@ -337,8 +245,7 @@
       "mobileLayout": {
         "mode1": "small",
         "mode2": "normal"
-      },
-      "defaultGalleryLayout": "grid"
+      }
     }
   },
   "flex-layout.row#contentmobile": {
@@ -347,6 +254,7 @@
       "preserveLayoutOnMobile": true
     }
   },
+  // ================================================================================
   "flex-layout.row#searchinfomobile": {
     "children": [
       "flex-layout.col#orderByMobile",
@@ -355,8 +263,8 @@
     ],
     "props": {
       "preserveLayoutOnMobile": true,
-      "colSizing": "auto"
-      //"colJustify": "around"
+      "colSizing": "auto",
+      "colJustify": "around"
     }
   },
   "flex-layout.col#orderByMobile": {
@@ -380,8 +288,7 @@
   "flex-layout.col#switcherMobile": {
     "children": ["search-layout-switcher"],
     "props": {
-      "verticalAlign": "middle",
-      "blockClass": "switcherMobileCol"
+      "verticalAlign": "middle"
     }
   },
   "search-not-found-layout": {
@@ -399,20 +306,37 @@
     }
   },
   "gallery": {
-    "blocks": ["product-summary.shelf.product-comparison#complete"]
-  },
-  "gallery#mobile": {
-    "blocks": ["product-summary.shelf#normal"]
+    "props": {
+      "layouts": [
+        {
+          "name": "grid",
+          "component": "GridSummary",
+          "itemsPerRow": {
+            // "(min-width:1008px)":4,
+            // "(min-width:623px) and (max-width:1007px)":3,
+            // "(max-width:622px)":2
+            "desktop": 3,
+            "tablet": 3,
+            "phone": 1
+          }
+        },
+        {
+          "name": "list",
+          "component": "ListSummary",
+          "itemsPerRow": 1
+        }
+      ],
+      "ListSummary": "product-summary.shelf#normal",
+      "GridSummary": "product-summary.shelf.product-comparison#complete"
+    }
   },
   "gallery-layout-switcher": {
     "children": [
       /*
-       * For accessbility to work properly,
-       * It's important to define the options in the same order as the layouts
+       * For accessibility purposes, it is fundamental to define the layout options following the same ordering used to declare them in step 2.
        */
       "gallery-layout-option#grid",
       "gallery-layout-option#list"
-      //"rich-text#viewText"  //view-richtext
     ]
   },
   "gallery-layout-option#grid": {
@@ -446,6 +370,12 @@
       "textColor": "c-auto",
       "blockClass": "layout-option"
     }
+  },
+  // "gallery": {
+  //   "blocks": ["product-summary.shelf.product-comparison#complete"]
+  // },
+  "gallery#mobile": {
+    "blocks": ["product-summary.shelf#normal"]
   }
   // Deprecated
   // "flex-layout.row#categorySlider": {

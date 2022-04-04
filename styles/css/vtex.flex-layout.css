@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-.flexRowContent--blog{
+.flexRowContent--blog {
   display: flex;
   justify-content: space-around;
 }
@@ -719,7 +719,6 @@
   color: #fff;
 }
 
-
 /* -------------------------Contact Us Page--------------------------------- */
 
 .flexRow--contact-us-form {
@@ -776,9 +775,20 @@
   width: 330px !important;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 680px) {
   .flexRow--banner {
     margin-bottom: 2rem;
+  }
+  .flexRow--combo-discount {
+    display: block;
+    justify-content: center;
+  }
+  .flexRowContent--combo-discount .stretchChildrenWidth {
+    justify-content: center;
+  }
+  .flexColChild--combo-discount-list1,
+  .flexColChild--combo-discount-list2 {
+    width: 380px !important;
   }
 }
 
@@ -791,3 +801,26 @@
 }
 /* ---------------------------------- */
 
+.flexColChild--priceListDetails {
+  text-align: initial;
+  color: red;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.flexColChild--listView-img{
+  width: 300px;
+    height: 300px;
+    padding: 0 50px;
+} 
+.flexRowContent--listViewDivision{
+  justify-content: inherit !important;
+}
+
+.flexCol--productNameCol{
+  margin: 50px 100px;
+}
+
+.flexColChild--wishlist{
+  align-items: center;
+}

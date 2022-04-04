@@ -30,14 +30,14 @@
   "slider-layout#wishlist": {
     "props": {
       "itemsPerPage": {
-        "desktop": 5,
-        "tablet": 3,
+        "desktop": 3,
+        "tablet": 2,
         "phone": 1
       },
       "infinite": false,
       "fullWidth": true,
       "showPaginationDots": "desktopOnly",
-      "showNavigationArrows": "desktopOnly",
+      "showNavigationArrows": "always",
       "blockClass": "shelfStyle1"
     }
   }

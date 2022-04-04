@@ -95,8 +95,6 @@
             "text": "Merchandise"
           }
         }
-
-
       ]
     }
   },
@@ -261,7 +259,8 @@
           "highlight": false,
           "itemProps": {
             "type": "internal",
-            "href": "/pickup",
+            // "href": "/pickup",
+            "href": "/stores",
             "noFollow": false,
             "tagTitle": "Store Pickup",
             "text": "Store Pickup"
@@ -270,5 +269,4 @@
       ]
     }
   }
-
 }
