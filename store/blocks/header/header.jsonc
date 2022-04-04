@@ -8,9 +8,14 @@
   },
 
   "header-layout.desktop": {
-    "children": ["sticky-layout#desktop"]
+    "children": ["flex-layout.row#0-desktop","sticky-layout#desktop"]
   },
-
+  "flex-layout.row#0-desktop": {
+    "children": ["b2b-user-widget"],
+    "props": {
+      "fullWidth": true
+    }
+  },
   "sticky-layout#desktop": {
     "props": {
       "blockClass": "sticky-header"
@@ -71,7 +76,7 @@
       "rich-text#headStripe5",
       "flex-layout.col#orderConfig",
       "flex-layout.col#spacer",
-      "challenge-permission#reseller"
+      "check-permission#reseller"
     ]
   },
 
@@ -310,7 +315,7 @@
   },
 
   "flex-layout.row#mobile": {
-    "children": ["drawer", "logo", "challenge-permission#login", "minicart.v2"],
+    "children": ["drawer", "logo", "check-permission#login", "minicart.v2"],
     "props": {
       "preventHorizontalStretch": true,
       "preserveLayoutOnMobile": true,
@@ -322,8 +327,8 @@
   "link#orderQuote": {
     "props": {
       "label": "My Quotes",
-      "href": "/orderquote",
-      // "href": "/b2b-quotes",
+      // "href": "/orderquote",
+      "href": "/b2b-quotes",
       "blockClass": "orderQuote"
     }
   },

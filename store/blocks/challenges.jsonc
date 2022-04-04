@@ -1,5 +1,5 @@
 {
-  "challenge-permission#reseller": {
+  "check-permission#reseller": {
     "props": {
       "roles": [
         "store-admin",
@@ -9,8 +9,7 @@
         "customer-admin",
         "customer-approver",
         "customer-buyer"
-      ],
-      "permissions": [{ "name": "reseller" }]
+      ]
     },
     "blocks": ["allowed-content#reseller", "disallowed-content#reseller"]
   },
@@ -26,7 +25,7 @@
       "blockClass": "resellerChallengeFallback"
     }
   },
-  "challenge-permission#login": {
+  "check-permission#login": {
     "props": {
       "roles": [
         "store-admin",
@@ -36,8 +35,7 @@
         "customer-admin",
         "customer-approver",
         "customer-buyer"
-      ],
-      "permissions": [{ "name": "user_login" }]
+      ]
     },
     "blocks": ["allowed-content#reseller", "disallowed-content#reseller"]
   },
