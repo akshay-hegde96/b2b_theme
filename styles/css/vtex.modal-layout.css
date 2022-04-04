@@ -121,3 +121,7 @@
   height: 1.25rem;
   width: 1.25rem;
 }
+
+:global(.vtex-flex-layout-0-x-flexColChild--quickview) .triggerContainer--quickviewTrigger {
+  position: inherit !important;
+}

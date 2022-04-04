@@ -1,11 +1,10 @@
 .container--summaryComplete {
   position: relative;
-  max-width: 240px;
+  max-width: 100% !important;
   border: 1px solid transparent;
   border-radius: 8px;
   padding: 20px;
   transition: all 0.3s ease;
-  
 }
 
 .containerNormal--minimumSummary {
@@ -326,18 +325,6 @@
   padding: 0;
 
 }
-/* .productBrandName{
-  font-weight: bold;
-}
-.priceContainer {
-  align-items: center;
-  width: max-content;
-} */
 
- :global(.vtex-product-summary-2-x-containerNormal--listViewTotalRow){
-max-width:inherit !important;
-}
 
-.containerNormal--summaryComplete{
-  max-width: 500px !important;
-}
+
