@@ -85,6 +85,8 @@
     "vtex.order-configuration": "2.x",
     "vtex.organizations-challenge": "1.x",
     "echidna.custom-blog-listing": "0.x",
+    "vtex.product-context": "0.x",
+    "vtex.search-page-context": "0.x",
     "vtex.my-authentication": "1.x",
     "vtex.my-orders-app": "3.x",
     "vtex.my-cards": "1.x"
