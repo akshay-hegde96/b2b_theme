@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: row;
   justify-content: left;
-  height: 370px;
 }
 
 .blog {
@@ -12,17 +11,12 @@
   margin-right: 10px;
 }
 
-.blogImage {
-  height: 10rem;
-  width: 16rem;
-}
-
 /* .imageWrapper{
   width: 16rem;
 } */
 .contentWrappper {
-  height: 16rem;
-  width: 16rem;
+  height: auto;
+  width: auto;
   font-size: 12px;
   margin-left: 2px;
 }
@@ -42,7 +36,6 @@
   padding: 5px;
   cursor: pointer;
 }
-
 
 @media screen and (max-width: 480px) {
   .blogContainer {

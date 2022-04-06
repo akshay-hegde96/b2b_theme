@@ -1,6 +1,6 @@
 .container--summaryComplete {
   position: relative;
-  max-width: 240px;
+  max-width: 100% !important;
   border: 1px solid transparent;
   border-radius: 8px;
   padding: 20px;
@@ -42,9 +42,7 @@
   border-radius: 4px;
 }
 
-.priceContainer {
-  align-items: center;
-}
+
 
 .nameWrapper,
 .price_sellingPriceContainer,
@@ -327,3 +325,6 @@
   padding: 0;
 
 }
+
+
+
