@@ -29,7 +29,16 @@
     // "props": {
     //   "width": "grow"
     // }
-     "children": ["blogsList"]
+     "children": ["blogsList"],
+     "props": {
+      "blockClass": "blogList"
+    }
+  },
+
+  "blogsList" : {
+    "props": {
+      "blockClass": "blogList"
+    }
   },
 
   "custom-blog-listing": {

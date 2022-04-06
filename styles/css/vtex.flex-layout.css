@@ -11,7 +11,7 @@
 
 .flexRowContent--blog {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
 }
 .flexRow--headerStripe {
   background: var(--b2b-blue-darkest);
@@ -256,9 +256,6 @@
   margin-bottom: 32px;
 }
 
-.flexCol--blogSEO {
-  width: 264px;
-}
 
 .flexRow--blog {
   padding-top: 48px;
@@ -795,6 +792,13 @@
   }
 }
 
+.flexCol--blogSEO{
+  margin-top: 15px;
+}
+
+.flexCol--blogList{
+  width: 500px;
+}
 /* ---------------------------------- */
 
 .flexColChild--priceListDetails {
