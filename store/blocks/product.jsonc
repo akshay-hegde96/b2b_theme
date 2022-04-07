@@ -40,7 +40,9 @@
       "flex-layout.row#description-and-gallery",
       "flex-layout.row#features",
       "flex-layout.row#specification",
-      "flex-layout.row#reviews-and-ratings"
+      "flex-layout.row#reviews-and-ratings",
+      "questions-and-answers"
+
     ]
   }
 }
