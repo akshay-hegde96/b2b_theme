@@ -17,3 +17,4 @@ export const categoryURL =
 
   export const OrderConfigAPI = "/api/checkout/pvt/configuration/orderForm"
 
+  export const blogSEOAPI = "/api/dataentities/CS/search?_fields=_all&_schema=CustomSeo"

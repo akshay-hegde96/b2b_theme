@@ -10,7 +10,7 @@
   },
 
   "flex-layout.col#blogSEO": {
-    "children": ["search-title.v2", "rich-text#blogSEO"],
+    "children": ["search-title.v2", "blogsSEO"/*"rich-text#blogSEO"*/],
     "props": {
       "blockClass": "blogSEO",
       "preventVerticalStretch": true
