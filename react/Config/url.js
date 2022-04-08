@@ -17,6 +17,7 @@ export const categoryURL =
 
   export const OrderConfigAPI = "/api/checkout/pvt/configuration/orderForm"
 
+  export const questionAPI = "/api/dataentities/qna/search?_fields=_all&_schema=v0.9"
 
-  
-   
+
+

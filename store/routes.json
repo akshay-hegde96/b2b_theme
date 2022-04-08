@@ -79,6 +79,8 @@
   },
   "store.custom#blog-listing-page": {
     "path": "/blogs"
+  },
+  "store.custom#qnaStorage":{
+    "path": "/qnaStorage"
   }
-
 }
