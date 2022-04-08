@@ -1,0 +1,10 @@
+.mainDropDown{
+
+  width: 100%;
+  margin: 10px 12px 0px 0px;
+}
+
+.dropdown select{
+  padding: 6px;
+  border-radius: 5px;
+}

@@ -13,7 +13,12 @@ export const contactUsURL =
 export const categoryURL =
   "/api/dataentities/BC/search?_fields=_all&_schema=categorybb";
 
-  export const blogAPI = "/api/dataentities/CB/search?_fields=_all&_schema=CustomBlog"
+export const blogAPI = "/api/dataentities/CB/search?_fields=_all&_schema=CustomBlog"
 
-  export const OrderConfigAPI = "/api/checkout/pvt/configuration/orderForm"
+export const OrderConfigAPI = "/api/checkout/pvt/configuration/orderForm"
 
+  export const questionAPI = "/api/dataentities/qna/search?_fields=_all&_schema=v0.9"
+
+
+
+export const blogSEOAPI = "/api/dataentities/CS/search?_fields=_all&_schema=CustomSeo"

@@ -1,0 +1,37 @@
+.qnaHeading{
+  text-align: center;
+}
+.qnaContainer{
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+.tablerow{
+  border-bottom: 1px solid black;
+  text-align: center !important;
+
+}
+.qnaTable {
+  border-collapse: collapse;
+  background-color: #dfecff;
+  box-shadow: 0px 0px 10px 0px grey;
+  border: 1px solid;
+}
+thead{
+  border-bottom: 2px solid;
+  background-color: #1b3255;
+  color: white;
+}
+td,th{
+  border-right: 1px solid;
+  padding: 10px;
+}
+.answersPadding{
+ padding-bottom: 10px;
+}
+.answeredByPadding{
+  padding-bottom: 20px;
+ }
+.fixedWidth{
+  width: 400px;
+}

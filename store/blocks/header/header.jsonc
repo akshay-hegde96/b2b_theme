@@ -71,7 +71,7 @@
       "rich-text#headStripe5",
       "flex-layout.col#orderConfig",
       "flex-layout.col#spacer",
-      "locale-switcher",
+      "localeSwitcherApp",
       "challenge-permission#reseller"
     ]
   },
