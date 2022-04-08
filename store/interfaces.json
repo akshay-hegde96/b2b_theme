@@ -21,11 +21,16 @@
   "blogsList": {
     "component": "BlogsListing"
   },
-
+  "blogsSEO": {
+    "component": "BlogSEO"
+  },
   "orderConfigForm":{
     "component":"OrderConfig"
   },
   "questions-answers-storage":{
     "component":"QnaStorage"
+  },
+  "localeSwitcherApp":{
+    "component":"LocaleSwitcher"
   }
 }
