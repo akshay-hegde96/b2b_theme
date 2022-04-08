@@ -12,7 +12,8 @@
 
   "flex-layout.col#text--sell": {
     "children": [
-      "rich-text#title--sell",
+      // "rich-text#title--sell",
+      "sandbox#title--sell",
       "rich-text#institutional-placeholder"
     ],
     "props": {
@@ -25,6 +26,13 @@
     "props": {
       "text": "# Sell with VTEX",
       "blockClass": "title"
+    }
+  },
+  "sandbox#title--sell": {
+    "props": {
+      "height": "4rem",
+      "initialContent": "<h1 style=\"text-align:left; margin-top:10px`; position:fixed\">Sell with VTEX</h1>",
+      "allowCookies": false
     }
   }
 }
