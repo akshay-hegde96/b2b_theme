@@ -21,7 +21,9 @@
   "blogsList": {
     "component": "BlogsListing"
   },
-
+  "blogsSEO": {
+    "component": "BlogSEO"
+  },
   "orderConfigForm":{
     "component":"OrderConfig"
   }
