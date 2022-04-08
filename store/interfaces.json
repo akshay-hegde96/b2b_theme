@@ -26,5 +26,9 @@
   },
   "orderConfigForm":{
     "component":"OrderConfig"
+  },
+
+  "localeSwitcherApp":{
+    "component":"LocaleSwitcher"
   }
 }
