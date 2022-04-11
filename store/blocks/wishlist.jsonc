@@ -21,10 +21,15 @@
       "product-summary-name",
       // "product-rating-summary",
       "product-rating-inline",
+      "product-price-suspense",
+      "modal-trigger#quickview",
+      "add-to-list-btn"
+    ]
+  },
+  "product-price-suspense": {
+    "children": [
       "product-summary-price",
-      "flex-layout.row#product-summary-buy-button",
-      "add-to-list-btn",
-      "modal-trigger#quickview"
+      "flex-layout.row#product-summary-buy-button"
     ]
   },
   "slider-layout#wishlist": {
