@@ -22,7 +22,7 @@ const BlogsListing = (props) => {
       console.log(response)
       setBlogs([...response])
     }
-    getBlogs()
+    getBlogs();
   }, [])
 
   const showMore = () => {
