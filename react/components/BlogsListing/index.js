@@ -7,7 +7,8 @@ import {
   useSearchPageState,
   useSearchPage,
   useSearchPageStateDispatch,
-} from 'vtex.search-page-context/SearchPageContext'
+} from 'vtex.search-page-context/SearchPageContext';
+import { FormattedMessage } from 'react-intl'
 
 
 const BlogsListing = (props) => {
@@ -47,8 +48,8 @@ const BlogsListing = (props) => {
 
   return (
     <>
-      <div className={styles.blogHeader}>
-        <h1>Blogs</h1>
+          <div className={styles.blogHeader}>
+        <h1><FormattedMessage id="store/my-app.blogs"/></h1>
         <div className={styles.showmoreBtn}><button onClick={showMore} className={styles.button} >show More &#62;</button></div>
       </div>
 
