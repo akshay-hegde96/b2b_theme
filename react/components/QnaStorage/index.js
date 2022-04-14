@@ -20,11 +20,13 @@ const QnaStorage = () => {
           <thead>
             <th>Qstn.No</th>
             <th className={styles.fixedWidth}>Questions</th>
-            <th>Total votes for the question</th>
+
             <th>Question asked by:</th>
+            <th>Total votes for the question</th>
             <th className={styles.fixedWidth}>Answers</th>
-            <th>Total likes for answers</th>
+
             <th>Answered by:</th>
+            <th>Total likes for answers</th>
 
             <th>ProductID</th>
           </thead>
@@ -34,26 +36,87 @@ const QnaStorage = () => {
                 <tr className={styles.tablerow}>
                   <td>{i + 1}</td>
                   <td>{qstn.question}</td>
-                  <td>{qstn.votes}</td>
-                  <td>{qstn.name}</td>
                   <td>
-                    {qstn.answers.map((ans) => {
-                      return <div className={styles.answersPadding}>{ans.answer}</div>;
-                    })}
+                    {qstn.name == "" ? (
+                      <div>Anonymous</div>
+                    ) : (
+                      <div>{qstn.name}</div>
+                    )}
                   </td>
                   <td>
-                    {qstn.answers.map((ans) => {
-                      return <div className={styles.answersPadding}>{ans.votes}</div>;
-                    })}
+                    {qstn.votes == null ? (
+                      <div>No votes yet</div>
+                    ) : (
+                      <div>{qstn.votes}</div>
+                    )}
                   </td>
-                  <td >
-                    {qstn.answers.map((ans) => {
-                      return <div className={styles.answeredByPadding}>{ans.name}</div>;
-                    })}
+
+                  <td>
+                    {qstn.answers ? (
+                      <div>
+                        {" "}
+                        {qstn.answers.map((ans) => {
+                          return (
+                            <div className={styles.answeredByPadding}>
+                              {ans.answer}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <div className={styles.answeredByPadding}>
+                        No answers yet. Be the first!
+                      </div>
+                    )}
+                  </td>
+                  <td>
+                    {qstn.answers ? (
+                      <div>
+                        {qstn.answers.map((ans) => {
+                          return (
+                            <div>
+                              {ans.name == "" ? (
+                                <div className={styles.answeredByPadding}>
+                                  Anonymous
+                                </div>
+                              ) : (
+                                <div className={styles.answeredByPadding}>
+                                  {ans.name}
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <div>No answers yet.</div>
+                    )}
+                  </td>
+                  <td>
+                    {qstn.answers ? (
+                      <div>
+                        {qstn.answers.map((ans) => {
+                          return (
+                            <div>
+                              {ans.votes == null ? (
+                                <div className={styles.answeredByPadding}>
+                                  No likes yet
+                                </div>
+                              ) : (
+                                <div className={styles.answeredByPadding}>
+                                  {ans.votes}
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <div>No answers yet.</div>
+                    )}
                   </td>
 
                   <td>{qstn.productId}</td>
-
                 </tr>
               );
             })}

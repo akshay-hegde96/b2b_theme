@@ -41,8 +41,18 @@
       "flex-layout.row#features",
       "flex-layout.row#specification",
       "flex-layout.row#reviews-and-ratings",
-      "questions-and-answers"
+      "flex-layout.row#questions-and-answers"
 
     ]
+  },
+  "flex-layout.row#questions-and-answers":{
+    "children": ["flex-layout.col#questions-and-answers"]
+  },
+  "flex-layout.col#questions-and-answers":{
+    "children": ["questions-and-answers"],
+    "props": {
+      "blockClass": "QnA",
+      "width": "74%"
+    }
   }
 }
