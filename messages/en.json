@@ -1,0 +1,12 @@
+{
+  "store/my-app.hello" : "Hello World!",
+  "store/my-app.blogs" : "Blogs",
+  "store/my-app.orderType": "Order Type",
+  "store/my-app.resale":"resale",
+  "store/my-app.consumption":"consumption",
+  "store/my-app.state":"State",
+  "store/my-app.selectState":"select your state",
+  "store/my-app.cart": "Cart Value",
+  "store/my-app.cartPlaceholder": "minimum cart value"
+}
+
