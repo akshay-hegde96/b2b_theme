@@ -17,8 +17,8 @@ const BlogSEO = (props) => {
   console.log(productContextValue);
   useEffect(() => {
     const getBlogs = async () => {
-      const response = await makeAPICall(blogSEOAPI, "GET");
-      console.log(response)
+      const response = await makeAPICall(blogSEOAPI, "GET", "0-100");
+     //console.log(response)
       setBlogs([...response])
     }
     getBlogs()
@@ -29,7 +29,7 @@ const BlogSEO = (props) => {
       var Data = window.location.pathname;
       console.log(Data);
       const categoryData = Data.split('/')[1];
-      console.log(categoryData);
+    //  console.log(categoryData);
       setCategory(categoryData);
     };
     getPLPPage();
@@ -37,15 +37,15 @@ const BlogSEO = (props) => {
 
   const { pagination, searchQuery } = useSearchPage();
   const categoryName = searchQuery?.data?.searchMetadata?.titleTag;
-  console.log("Category :");
-  console.log(categoryName);
+  // console.log("Category :");
+  // console.log(categoryName);
 
   return (
     <>
       <div className={styles.blogContainer}>
         {blogs.filter((blogs) => blogs.category === categoryName).map((blogs) => {
           return (
-            <div className={styles.blog} key={blogs.id}>          
+            <div className={styles.blog} key={blogs.id}>
               <div className={styles.contentWrappper} >
                 <p className={styles.shortDescription}>
                   {blogs.description}

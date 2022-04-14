@@ -7,7 +7,8 @@ import {
   useSearchPageState,
   useSearchPage,
   useSearchPageStateDispatch,
-} from 'vtex.search-page-context/SearchPageContext'
+} from 'vtex.search-page-context/SearchPageContext';
+import { FormattedMessage } from 'react-intl'
 
 
 const BlogsListing = (props) => {
@@ -18,8 +19,8 @@ const BlogsListing = (props) => {
   useEffect(() => {
     //BlogURL = "api/dataentities/CB/search?_fields=_all&_schema=CustomBlog"
     const getBlogs = async () => {
-      const response = await makeAPICall(blogAPI, "GET");
-      console.log(response)
+      const response = await makeAPICall(blogAPI, "GET", "0-100");
+    // console.log(response)
       setBlogs([...response])
     }
     getBlogs();
@@ -34,7 +35,7 @@ const BlogsListing = (props) => {
       var Data = window.location.pathname;
       console.log(Data);
       const categoryData = Data.split('/')[1];
-      console.log(categoryData);
+     // console.log(categoryData);
       setCategory(categoryData);
     };
     getPLPPage();
@@ -42,14 +43,14 @@ const BlogsListing = (props) => {
 
   const { pagination, searchQuery } = useSearchPage();
   const categoryName = searchQuery?.data?.searchMetadata?.titleTag;
-  console.log("Category :");
-  console.log(categoryName);
+  // console.log("Category :");
+  // console.log(categoryName);
 
   return (
     <>
-      <div className={styles.blogHeader}>
-        <h1>Blogs</h1>
-        <div className={styles.showmoreBtn}><button onClick={showMore} className={styles.button} >show More &#62;</button></div>
+          <div className={styles.blogHeader}>
+        <h1><FormattedMessage id="store/my-app.blogs"/></h1>
+        <div className={styles.showmoreBtn}><button onClick={showMore} className={styles.button} >Show More &#62;</button></div>
       </div>
 
       <div className={styles.blogContainer}>

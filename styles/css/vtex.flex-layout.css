@@ -812,7 +812,7 @@
   width: 300px;
     height: 300px;
     padding: 0 50px;
-} 
+}
 .flexRowContent--listViewDivision{
   justify-content: inherit !important;
 }
@@ -823,4 +823,9 @@
 
 .flexColChild--wishlist{
   align-items: center;
+}
+.flexColChild--QnA{
+  background-color: #f3f9ff;
+  border: 1px solid #ccdff7;
+  border-radius: 10px;
 }

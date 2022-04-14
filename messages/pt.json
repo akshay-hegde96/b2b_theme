@@ -1,0 +1,17 @@
+{
+  "store/my-app.hello" : "Olá, pessoal!",
+  "store/my-app.blogs" : "blogues",
+  "store/my-app.orderType": "Tipo de pedido",
+  "store/my-app.resale":"revenda",
+  "store/my-app.consumption":"consumo",
+  "store/my-app.state":"Estado",
+  "store/my-app.selectState":"selecione seu estado",
+  "store/my-app.cart": "Valor do carro",
+  "store/my-app.cartPlaceholder": "valor mínimo do carro"
+
+
+
+
+
+
+}
