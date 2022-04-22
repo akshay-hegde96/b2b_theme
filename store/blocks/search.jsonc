@@ -4,7 +4,8 @@
     "props": {
       "context": {
         "skusFilter": "ALL",
-        "simulationBehavior": "skip"
+        "simulationBehavior": "default",
+        "hideUnavailableItems":false
       }
     }
   },
@@ -12,11 +13,11 @@
     "blocks": ["search-result-layout", "flex-layout.row#newsletter"],
     "props": {
       "context": {
-        "orderByField": "OrderByReleaseDateDESC",
-        "hideUnavailableItems": true,
+
         "maxItemsPerPage": 10,
         "skusFilter": "ALL",
-        "simulationBehavior": "skip"
+        "simulationBehavior": "skip",
+        "hideUnavailableItems":false
       }
     }
   },
@@ -26,7 +27,8 @@
       "context": {
         "skusFilter": "ALL",
         "simulationBehavior": "skip",
-        "maxItemsPerPage": 20
+        "maxItemsPerPage": 20,
+        "hideUnavailableItems":false
       },
       "fullWidth": true
     }
@@ -37,7 +39,8 @@
       "context": {
         "skusFilter": "ALL",
         "simulationBehavior": "skip",
-        "maxItemsPerPage": 20
+        "maxItemsPerPage": 20,
+        "hideUnavailableItems":false
       },
       "fullWidth": true
     }
@@ -48,15 +51,16 @@
       "context": {
         "skusFilter": "ALL",
         "simulationBehavior": "skip",
-        "maxItemsPerPage": 20
+        "maxItemsPerPage": 20,
+        "hideUnavailableItems":false
       },
       "fullWidth": true
     }
   },
   "search-result-layout": {
     "blocks": [
-      //"search-result-layout.desktop.product-comparison",
-      "search-result-layout.desktop",
+      "search-result-layout.desktop.product-comparison",
+      //"search-result-layout.desktop",
       "search-result-layout.mobile",
       "search-not-found-layout"
     ],
@@ -169,7 +173,7 @@
     "props": {
       "preserveLayoutOnMobile": true,
       "fullWidth": true,
-      "marginBottom": 5
+      "marginBottom": 6
     }
   },
 
@@ -358,12 +362,14 @@
             "desktop": 3,
             "tablet": 3,
             "phone": 1
-          }
+          },
+         "preferredSKU":"FIRST_AVAILABLE"
         },
         {
           "name": "list",
           "component": "ListSummary",
-          "itemsPerRow": 1
+          "itemsPerRow": 1,
+         "preferredSKU":"FIRST_AVAILABLE"
         }
       ],
       "ListSummary": "product-summary.shelf#normal",
