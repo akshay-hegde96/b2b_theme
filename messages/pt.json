@@ -7,11 +7,22 @@
   "store/my-app.state":"Estado",
   "store/my-app.selectState":"selecione seu estado",
   "store/my-app.cart": "Valor do carro",
-  "store/my-app.cartPlaceholder": "valor mínimo do carro"
-
-
-
-
+  "store/my-app.cartPlaceholder": "valor mínimo do carro",
+  
+    "store/my-app.questions" : "Perguntas e Respostas",
+    "store/my-app.qstn" : "Qstn.No",
+    "store/my-app.qstnAsked": "Pergunta feita por:",
+    "store/my-app.quesHeading":"Questões",
+    "store/my-app.votes":"Total de votos para a pergunta",
+    "store/my-app.answerBy":"Respondido por:",
+    "store/my-app.answers":"Respostas",
+    "store/my-app.ansLikes": "Total de curtidas para respostas",
+    "store/my-app.prodID": "ID do produto",
+    "store/my-app.anonymous":"Anônima",
+    "store/my-app.noVotes":"Ainda não há votos",
+    "store/my-app.noAns":"Ainda não há respostas. Seja o primeiro!",
+    "store/my-app.yetNoAns":"Ainda não há respostas.",
+    "store/my-app.noLikes": "Sem curtidas ainda"
 
 
 }

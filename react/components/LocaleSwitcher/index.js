@@ -22,6 +22,7 @@ const LocaleSwitcher = () => {
   useEffect(() => {
     let localData = window.localStorage.getItem("language");
     setSelect(localData);
+    console.log("localData",localData);
   }, []);
 
   return (
