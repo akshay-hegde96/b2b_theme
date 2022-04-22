@@ -32,5 +32,8 @@
   },
   "localeSwitcherApp":{
     "component":"LocaleSwitcher"
+  },
+  "chart-data":{
+    "component":"ChartData"
   }
 }

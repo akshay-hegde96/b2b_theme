@@ -181,6 +181,19 @@
             "tagTitle": "about-us",
             "text": "Locations"
           }
+        },
+        {
+          "id": "footerItem-dashboard",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/dashboard",
+            "noFollow": false,
+            "tagTitle": "DashBoard",
+            "text": "DashBoard"
+          }
         }
       ]
     }
