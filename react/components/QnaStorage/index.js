@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { questionAPI } from "../../Config/url";
 import { makeAPICall } from "../../Utils/httpCall";
+import { FormattedMessage } from 'react-intl'
 import styles from "./QnaStorage.css";
 const QnaStorage = () => {
   useEffect(() => {
@@ -14,21 +15,39 @@ const QnaStorage = () => {
   const [qstns, setQstns] = useState([]);
   return (
     <React.Fragment>
-      <h1 className={styles.qnaHeading}>Questions&Answers</h1>
+      <h1 className={styles.qnaHeading}>
+      <FormattedMessage id="store/my-app.questions" />
+      </h1>
       <div className={styles.qnaContainer}>
         <table className={styles.qnaTable}>
           <thead>
-            <th>Qstn.No</th>
-            <th className={styles.fixedWidth}>Questions</th>
+            <th>
+            <FormattedMessage id="store/my-app.qstn" />
+            </th>
+            <th className={styles.fixedWidth}>
+            <FormattedMessage id="store/my-app.quesHeading" />
+            </th>
 
-            <th>Question asked by:</th>
-            <th>Total votes for the question</th>
-            <th className={styles.fixedWidth}>Answers</th>
+            <th>
+            <FormattedMessage id="store/my-app.qstnAsked" />
+            </th>
+            <th>
+            <FormattedMessage id="store/my-app.votes" />
+            </th>
+            <th className={styles.fixedWidth}>
+            <FormattedMessage id="store/my-app.answers" />
+            </th>
 
-            <th>Answered by:</th>
-            <th>Total likes for answers</th>
+            <th>
+            <FormattedMessage id="store/my-app.answerBy" />
+            </th>
+            <th>
+            <FormattedMessage id="store/my-app.ansLikes" />
+            </th>
 
-            <th>ProductID</th>
+            <th>
+            <FormattedMessage id="store/my-app.prodID" />
+            </th>
           </thead>
           <tbody>
             {qstns.map((qstn, i) => {
@@ -38,14 +57,18 @@ const QnaStorage = () => {
                   <td>{qstn.question}</td>
                   <td>
                     {qstn.name == "" ? (
-                      <div>Anonymous</div>
+                      <div>
+                         <FormattedMessage id="store/my-app.anonymous" />
+                      </div>
                     ) : (
                       <div>{qstn.name}</div>
                     )}
                   </td>
                   <td>
                     {qstn.votes == null ? (
-                      <div>No votes yet</div>
+                      <div>
+                         <FormattedMessage id="store/my-app.noVotes" />
+                      </div>
                     ) : (
                       <div>{qstn.votes}</div>
                     )}
@@ -65,7 +88,7 @@ const QnaStorage = () => {
                       </div>
                     ) : (
                       <div className={styles.answeredByPadding}>
-                        No answers yet. Be the first!
+                        <FormattedMessage id="store/my-app.noAns" />
                       </div>
                     )}
                   </td>
@@ -77,7 +100,7 @@ const QnaStorage = () => {
                             <div>
                               {ans.name == "" ? (
                                 <div className={styles.answeredByPadding}>
-                                  Anonymous
+                                  <FormattedMessage id="store/my-app.anonymous" />
                                 </div>
                               ) : (
                                 <div className={styles.answeredByPadding}>
@@ -89,7 +112,9 @@ const QnaStorage = () => {
                         })}
                       </div>
                     ) : (
-                      <div>No answers yet.</div>
+                      <div>
+                        <FormattedMessage id="store/my-app.yetNoAns" />
+                      </div>
                     )}
                   </td>
                   <td>
@@ -100,7 +125,7 @@ const QnaStorage = () => {
                             <div>
                               {ans.votes == null ? (
                                 <div className={styles.answeredByPadding}>
-                                  No likes yet
+                                   <FormattedMessage id="store/my-app.noLikes" />
                                 </div>
                               ) : (
                                 <div className={styles.answeredByPadding}>
@@ -112,7 +137,9 @@ const QnaStorage = () => {
                         })}
                       </div>
                     ) : (
-                      <div>No answers yet.</div>
+                      <div>
+                        <FormattedMessage id="store/my-app.yetNoAns" />
+                      </div>
                     )}
                   </td>
 

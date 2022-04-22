@@ -7,6 +7,25 @@
   "store/my-app.state":"State",
   "store/my-app.selectState":"select your state",
   "store/my-app.cart": "Cart Value",
-  "store/my-app.cartPlaceholder": "minimum cart value"
+  "store/my-app.cartPlaceholder": "minimum cart value",
+  
+    "store/my-app.questions" : "Questions&Answers",
+    "store/my-app.qstn" : "Qstn.No",
+    "store/my-app.qstnAsked": "Question asked by:",
+    "store/my-app.quesHeading":"Questions",
+    "store/my-app.votes":"Total votes for the question",
+    "store/my-app.answerBy":"Answered by:",
+    "store/my-app.answers":"Answers",
+    "store/my-app.ansLikes": "Total likes for answers",
+    "store/my-app.prodID": "ProductID",
+    "store/my-app.anonymous":"Anonymous",
+    "store/my-app.noVotes":"No votes yet",
+    "store/my-app.noAns":" No answers yet. Be the first!",
+    "store/my-app.yetNoAns":"No answers yet.",
+    "store/my-app.noLikes": "No likes yet"
+
+   
+  
+  
 }
 
