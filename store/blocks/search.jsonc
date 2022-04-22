@@ -13,7 +13,7 @@
     "blocks": ["search-result-layout", "flex-layout.row#newsletter"],
     "props": {
       "context": {
-
+        // "orderByField": "OrderByReleaseDateDESC",
         "maxItemsPerPage": 10,
         "skusFilter": "ALL",
         "simulationBehavior": "skip",
