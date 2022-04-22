@@ -82,5 +82,8 @@
   },
   "store.custom#qnaStorage":{
     "path": "/qnaStorage"
+  },
+  "store.custom#dashboard":{
+    "path": "/dashboard"
   }
 }
