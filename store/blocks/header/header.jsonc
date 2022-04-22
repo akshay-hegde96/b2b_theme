@@ -47,10 +47,17 @@
   },
 
   "flex-layout.col#search-bar": {
-    "children": ["search-bar"],
+    "children": ["search-bar#desktop"],
     "props": {
       "paddingLeft": 8,
       "width": "grow"
+    }
+  },
+
+  "search-bar#desktop":{
+    "props": {
+      "openAutocompleteOnFocus": true,
+      "blockClass": "searchMobile"
     }
   },
 
