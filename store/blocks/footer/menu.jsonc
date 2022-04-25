@@ -194,6 +194,19 @@
             "tagTitle": "DashBoard",
             "text": "DashBoard"
           }
+        },
+        {
+          "id": "footerItem-echidnaDashboard",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/echidnadashboard",
+            "noFollow": false,
+            "tagTitle": "EchidnaDashBoard",
+            "text": "EchidnaDashBoard"
+          }
         }
       ]
     }

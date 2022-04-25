@@ -1,0 +1,26 @@
+{
+  "store.custom#echidnadashboard": {
+    "blocks": [
+      "rich-text#echidnadashboard",
+      "mychart"
+    ]
+  },
+  // =============Charts========================
+  // =========== With dynamic data through React comp ===========
+  "rich-text#echidnadashboard": {
+    "props": {
+      "text": "##  Echidna DashBoard",
+      "blockClass": "dashboard-heading"
+    }
+  },
+  "mychart": {
+    "props": {
+      "BarChart": "BarChart",
+      "LineChart": "LineChart",
+      "PieChart": "PieChart",
+      "ChartRef": "ChartRef",
+      "ScatterChart": "ScatterChart",
+      "BubbleChart": "BubbleChart"
+    }
+  }
+}

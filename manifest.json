@@ -94,6 +94,7 @@
     "vtex.my-orders-app": "3.x",
     "vtex.my-cards": "1.x",
     "vtex.locale-switcher": "0.x",
+    "echidna.react-chart": "0.x",
     "vtex.sandbox": "0.x",
     "service-worker": "0.x"
   },
