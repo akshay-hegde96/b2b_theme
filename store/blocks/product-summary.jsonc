@@ -7,6 +7,7 @@
       "flex-layout.row#stackSavings",
       "product-summary-brand",
       "product-summary-name",
+      //"product-summary-sku-name",
       //"product-rating-summary",
       "product-rating-inline",
       "challenge-permission#product-summary-price",
@@ -90,12 +91,16 @@
   "product-summary.shelf#searchBar": {
 
     "props": {
-      "blockClass": "summarySearch"
+      "blockClass": "summarySearch",
+      "skusFilter":"FIRST_AVAILABLE"
+
+
     },
     "children": [
       "product-summary-image#searchBar",
       "product-summary-brand",
       "product-summary-name"
+      //"product-summary-sku-name"
     ]
   },
   "product-summary.shelf#searchBarMobile": {
@@ -129,7 +134,7 @@
       "product-summary-image",
       "product-price-savings#summary",
       "product-price-savings#discount"
-      
+
     ],
     "props": {
       "zIndexOffset": 3,
@@ -194,8 +199,8 @@
       "displayMode": "text"
     }
   },
-  
-  
+
+
   "product-summary.shelf#normal": {
     "props": {
       "blockClass": "summaryComplete"
@@ -207,7 +212,7 @@
     "props":{
       "fullWidth":true
     }
-    
+
   },
 
   "flex-layout.col#img-view":{
@@ -228,6 +233,7 @@
     "props": {
       "preventVerticalStretch": true,
       "blockClass":"productNameCol"
+
     }
   },
   "product-summary.shelf#trending": {

@@ -29,5 +29,14 @@
   },
   "mychart":{
     "component":"Chart"
+  },
+  "questions-answers-storage":{
+    "component":"QnaStorage"
+  },
+  "localeSwitcherApp":{
+    "component":"LocaleSwitcher"
+  },
+  "chart-data":{
+    "component":"ChartData"
   }
 }

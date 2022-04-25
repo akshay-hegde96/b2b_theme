@@ -1,0 +1,19 @@
+
+.chartRow{
+  display: flex;
+}
+.chartCol{
+  width: 50%;
+  margin: 40px 20px;
+  /* background-color: #272953; */
+  padding: 20px;
+  box-shadow: 0px 0px 5px 0px rgba(41, 35, 67, 0.473);
+  border-radius: 10px;
+}
+/* .dashBoardContainer{
+  background-color:#16113a;
+} */
+.chartHeadings{
+  text-align: center;
+  color: rgb(24, 7, 99);
+}

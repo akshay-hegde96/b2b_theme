@@ -54,6 +54,13 @@
     }
   },
 
+  "search-bar#desktop":{
+    "props": {
+      "openAutocompleteOnFocus": true,
+      "blockClass": "searchMobile"
+    }
+  },
+
   "flex-layout.row#headerStripe": {
     "props": {
       "blockClass": "headerStripe",
@@ -71,7 +78,7 @@
       "rich-text#headStripe5",
       "flex-layout.col#orderConfig",
       "flex-layout.col#spacer",
-      "locale-switcher",
+      "localeSwitcherApp",
       "challenge-permission#reseller"
     ]
   },

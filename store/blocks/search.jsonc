@@ -4,7 +4,8 @@
     "props": {
       "context": {
         "skusFilter": "ALL",
-        "simulationBehavior": "skip"
+        "simulationBehavior": "default",
+        "hideUnavailableItems":false
       }
     }
   },
@@ -12,11 +13,11 @@
     "blocks": ["search-result-layout", "flex-layout.row#newsletter"],
     "props": {
       "context": {
-        "orderByField": "OrderByReleaseDateDESC",
-        "hideUnavailableItems": true,
+        // "orderByField": "OrderByReleaseDateDESC",
         "maxItemsPerPage": 10,
         "skusFilter": "ALL",
-        "simulationBehavior": "skip"
+        "simulationBehavior": "skip",
+        "hideUnavailableItems":false
       }
     }
   },
@@ -26,7 +27,8 @@
       "context": {
         "skusFilter": "ALL",
         "simulationBehavior": "skip",
-        "maxItemsPerPage": 20
+        "maxItemsPerPage": 20,
+        "hideUnavailableItems":false
       },
       "fullWidth": true
     }
@@ -37,7 +39,8 @@
       "context": {
         "skusFilter": "ALL",
         "simulationBehavior": "skip",
-        "maxItemsPerPage": 20
+        "maxItemsPerPage": 20,
+        "hideUnavailableItems":false
       },
       "fullWidth": true
     }
@@ -48,7 +51,8 @@
       "context": {
         "skusFilter": "ALL",
         "simulationBehavior": "skip",
-        "maxItemsPerPage": 20
+        "maxItemsPerPage": 20,
+        "hideUnavailableItems":false
       },
       "fullWidth": true
     }
@@ -56,6 +60,7 @@
   "search-result-layout": {
     "blocks": [
       "search-result-layout.desktop.product-comparison",
+      //"search-result-layout.desktop",
       "search-result-layout.mobile",
       "search-not-found-layout"
     ],
@@ -63,11 +68,35 @@
       "fullWidth": true
     }
   },
+  //-------------------------------------------------
+
+"search-result-layout.desktop":{
+  "children": [
+    "flex-layout.row#searchLayout",
+    "product-comparison-drawer",
+    "flex-layout.row#blog"
+
+  ],
+  "props": {
+    "pagination": "show-more",
+    "preventRouteChange": false,
+    "mobileLayout": {
+      "mode1": "small",
+      "mode2": "normal"
+    },
+    "fullWidth": true
+  }
+
+},
+
+
+  //--------------------------------------------------
   "search-result-layout.desktop.product-comparison": {
     "children": [
       "flex-layout.row#searchLayout",
       "product-comparison-drawer",
       "flex-layout.row#blog"
+
     ],
     "props": {
       "pagination": "show-more",
@@ -115,6 +144,8 @@
       "flex-layout.row#SEOText",
       // Deprecated
       // "flex-layout.row#categorySlider",
+      "flex-layout.row#did-you-mean",
+     // "flex-layout.row#suggestion",
       "flex-layout.row#searchinfo",
       "flex-layout.row#fetchprevious",
       "flex-layout.row#products",
@@ -125,6 +156,8 @@
       "paddingRight": 7
     }
   },
+
+
   "flex-layout.row#SEOText": {
     "children": ["rich-text#SEOText"]
   },
@@ -140,7 +173,7 @@
     "props": {
       "preserveLayoutOnMobile": true,
       "fullWidth": true,
-      "marginBottom": 5
+      "marginBottom": 6
     }
   },
 
@@ -233,6 +266,8 @@
       "flex-layout.row#SEOText",
       // Deprecated
       // "flex-layout.row#categorySlider",
+      "flex-layout.row#did-you-mean",
+     // "flex-layout.row#suggestion",
       "flex-layout.row#productCountMobile",
       "flex-layout.row#searchinfomobile",
       "flex-layout.row#fetchprevious",
@@ -248,6 +283,15 @@
       }
     }
   },
+
+  "flex-layout.row#did-you-mean": {
+    "children": ["did-you-mean"]
+  },
+
+  "flex-layout.row#suggestion": {
+    "children": ["search-suggestions"]
+  },
+
   "flex-layout.row#contentmobile": {
     "children": ["search-content#mobile"],
     "props": {
@@ -318,12 +362,14 @@
             "desktop": 3,
             "tablet": 3,
             "phone": 1
-          }
+          },
+         "preferredSKU":"FIRST_AVAILABLE"
         },
         {
           "name": "list",
           "component": "ListSummary",
-          "itemsPerRow": 1
+          "itemsPerRow": 1,
+         "preferredSKU":"FIRST_AVAILABLE"
         }
       ],
       "ListSummary": "product-summary.shelf#normal",
