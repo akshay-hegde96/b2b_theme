@@ -26,5 +26,8 @@
   },
   "orderConfigForm":{
     "component":"OrderConfig"
+  },
+  "mychart":{
+    "component":"Chart"
   }
 }

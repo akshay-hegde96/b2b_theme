@@ -77,6 +77,9 @@
   "store.custom#sales-page": {
     "path": "/sales"
   },
+  "store.custom#echidnadashboard": {
+    "path": "/echidnadashboard"
+  },
   "store.custom#blog-listing-page": {
     "path": "/blogs"
   }
