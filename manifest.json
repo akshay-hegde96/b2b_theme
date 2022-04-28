@@ -95,7 +95,8 @@
     "vtex.my-cards": "1.x",
     "vtex.locale-switcher": "0.x",
     "echidna.react-chart": "0.x",
-    "vtex.sandbox": "0.x"
+    "vtex.sandbox": "0.x",
+    "vtex.orders-graphql": "0.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }
