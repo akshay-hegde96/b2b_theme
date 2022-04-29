@@ -1,4 +1,4 @@
-query GetcustomerOrders{
+query GetcustomerOrderDetails{
   customerOrders{
     list{
       orderId,

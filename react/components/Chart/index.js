@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from 'react-apollo';
 import styles from "./Chart.css";
-import GetcustomerOrders from '../../queries/searchOrderId.graphql'
+import GetcustomerOrderDetails from '../../queries/searchOrderId.graphql'
 
 
 const Chart = (props) => {
@@ -10,7 +10,7 @@ const Chart = (props) => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
 
-    const { data } = useQuery(GetcustomerOrders, {
+    const { data } = useQuery(GetcustomerOrderDetails, {
         variables: {
             orderId: "",
             value: "",
