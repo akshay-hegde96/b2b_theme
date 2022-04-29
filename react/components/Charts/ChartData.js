@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Chart.css";
 import { useQuery } from "react-apollo";
 import GetcustomerOrders from "../../queries/customerOrders.graphql";
 const ChartData = (props) => {
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const [currentMonth, setMonth] = useState(monthNames[0]);
   const { data } = useQuery(GetcustomerOrders, {
     variables: {
       orderId: "",
@@ -625,6 +640,34 @@ const ChartData = (props) => {
     },
   ];
 
+  // for monthwise order
+  const customerOrderData = data?.customerOrders?.list;
+
+  const allmnthsData = customerOrderData?.map((eachOrder) => {
+    const date = new Date(eachOrder.creationDate);
+
+    return {
+      orderYear: date.getFullYear(),
+      orderMonth: monthNames[date.getMonth()],
+      orderDay: date.getDay(),
+      value: eachOrder.value,
+      status: eachOrder.status,
+    };
+  });
+  console.log("allmnthsData", allmnthsData);
+  const orderBymnthsData = allmnthsData?.reverse();
+
+  const selectMnthHandler = (e) => {
+    const selectedmnth = e.target.value;
+    setMonth(selectedmnth);
+    console.log(selectedmnth);
+  };
+
+  const mnthData = orderBymnthsData?.filter(
+    (order) => order.orderMonth == currentMonth
+  );
+  console.log(mnthData);
+
   return (
     <React.Fragment>
       <div className={styles.dashBoardContainer}>
@@ -705,6 +748,40 @@ const ChartData = (props) => {
               ratio={4 / 3}
               stroke="#fff"
               fill="#8884d8"
+            />
+          </div>
+        </div>
+        <div className={styles.chartRow}>
+          <div className={styles.chartCol}>
+            <span>Filter By Month : </span>
+            <select
+              name="orderStatus"
+              id="orderStatus"
+              value={currentMonth}
+              onChange={selectMnthHandler}
+            >
+              {monthNames.map((month, i) => {
+                return (
+                  <option key={i} value={month}>
+                    {month}
+                  </option>
+                );
+              })}
+            </select>
+            {mnthData.length == 0 && (
+              <span style={{ color: "red" }}>
+                There is No data for the selected month!
+              </span>
+            )}
+            <h3 className={styles.chartHeadings}> Orders Monthwise</h3>
+
+            <props.LineChartApp
+              data={mnthData}
+              height={300}
+              width="100%"
+              gridStrokeDasharray="5 5"
+              horizontalDataKey="orderDay"
+              arrayofLines={arrayofLines}
             />
           </div>
         </div>

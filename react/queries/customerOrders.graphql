@@ -1,9 +1,10 @@
-query GetcustomerOrders{
-  customerOrders{
-    list{
-      orderId,
-      value,
+query GetcustomerOrders {
+  customerOrders {
+    list {
+      orderId
+      value
       status
+      creationDate
     }
   }
 }
