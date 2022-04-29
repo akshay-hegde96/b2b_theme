@@ -1,0 +1,9 @@
+query GetcustomerOrderDetails{
+  customerOrders{
+    list{
+      orderId,
+      value,
+      status
+    }
+  }
+}
