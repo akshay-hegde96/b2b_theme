@@ -1,5 +1,21 @@
-.container {
+.chartRow {
     display: flex;
-    flex-direction: column;
-    width: 40%;
+}
+
+.chartCol {
+    width: 50%;
+    height: 50%;
+    margin: 40px 20px;
+    /* background-color: #272953; */
+    padding: 20px;
+    box-shadow: 0px 0px 5px 0px rgb(135,206,235);
+    border-radius: 10px;
+}
+
+/* .dashBoardContainer{
+    background-color:#16113a;
+  } */
+.chartHeadings {
+    text-align: center;
+    color: rgb(135,206,235);
 }
