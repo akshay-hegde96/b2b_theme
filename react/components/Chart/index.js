@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-apollo';
 import styles from "./Chart.css";
 import GetcustomerOrderDetails from '../../queries/searchOrderId.graphql'
@@ -10,6 +10,12 @@ const Chart = (props) => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
 
+    const orderStatus = [
+        "ready-for-handling",
+        "cancellation-requested",
+        "invoiced",
+    ];
+
     const { data } = useQuery(GetcustomerOrderDetails, {
         variables: {
             orderId: "",
@@ -18,12 +24,27 @@ const Chart = (props) => {
         ssr: false,
     });
 
-    const order = data?.customerOrders?.list.map(getOrderId);
+    const ordersData = data?.customerOrders?.list;
+    const [currentStatus, setStatus] = useState(orderStatus[0]);
+
+    const selectedStatus = ordersData?.filter(
+        (urdata) => urdata.status == currentStatus
+    );
+
+    const statusHandler = (e) => {
+        const selectedStatus = e.target.value;
+        setStatus(selectedStatus);
+        console.log("## selectedStatus", selectedStatus);
+    };
+
+    //var order = data?.customerOrders?.list.map(getOrderId);
+    const order = selectedStatus?.map(getOrderId);
     function getOrderId(item) {
         return item.orderId;
     }
 
-    const value = data?.customerOrders?.list.map(getOrderValue);
+    //const value = data?.customerOrders?.list.map(getOrderValue);
+    const value = selectedStatus?.map(getOrderValue);
     function getOrderValue(item) {
         return item.value;
     }
@@ -35,7 +56,7 @@ const Chart = (props) => {
     const BarChartlabelsName = order;
     const BarChartDataset = [
         {
-            label: 'Echidna Order Sales Data',
+            label: 'OrderId',
             data: value,
             backgroundColor: 'rgba(255, 99, 132, 0.5)',
         }
@@ -44,7 +65,7 @@ const Chart = (props) => {
     const LineChartlabelsName = order;
     const LineChartDataset = [
         {
-            label: 'Echidna Order Sales Data',
+            label: 'OrderId',
             data: value,
             borderColor: 'rgb(255, 99, 132)',
             backgroundColor: 'rgba(255, 99, 132, 0.5)',
@@ -54,7 +75,7 @@ const Chart = (props) => {
     const PieChartlabelsName = order;
     const PieChartDataset = [
         {
-            label: '# of Echidnites Votes',
+            label: 'OrderId',
             data: value,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -72,7 +93,7 @@ const Chart = (props) => {
     const RefChartDataset = [
         {
             type: 'line',
-            label: 'Dataset 1',
+            label: 'OrderId Line',
             borderColor: 'rgb(255, 99, 132)',
             borderWidth: 2,
             fill: false,
@@ -80,18 +101,12 @@ const Chart = (props) => {
         },
         {
             type: 'bar',
-            label: 'Dataset 2',
+            label: 'OrderId Bar',
             backgroundColor: 'rgb(75, 192, 192)',
             data: value,
             borderColor: 'white',
             borderWidth: 2,
-        },
-        {
-            type: 'bar',
-            label: 'Dataset 3',
-            backgroundColor: 'rgb(53, 162, 235)',
-            data: value,
-        },
+        }
     ];
 
     const ScatterChartlabelsName = "Echidna dataset";
@@ -130,16 +145,17 @@ const Chart = (props) => {
     return (
         <React.Fragment>
             <div className={styles.dashBoardContainer}>
+                <select name="orderMonth" id="orderMonth" value={currentStatus} onChange={statusHandler} className={styles.dropdownContainer} >
+                    {orderStatus.map((orderData, i) => {
+                        return (
+                            <option key={i} value={orderData} className={styles.option} >
+                                {orderData}
+                            </option>
+                        );
+                    })}
+                </select>
                 <div className={styles.chartRow}>
                     <div className={styles.chartCol}>
-                        <select name="orderStatus" id="orderStatus">
-                            <option value="SOPA">Sheduled Orders Pending Approval</option>
-                            <option value="FAO">Failed Approval Orders</option>
-                            <option value="SO">Scheduled Orders</option>
-                            <option value="IO">Incomplete Orders</option>
-                            <option value="SFO">Submitted to fulfillment Orders</option>
-                            <option value="PAO">Pending Approval Orders</option>
-                        </select>
                         <h3 className={styles.chartHeadings}>Bar Chart</h3>
                         <props.BarChart className={styles.BarChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={BarChartDataset}
                             titleText="Echidna Sales Bar Chart" labelsName={BarChartlabelsName} ></props.BarChart>,
