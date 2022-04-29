@@ -640,7 +640,8 @@ const ChartData = (props) => {
     },
   ];
 
-  // for monthwise order
+  // Logic for monthwise filter of customer order---------------------------------------------------
+
   const customerOrderData = data?.customerOrders?.list;
 
   const allmnthsData = customerOrderData?.map((eachOrder) => {
@@ -649,7 +650,7 @@ const ChartData = (props) => {
     return {
       orderYear: date.getFullYear(),
       orderMonth: monthNames[date.getMonth()],
-      orderDay: date.getDay(),
+      orderDate: date.getDate(),
       value: eachOrder.value,
       status: eachOrder.status,
     };
@@ -663,11 +664,11 @@ const ChartData = (props) => {
     console.log(selectedmnth);
   };
 
-  const mnthData = orderBymnthsData?.filter(
+  const currentMnthData = orderBymnthsData?.filter(
     (order) => order.orderMonth == currentMonth
   );
-  console.log(mnthData);
-
+  console.log(currentMnthData);
+  //-----------------------------------------------------------------------
   return (
     <React.Fragment>
       <div className={styles.dashBoardContainer}>
@@ -755,8 +756,8 @@ const ChartData = (props) => {
           <div className={styles.chartCol}>
             <span>Filter By Month : </span>
             <select
-              name="orderStatus"
-              id="orderStatus"
+              name="orderMonth"
+              id="orderMonth"
               value={currentMonth}
               onChange={selectMnthHandler}
             >
@@ -768,19 +769,20 @@ const ChartData = (props) => {
                 );
               })}
             </select>
-            {mnthData.length == 0 && (
+            {currentMnthData?.length == 0 && (
               <span style={{ color: "red" }}>
-                There is No data for the selected month!
+                {" "}
+                Sorry, there were no orders in {currentMonth}!
               </span>
             )}
-            <h3 className={styles.chartHeadings}> Orders Monthwise</h3>
+            <h3 className={styles.chartHeadings}>Customer Orders</h3>
 
             <props.LineChartApp
-              data={mnthData}
+              data={currentMnthData}
               height={300}
               width="100%"
               gridStrokeDasharray="5 5"
-              horizontalDataKey="orderDay"
+              horizontalDataKey="orderDate"
               arrayofLines={arrayofLines}
             />
           </div>
