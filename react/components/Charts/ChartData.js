@@ -663,6 +663,12 @@ const ChartData = (props) => {
                 );
               })}
             </select>
+            {selectedStatus?.length == 0 && (
+              <div style={{ color: "red" }}>
+                {" "}
+               <h2> Sorry, there are no orders in <span style={{ color: "blue" }}>{currentStatus}</span> status!</h2>
+              </div>
+            )}
             <h3 className={styles.chartHeadings}>Orders</h3>
 
             <props.LineChartApp
