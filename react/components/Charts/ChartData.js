@@ -31,10 +31,14 @@ const ChartData = (props) => {
     "cancellation-requested",
     "invoiced",
     "canceled",
-    "handling"
+    "handling",
   ];
 
-  const ordersData = data?.customerOrders?.list;
+  const ordersData = data?.customerOrders?.list?.map((item) => {
+    return Object.assign({}, item, {
+      value: item.value ? Number((item.value / 100).toFixed(2)) : "",
+    });
+  });
   const [currentStatus, setStatus] = useState(orderStatus[0]);
 
   const selectedStatus = ordersData?.filter(
@@ -43,9 +47,8 @@ const ChartData = (props) => {
   const statusHandler = (e) => {
     const selectedStatus = e.target.value;
     setStatus(selectedStatus);
-    console.log("ssssssss", selectedStatus);
+    // console.log("ssssssss", selectedStatus);
   };
-
   // ================== data for line , bar chart ,composed and area chart =========
   const mydata = [
       {
@@ -709,22 +712,35 @@ const ChartData = (props) => {
                 );
               })}
             </select>
-            {selectedStatus?.length == 0 && (
+            {/* {selectedStatus?.length == 0  (
               <div style={{ color: "red" }}>
                 {" "}
                <h2> Sorry, there are no orders in <span style={{ color: "blue" }}>{currentStatus}</span> status!</h2>
               </div>
-            )}
-            <h3 className={styles.chartHeadings}>Orders</h3>
+            )} */}
 
-            <props.LineChartApp
-              data={selectedStatus}
-              height={300}
-              width="100%"
-              gridStrokeDasharray="5 5"
-              horizontalDataKey="orderId"
-              arrayofLines={arrayofLines}
-            />
+            {selectedStatus?.length == 0 ? (
+              <div style={{ color: "red" }} className={styles.warningStatus}>
+                {" "}
+                <h2>
+                  Sorry, there are no orders in{" "}
+                  <span style={{ color: "blue" }}>{currentStatus}</span> status!
+                </h2>
+              </div>
+            ) : (
+              <div>
+                <h3 className={styles.chartHeadings}>Orders</h3>
+
+                <props.LineChartApp
+                  data={selectedStatus}
+                  height={300}
+                  width="100%"
+                  gridStrokeDasharray="5 5"
+                  horizontalDataKey="orderId"
+                  arrayofLines={arrayofLines}
+                />
+              </div>
+            )}
           </div>
           <div className={styles.chartCol}>
             <h3 className={styles.chartHeadings}>Bar Chart</h3>
