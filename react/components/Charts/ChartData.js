@@ -25,9 +25,26 @@ const ChartData = (props) => {
     },
     ssr: false,
   });
-  console.log(data?.customerOrders?.list);
-  // const resultData = JSON.stringify (data.customerOrders.list);
-  // console.log(resultData)
+  // console.log(data?.customerOrders?.list)
+  const orderStatus = [
+    "ready-for-handling",
+    "cancellation-requested",
+    "invoiced",
+    "canceled",
+    "handling"
+  ];
+
+  const ordersData = data?.customerOrders?.list;
+  const [currentStatus, setStatus] = useState(orderStatus[0]);
+
+  const selectedStatus = ordersData?.filter(
+    (urdata) => urdata.status == currentStatus
+  );
+  const statusHandler = (e) => {
+    const selectedStatus = e.target.value;
+    setStatus(selectedStatus);
+    console.log("ssssssss", selectedStatus);
+  };
 
   // ================== data for line , bar chart ,composed and area chart =========
   const mydata = [
@@ -86,12 +103,15 @@ const ChartData = (props) => {
       {
         dataKey: "value",
         type: "monotone",
-        stroke: "red",
+        stroke: "#a16a38",
+        strokeWidth: 3,
+        legendType: "none",
       },
       {
         dataKey: "status",
         type: "monotone",
         stroke: "green",
+        legendType: "none",
       },
       // {
       //   dataKey: "amt",
@@ -674,18 +694,31 @@ const ChartData = (props) => {
       <div className={styles.dashBoardContainer}>
         <div className={styles.chartRow}>
           <div className={styles.chartCol}>
-            <select name="orderStatus" id="orderStatus">
-              <option value="SOPA">Sheduled Orders Pending Approval</option>
-              <option value="FAO">Failed Approval Orders</option>
-              <option value="SO">Scheduled Orders</option>
-              <option value="IO">Incomplete Orders</option>
-              <option value="SFO">Submitted to fulfillment Orders</option>
-              <option value="PAO">Pending Approval Orders</option>
+            <select
+              name="orderMonth"
+              id="orderMonth"
+              value={currentStatus}
+              onChange={statusHandler}
+              className={styles.dropdownContainer}
+            >
+              {orderStatus.map((order, i) => {
+                return (
+                  <option key={i} value={order}>
+                    {order}
+                  </option>
+                );
+              })}
             </select>
+            {selectedStatus?.length == 0 && (
+              <div style={{ color: "red" }}>
+                {" "}
+               <h2> Sorry, there are no orders in <span style={{ color: "blue" }}>{currentStatus}</span> status!</h2>
+              </div>
+            )}
             <h3 className={styles.chartHeadings}>Orders</h3>
 
             <props.LineChartApp
-              data={data?.customerOrders?.list}
+              data={selectedStatus}
               height={300}
               width="100%"
               gridStrokeDasharray="5 5"
