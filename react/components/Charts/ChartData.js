@@ -770,21 +770,27 @@ const ChartData = (props) => {
               })}
             </select>
             {currentMnthData?.length == 0 && (
-              <span style={{ color: "red" }}>
-                {" "}
-                Sorry, there were no orders in {currentMonth}!
-              </span>
+              <h2
+                className={styles.noDataAlert}
+                style={{ color: "red", textAlign: "center" }}
+              >
+                Sorry, there are no orders in {currentMonth}!
+              </h2>
             )}
-            <h3 className={styles.chartHeadings}>Customer Orders</h3>
+            {currentMnthData?.length !== 0 && (
+              <div>
+                <h3 className={styles.chartHeadings}>Customer Orders</h3>
 
-            <props.LineChartApp
-              data={currentMnthData}
-              height={300}
-              width="100%"
-              gridStrokeDasharray="5 5"
-              horizontalDataKey="orderDate"
-              arrayofLines={arrayofLines}
-            />
+                <props.LineChartApp
+                  data={currentMnthData}
+                  height={300}
+                  width="100%"
+                  gridStrokeDasharray="5 5"
+                  horizontalDataKey="orderDate"
+                  arrayofLines={arrayofLines}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>

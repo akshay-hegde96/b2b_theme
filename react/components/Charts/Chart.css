@@ -1,8 +1,7 @@
-
-.chartRow{
+.chartRow {
   display: flex;
 }
-.chartCol{
+.chartCol {
   width: 50%;
   margin: 40px 20px;
   /* background-color: #272953; */
@@ -13,7 +12,11 @@
 /* .dashBoardContainer{
   background-color:#16113a;
 } */
-.chartHeadings{
+.chartHeadings {
   text-align: center;
   color: rgb(24, 7, 99);
+}
+
+.noDataAlert {
+  padding: 5rem 1rem;
 }
