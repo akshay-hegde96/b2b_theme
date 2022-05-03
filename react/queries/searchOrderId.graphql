@@ -1,5 +1,5 @@
 query GetcustomerOrderDetails{
-  customerOrders{
+  customerOrders(page:1 perPage:5000) {
     list{
       orderId,
       value,

@@ -3,6 +3,21 @@ import styles from "./Chart.css";
 import { useQuery } from "react-apollo";
 import GetcustomerOrders from "../../queries/customerOrders.graphql";
 const ChartData = (props) => {
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const [currentMonth, setMonth] = useState(monthNames[0]);
   const { data } = useQuery(GetcustomerOrders, {
     variables: {
       orderId: "",
@@ -645,6 +660,35 @@ const ChartData = (props) => {
     },
   ];
 
+  // Logic for monthwise filter of customer order---------------------------------------------------
+
+  const customerOrderData = data?.customerOrders?.list;
+
+  const allmnthsData = customerOrderData?.map((eachOrder) => {
+    const date = new Date(eachOrder.creationDate);
+
+    return {
+      orderYear: date.getFullYear(),
+      orderMonth: monthNames[date.getMonth()],
+      orderDate: date.getDate(),
+      value: eachOrder.value,
+      status: eachOrder.status,
+    };
+  });
+  console.log("allmnthsData", allmnthsData);
+  const orderBymnthsData = allmnthsData?.reverse();
+
+  const selectMnthHandler = (e) => {
+    const selectedmnth = e.target.value;
+    setMonth(selectedmnth);
+    console.log(selectedmnth);
+  };
+
+  const currentMnthData = orderBymnthsData?.filter(
+    (order) => order.orderMonth == currentMonth
+  );
+  console.log(currentMnthData);
+  //-----------------------------------------------------------------------
   return (
     <React.Fragment>
       <div className={styles.dashBoardContainer}>
@@ -738,6 +782,41 @@ const ChartData = (props) => {
               ratio={4 / 3}
               stroke="#fff"
               fill="#8884d8"
+            />
+          </div>
+        </div>
+        <div className={styles.chartRow}>
+          <div className={styles.chartCol}>
+            <span>Filter By Month : </span>
+            <select
+              name="orderMonth"
+              id="orderMonth"
+              value={currentMonth}
+              onChange={selectMnthHandler}
+            >
+              {monthNames.map((month, i) => {
+                return (
+                  <option key={i} value={month}>
+                    {month}
+                  </option>
+                );
+              })}
+            </select>
+            {currentMnthData?.length == 0 && (
+              <span style={{ color: "red" }}>
+                {" "}
+                Sorry, there were no orders in {currentMonth}!
+              </span>
+            )}
+            <h3 className={styles.chartHeadings}>Customer Orders</h3>
+
+            <props.LineChartApp
+              data={currentMnthData}
+              height={300}
+              width="100%"
+              gridStrokeDasharray="5 5"
+              horizontalDataKey="orderDate"
+              arrayofLines={arrayofLines}
             />
           </div>
         </div>

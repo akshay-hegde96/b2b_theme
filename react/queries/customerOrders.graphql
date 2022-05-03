@@ -1,9 +1,10 @@
-query GetcustomerOrders{
-  customerOrders (page:1 perPage:5000) {
-    list{
-      orderId,
-      value,
+query GetcustomerOrders {
+  customerOrders {
+    list {
+      orderId
+      value
       status
+      creationDate
     }
   }
 }
