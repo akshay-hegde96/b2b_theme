@@ -15,6 +15,8 @@ const ChartData = (props) => {
     "ready-for-handling",
     "cancellation-requested",
     "invoiced",
+    "canceled",
+    "handling"
   ];
 
   const ordersData = data?.customerOrders?.list;
