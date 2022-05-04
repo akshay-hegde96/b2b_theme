@@ -10,6 +10,22 @@ const Chart = (props) => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
 
+    const monthNames = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
+    const [currentMonth, setMonth] = useState(monthNames[0]);
+
     const orderStatus = [
         "ready-for-handling",
         "cancellation-requested",
@@ -26,7 +42,65 @@ const Chart = (props) => {
         ssr: false,
     });
 
-    const ordersData = data?.customerOrders?.list;
+    // Logic for monthwise filter of customer order---------------------------------------------------
+
+    const customerOrderData = data?.customerOrders?.list;
+
+    const allmnthsData = customerOrderData?.map((eachOrder) => {
+        const date = new Date(eachOrder.creationDate);
+
+        return {
+            orderYear: date.getFullYear(),
+            orderMonth: monthNames[date.getMonth()],
+            orderDate: date.getDate(),
+            value: eachOrder.value,
+            status: eachOrder.status,
+        };
+    });
+    console.log("allmnthsData", allmnthsData);
+    const orderBymnthsData = allmnthsData?.reverse();
+
+    const selectMnthHandler = (e) => {
+        const selectedmnth = e.target.value;
+        setMonth(selectedmnth);
+        console.log(selectedmnth);
+    };
+
+    const currentMnthData = orderBymnthsData?.filter(
+        (order) => order.orderMonth == currentMonth
+    );
+    console.log("## currentMnthData", currentMnthData);
+    const monthlyValue = currentMnthData?.map(getOrderValue);
+    function getOrderValue(item) {
+        return item.value;
+    }
+
+    const monthOrderDate = currentMnthData?.map(getOrderDate);
+    function getOrderDate(item) {
+        return item.orderDate;
+    }
+    console.log("## monthlyValue", monthlyValue);
+    console.log("## monthOrderDate", monthOrderDate);
+
+    const MonthLineChartlabelsName = monthOrderDate;
+    const MonthLineChartDataset = [
+        {
+            label: 'OrderId',
+            data: monthlyValue,
+            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        }
+    ];
+
+    //-----------------------------------------------------------------------
+
+    //const ordersData = data?.customerOrders?.list;
+    const ordersData = data?.customerOrders?.list?.map((item) => {
+        return Object.assign({}, item, {
+            value: item.value ? Number((item.value / 100).toFixed(2)) : "",
+        });
+    });
+
     const [currentStatus, setStatus] = useState(orderStatus[0]);
 
     const selectedStatus = ordersData?.filter(
@@ -201,6 +275,29 @@ const Chart = (props) => {
                         </div>
                     </div>
                 )}
+                <div className={styles.reactChartRow}>
+                    <div className={styles.reactChartCol}>
+                        <span>Filter By Month : </span>
+                        <select name="orderMonth" id="orderMonth" value={currentMonth} onChange={selectMnthHandler} >
+                            {monthNames.map((month, i) => {
+                                return (
+                                    <option key={i} value={month}>
+                                        {month}
+                                    </option>
+                                );
+                            })}
+                        </select>
+                        {currentMnthData?.length == 0 && (
+                            <span style={{ color: "red" }}>
+                                {" "}
+                                Sorry, there were no orders in {currentMonth}!
+                            </span>
+                        )}
+                        <h3 className={styles.reactChartHeadings}>Customer Orders</h3>
+                        <props.LineChart className={styles.LineChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={MonthLineChartDataset}
+                            titleText="Echidna Sales Line Chart" labelsName={MonthLineChartlabelsName} ></props.LineChart>
+                    </div>
+                </div>
             </div>
 
         </React.Fragment>
