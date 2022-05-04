@@ -1,8 +1,7 @@
-
-.chartRow{
+.chartRow {
   display: flex;
 }
-.chartCol{
+.chartCol {
   width: 50%;
   margin: 40px 20px;
   /* background-color: #272953; */
@@ -13,27 +12,32 @@
 /* .dashBoardContainer{
   background-color:#16113a;
 } */
-.chartHeadings{
+.chartHeadings {
   text-align: center;
   color: rgb(24, 7, 99);
 }
-.dropdownContainer{
+
+.noDataAlert {
+  padding: 5rem 1rem;
+}
+.dropdownContainer {
   padding: 20px;
   font-size: 20px;
   font-weight: bold;
+  margin-right: 1rem;
 }
-option{
-  font-size: 18px ;
-  color: #196b9f ;
+option {
+  font-size: 18px;
+  color: #196b9f;
   padding: 10px 0px;
 }
 /* option:hover{
   background-color: transparent !important;
 } */
-.warningStatus{
+.warningStatus {
   text-align: center;
-    position: relative;
-    top: 60px;
-    width: 50%;
-    left: 150px;
+  position: relative;
+  top: 60px;
+  width: 50%;
+  left: 150px;
 }
