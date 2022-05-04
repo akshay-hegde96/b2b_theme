@@ -17,7 +17,7 @@ const ChartData = (props) => {
     "November",
     "December",
   ];
-  const yearNames = ["2020", "2021", "2022"];
+  const yearNames = ["2021", "2022"];
   const [currentMonth, setMonth] = useState(monthNames[0]);
   const [currentYear, setYear] = useState("2021");
 
@@ -679,6 +679,7 @@ const ChartData = (props) => {
       orderDate: date.getDate(),
       value: eachOrder.value,
       status: eachOrder.status,
+      orderID: eachOrder.orderId,
     };
   });
   console.log("allmnthsData", allmnthsData);
@@ -817,36 +818,39 @@ const ChartData = (props) => {
         </div>
         <div className={styles.chartRow}>
           <div className={styles.chartCol}>
-            <span>Filter By Year and Month : </span>
-            <select
-              name="orderYear"
-              id="orderYear"
-              value={currentYear}
-              onChange={selectYearHandler}
-            >
-              {yearNames.map((year, i) => {
-                return (
-                  <option key={i} value={year}>
-                    {year}
-                  </option>
-                );
-              })}
-            </select>
-            <select
-              name="orderMonth"
-              id="orderMonth"
-              value={currentMonth}
-              onChange={selectMnthHandler}
-            >
-              {monthNames.map((month, i) => {
-                return (
-                  <option key={i} value={month}>
-                    {month}
-                  </option>
-                );
-              })}
-            </select>
-
+            <div>
+              <span>Filter By Year and Month : </span>
+              <select
+                name="orderYear"
+                id="orderYear"
+                value={currentYear}
+                onChange={selectYearHandler}
+                className={styles.dropdownContainer}
+              >
+                {yearNames.map((year, i) => {
+                  return (
+                    <option key={i} value={year}>
+                      {year}
+                    </option>
+                  );
+                })}
+              </select>
+              <select
+                name="orderMonth"
+                id="orderMonth"
+                value={currentMonth}
+                onChange={selectMnthHandler}
+                className={styles.dropdownContainer}
+              >
+                {monthNames.map((month, i) => {
+                  return (
+                    <option key={i} value={month}>
+                      {month}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
             {currentMnthData?.length == 0 && (
               <h2
                 className={styles.noDataAlert}
@@ -864,7 +868,7 @@ const ChartData = (props) => {
                   height={300}
                   width="100%"
                   gridStrokeDasharray="5 5"
-                  horizontalDataKey="orderDate"
+                  horizontalDataKey="orderID"
                   arrayofLines={arrayofLines}
                 />
               </div>
