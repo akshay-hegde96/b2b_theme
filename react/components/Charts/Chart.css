@@ -33,3 +33,10 @@ option {
 /* option:hover{
   background-color: transparent !important;
 } */
+.warningStatus{
+  text-align: center;
+    position: relative;
+    top: 60px;
+    width: 50%;
+    left: 150px;
+}

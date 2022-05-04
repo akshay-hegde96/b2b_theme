@@ -14,6 +14,8 @@ const Chart = (props) => {
         "ready-for-handling",
         "cancellation-requested",
         "invoiced",
+        "canceled",
+        "handling"
     ];
 
     const { data } = useQuery(GetcustomerOrderDetails, {
@@ -145,47 +147,60 @@ const Chart = (props) => {
     return (
         <React.Fragment>
             <div className={styles.dashBoardContainer}>
-                <select name="orderMonth" id="orderMonth" value={currentStatus} onChange={statusHandler} className={styles.dropdownContainer} >
+                <select name="orderMonth" id="orderMonth" value={currentStatus} onChange={statusHandler} className={styles.reactDropdownContainer} >
                     {orderStatus.map((orderData, i) => {
                         return (
-                            <option key={i} value={orderData} className={styles.option} >
+                            <option key={i} value={orderData} className={styles.reactOption} >
                                 {orderData}
                             </option>
                         );
                     })}
                 </select>
-                <div className={styles.chartRow}>
-                    <div className={styles.chartCol}>
-                        <h3 className={styles.chartHeadings}>Bar Chart</h3>
-                        <props.BarChart className={styles.BarChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={BarChartDataset}
-                            titleText="Echidna Sales Bar Chart" labelsName={BarChartlabelsName} ></props.BarChart>,
+
+                {selectedStatus?.length == 0 ? (
+                    <div className={styles.reactWarningStatus}>
+                        {" "}
+                        <h2>
+                            Sorry, there are no orders in{" "}
+                            <span style={{ "font-weight": "bold", "text-decoration": "underline", "text-decoration-color": "red" }}>"{currentStatus}"</span> status!
+                        </h2>
                     </div>
-                    <div className={styles.chartCol}>
-                        <h3 className={styles.chartHeadings}>Line Chart</h3>
-                        <props.LineChart className={styles.LineChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={LineChartDataset}
-                            titleText="Echidna Sales Line Chart" labelsName={LineChartlabelsName} ></props.LineChart>,
+                ) : (
+                    <div>
+                        <div className={styles.reactChartRow}>
+                            <div className={styles.reactChartCol}>
+                                <h3 className={styles.reactChartHeadings}>Bar Chart</h3>
+                                <props.BarChart className={styles.BarChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={BarChartDataset}
+                                    titleText="Echidna Sales Bar Chart" labelsName={BarChartlabelsName} ></props.BarChart>,
+                            </div>
+                            <div className={styles.reactChartCol}>
+                                <h3 className={styles.reactChartHeadings}>Line Chart</h3>
+                                <props.LineChart className={styles.LineChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={LineChartDataset}
+                                    titleText="Echidna Sales Line Chart" labelsName={LineChartlabelsName} ></props.LineChart>,
+                            </div>
+                            <div className={styles.reactChartCol}>
+                                <h3 className={styles.reactChartHeadings}>Ref Chart</h3>
+                                <props.ChartRef className={styles.ChartRef} legendPosition="bottom" responsive="true" displayTitle="true" dataset={RefChartDataset}
+                                    titleText="Echidna Sales Ref Chart" labelsName={RefChartlabelsName} ></props.ChartRef>,
+                            </div>
+                        </div>
+                        <div className={styles.reactChartRow}>
+                            <div className={styles.reactChartCol}>
+                                <h3 className={styles.reactChartHeadings}>Pie Chart</h3>
+                                <props.PieChart className={styles.PieChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={PieChartDataset}
+                                    titleText="Echidna Sales Pie Chart" labelsName={PieChartlabelsName} ></props.PieChart>,
+                            </div>
+                            <div className={styles.reactChartCol}>
+                                <h3 className={styles.reactChartHeadings}>Scatter Chart</h3>
+                                <props.ScatterChart className={styles.ScatterChart} beginAtZero="true" dataset={ScatterChartDataset} ></props.ScatterChart>,
+                            </div>
+                            <div className={styles.reactChartCol}>
+                                <h3 className={styles.reactChartHeadings}>Bubble Chart</h3>
+                                <props.BubbleChart className={styles.BubbleChart} beginAtZero="true" dataset={BubbleChartDataset} ></props.BubbleChart>,
+                            </div>
+                        </div>
                     </div>
-                    <div className={styles.chartCol}>
-                        <h3 className={styles.chartHeadings}>Ref Chart</h3>
-                        <props.ChartRef className={styles.ChartRef} legendPosition="bottom" responsive="true" displayTitle="true" dataset={RefChartDataset}
-                            titleText="Echidna Sales Ref Chart" labelsName={RefChartlabelsName} ></props.ChartRef>,
-                    </div>
-                </div>
-                <div className={styles.chartRow}>
-                    <div className={styles.chartCol}>
-                        <h3 className={styles.chartHeadings}>Pie Chart</h3>
-                        <props.PieChart className={styles.PieChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={PieChartDataset}
-                            titleText="Echidna Sales Pie Chart" labelsName={PieChartlabelsName} ></props.PieChart>,
-                    </div>
-                    <div className={styles.chartCol}>
-                        <h3 className={styles.chartHeadings}>Scatter Chart</h3>
-                        <props.ScatterChart className={styles.ScatterChart} beginAtZero="true" dataset={ScatterChartDataset} ></props.ScatterChart>,
-                    </div>
-                    <div className={styles.chartCol}>
-                        <h3 className={styles.chartHeadings}>Bubble Chart</h3>
-                        <props.BubbleChart className={styles.BubbleChart} beginAtZero="true" dataset={BubbleChartDataset} ></props.BubbleChart>,
-                    </div>
-                </div>
+                )}
             </div>
 
         </React.Fragment>
