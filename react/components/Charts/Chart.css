@@ -20,3 +20,16 @@
 .noDataAlert {
   padding: 5rem 1rem;
 }
+.dropdownContainer {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+option {
+  font-size: 18px;
+  color: #196b9f;
+  padding: 10px 0px;
+}
+/* option:hover{
+  background-color: transparent !important;
+} */
