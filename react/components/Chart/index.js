@@ -10,10 +10,38 @@ const Chart = (props) => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
 
+    function getOrderValue(item) {
+        return item.value;
+    };
+
+    function getOrderDate(item) {
+        return item.orderDate;
+    };
+
+    const monthNames = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
+    const yearNames = ["2021", "2022"];
+    const [currentYear, setYear] = useState("2021");
+    const [currentMonth, setMonth] = useState(monthNames[0]);
+
     const orderStatus = [
         "ready-for-handling",
         "cancellation-requested",
         "invoiced",
+        "canceled",
+        "handling"
     ];
 
     const { data } = useQuery(GetcustomerOrderDetails, {
@@ -24,7 +52,70 @@ const Chart = (props) => {
         ssr: false,
     });
 
-    const ordersData = data?.customerOrders?.list;
+    // Logic for monthwise filter of customer order---------------------------------------------------
+
+    const customerOrderData = data?.customerOrders?.list;
+
+    const allmnthsData = customerOrderData?.map((eachOrder) => {
+        const date = new Date(eachOrder.creationDate);
+
+        return {
+            orderYear: date.getFullYear(),
+            orderMonth: monthNames[date.getMonth()],
+            orderDate: date.getDate(),
+            value: eachOrder.value,
+            status: eachOrder.status,
+            orderID: eachOrder.orderId,
+        };
+    });
+    console.log("allmnthsData", allmnthsData);
+    const orderBymnthsData = allmnthsData?.reverse();
+
+    const selectMnthHandler = (e) => {
+        const selectedmnth = e.target.value;
+        setMonth(selectedmnth);
+        console.log(selectedmnth);
+    };
+
+    const selectYearHandler = (e) => {
+        const selectedYear = e.target.value;
+        setYear(selectedYear);
+        console.log(selectedYear);
+    };
+
+    const currentMnthData = orderBymnthsData?.filter(
+        (MnthOrder) =>
+            MnthOrder.orderMonth == currentMonth && MnthOrder.orderYear == currentYear
+    );
+    console.log("## currentMnthData", currentMnthData);
+    const monthlyValue = currentMnthData?.map(getOrderValue);
+    const monthOrderID = currentMnthData?.map(getOrderID);
+    function getOrderID(item) {
+        return item.orderID;
+    };
+
+    console.log("## monthlyValue", monthlyValue);
+    console.log("## monthOrderID", monthOrderID);
+
+    const MonthLineChartlabelsName = monthOrderID;
+    const MonthLineChartDataset = [
+        {
+            label: 'Order ID',
+            data: monthlyValue,
+            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        }
+    ];
+
+    //-----------------------------------------------------------------------
+
+    //const ordersData = data?.customerOrders?.list;
+    const ordersData = data?.customerOrders?.list?.map((item) => {
+        return Object.assign({}, item, {
+            value: item.value ? Number((item.value / 100).toFixed(2)) : "",
+        });
+    });
+
     const [currentStatus, setStatus] = useState(orderStatus[0]);
 
     const selectedStatus = ordersData?.filter(
@@ -41,15 +132,12 @@ const Chart = (props) => {
     const order = selectedStatus?.map(getOrderId);
     function getOrderId(item) {
         return item.orderId;
-    }
+    };
 
     //const value = data?.customerOrders?.list.map(getOrderValue);
     const value = selectedStatus?.map(getOrderValue);
-    function getOrderValue(item) {
-        return item.value;
-    }
 
-    console.log("## data : ", data?.customerOrders?.list);
+    console.log("## data : ", selectedStatus);
     console.log("## Order Id : ", order);
     console.log("## Order Value : ", value);
 
@@ -145,45 +233,99 @@ const Chart = (props) => {
     return (
         <React.Fragment>
             <div className={styles.dashBoardContainer}>
-                <select name="orderMonth" id="orderMonth" value={currentStatus} onChange={statusHandler} className={styles.dropdownContainer} >
+                <select name="orderMonth" id="orderMonth" value={currentStatus} onChange={statusHandler} className={styles.reactDropdownContainer} >
                     {orderStatus.map((orderData, i) => {
                         return (
-                            <option key={i} value={orderData} className={styles.option} >
+                            <option key={i} value={orderData} className={styles.reactOption} >
                                 {orderData}
                             </option>
                         );
                     })}
                 </select>
-                <div className={styles.chartRow}>
-                    <div className={styles.chartCol}>
-                        <h3 className={styles.chartHeadings}>Bar Chart</h3>
-                        <props.BarChart className={styles.BarChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={BarChartDataset}
-                            titleText="Echidna Sales Bar Chart" labelsName={BarChartlabelsName} ></props.BarChart>,
+
+                {selectedStatus?.length == 0 ? (
+                    <div className={styles.reactWarningStatus}>
+                        {" "}
+                        <h2>
+                            Sorry, there are no orders in{" "}
+                            <span style={{ "font-weight": "bold", "text-decoration": "underline", "text-decoration-color": "red" }}>"{currentStatus}"</span> status !!
+                        </h2>
                     </div>
-                    <div className={styles.chartCol}>
-                        <h3 className={styles.chartHeadings}>Line Chart</h3>
-                        <props.LineChart className={styles.LineChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={LineChartDataset}
-                            titleText="Echidna Sales Line Chart" labelsName={LineChartlabelsName} ></props.LineChart>,
+                ) : (
+                    <div>
+                        <div className={styles.reactChartRow}>
+                            <div className={styles.reactChartCol}>
+                                <h3 className={styles.reactChartHeadings}>Bar Chart</h3>
+                                <props.BarChart className={styles.BarChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={BarChartDataset}
+                                    titleText="Echidna Sales Bar Chart" labelsName={BarChartlabelsName} ></props.BarChart>,
+                            </div>
+                            <div className={styles.reactChartCol}>
+                                <h3 className={styles.reactChartHeadings}>Line Chart</h3>
+                                <props.LineChart className={styles.LineChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={LineChartDataset}
+                                    titleText="Echidna Sales Line Chart" labelsName={LineChartlabelsName} ></props.LineChart>,
+                            </div>
+                            <div className={styles.reactChartCol}>
+                                <h3 className={styles.reactChartHeadings}>Ref Chart</h3>
+                                <props.ChartRef className={styles.ChartRef} legendPosition="bottom" responsive="true" displayTitle="true" dataset={RefChartDataset}
+                                    titleText="Echidna Sales Ref Chart" labelsName={RefChartlabelsName} ></props.ChartRef>,
+                            </div>
+                        </div>
+                        <div className={styles.reactChartRow}>
+                            <div className={styles.reactChartCol}>
+                                <h3 className={styles.reactChartHeadings}>Pie Chart</h3>
+                                <props.PieChart className={styles.PieChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={PieChartDataset}
+                                    titleText="Echidna Sales Pie Chart" labelsName={PieChartlabelsName} ></props.PieChart>,
+                            </div>
+                            <div className={styles.reactChartCol}>
+                                <h3 className={styles.reactChartHeadings}>Scatter Chart</h3>
+                                <props.ScatterChart className={styles.ScatterChart} beginAtZero="true" dataset={ScatterChartDataset} ></props.ScatterChart>,
+                            </div>
+                            <div className={styles.reactChartCol}>
+                                <h3 className={styles.reactChartHeadings}>Bubble Chart</h3>
+                                <props.BubbleChart className={styles.BubbleChart} beginAtZero="true" dataset={BubbleChartDataset} ></props.BubbleChart>,
+                            </div>
+                        </div>
                     </div>
-                    <div className={styles.chartCol}>
-                        <h3 className={styles.chartHeadings}>Ref Chart</h3>
-                        <props.ChartRef className={styles.ChartRef} legendPosition="bottom" responsive="true" displayTitle="true" dataset={RefChartDataset}
-                            titleText="Echidna Sales Ref Chart" labelsName={RefChartlabelsName} ></props.ChartRef>,
-                    </div>
-                </div>
-                <div className={styles.chartRow}>
-                    <div className={styles.chartCol}>
-                        <h3 className={styles.chartHeadings}>Pie Chart</h3>
-                        <props.PieChart className={styles.PieChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={PieChartDataset}
-                            titleText="Echidna Sales Pie Chart" labelsName={PieChartlabelsName} ></props.PieChart>,
-                    </div>
-                    <div className={styles.chartCol}>
-                        <h3 className={styles.chartHeadings}>Scatter Chart</h3>
-                        <props.ScatterChart className={styles.ScatterChart} beginAtZero="true" dataset={ScatterChartDataset} ></props.ScatterChart>,
-                    </div>
-                    <div className={styles.chartCol}>
-                        <h3 className={styles.chartHeadings}>Bubble Chart</h3>
-                        <props.BubbleChart className={styles.BubbleChart} beginAtZero="true" dataset={BubbleChartDataset} ></props.BubbleChart>,
+                )}
+                <div className={styles.reactChartRow}>
+                    <div className={styles.reactChartCol}>
+
+                        <div>
+                            <span>Filter By Year and Month : </span>
+                            <select name="orderYear" id="orderYear" value={currentYear}
+                                onChange={selectYearHandler} className={styles.reactDropdownContainer} >
+                                {yearNames.map((year, i) => {
+                                    return (
+                                        <option key={i} value={year}>
+                                            {year}
+                                        </option>
+                                    );
+                                })}
+                            </select>
+                            <select name="orderMonth" id="orderMonth" value={currentMonth}
+                                onChange={selectMnthHandler} className={styles.reactDropdownContainer} >
+                                {monthNames.map((month, i) => {
+                                    return (
+                                        <option key={i} value={month}>
+                                            {month}
+                                        </option>
+                                    );
+                                })}
+                            </select>
+                        </div>
+                        {currentMnthData?.length == 0 && (
+                            <h2 className={styles.reactWarningStatus} >
+                                Sorry, there are no orders in {" "}
+                                <span style={{ "font-weight": "bold", "text-decoration": "underline", "text-decoration-color": "red" }}>{currentMonth} - {currentYear}</span> !!
+                            </h2>
+                        )}
+                        {currentMnthData?.length !== 0 && (
+                            <div>
+                                <h3 className={styles.reactChartHeadings}>Customer Orders</h3>
+                                <props.LineChart className={styles.LineChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={MonthLineChartDataset}
+                                    titleText="Echidna Sales Line Chart" labelsName={MonthLineChartlabelsName} ></props.LineChart>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

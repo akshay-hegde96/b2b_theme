@@ -17,7 +17,10 @@ const ChartData = (props) => {
     "November",
     "December",
   ];
+  const yearNames = ["2021", "2022"];
   const [currentMonth, setMonth] = useState(monthNames[0]);
+  const [currentYear, setYear] = useState("2021");
+
   const { data } = useQuery(GetcustomerOrders, {
     variables: {
       orderId: "",
@@ -676,6 +679,7 @@ const ChartData = (props) => {
       orderDate: date.getDate(),
       value: eachOrder.value,
       status: eachOrder.status,
+      orderID: eachOrder.orderId,
     };
   });
   console.log("allmnthsData", allmnthsData);
@@ -686,11 +690,18 @@ const ChartData = (props) => {
     setMonth(selectedmnth);
     console.log(selectedmnth);
   };
+  const selectYearHandler = (e) => {
+    const selectedYear = e.target.value;
+    setYear(selectedYear);
+    console.log(selectedYear);
+  };
 
   const currentMnthData = orderBymnthsData?.filter(
-    (order) => order.orderMonth == currentMonth
+    (order) =>
+      order.orderMonth == currentMonth && order.orderYear == currentYear
   );
   console.log(currentMnthData);
+
   //-----------------------------------------------------------------------
   return (
     <React.Fragment>
@@ -715,7 +726,11 @@ const ChartData = (props) => {
             {/* {selectedStatus?.length == 0  (
               <div style={{ color: "red" }}>
                 {" "}
-               <h2> Sorry, there are no orders in <span style={{ color: "blue" }}>{currentStatus}</span> status!</h2>
+                <h2>
+                  {" "}
+                  Sorry, there are no orders in{" "}
+                  <span style={{ color: "blue" }}>{currentStatus}</span> status!
+                </h2>
               </div>
             )} */}
 
@@ -742,6 +757,66 @@ const ChartData = (props) => {
               </div>
             )}
           </div>
+
+          <div className={styles.chartCol}>
+            <div>
+              <span>Filter By Year and Month : </span>
+              <select
+                name="orderYear"
+                id="orderYear"
+                value={currentYear}
+                onChange={selectYearHandler}
+                className={styles.dropdownContainer}
+              >
+                {yearNames.map((year, i) => {
+                  return (
+                    <option key={i} value={year}>
+                      {year}
+                    </option>
+                  );
+                })}
+              </select>
+              <select
+                name="orderMonth"
+                id="orderMonth"
+                value={currentMonth}
+                onChange={selectMnthHandler}
+                className={styles.dropdownContainer}
+              >
+                {monthNames.map((month, i) => {
+                  return (
+                    <option key={i} value={month}>
+                      {month}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
+            {currentMnthData?.length == 0 && (
+              <h2
+                className={styles.noDataAlert}
+                style={{ color: "red", textAlign: "center" }}
+              >
+                Sorry, there are no orders in {currentMonth}!
+              </h2>
+            )}
+            {currentMnthData?.length !== 0 && (
+              <div>
+                <h3 className={styles.chartHeadings}>Customer Orders</h3>
+
+                <props.LineChartApp
+                  data={currentMnthData}
+                  height={300}
+                  width="100%"
+                  gridStrokeDasharray="5 5"
+                  horizontalDataKey="orderID"
+                  arrayofLines={arrayofLines}
+                />
+              </div>
+            )}
+          </div>
+        </div>
+        <div className={styles.chartRow}>
           <div className={styles.chartCol}>
             <h3 className={styles.chartHeadings}>Bar Chart</h3>
             <props.BarChartApp
@@ -753,8 +828,6 @@ const ChartData = (props) => {
               arrayofBars={arrayofBars}
             />
           </div>
-        </div>
-        <div className={styles.chartRow}>
           <div className={styles.chartCol}>
             <h3 className={styles.chartHeadings}>Composed Chart</h3>
             <props.ComposedChartApp
@@ -766,6 +839,8 @@ const ChartData = (props) => {
               composedGraphArray={composedGraphArray}
             />
           </div>
+        </div>
+        <div className={styles.chartRow}>
           <div className={styles.chartCol}>
             <h3 className={styles.chartHeadings}>Area Chart</h3>
             <props.AreaChartApp
@@ -778,8 +853,7 @@ const ChartData = (props) => {
               areaGradients={areaGradients}
             />
           </div>
-        </div>
-        <div className={styles.chartRow}>
+
           <div className={styles.chartCol}>
             <h3 className={styles.chartHeadings}>Pie Chart</h3>
             <props.PieChartApp
@@ -788,6 +862,8 @@ const ChartData = (props) => {
               width="100%"
             />
           </div>
+        </div>
+        <div className={styles.chartRow}>
           <div className={styles.chartCol}>
             <h3 className={styles.chartHeadings}>Tree Map</h3>
             <props.TreeMapApp
@@ -798,41 +874,6 @@ const ChartData = (props) => {
               ratio={4 / 3}
               stroke="#fff"
               fill="#8884d8"
-            />
-          </div>
-        </div>
-        <div className={styles.chartRow}>
-          <div className={styles.chartCol}>
-            <span>Filter By Month : </span>
-            <select
-              name="orderMonth"
-              id="orderMonth"
-              value={currentMonth}
-              onChange={selectMnthHandler}
-            >
-              {monthNames.map((month, i) => {
-                return (
-                  <option key={i} value={month}>
-                    {month}
-                  </option>
-                );
-              })}
-            </select>
-            {currentMnthData?.length == 0 && (
-              <span style={{ color: "red" }}>
-                {" "}
-                Sorry, there were no orders in {currentMonth}!
-              </span>
-            )}
-            <h3 className={styles.chartHeadings}>Customer Orders</h3>
-
-            <props.LineChartApp
-              data={currentMnthData}
-              height={300}
-              width="100%"
-              gridStrokeDasharray="5 5"
-              horizontalDataKey="orderDate"
-              arrayofLines={arrayofLines}
             />
           </div>
         </div>

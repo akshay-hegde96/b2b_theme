@@ -3,7 +3,8 @@ query GetcustomerOrderDetails{
     list{
       orderId,
       value,
-      status
+      status,
+      creationDate,
     }
   }
 }
