@@ -742,42 +742,6 @@ const ChartData = (props) => {
               </div>
             )}
           </div>
-
-          <div className={styles.chartCol}>
-            <span>Filter By Month : </span>
-            <select
-              name="orderMonth"
-              id="orderMonth"
-              value={currentMonth}
-              onChange={selectMnthHandler}
-            >
-              {monthNames.map((month, i) => {
-                return (
-                  <option key={i} value={month}>
-                    {month}
-                  </option>
-                );
-              })}
-            </select>
-            {currentMnthData?.length == 0 && (
-              <span style={{ color: "red" }}>
-                {" "}
-                Sorry, there were no orders in {currentMonth}!
-              </span>
-            )}
-            <h3 className={styles.chartHeadings}>Customer Orders</h3>
-
-            <props.LineChartApp
-              data={currentMnthData}
-              height={300}
-              width="100%"
-              gridStrokeDasharray="5 5"
-              horizontalDataKey="orderDate"
-              arrayofLines={arrayofLines}
-            />
-          </div>
-        </div>
-        <div className={styles.chartRow}>
           <div className={styles.chartCol}>
             <h3 className={styles.chartHeadings}>Bar Chart</h3>
             <props.BarChartApp
@@ -787,6 +751,19 @@ const ChartData = (props) => {
               horizontalDataKey="name"
               gridStrokeDasharray="5 5"
               arrayofBars={arrayofBars}
+            />
+          </div>
+        </div>
+        <div className={styles.chartRow}>
+          <div className={styles.chartCol}>
+            <h3 className={styles.chartHeadings}>Composed Chart</h3>
+            <props.ComposedChartApp
+              height={300}
+              width="100%"
+              data={mydata}
+              horizontalDataKey="name"
+              gridStrokeDasharray="5 5"
+              composedGraphArray={composedGraphArray}
             />
           </div>
           <div className={styles.chartCol}>
@@ -826,14 +803,36 @@ const ChartData = (props) => {
         </div>
         <div className={styles.chartRow}>
           <div className={styles.chartCol}>
-            <h3 className={styles.chartHeadings}>Composed Chart</h3>
-            <props.ComposedChartApp
+            <span>Filter By Month : </span>
+            <select
+              name="orderMonth"
+              id="orderMonth"
+              value={currentMonth}
+              onChange={selectMnthHandler}
+            >
+              {monthNames.map((month, i) => {
+                return (
+                  <option key={i} value={month}>
+                    {month}
+                  </option>
+                );
+              })}
+            </select>
+            {currentMnthData?.length == 0 && (
+              <span style={{ color: "red" }}>
+                {" "}
+                Sorry, there were no orders in {currentMonth}!
+              </span>
+            )}
+            <h3 className={styles.chartHeadings}>Customer Orders</h3>
+
+            <props.LineChartApp
+              data={currentMnthData}
               height={300}
               width="100%"
-              data={mydata}
-              horizontalDataKey="name"
               gridStrokeDasharray="5 5"
-              composedGraphArray={composedGraphArray}
+              horizontalDataKey="orderDate"
+              arrayofLines={arrayofLines}
             />
           </div>
         </div>
