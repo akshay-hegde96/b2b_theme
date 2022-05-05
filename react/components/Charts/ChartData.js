@@ -757,66 +757,7 @@ const ChartData = (props) => {
               </div>
             )}
           </div>
-          <div className={styles.chartCol}>
-            <h3 className={styles.chartHeadings}>Bar Chart</h3>
-            <props.BarChartApp
-              data={mydata}
-              height={300}
-              width="100%"
-              horizontalDataKey="name"
-              gridStrokeDasharray="5 5"
-              arrayofBars={arrayofBars}
-            />
-          </div>
-        </div>
-        <div className={styles.chartRow}>
-          <div className={styles.chartCol}>
-            <h3 className={styles.chartHeadings}>Composed Chart</h3>
-            <props.ComposedChartApp
-              height={300}
-              width="100%"
-              data={mydata}
-              horizontalDataKey="name"
-              gridStrokeDasharray="5 5"
-              composedGraphArray={composedGraphArray}
-            />
-          </div>
-          <div className={styles.chartCol}>
-            <h3 className={styles.chartHeadings}>Area Chart</h3>
-            <props.AreaChartApp
-              height={300}
-              width="100%"
-              data={mydata}
-              horizontalDataKey="name"
-              gridStrokeDasharray="5 5"
-              arrayofArea={arrayofArea}
-              areaGradients={areaGradients}
-            />
-          </div>
-        </div>
-        <div className={styles.chartRow}>
-          <div className={styles.chartCol}>
-            <h3 className={styles.chartHeadings}>Pie Chart</h3>
-            <props.PieChartApp
-              arrayofPie={arrayofPie}
-              height={300}
-              width="100%"
-            />
-          </div>
-          <div className={styles.chartCol}>
-            <h3 className={styles.chartHeadings}>Tree Map</h3>
-            <props.TreeMapApp
-              data={treeData}
-              height={300}
-              width="100%"
-              dataKey="size"
-              ratio={4 / 3}
-              stroke="#fff"
-              fill="#8884d8"
-            />
-          </div>
-        </div>
-        <div className={styles.chartRow}>
+
           <div className={styles.chartCol}>
             <div>
               <span>Filter By Year and Month : </span>
@@ -873,6 +814,67 @@ const ChartData = (props) => {
                 />
               </div>
             )}
+          </div>
+        </div>
+        <div className={styles.chartRow}>
+          <div className={styles.chartCol}>
+            <h3 className={styles.chartHeadings}>Bar Chart</h3>
+            <props.BarChartApp
+              data={mydata}
+              height={300}
+              width="100%"
+              horizontalDataKey="name"
+              gridStrokeDasharray="5 5"
+              arrayofBars={arrayofBars}
+            />
+          </div>
+          <div className={styles.chartCol}>
+            <h3 className={styles.chartHeadings}>Composed Chart</h3>
+            <props.ComposedChartApp
+              height={300}
+              width="100%"
+              data={mydata}
+              horizontalDataKey="name"
+              gridStrokeDasharray="5 5"
+              composedGraphArray={composedGraphArray}
+            />
+          </div>
+        </div>
+        <div className={styles.chartRow}>
+          <div className={styles.chartCol}>
+            <h3 className={styles.chartHeadings}>Area Chart</h3>
+            <props.AreaChartApp
+              height={300}
+              width="100%"
+              data={mydata}
+              horizontalDataKey="name"
+              gridStrokeDasharray="5 5"
+              arrayofArea={arrayofArea}
+              areaGradients={areaGradients}
+            />
+          </div>
+
+          <div className={styles.chartCol}>
+            <h3 className={styles.chartHeadings}>Pie Chart</h3>
+            <props.PieChartApp
+              arrayofPie={arrayofPie}
+              height={300}
+              width="100%"
+            />
+          </div>
+        </div>
+        <div className={styles.chartRow}>
+          <div className={styles.chartCol}>
+            <h3 className={styles.chartHeadings}>Tree Map</h3>
+            <props.TreeMapApp
+              data={treeData}
+              height={300}
+              width="100%"
+              dataKey="size"
+              ratio={4 / 3}
+              stroke="#fff"
+              fill="#8884d8"
+            />
           </div>
         </div>
       </div>
