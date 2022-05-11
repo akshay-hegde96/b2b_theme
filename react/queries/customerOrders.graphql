@@ -5,6 +5,8 @@ query GetcustomerOrders {
       value
       status
       creationDate
+      totalItems
+      productIds
     }
   }
 }

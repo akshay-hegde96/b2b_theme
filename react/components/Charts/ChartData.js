@@ -50,8 +50,59 @@ const ChartData = (props) => {
   const statusHandler = (e) => {
     const selectedStatus = e.target.value;
     setStatus(selectedStatus);
-    // console.log("ssssssss", selectedStatus);
   };
+  // =========== Steps to get data object for  pie chart ================
+  const COLORS = ["#00C49F", "#0088FE", "#FFBB28", "#FF8042"];
+  // Step1: Filtering and counting each status in OMS data
+  const Readylength = ordersData?.filter(function (item) {
+    return item.status == "ready-for-handling";
+  }).length;
+
+  const Canceledlength = ordersData?.filter(function (item) {
+    return item.status == "canceled";
+  }).length;
+
+  const Cancellationlength = ordersData?.filter(function (item) {
+    return item.status == "cancellation-requested";
+  }).length;
+
+  const Invoicedlength = ordersData?.filter(function (item) {
+    return item.status == "invoiced";
+  }).length;
+
+  const Handlinglength = ordersData?.filter(function (item) {
+    return item.status == "handling";
+  }).length;
+
+  // Converting status and counts to key,value pairs
+  let ReadyObj = {};
+  ReadyObj["status"] = "ready-for-handling";
+  ReadyObj["count"] = Readylength;
+
+  let CanceledObj = {};
+  CanceledObj["status"] = "canceled";
+  CanceledObj["count"] = Canceledlength;
+
+  let CancellationObj = {};
+  CancellationObj["status"] = "cancellation-requested";
+  CancellationObj["count"] = Cancellationlength;
+
+  let InvoicedObj = {};
+  InvoicedObj["status"] = "invoiced";
+  InvoicedObj["count"] = Invoicedlength;
+
+  let HandlingObj = {};
+  HandlingObj["status"] = "handling";
+  HandlingObj["count"] = Handlinglength;
+
+  // ===Final data for Piechart(Array of objects)
+  const PieStatus = [
+    ReadyObj,
+    CanceledObj,
+    CancellationObj,
+    InvoicedObj,
+    HandlingObj,
+  ];
   // ================== data for line , bar chart ,composed and area chart =========
   const mydata = [
       {
@@ -119,16 +170,6 @@ const ChartData = (props) => {
         stroke: "green",
         legendType: "none",
       },
-      // {
-      //   dataKey: "amt",
-      //   type: "monotone",
-      //   stroke: "blue",
-      // },
-      // {
-      //   dataKey: "ak",
-      //   type: "monotone",
-      //   stroke: "black",
-      // },
     ],
     arrayofBars = [
       {
@@ -139,14 +180,6 @@ const ChartData = (props) => {
         dataKey: "pv",
         fill: "#9bd4b0",
       },
-      // {
-      //   dataKey: "amt",
-      //   fill: "blue",
-      // },
-      // {
-      //   dataKey: "ak",
-      //   fill: "black",
-      // },
     ],
     // ======== Area chart ==========
     arrayofArea = [
@@ -164,20 +197,6 @@ const ChartData = (props) => {
         fillOpacity: 1,
         fill: "url(#colorPv)",
       },
-      // {
-      //   dataKey: "amt",
-      //   type: "monotone",
-      //   stroke: "blue",
-      //   fillOpacity: 1,
-      //   fill: "url(#colorAmt)",
-      // },
-      // {
-      //   dataKey: "ak",
-      //   type: "monotone",
-      //   stroke: "black",
-      //   fillOpacity: 1,
-      //   fill: "url(#colorAk)",
-      // },
     ],
     areaGradients = [
       {
@@ -206,122 +225,36 @@ const ChartData = (props) => {
         stopOpacity1: 0.8,
         stopOpacity2: 0,
       },
-      // {
-      //   id: "colorAmt",
-      //   x1: "0",
-      //   y1: "0",
-      //   x2: "0",
-      //   y2: "1",
-      //   offset1: "5%",
-      //   offset2: "95%",
-      //   stopColor1: "red",
-      //   stopColor2: "red",
-      //   stopOpacity1: 0.8,
-      //   stopOpacity2: 0,
-      // },
-      // {
-      //   id: "colorAk",
-      //   x1: "0",
-      //   y1: "0",
-      //   x2: "0",
-      //   y2: "1",
-      //   offset1: "5%",
-      //   offset2: "95%",
-      //   stopColor1: "green",
-      //   stopColor2: "green",
-      //   stopOpacity1: 0.8,
-      //   stopOpacity2: 0,
-      // },
     ],
     composedGraphArray = [
       {
         areaType: "monotone",
-        areaDataKey: "amt",
+        areaDataKey: "value",
         areaFill: "#8884d8",
         areaStroke: "#8884d8",
-        barDataKey: "pv",
+        barDataKey: "productIds",
         barSize: 20,
         barFill: "#413ea0",
         lineType: "monotone",
-        lineDataKey: "uv",
+        lineDataKey: "totalItems",
         lineStroke: "#ff7300",
       },
     ],
     // ========data and customizations for pie chart==================
     arrayofPie = [
       {
-        dataKey: "value",
-        nameKey: "name",
+        dataKey: "count",
+        nameKey: "status",
         cx: "50%",
         cy: "50%",
         // "innerRadius":20,      //mention inner radius only if u want to make hollow at center
-        outerRadius: 30, //outer radius should be greater than inner radius
-        fill: "#9bd4b0",
-        label: false,
-        pieData: [
-          {
-            name: "Group A",
-            value: 2400,
-          },
-          {
-            name: "Group B",
-            value: 4567,
-          },
-          {
-            name: "Group C",
-            value: 1398,
-          },
-          {
-            name: "Group D",
-            value: 9800,
-          },
-          {
-            name: "Group E",
-            value: 3908,
-          },
-          {
-            name: "Group F",
-            value: 4800,
-          },
-        ],
-      },
-      {
-        dataKey: "value",
-        nameKey: "name",
-        cx: "50%",
-        cy: "50%",
-        innerRadius: 80,
-        outerRadius: 120,
-        fill: "#0067c7",
+        outerRadius: 130, //outer radius should be greater than inner radius
+        fill: "#8884d8",
         label: true,
-        pieData: [
-          {
-            name: "Group A",
-            value: 3400,
-          },
-          {
-            name: "Group B",
-            value: 5567,
-          },
-          {
-            name: "Group C",
-            value: 2398,
-          },
-          {
-            name: "Group D",
-            value: 9800,
-          },
-          {
-            name: "Group E",
-            value: 5908,
-          },
-          {
-            name: "Group F",
-            value: 6800,
-          },
-        ],
+        pieData: PieStatus,
       },
     ];
+
   // ======== data for treeMap========
   const treeData = [
     {
@@ -668,9 +601,9 @@ const ChartData = (props) => {
 
   // Logic for monthwise filter of customer order---------------------------------------------------
 
-  const customerOrderData = data?.customerOrders?.list;
+  // const customerOrderData = data?.customerOrders?.list;
 
-  const allmnthsData = customerOrderData?.map((eachOrder) => {
+  const allmnthsData = ordersData?.map((eachOrder) => {
     const date = new Date(eachOrder.creationDate);
 
     return {
@@ -682,25 +615,25 @@ const ChartData = (props) => {
       orderID: eachOrder.orderId,
     };
   });
-  console.log("allmnthsData", allmnthsData);
+  // console.log("allmnthsData", allmnthsData);
   const orderBymnthsData = allmnthsData?.reverse();
 
   const selectMnthHandler = (e) => {
     const selectedmnth = e.target.value;
     setMonth(selectedmnth);
-    console.log(selectedmnth);
+    // console.log(selectedmnth);
   };
   const selectYearHandler = (e) => {
     const selectedYear = e.target.value;
     setYear(selectedYear);
-    console.log(selectedYear);
+    // console.log(selectedYear);
   };
 
   const currentMnthData = orderBymnthsData?.filter(
     (order) =>
       order.orderMonth == currentMonth && order.orderYear == currentYear
   );
-  console.log(currentMnthData);
+  // console.log(currentMnthData);
 
   //-----------------------------------------------------------------------
   return (
@@ -723,17 +656,6 @@ const ChartData = (props) => {
                 );
               })}
             </select>
-            {/* {selectedStatus?.length == 0  (
-              <div style={{ color: "red" }}>
-                {" "}
-                <h2>
-                  {" "}
-                  Sorry, there are no orders in{" "}
-                  <span style={{ color: "blue" }}>{currentStatus}</span> status!
-                </h2>
-              </div>
-            )} */}
-
             {selectedStatus?.length == 0 ? (
               <div style={{ color: "red" }} className={styles.warningStatus}>
                 {" "}
@@ -818,25 +740,23 @@ const ChartData = (props) => {
         </div>
         <div className={styles.chartRow}>
           <div className={styles.chartCol}>
-            <h3 className={styles.chartHeadings}>Bar Chart</h3>
-            <props.BarChartApp
-              data={mydata}
-              height={300}
-              width="100%"
-              horizontalDataKey="name"
-              gridStrokeDasharray="5 5"
-              arrayofBars={arrayofBars}
-            />
-          </div>
-          <div className={styles.chartCol}>
             <h3 className={styles.chartHeadings}>Composed Chart</h3>
             <props.ComposedChartApp
               height={300}
               width="100%"
-              data={mydata}
-              horizontalDataKey="name"
+              data={ordersData}
+              horizontalDataKey="orderId"
               gridStrokeDasharray="5 5"
               composedGraphArray={composedGraphArray}
+            />
+          </div>
+          <div className={styles.chartCol}>
+            <h3 className={styles.chartHeadings}>Orders Status</h3>
+            <props.PieChartApp
+              arrayofPie={arrayofPie}
+              height={300}
+              width="100%"
+              colors={COLORS}
             />
           </div>
         </div>
@@ -853,13 +773,15 @@ const ChartData = (props) => {
               areaGradients={areaGradients}
             />
           </div>
-
           <div className={styles.chartCol}>
-            <h3 className={styles.chartHeadings}>Pie Chart</h3>
-            <props.PieChartApp
-              arrayofPie={arrayofPie}
+            <h3 className={styles.chartHeadings}>Bar Chart</h3>
+            <props.BarChartApp
+              data={mydata}
               height={300}
               width="100%"
+              horizontalDataKey="name"
+              gridStrokeDasharray="5 5"
+              arrayofBars={arrayofBars}
             />
           </div>
         </div>
