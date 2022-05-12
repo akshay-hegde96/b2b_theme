@@ -41,3 +41,11 @@ option {
   width: 50%;
   left: 150px;
 }
+
+.categoryBarChart {
+  height: 400px;
+  margin: 40px 20px;
+  padding: 20px;
+  box-shadow: 0px 0px 5px 0px rgba(41, 35, 67, 0.473);
+  border-radius: 10px;
+}
