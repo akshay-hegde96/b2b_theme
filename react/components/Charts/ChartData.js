@@ -20,7 +20,7 @@ const ChartData = (props) => {
   const yearNames = ["2021", "2022"];
   const [currentMonth, setMonth] = useState(monthNames[0]);
   const [currentYear, setYear] = useState("2021");
-
+  const [CatArr, setCatArr] = useState([]);
   const { data } = useQuery(GetcustomerOrders, {
     variables: {
       orderId: "",
@@ -635,7 +635,73 @@ const ChartData = (props) => {
   );
   // console.log(currentMnthData);
 
-  //-----------------------------------------------------------------------
+  // -----------------------For category name vs totalproducts chart---------------------------------------------------------------------
+
+  const productId = ordersData?.map((prod) => prod.productIds);
+  let newArr = productId?.join(",").split(",");
+  console.log(newArr);
+  const productURL = newArr?.map(
+    (arr) => "/api/catalog/pvt/product/" + `${arr}`
+  );
+
+  const CategoryArr = [];
+  async function fetchAll() {
+    const result = await Promise.all(
+      productURL?.map((url) => fetch(url).then((r) => r.json()))
+    );
+    const result2 = await result?.map((cat) => cat.CategoryId);
+    console.log(result2);
+
+    const resCatname = await Promise.all(
+      result2.map((catid) =>
+        fetch(`/api/catalog/pvt/category/${catid}`).then((res) => res.json())
+      )
+    );
+    const catNameRes = await resCatname?.map((category) => category.Name);
+    console.log("catNameRes", catNameRes);
+    CategoryArr.push(...catNameRes);
+  }
+
+  function processFetchedData() {
+    CategoryArr.length !== 0 &&
+      CategoryArr.forEach((element) => {
+        CatCount[element] = (CatCount[element] || 0) + 1;
+      });
+    console.log("CatCount", CatCount);
+
+    for (const char in CatCount) {
+      newCatArrData.push({ name: `${char}`, products: CatCount[char] });
+    }
+    console.log("newCatArrData", newCatArrData);
+
+    if (newCatArrData.length > 0) {
+      console.log("setdata", newCatArrData);
+
+      if (CatArr?.length == newCatArrData?.length) {
+        return;
+      } else setCatArr(newCatArrData);
+    }
+  }
+
+  const CatCount = {};
+  const newCatArrData = [];
+
+  async function datahandler() {
+    await fetchAll();
+    await processFetchedData();
+  }
+
+  datahandler();
+
+  const arrayofCatBars = [
+    {
+      dataKey: "products",
+      fill: "#413ea0",
+    },
+  ];
+
+  //---------------------------------------------------------------------------------------------------------
+
   return (
     <React.Fragment>
       <div className={styles.dashBoardContainer}>
@@ -798,6 +864,25 @@ const ChartData = (props) => {
               fill="#8884d8"
             />
           </div>
+        </div>
+        <div className={styles.categoryBarChart}>
+          <h3 className={styles.chartHeadings}>
+            Categorywise Products Ordered
+          </h3>
+          {CatArr.length > 0 ? (
+            <props.BarChartApp
+              data={CatArr}
+              height={300}
+              width="100%"
+              horizontalDataKey="name"
+              gridStrokeDasharray="5 5"
+              arrayofBars={arrayofCatBars}
+            />
+          ) : (
+            <h2 style={{ color: "red" }}>
+              Please wait, while the data is Loading...
+            </h2>
+          )}
         </div>
       </div>
     </React.Fragment>
