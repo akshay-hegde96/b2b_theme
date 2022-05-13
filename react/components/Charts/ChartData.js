@@ -20,7 +20,10 @@ const ChartData = (props) => {
   const yearNames = ["2021", "2022"];
   const [currentMonth, setMonth] = useState(monthNames[0]);
   const [currentYear, setYear] = useState("2021");
+  const [categoryCurrentMonth, setCategoryMonth] = useState(monthNames[0]);
+  const [categoryCurrentYear, setCategoryYear] = useState("2021");
   const [CatArr, setCatArr] = useState([]);
+
   const { data } = useQuery(GetcustomerOrders, {
     variables: {
       orderId: "",
@@ -602,7 +605,7 @@ const ChartData = (props) => {
   // Logic for monthwise filter of customer order---------------------------------------------------
 
   // const customerOrderData = data?.customerOrders?.list;
-
+  console.log(ordersData);
   const allmnthsData = ordersData?.map((eachOrder) => {
     const date = new Date(eachOrder.creationDate);
 
@@ -613,6 +616,7 @@ const ChartData = (props) => {
       value: eachOrder.value,
       status: eachOrder.status,
       orderID: eachOrder.orderId,
+      productID: eachOrder.productIds,
     };
   });
   // console.log("allmnthsData", allmnthsData);
@@ -636,8 +640,27 @@ const ChartData = (props) => {
   // console.log(currentMnthData);
 
   // -----------------------For category name vs totalproducts chart---------------------------------------------------------------------
+  //monthwise and yearwise filter
+  const selectCategoryMnthHandler = (e) => {
+    const selectedcategorymnth = e.target.value;
+    setCategoryMonth(selectedcategorymnth);
+    setCatArr([]);
+    setLoadingCat(true);
+  };
+  const selectCategoryYearHandler = (e) => {
+    const selectedcategoryYear = e.target.value;
+    setCategoryYear(selectedcategoryYear);
+    setCatArr([]);
+    setLoadingCat(true);
+  };
 
-  const productId = ordersData?.map((prod) => prod.productIds);
+  const currentCategoryMnthData = orderBymnthsData?.filter(
+    (order) =>
+      order.orderMonth == categoryCurrentMonth &&
+      order.orderYear == categoryCurrentYear
+  );
+
+  const productId = currentCategoryMnthData?.map((prod) => prod.productID);
   let newArr = productId?.join(",").split(",");
   console.log(newArr);
   const productURL = newArr?.map(
@@ -689,6 +712,7 @@ const ChartData = (props) => {
   async function datahandler() {
     await fetchAll();
     await processFetchedData();
+    CatArr.length > 0 && setLoadingCat(false);
   }
 
   datahandler();
@@ -785,7 +809,7 @@ const ChartData = (props) => {
                 className={styles.noDataAlert}
                 style={{ color: "red", textAlign: "center" }}
               >
-                Sorry, there are no orders in {currentMonth}!
+                Sorry, there are no orders in {currentMonth} {currentYear}!
               </h2>
             )}
             {currentMnthData?.length !== 0 && (
@@ -869,19 +893,69 @@ const ChartData = (props) => {
           <h3 className={styles.chartHeadings}>
             Categorywise Products Ordered
           </h3>
-          {CatArr.length > 0 ? (
-            <props.BarChartApp
-              data={CatArr}
-              height={300}
-              width="100%"
-              horizontalDataKey="name"
-              gridStrokeDasharray="5 5"
-              arrayofBars={arrayofCatBars}
-            />
-          ) : (
-            <h2 style={{ color: "red" }}>
-              Please wait, while the data is Loading...
+          <div>
+            <span>Filter By Year and Month : </span>
+            <select
+              name="categoryYear"
+              id="categoryYear"
+              value={categoryCurrentYear}
+              onChange={selectCategoryYearHandler}
+              className={styles.dropdownContainer}
+            >
+              {yearNames.map((year, i) => {
+                return (
+                  <option key={i} value={year}>
+                    {year}
+                  </option>
+                );
+              })}
+            </select>
+            <select
+              name="categoryMonth"
+              id="categoryMonth"
+              value={categoryCurrentMonth}
+              onChange={selectCategoryMnthHandler}
+              className={styles.dropdownContainer}
+            >
+              {monthNames.map((month, i) => {
+                return (
+                  <option key={i} value={month}>
+                    {month}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+
+          {currentCategoryMnthData?.length == 0 && (
+            <h2
+              className={styles.noDataAlert}
+              style={{ color: "red", textAlign: "center" }}
+            >
+              Sorry, there are no orders in {categoryCurrentMonth}{" "}
+              {categoryCurrentYear}!
             </h2>
+          )}
+
+          {currentCategoryMnthData?.length !== 0 && CatArr.length > 0 ? (
+            <div>
+              <props.BarChartApp
+                data={CatArr}
+                height={300}
+                width="100%"
+                horizontalDataKey="name"
+                gridStrokeDasharray="5 5"
+                arrayofBars={arrayofCatBars}
+              />
+            </div>
+          ) : (
+            currentCategoryMnthData?.length !== 0 && (
+              <div>
+                <h2 style={{ color: "red" }}>
+                  Please wait, while the data is Loading...
+                </h2>
+              </div>
+            )
           )}
         </div>
       </div>
