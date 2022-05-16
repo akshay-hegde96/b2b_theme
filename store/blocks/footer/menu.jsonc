@@ -307,7 +307,20 @@
             "tagTitle": "Questions & Answers",
             "text": "Questions & Answers"
           }
+        },
+        {
+        "id": "g-analytics",
+        "type": "custom",
+        "iconId": null,
+        "highlight": false,
+        "itemProps": {
+          "type": "internal",
+          "href": "/analytics",
+          "noFollow": false,
+          "tagTitle": "Analytics Reports",
+          "text": "Analytics Reports"
         }
+      }
       ]
     }
   }
