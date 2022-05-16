@@ -5,6 +5,8 @@ query GetcustomerOrderDetails{
       value,
       status,
       creationDate,
+      totalItems,
+      productIds,
     }
   }
 }
