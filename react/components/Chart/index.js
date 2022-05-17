@@ -134,20 +134,20 @@ const Chart = (props) => {
             backgroundColor: 'rgba(255, 99, 132, 0.5)',
         }
     ];
-    const MonthLineChartlabelsName = monthLineOrderID;
+    const MonthLineChartlabelsName = monthBarOrderID;
     const MonthLineChartDataset = [
         {
             label: 'Order ID',
-            data: monthlyLineValue,
+            data: monthlyBarValue,
             borderColor: 'rgb(255, 99, 132)',
             backgroundColor: 'rgba(255, 99, 132, 0.5)',
         }
     ];
-    const MonthPieChartlabelsName = monthPieOrderID;
+    const MonthPieChartlabelsName = monthBarOrderID;
     const MonthPieChartDataset = [
         {
             label: 'OrderId',
-            data: monthlyPieValue,
+            data: monthlyBarValue,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -159,7 +159,7 @@ const Chart = (props) => {
             borderWidth: 1,
         },
     ];
-    const MonthRefChartlabelsName = monthRefOrderID;
+    const MonthRefChartlabelsName = monthBarOrderID;
     const MonthRefChartDataset = [
         {
             type: 'line',
@@ -167,13 +167,13 @@ const Chart = (props) => {
             borderColor: 'rgb(255, 99, 132)',
             borderWidth: 2,
             fill: false,
-            data: monthlyRefValue,
+            data: monthlyBarValue,
         },
         {
             type: 'bar',
             label: 'OrderId Bar',
             backgroundColor: 'rgb(75, 192, 192)',
-            data: monthlyRefValue,
+            data: monthlyBarValue,
             borderColor: 'white',
             borderWidth: 2,
         }
@@ -470,7 +470,6 @@ const Chart = (props) => {
                 <div className={styles.reactChartRow}>
                     <div className={styles.reactMonthChartOuterCol}>
                         <div>
-                            <h3 className={styles.reactChartHeadings}>Bar Chart</h3>
                             <span>Filter By Year and Month : </span>
                             <select name="orderYear" id="orderYear" value={currentBarYear}
                                 onChange={selectBarYearHandler} className={styles.reactDropdownContainer} >
@@ -503,134 +502,24 @@ const Chart = (props) => {
                             <div>
                                 <div className={styles.reactChartRow}>
                                     <div className={styles.reactMonthChartCol}>
+                                        <h3 className={styles.reactChartHeadings}>Bar Chart</h3>
                                         <props.BarChart className={styles.BarChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={MonthBarChartDataset}
                                             titleText="Echidna Sales Bar Chart" labelsName={MonthBarChartlabelsName} ></props.BarChart>
                                     </div>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                    <div className={styles.reactMonthChartOuterCol}>
-                        <div>
-                            <h3 className={styles.reactChartHeadings}>Customer Orders</h3>
-                            <span>Filter By Year and Month : </span>
-                            <select name="orderYear" id="orderYear" value={currentLineYear}
-                                onChange={selectLineYearHandler} className={styles.reactDropdownContainer} >
-                                {yearNames.map((year, i) => {
-                                    return (
-                                        <option key={i} value={year}>
-                                            {year}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                            <select name="orderMonth" id="orderMonth" value={currentLineMonth}
-                                onChange={selectLineMnthHandler} className={styles.reactDropdownContainer} >
-                                {monthNames.map((month, i) => {
-                                    return (
-                                        <option key={i} value={month}>
-                                            {month}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                        </div>
-                        {currentLineMnthData?.length == 0 && (
-                            <h2 className={styles.reactWarningStatus} >
-                                Sorry, there are no orders in {" "}
-                                <span style={{ "font-weight": "bold", "text-decoration": "underline", "text-decoration-color": "red" }}>{currentLineMonth} - {currentLineYear}</span> !!
-                            </h2>
-                        )}
-                        {currentLineMnthData?.length !== 0 && (
-                            <div>
-                                <div className={styles.reactChartRow}>
                                     <div className={styles.reactMonthChartCol}>
+                                    <h3 className={styles.reactChartHeadings}>Line Chart</h3>
                                         <props.LineChart className={styles.LineChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={MonthLineChartDataset}
                                             titleText="Echidna Sales Line Chart" labelsName={MonthLineChartlabelsName} ></props.LineChart>
                                     </div>
                                 </div>
-                            </div>
-                        )}
-                    </div>
-                </div>
-                <div className={styles.reactChartRow}>
-                    <div className={styles.reactMonthChartOuterCol}>
-                        <div>
-                            <h3 className={styles.reactChartHeadings}>Ref Chart</h3>
-                            <span>Filter By Year and Month : </span>
-                            <select name="orderYear" id="orderYear" value={currentRefYear}
-                                onChange={selectRefYearHandler} className={styles.reactDropdownContainer} >
-                                {yearNames.map((year, i) => {
-                                    return (
-                                        <option key={i} value={year}>
-                                            {year}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                            <select name="orderMonth" id="orderMonth" value={currentRefMonth}
-                                onChange={selectRefMnthHandler} className={styles.reactDropdownContainer} >
-                                {monthNames.map((month, i) => {
-                                    return (
-                                        <option key={i} value={month}>
-                                            {month}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                        </div>
-                        {currentRefMnthData?.length == 0 && (
-                            <h2 className={styles.reactWarningStatus} >
-                                Sorry, there are no orders in {" "}
-                                <span style={{ "font-weight": "bold", "text-decoration": "underline", "text-decoration-color": "red" }}>{currentRefMonth} - {currentRefYear}</span> !!
-                            </h2>
-                        )}
-                        {currentRefMnthData?.length !== 0 && (
-                            <div>
                                 <div className={styles.reactChartRow}>
                                     <div className={styles.reactMonthChartCol}>
+                                        <h3 className={styles.reactChartHeadings}>Ref Chart</h3>
                                         <props.ChartRef className={styles.ChartRef} legendPosition="bottom" responsive="true" displayTitle="true" dataset={MonthRefChartDataset}
                                             titleText="Echidna Sales Ref Chart" labelsName={MonthRefChartlabelsName} ></props.ChartRef>
                                     </div>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                    <div className={styles.reactMonthChartOuterCol}>
-                        <div>
-                            <h3 className={styles.reactChartHeadings}>Order ID Pie Chart</h3>
-                            <span>Filter By Year and Month : </span>
-                            <select name="orderYear" id="orderYear" value={currentPieYear}
-                                onChange={selectPieYearHandler} className={styles.reactDropdownContainer} >
-                                {yearNames.map((year, i) => {
-                                    return (
-                                        <option key={i} value={year}>
-                                            {year}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                            <select name="orderMonth" id="orderMonth" value={currentPieMonth}
-                                onChange={selectPieMnthHandler} className={styles.reactDropdownContainer} >
-                                {monthNames.map((month, i) => {
-                                    return (
-                                        <option key={i} value={month}>
-                                            {month}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                        </div>
-                        {currentPieMnthData?.length == 0 && (
-                            <h2 className={styles.reactWarningStatus} >
-                                Sorry, there are no orders in {" "}
-                                <span style={{ "font-weight": "bold", "text-decoration": "underline", "text-decoration-color": "red" }}>{currentPieMonth} - {currentPieYear}</span> !!
-                            </h2>
-                        )}
-                        {currentPieMnthData?.length !== 0 && (
-                            <div>
-                                <div className={styles.reactChartRow}>
                                     <div className={styles.reactMonthChartCol}>
+                                        <h3 className={styles.reactChartHeadings}>Order ID Pie Chart</h3>
                                         <props.PieChart className={styles.PieChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={MonthPieChartDataset}
                                             titleText="Echidna Sales Pie Chart" labelsName={MonthPieChartlabelsName} ></props.PieChart>
                                     </div>
