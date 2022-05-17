@@ -88,5 +88,8 @@
   },
   "store.custom#dashboard":{
     "path": "/dashboard"
+  },
+  "store.custom#analyticsReports":{
+    "path": "/analytics"
   }
 }
