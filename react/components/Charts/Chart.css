@@ -1,5 +1,6 @@
 .chartRow {
   display: flex;
+  height: 550px;
 }
 .chartCol {
   width: 50%;
@@ -48,4 +49,15 @@ option {
   padding: 20px;
   box-shadow: 0px 0px 5px 0px rgba(41, 35, 67, 0.473);
   border-radius: 10px;
+}
+
+.filter {
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.filter span {
+  color: rgb(24, 7, 99);
+  font-size: 24px;
+  font-weight: bold;
 }
