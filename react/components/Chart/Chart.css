@@ -4,17 +4,17 @@
 }
 
 .reactChartCol {
-    width: 35%;
-    height: 35%;
+    width: 50%;
+    height: 50%;
     margin: 20px 20px;
     padding: 20px;
     box-shadow: 0px 0px 5px 0px rgb(135, 206, 235);
     border-radius: 10px;
 }
 
-.reactCategoryChartCol {
-    width: 50%;
-    height: 50%;
+.reactPieChartCol {
+    width: 40%;
+    height: 40%;
     margin: 40px 20px;
     padding: 20px;
     box-shadow: 0px 0px 5px 0px rgb(135, 206, 235);
