@@ -475,22 +475,24 @@ const Chart = (props) => {
                                         <props.LineChart className={styles.LineChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={MonthLineChartDataset}
                                             titleText="Echidna Sales Line Chart" labelsName={MonthLineChartlabelsName} ></props.LineChart>
                                     </div>
+                                </div>
+                                <div className={styles.reactChartRow}>
                                     <div className={styles.reactChartCol}>
                                         <h3 className={styles.reactChartHeadings}>Ref Chart</h3>
                                         <props.ChartRef className={styles.ChartRef} legendPosition="bottom" responsive="true" displayTitle="true" dataset={MonthRefChartDataset}
                                             titleText="Echidna Sales Ref Chart" labelsName={MonthRefChartlabelsName} ></props.ChartRef>
                                     </div>
-                                </div>
-                                <div className={styles.reactChartRow}>
                                     <div className={styles.reactChartCol}>
-                                        <h3 className={styles.reactChartHeadings}>Order ID Pie Chart</h3>
-                                        <props.PieChart className={styles.PieChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={MonthPieChartDataset}
-                                            titleText="Echidna Sales Pie Chart" labelsName={MonthPieChartlabelsName} ></props.PieChart>
-                                    </div>
-                                    <div className={styles.reactCategoryChartCol}>
                                         <h3 className={styles.reactChartHeadings}>Product Category Bar Chart</h3>
                                         <props.BarChart className={styles.BarChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={CatBarChartDataset}
                                             titleText="Echidna Sales Bar Chart" labelsName={CatBarChartlabelsName} ></props.BarChart>
+                                    </div>
+                                </div>
+                                <div className={styles.reactChartRow}>
+                                <div className={styles.reactPieChartCol}>
+                                        <h3 className={styles.reactChartHeadings}>Order ID Pie Chart</h3>
+                                        <props.PieChart className={styles.PieChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={MonthPieChartDataset}
+                                            titleText="Echidna Sales Pie Chart" labelsName={MonthPieChartlabelsName} ></props.PieChart>
                                     </div>
                                 </div>
                             </div>
@@ -544,12 +546,12 @@ const Chart = (props) => {
                                     </div>
                                 </div>
                                 <div className={styles.reactChartRow}>
-                                    <div className={styles.reactChartCol}>
+                                    <div className={styles.reactPieChartCol}>
                                         <h3 className={styles.reactChartHeadings}>Order Status Pie Chart</h3>
                                         <props.PieChart className={styles.PieChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={StatusPieChartDataset}
                                             titleText="Echidna Sales Pie Chart" labelsName={StatusPieChartlabelsName} ></props.PieChart>
                                     </div>
-                                    <div className={styles.reactChartCol}>
+                                    <div className={styles.reactPieChartCol}>
                                         <h3 className={styles.reactChartHeadings}>Order ID Pie Chart</h3>
                                         <props.PieChart className={styles.PieChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={PieChartDataset}
                                             titleText="Echidna Sales Pie Chart" labelsName={PieChartlabelsName} ></props.PieChart>
