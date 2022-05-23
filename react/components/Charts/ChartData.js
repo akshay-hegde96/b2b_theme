@@ -20,13 +20,7 @@ const ChartData = (props) => {
   const yearNames = ["2021", "2022"];
   const [currentMonth, setMonth] = useState(monthNames[0]);
   const [currentYear, setYear] = useState(yearNames[0]);
-  const [categoryCurrentMonth, setCategoryMonth] = useState(monthNames[0]);
-  const [categoryCurrentYear, setCategoryYear] = useState(yearNames[0]);
   const [CatArr, setCatArr] = useState([]);
-  const [composedCurrentMonth, setComposedMonth] = useState(monthNames[0]);
-  const [composedCurrentYear, setComposedYear] = useState(yearNames[0]);
-  const [pieCurrentMonth, setPieMonth] = useState(monthNames[0]);
-  const [pieCurrentYear, setPieYear] = useState(yearNames[0]);
 
   const { data } = useQuery(GetcustomerOrders, {
     variables: {
@@ -58,60 +52,6 @@ const ChartData = (props) => {
     const selectedStatus = e.target.value;
     setStatus(selectedStatus);
   };
-  // // // =========== Steps to get data object for  pie chart ================
-  // const COLORS = ["#00C49F", "#0088FE", "#FFBB28", "#FF8042"];
-  // // Step1: Filtering and counting each status in OMS data
-  // const Readylength = currentPieMnthData?.filter(function (item) {
-  //   return item.status == "ready-for-handling";
-  // }).length;
-
-  // const Canceledlength = currentPieMnthData?.filter(function (item) {
-  //   return item.status == "canceled";
-  // }).length;
-
-  // const Cancellationlength = currentPieMnthData?.filter(function (item) {
-  //   return item.status == "cancellation-requested";
-  // }).length;
-
-  // const Invoicedlength = currentPieMnthData?.filter(function (item) {
-  //   return item.status == "invoiced";
-  // }).length;
-
-  // const Handlinglength = currentPieMnthData?.filter(function (item) {
-  //   return item.status == "handling";
-  // }).length;
-
-  // // Converting status and counts to key,value pairs
-  // let ReadyObj = {};
-  // ReadyObj["status"] = "ready-for-handling";
-  // ReadyObj["count"] = Readylength;
-
-  // let CanceledObj = {};
-  // CanceledObj["status"] = "canceled";
-  // CanceledObj["count"] = Canceledlength;
-
-  // let CancellationObj = {};
-  // CancellationObj["status"] = "cancellation-requested";
-  // CancellationObj["count"] = Cancellationlength;
-
-  // let InvoicedObj = {};
-  // InvoicedObj["status"] = "invoiced";
-  // InvoicedObj["count"] = Invoicedlength;
-
-  // let HandlingObj = {};
-  // HandlingObj["status"] = "handling";
-  // HandlingObj["count"] = Handlinglength;
-
-  // // ===Final data for Piechart(Array of objects)
-  // const PieStatus = [
-  //   ReadyObj,
-  //   CanceledObj,
-  //   CancellationObj,
-  //   InvoicedObj,
-  //   HandlingObj,
-  // ];
-
-  // console.log("PieStatus", PieStatus);
   // ================== data for line , bar chart ,composed and area chart =========
   // const mydata = [
   //     {
@@ -633,11 +573,15 @@ const ChartData = (props) => {
   const selectMnthHandler = (e) => {
     const selectedmnth = e.target.value;
     setMonth(selectedmnth);
+    setCatArr([]);
+    setLoadingCat(true);
     // console.log(selectedmnth);
   };
   const selectYearHandler = (e) => {
     const selectedYear = e.target.value;
     setYear(selectedYear);
+    setCatArr([]);
+    setLoadingCat(true);
     // console.log(selectedYear);
   };
 
@@ -648,27 +592,8 @@ const ChartData = (props) => {
   // console.log(currentMnthData);
 
   // -----------------------For category name vs totalproducts chart---------------------------------------------------------------------
-  //monthwise and yearwise filter
-  const selectCategoryMnthHandler = (e) => {
-    const selectedcategorymnth = e.target.value;
-    setCategoryMonth(selectedcategorymnth);
-    setCatArr([]);
-    setLoadingCat(true);
-  };
-  const selectCategoryYearHandler = (e) => {
-    const selectedcategoryYear = e.target.value;
-    setCategoryYear(selectedcategoryYear);
-    setCatArr([]);
-    setLoadingCat(true);
-  };
 
-  const currentCategoryMnthData = orderBymnthsData?.filter(
-    (order) =>
-      order.orderMonth == categoryCurrentMonth &&
-      order.orderYear == categoryCurrentYear
-  );
-
-  const productId = currentCategoryMnthData?.map((prod) => prod.productID);
+  const productId = currentMnthData?.map((prod) => prod.productID);
   let newArr = productId?.join(",").split(",");
   console.log(newArr);
   const productURL = newArr?.map(
@@ -732,60 +657,26 @@ const ChartData = (props) => {
     },
   ];
 
-  //-----------------Month and yearwise filter for Composed chart-----------------------------------------------------
-
-  const selectComposedMnthHandler = (e) => {
-    const selectedcomposedmnth = e.target.value;
-    setComposedMonth(selectedcomposedmnth);
-  };
-  const selectcomposedYearHandler = (e) => {
-    const selectedcomposedYear = e.target.value;
-    setComposedYear(selectedcomposedYear);
-  };
-
-  const currentComposedMnthData = orderBymnthsData?.filter(
-    (order) =>
-      order.orderMonth == composedCurrentMonth &&
-      order.orderYear == composedCurrentYear
-  );
-  //-------------------------Month and yearwise filter for Pie chart---------------------------------------------------
-
-  const selectPieMnthHandler = (e) => {
-    const selectedPiemnth = e.target.value;
-    setPieMonth(selectedPiemnth);
-  };
-  const selectPieYearHandler = (e) => {
-    const selectedPieYear = e.target.value;
-    setPieYear(selectedPieYear);
-  };
-
-  const currentPieMnthData = orderBymnthsData?.filter(
-    (order) =>
-      order.orderMonth == pieCurrentMonth && order.orderYear == pieCurrentYear
-  );
-
-  console.log("currentPieMnthData", currentPieMnthData);
-
   //=========== Steps to get data object for  pie chart ================
-  const COLORS = ["#00C49F", "#0088FE", "#FFBB28", "#FF8042"];
+  const COLORS = ["#00C49F", "#0088FE", "#FFBB28", "#FF8042", "#F06292"];
   // Step1: Filtering and counting each status in OMS data
-  const Readylength = currentPieMnthData?.filter(function (item) {
+  const Readylength = currentMnthData?.filter(function (item) {
     return item.status == "ready-for-handling";
   }).length;
 
-  const Canceledlength = currentPieMnthData?.filter(function (item) {
+  const Canceledlength = currentMnthData?.filter(function (item) {
     return item.status == "canceled";
   }).length;
 
-  const Cancellationlength = currentPieMnthData?.filter(function (item) {
+  const Cancellationlength = currentMnthData?.filter(function (item) {
     return item.status == "cancellation-requested";
   }).length;
 
-  const Invoicedlength = currentPieMnthData?.filter(function (item) {
+  const Invoicedlength = currentMnthData?.filter(function (item) {
     return item.status == "invoiced";
   }).length;
 
-  const Handlinglength = currentPieMnthData?.filter(function (item) {
+  const Handlinglength = currentMnthData?.filter(function (item) {
     return item.status == "handling";
   }).length;
 
@@ -840,56 +731,55 @@ const ChartData = (props) => {
   return (
     <React.Fragment>
       <div className={styles.dashBoardContainer}>
+        <div className={styles.filter}>
+          <span>Filter By Year and Month : </span>
+          <select
+            name="orderYear"
+            id="orderYear"
+            value={currentYear}
+            onChange={selectYearHandler}
+            className={styles.dropdownContainer}
+          >
+            {yearNames.map((year, i) => {
+              return (
+                <option key={i} value={year}>
+                  {year}
+                </option>
+              );
+            })}
+          </select>
+          <select
+            name="orderMonth"
+            id="orderMonth"
+            value={currentMonth}
+            onChange={selectMnthHandler}
+            className={styles.dropdownContainer}
+          >
+            {monthNames.map((month, i) => {
+              return (
+                <option key={i} value={month}>
+                  {month}
+                </option>
+              );
+            })}
+          </select>
+        </div>
         <div className={styles.chartRow}>
           <div className={styles.chartCol}>
             <h3 className={styles.chartHeadings}>Orders Status</h3>
-            <div>
-              <span>Filter By Year and Month : </span>
-              <select
-                name="orderPieYear"
-                id="orderPieYear"
-                value={pieCurrentYear}
-                onChange={selectPieYearHandler}
-                className={styles.dropdownContainer}
-              >
-                {yearNames.map((year, i) => {
-                  return (
-                    <option key={i} value={year}>
-                      {year}
-                    </option>
-                  );
-                })}
-              </select>
-              <select
-                name="orderPieMonth"
-                id="orderPieMonth"
-                value={pieCurrentMonth}
-                onChange={selectPieMnthHandler}
-                className={styles.dropdownContainer}
-              >
-                {monthNames.map((month, i) => {
-                  return (
-                    <option key={i} value={month}>
-                      {month}
-                    </option>
-                  );
-                })}
-              </select>
-            </div>
-            {currentPieMnthData?.length == 0 && (
+            {currentMnthData?.length == 0 && (
               <h2
                 className={styles.noDataAlert}
                 style={{ color: "red", textAlign: "center" }}
               >
-                Sorry, there are no orders in {pieCurrentMonth} {pieCurrentYear}
-                !
+                Sorry, there are no orders in {currentMonth} {currentYear}!
               </h2>
             )}
 
-            {currentPieMnthData?.length !== 0 && (
+            {currentMnthData?.length !== 0 && (
               <props.PieChartApp
                 arrayofPie={arrayofPie}
-                height={400}
+                height={350}
                 width="100%"
                 colors={COLORS}
               />
@@ -899,37 +789,6 @@ const ChartData = (props) => {
           <div className={styles.chartCol}>
             <div>
               <h3 className={styles.chartHeadings}>Customer Orders</h3>
-              <span>Filter By Year and Month : </span>
-              <select
-                name="orderYear"
-                id="orderYear"
-                value={currentYear}
-                onChange={selectYearHandler}
-                className={styles.dropdownContainer}
-              >
-                {yearNames.map((year, i) => {
-                  return (
-                    <option key={i} value={year}>
-                      {year}
-                    </option>
-                  );
-                })}
-              </select>
-              <select
-                name="orderMonth"
-                id="orderMonth"
-                value={currentMonth}
-                onChange={selectMnthHandler}
-                className={styles.dropdownContainer}
-              >
-                {monthNames.map((month, i) => {
-                  return (
-                    <option key={i} value={month}>
-                      {month}
-                    </option>
-                  );
-                })}
-              </select>
             </div>
             {currentMnthData?.length == 0 && (
               <h2
@@ -943,7 +802,7 @@ const ChartData = (props) => {
               <div>
                 <props.LineChartApp
                   data={currentMnthData}
-                  height={300}
+                  height={350}
                   width="100%"
                   gridStrokeDasharray="5 5"
                   horizontalDataKey="orderID"
@@ -958,51 +817,16 @@ const ChartData = (props) => {
           <h3 className={styles.chartHeadings}>
             Categorywise Products Ordered
           </h3>
-          <div>
-            <span>Filter By Year and Month : </span>
-            <select
-              name="categoryYear"
-              id="categoryYear"
-              value={categoryCurrentYear}
-              onChange={selectCategoryYearHandler}
-              className={styles.dropdownContainer}
-            >
-              {yearNames.map((year, i) => {
-                return (
-                  <option key={i} value={year}>
-                    {year}
-                  </option>
-                );
-              })}
-            </select>
-            <select
-              name="categoryMonth"
-              id="categoryMonth"
-              value={categoryCurrentMonth}
-              onChange={selectCategoryMnthHandler}
-              className={styles.dropdownContainer}
-            >
-              {monthNames.map((month, i) => {
-                return (
-                  <option key={i} value={month}>
-                    {month}
-                  </option>
-                );
-              })}
-            </select>
-          </div>
-
-          {currentCategoryMnthData?.length == 0 && (
+          {currentMnthData?.length == 0 && (
             <h2
               className={styles.noDataAlert}
               style={{ color: "red", textAlign: "center" }}
             >
-              Sorry, there are no orders in {categoryCurrentMonth}{" "}
-              {categoryCurrentYear}!
+              Sorry, there are no orders in {currentMonth} {currentYear}!
             </h2>
           )}
 
-          {currentCategoryMnthData?.length !== 0 && CatArr.length > 0 ? (
+          {currentMnthData?.length !== 0 && CatArr.length > 0 ? (
             <div>
               <props.BarChartApp
                 data={CatArr}
@@ -1014,7 +838,7 @@ const ChartData = (props) => {
               />
             </div>
           ) : (
-            currentCategoryMnthData?.length !== 0 && (
+            currentMnthData?.length !== 0 && (
               <div>
                 <h2 style={{ color: "red" }}>
                   Please wait, while the data is Loading...
@@ -1027,53 +851,19 @@ const ChartData = (props) => {
         <div className={styles.chartRow}>
           <div className={styles.chartCol}>
             <h3 className={styles.chartHeadings}>Composed Chart</h3>
-            <div>
-              <span>Filter By Year and Month : </span>
-              <select
-                name="composedYear"
-                id="composedYear"
-                value={composedCurrentYear}
-                onChange={selectcomposedYearHandler}
-                className={styles.dropdownContainer}
-              >
-                {yearNames.map((year, i) => {
-                  return (
-                    <option key={i} value={year}>
-                      {year}
-                    </option>
-                  );
-                })}
-              </select>
-              <select
-                name="composedMonth"
-                id="composedMonth"
-                value={composedCurrentMonth}
-                onChange={selectComposedMnthHandler}
-                className={styles.dropdownContainer}
-              >
-                {monthNames.map((month, i) => {
-                  return (
-                    <option key={i} value={month}>
-                      {month}
-                    </option>
-                  );
-                })}
-              </select>
-            </div>
-            {currentComposedMnthData?.length == 0 && (
+            {currentMnthData?.length == 0 && (
               <h2
                 className={styles.noDataAlert}
                 style={{ color: "red", textAlign: "center" }}
               >
-                Sorry, there are no orders in {composedCurrentMonth}{" "}
-                {composedCurrentYear}!
+                Sorry, there are no orders in {currentMonth} {currentYear}!
               </h2>
             )}
-            {currentComposedMnthData?.length !== 0 && (
+            {currentMnthData?.length !== 0 && (
               <props.ComposedChartApp
                 height={300}
                 width="100%"
-                data={currentComposedMnthData}
+                data={currentMnthData}
                 horizontalDataKey="orderID"
                 gridStrokeDasharray="5 5"
                 composedGraphArray={composedGraphArray}
