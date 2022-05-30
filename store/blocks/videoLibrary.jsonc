@@ -1,0 +1,61 @@
+{
+  "store.custom#videoLibrary":{
+    "children":[
+      "list-context.media-list#demo"
+      //"video#background"
+    ]
+  },
+   "list-context.media-list#demo": {
+    "children": ["slider-layout#demo-media"],
+    "props": {
+      "height": 450,
+      "mediaList": [
+        {
+          "video": "https://www.youtube.com/embed/JgkrlaF52WQ",
+          "width": "1200px",
+          "height": "400px",
+          "muted":true,
+          "autoPlay": true,
+          "loop": false
+        },
+        {
+          "video": "https://www.youtube.com/watch?v=hndKhbphaW8",
+          "width": "1200px",
+          "height": "400px",
+          "muted":true
+        },
+        {
+          "video": "https://www.youtube.com/watch?v=FzJYJw1g0EI",
+          "width": "1200px",
+          "height": "400px",
+          "muted":true
+        }
+      ]
+    }
+ },
+  "slider-layout#demo-media": {
+    "props": {
+      "itemsPerPage":{
+        "desktop": 1,
+        "tablet": 1,
+        "phone": 1
+      },
+      "infinite": true,
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "carousel"
+    }
+  }
+
+  // "video#background": {
+  //   "props": {
+  //     "width": "100%",
+  //     "height": "600px",
+  //     "loop": false,
+  //     "autoPlay": true,
+  //     "muted": false,
+  //     "src": "https://www.youtube.com/embed/JgkrlaF52WQ",
+  //     "blockClass": "videoEl"
+  //   }
+  // }
+
+}
