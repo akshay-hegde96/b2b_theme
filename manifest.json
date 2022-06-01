@@ -9,8 +9,7 @@
     "store": "0.x",
     "checkout-ui-custom": "0.x",
     "react": "3.x",
-    "messages": "1.x",
-    "admin": "0.x"
+    "messages": "1.x"
   },
   "scripts": {
     "postreleasy": "vtex publish --verbose"
@@ -97,7 +96,8 @@
     "vtex.locale-switcher": "0.x",
     "echidna.react-chart": "0.x",
     "vtex.sandbox": "0.x",
-    "vtex.orders-graphql": "0.x"
+    "vtex.orders-graphql": "0.x",
+    "vtex.store-media": "0.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }
