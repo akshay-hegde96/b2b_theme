@@ -91,5 +91,8 @@
   },
   "store.custom#analyticsReports":{
     "path": "/analytics"
+  },
+  "store.custom#videoLibrary":{
+    "path":"/videoLibrary"
   }
 }
