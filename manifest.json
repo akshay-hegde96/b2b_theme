@@ -9,8 +9,7 @@
     "store": "0.x",
     "checkout-ui-custom": "0.x",
     "react": "3.x",
-    "messages": "1.x",
-    "admin": "0.x"
+    "messages": "1.x"
   },
   "scripts": {
     "postreleasy": "vtex publish --verbose"
@@ -25,7 +24,8 @@
     "vtex.store-locator": "0.x",
     "vtex.availability-notify": "1.x",
     "vtex.questions-and-answers": "0.x",
-    "echidna.charts": "0.x"
+    "echidna.charts": "0.x",
+    "vtexarg.product-highlight-by-vtex-segment": "0.x"
   },
   "dependencies": {
     "vtex.store": "2.x",

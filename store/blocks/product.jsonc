@@ -47,6 +47,9 @@
 
     ]
   },
+  "flex-layout.row#productHighlight":{
+"children":["product-highlight-by-vtex-segment"]
+  },
   "flex-layout.row#questions-and-answers":{
     "children": ["flex-layout.col#questions-and-answers"]
   },
