@@ -1,6 +1,6 @@
 {
   "flex-layout.col#left-col": {
-    "children": ["product-images#desktop"],
+    "children": ["product-images#desktop", "upload-file"],
     "props": {
       "blockClass": "left-col"
     }
