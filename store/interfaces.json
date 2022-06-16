@@ -21,8 +21,25 @@
   "blogsList": {
     "component": "BlogsListing"
   },
-
-  "submitButton":{
+  "blogsSEO": {
+    "component": "BlogSEO"
+  },
+  "orderConfigForm":{
     "component":"OrderConfig"
+  },
+  "mychart":{
+    "component":"Chart"
+  },
+  "questions-answers-storage":{
+    "component":"QnaStorage"
+  },
+  "localeSwitcherApp":{
+    "component":"LocaleSwitcher"
+  },
+  "chart-data":{
+    "component":"ChartData"
+  },
+  "analytics":{
+    "component":"AnalyticsReports"
   }
 }

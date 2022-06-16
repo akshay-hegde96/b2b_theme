@@ -13,7 +13,7 @@
     ],
     "props": {
       "simulationBehavior": "skip",
-      "maxSuggestedProducts": 6,
+      "maxSuggestedProducts": 3,
       "customBreakpoints": {
         "md": {
           "width": 100

@@ -77,8 +77,22 @@
   "store.custom#sales-page": {
     "path": "/sales"
   },
+  "store.custom#echidnadashboard": {
+    "path": "/echidnadashboard"
+  },
   "store.custom#blog-listing-page": {
     "path": "/blogs"
+  },
+  "store.custom#qnaStorage":{
+    "path": "/qnaStorage"
+  },
+  "store.custom#dashboard":{
+    "path": "/dashboard"
+  },
+  "store.custom#analyticsReports":{
+    "path": "/analytics"
+  },
+  "store.custom#videoLibrary":{
+    "path":"/videoLibrary"
   }
-
 }

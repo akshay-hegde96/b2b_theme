@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "react-intl": "3"
+  },
+  "devDependencies": {
+    "@types/react-intl": "3"
+  }
+}

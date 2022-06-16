@@ -1,0 +1,54 @@
+.reactChartRow {
+    display: flex;
+    justify-content: space-around;
+}
+
+.reactChartCol {
+    width: 50%;
+    height: 50%;
+    margin: 20px 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 5px 0px rgb(135, 206, 235);
+    border-radius: 10px;
+}
+
+.reactPieChartCol {
+    width: 40%;
+    height: 40%;
+    margin: 40px 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 5px 0px rgb(135, 206, 235);
+    border-radius: 10px;
+}
+
+.reactMonthChartOuterCol {
+    width: 90%;
+    height: 50%;
+    margin: 40px 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 5px 0px rgb(135, 206, 235);
+    border-radius: 10px;
+}
+
+.reactChartHeadings {
+    text-align: center;
+    color: rgb(135, 206, 235);
+}
+
+.reactDropdownContainer {
+    margin: 20px 20px;
+    padding: 10px 10px;
+    font-size: 15px;
+}
+
+.reactOption {
+    font-size: 15px;
+    color: rgb(31, 153, 201);
+    padding: 10px 0px;
+}
+
+.reactWarningStatus {
+    margin: 20px 20px;
+    color: rgb(255, 127, 127);
+    font-weight: normal;
+}

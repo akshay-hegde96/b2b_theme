@@ -5,7 +5,9 @@
   "responsive-layout.desktop": {
     "children": [
       "flex-layout.row#imageList",
+      "__fold__.experimentalLazyAssets",
       "flex-layout.row#shopByCategory",
+      "__fold__.desktop",
       // Deprecated
       // "flex-layout.row#shopByBrand",
       "flex-layout.row#shelf1",

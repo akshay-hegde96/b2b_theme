@@ -59,6 +59,13 @@
     }
   },
 
+  "search-bar#desktop":{
+    "props": {
+      "openAutocompleteOnFocus": true,
+      "blockClass": "searchMobile"
+    }
+  },
+
   "flex-layout.row#headerStripe": {
     "props": {
       "blockClass": "headerStripe",
@@ -76,7 +83,9 @@
       "rich-text#headStripe5",
       "flex-layout.col#orderConfig",
       "flex-layout.col#spacer",
-      "check-permission#reseller"
+      "check-permission#reseller",
+      "localeSwitcherApp"
+
     ]
   },
 
@@ -128,7 +137,6 @@
     "children": ["order-config.title#header", "order-config.modal#header"],
     "props": {
       "showInTitle": false,
-      "blockClass": "orderConfigForm",
       "formFields": [
         {
           "name": "orderType",
@@ -146,54 +154,9 @@
               "value": "consumption"
             }
           ]
-        },
-        {
-          "name": "state",
-          "type": "string",
-          "fieldType": "select",
-          "label": "State",
-          "showInTitle": true,
-          "defaultValue": "US",
-          "options": [
-            {
-              "label": "United State",
-              "value": "US"
-            },
-            {
-              "label": "Russia",
-              "value": "RUS"
-            },
-            {
-              "label": "Brazil",
-              "value": "BRZ"
-            }
-          ]
-        },
-        {
-          "name": "paymentMethod",
-          "type": "string",
-          "fieldType": "radio",
-          "label": "Payment Method",
-          "defaultValue": "Visa",
-          "options": [
-            {
-              "label": "Visa",
-              "value": "visa"
-            },
-            {
-              "label": "Master Card",
-              "value": "masterCard"
-            },
-            {
-              "label": "American Express",
-              "value": "americanExpress"
-            },
-            {
-              "label": "Mestro",
-              "value": "mestro"
-            }
-          ]
         }
+
+
       ]
     }
   },
@@ -206,52 +169,15 @@
   },
 
   "order-config.modal#header": {
-    "children": ["order-config.form"],
-    "props": {
-      "blockClass": "modal"
-    }
+    "children": ["order-config.form"]
+
   },
 
   "order-config.form":{
     "children":[
-      "flex-layout.row#state-and-payment-method",
-      //"order-config.text#some-text-input",
-      "submitButton"
-      //"order-config.submit"
-    ]
+         "orderConfigForm"
+         ]
   },
-
-
-  "flex-layout.row#state-and-payment-method": {
-    "children": [
-      "order-config.radiogroup#orderType",
-      "order-config.dropdown#state",
-      "order-config.radiogroup#payment-method"
-    ],
-    "props": {
-      "blockClass": "stateAndPaymentMethod"
-    }
-  },
-  "order-config.radiogroup#orderType":{
-    "props":{
-      "pointer": "#/properties/orderType"
-    }
-  },
-
-
-  "order-config.dropdown#state": {
-    "props": {
-      "pointer": "#/properties/state"
-    }
-  },
-
-  "order-config.radiogroup#payment-method": {
-    "props": {
-      "pointer": "#/properties/paymentMethod",
-      "blockClass":"payment"
-    }
-  },
-
 
   //========== Order Configuration Ends============
 

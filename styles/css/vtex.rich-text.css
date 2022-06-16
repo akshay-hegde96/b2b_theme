@@ -697,3 +697,9 @@
 }
 
 /* -------------------------------------------------------------- */
+.container--dashboard-heading{
+display: flex;
+justify-content: center;
+background-color: #16113a;
+color: white;
+}

@@ -3,6 +3,7 @@
     "props": {
       "blockClass": "flexCol",
       "orientation": "vertical",
+      "experimentalOptimizeRendering": true,
       "items": [
         {
           "id": "footerItem-nismo",
@@ -101,6 +102,7 @@
   "vtex.menu@2.x:menu#about-us": {
     "props": {
       "blockClass": "flexCol",
+      "experimentalOptimizeRendering": true,
       "items": [
         {
           "id": "footerItem-ourcompnay",
@@ -179,6 +181,32 @@
             "tagTitle": "about-us",
             "text": "Locations"
           }
+        },
+        {
+          "id": "footerItem-dashboard",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/dashboard",
+            "noFollow": false,
+            "tagTitle": "DashBoard",
+            "text": "DashBoard"
+          }
+        },
+        {
+          "id": "footerItem-echidnaDashboard",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/echidnadashboard",
+            "noFollow": false,
+            "tagTitle": "EchidnaDashBoard",
+            "text": "EchidnaDashBoard"
+          }
         }
       ]
     }
@@ -186,6 +214,7 @@
   "vtex.menu@2.x:menu#costumer": {
     "props": {
       "blockClass": "flexCol",
+      "experimentalOptimizeRendering": true,
       "items": [
         {
           "id": "footerItem-help",
@@ -265,7 +294,33 @@
             "tagTitle": "Store Pickup",
             "text": "Store Pickup"
           }
+        },
+        {
+          "id": "qna-storage",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/qnaStorage",
+            "noFollow": false,
+            "tagTitle": "Questions & Answers",
+            "text": "Questions & Answers"
+          }
+        },
+        {
+        "id": "g-analytics",
+        "type": "custom",
+        "iconId": null,
+        "highlight": false,
+        "itemProps": {
+          "type": "internal",
+          "href": "/analytics",
+          "noFollow": false,
+          "tagTitle": "Analytics Reports",
+          "text": "Analytics Reports"
         }
+      }
       ]
     }
   }
