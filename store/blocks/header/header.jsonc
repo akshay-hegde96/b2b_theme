@@ -41,9 +41,24 @@
       "drawer",
       "flex-layout.col#logo-desktop",
       "flex-layout.col#search-bar",
+      "flex-layout.col#text-speech",
       "login",
       "minicart.v2"
     ]
+  },
+  "flex-layout.col#text-speech": {
+    "children": [
+      "speech-to-text"
+    ]
+  },
+  "speech-to-text": {
+    "props": {
+      "lang": "es-ES",
+      "iconHeight": "20px",
+      "iconWidth": "20px",
+      "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Font_Awesome_5_solid_microphone.svg",
+      "blockClass": "echidnaSpeach"
+    }
   },
 
   "flex-layout.col#search-bar": {
