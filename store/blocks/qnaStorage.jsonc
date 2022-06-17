@@ -1,7 +1,33 @@
 {
   "store.custom#qnaStorage": {
     "blocks": [
-      "questions-answers-storage"
+      "check-permission#qnaBlock"
     ]
+  },
+  "check-permission#qnaBlock": {
+    "props": {
+      "roles": [
+        "store-admin",
+        "sales-admin",
+        "sales-manager",
+        "sales-representative",
+        "customer-admin",
+        "customer-approver",
+        "customer-buyer"
+      ]
+    },
+    "blocks": ["allowed-content#qnaBlock", "disallowed-content#qnaBlock"]
+  },
+  "allowed-content#qnaBlock": {
+    "children": ["questions-answers-storage"]
+  },
+  "disallowed-content#qnaBlock": {
+    "children": ["rich-text#qnaBlock"]
+  },
+  "rich-text#qnaBlock": {
+    "props": {
+      "blockClass":"qna-disallowed-msg" ,
+      "text": "## Log in or sign up to view this page"
+    }
   }
 }
