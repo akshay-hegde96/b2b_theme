@@ -1,12 +1,9 @@
 {
-  "challenge-permission#product-summary-price": {
+  "check-permission#product-summary-price": {
     "blocks": [
       "allowed-content#product-summary-price",
       "disallowed-content#product-summary-price"
-    ],
-    "props": {
-      "permissions": [{ "name": "view_prices" }]
-    }
+    ]
   },
   "allowed-content#product-summary-price": {
     "children": ["product-summary-price"]

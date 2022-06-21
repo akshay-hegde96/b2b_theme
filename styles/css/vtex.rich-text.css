@@ -703,3 +703,13 @@ justify-content: center;
 background-color: #16113a;
 color: white;
 }
+
+.container--qna-disallowed-msg{
+  display: flex;
+  justify-content: center;
+}
+.headingLevel2--qna-disallowed-msg{
+  color: #597298;
+  border: 5px double #597298;
+  padding: 25px;
+}

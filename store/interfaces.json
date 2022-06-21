@@ -41,5 +41,8 @@
   },
   "analytics":{
     "component":"AnalyticsReports"
+  },
+  "image-hotspot":{
+    "component":"ImageHotspotWrapper"
   }
 }
