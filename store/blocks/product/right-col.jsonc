@@ -3,12 +3,14 @@
     "children": [
       "flex-layout.row#brand-and-rating",
       "flex-layout.row#product-name",
+
       "flex-layout.row#product-identifier",
       // "flex-layout.row#sku-selector",
       "condition-layout.product#sku-selector-or-list",
       "flex-layout.row#assembly-options",
       //"location-context"
-      "condition-layout.product#availability"
+      "condition-layout.product#availability",
+      "product-specification-group#table"
       // "flex-layout.row#link-seller"
     ],
     "props": {
@@ -97,6 +99,7 @@
     "children": [
       //"availability-subscriber",
       "availability-notify"
+
     ]
   }
 }

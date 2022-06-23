@@ -25,7 +25,8 @@
     "vtex.storefront-permissions": "1.x",
     "vtex.availability-notify": "1.x",
     "vtex.questions-and-answers": "0.x",
-    "echidna.charts": "0.x"
+    "echidna.charts": "0.x",
+    "vtexarg.product-highlight-by-vtex-segment": "0.x"
   },
   "dependencies": {
     "vtex.store": "2.x",

@@ -7,6 +7,7 @@
       "flex-layout.row#stackSavings",
       "product-summary-brand",
       "product-summary-name",
+      "flex-layout.row#productHighlight",
       //"product-summary-sku-name",
       //"product-rating-summary",
       "product-rating-inline",

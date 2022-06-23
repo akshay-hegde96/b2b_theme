@@ -1,6 +1,6 @@
 {
   "flex-layout.col#left-col": {
-    "children": ["product-images#desktop"],
+    "children": ["image-hotspot"],
     "props": {
       "blockClass": "left-col"
     }
