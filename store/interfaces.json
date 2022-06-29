@@ -44,5 +44,8 @@
   },
   "image-hotspot":{
     "component":"ImageHotspotWrapper"
+  },
+  "po-number":{
+    "component":"POnumber"
   }
 }
