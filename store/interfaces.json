@@ -47,5 +47,8 @@
   },
   "po-number":{
     "component":"POnumber"
+  },
+  "my-orders-extra-actions.show-id-button": {
+    "component": "ShowIdButton"
   }
 }
