@@ -35,16 +35,6 @@ const Chart = (props) => {
     const yearNames = ["2021", "2022"];
     const [currentBarYear, setBarYear] = useState(yearNames[0]);
     const [currentBarMonth, setBarMonth] = useState(monthNames[0]);
-
-    const [currentLineYear, setLineYear] = useState(yearNames[0]);
-    const [currentLineMonth, setLineMonth] = useState(monthNames[0]);
-
-    const [currentRefYear, setRefYear] = useState(yearNames[0]);
-    const [currentRefMonth, setRefMonth] = useState(monthNames[0]);
-
-    const [currentPieYear, setPieYear] = useState(yearNames[0]);
-    const [currentPieMonth, setPieMonth] = useState(monthNames[0]);
-
     const [CatArr, setCatArr] = useState([]);
 
     const orderStatus = [
@@ -80,44 +70,23 @@ const Chart = (props) => {
             value: eachOrder.value,
             status: eachOrder.status,
             orderID: eachOrder.orderId,
+            productID: eachOrder.productIds,
+            totalItems: eachOrder.totalItems,
         };
     });
-    console.log("allmnthsData", allmnthsData);
+    console.log("## allmnthsData", allmnthsData);
     const orderBymnthsData = allmnthsData?.reverse();
 
-    const selectBarMnthHandler = (e) => { const selectedmnth = e.target.value; setBarMonth(selectedmnth); };
-    const selectBarYearHandler = (e) => { const selectedYear = e.target.value; setBarYear(selectedYear); };
+    const selectBarMnthHandler = (e) => { const selectedmnth = e.target.value; setBarMonth(selectedmnth); setCatArr([]); setLoadingCat(true); };
+    const selectBarYearHandler = (e) => { const selectedYear = e.target.value; setBarYear(selectedYear); setCatArr([]); setLoadingCat(true); };
 
-    const selectLineMnthHandler = (e) => { const selectedmnth = e.target.value; setLineMonth(selectedmnth); };
-    const selectLineYearHandler = (e) => { const selectedYear = e.target.value; setLineYear(selectedYear); };
-
-    const selectRefMnthHandler = (e) => { const selectedmnth = e.target.value; setRefMonth(selectedmnth); };
-    const selectRefYearHandler = (e) => { const selectedYear = e.target.value; setRefYear(selectedYear); };
-
-    const selectPieMnthHandler = (e) => { const selectedmnth = e.target.value; setPieMonth(selectedmnth); };
-    const selectPieYearHandler = (e) => { const selectedYear = e.target.value; setPieYear(selectedYear); };
 
     const currentBarMnthData = orderBymnthsData?.filter(
         (MnthOrder) => MnthOrder.orderMonth == currentBarMonth && MnthOrder.orderYear == currentBarYear);
-    const currentLineMnthData = orderBymnthsData?.filter(
-        (MnthOrder) => MnthOrder.orderMonth == currentLineMonth && MnthOrder.orderYear == currentLineYear);
-    const currentRefMnthData = orderBymnthsData?.filter(
-        (MnthOrder) => MnthOrder.orderMonth == currentRefMonth && MnthOrder.orderYear == currentRefYear);
-    const currentPieMnthData = orderBymnthsData?.filter(
-        (MnthOrder) => MnthOrder.orderMonth == currentPieMonth && MnthOrder.orderYear == currentPieYear);
     console.log("## currentBarMnthData", currentBarMnthData);
 
     const monthlyBarValue = currentBarMnthData?.map(getOrderValue);
     const monthBarOrderID = currentBarMnthData?.map(getOrderID);
-
-    const monthlyLineValue = currentLineMnthData?.map(getOrderValue);
-    const monthLineOrderID = currentLineMnthData?.map(getOrderID);
-
-    const monthlyRefValue = currentRefMnthData?.map(getOrderValue);
-    const monthRefOrderID = currentRefMnthData?.map(getOrderID);
-
-    const monthlyPieValue = currentPieMnthData?.map(getOrderValue);
-    const monthPieOrderID = currentPieMnthData?.map(getOrderID);
 
     function getOrderID(item) {
         return item.orderID;
@@ -134,20 +103,20 @@ const Chart = (props) => {
             backgroundColor: 'rgba(255, 99, 132, 0.5)',
         }
     ];
-    const MonthLineChartlabelsName = monthLineOrderID;
+    const MonthLineChartlabelsName = monthBarOrderID;
     const MonthLineChartDataset = [
         {
             label: 'Order ID',
-            data: monthlyLineValue,
+            data: monthlyBarValue,
             borderColor: 'rgb(255, 99, 132)',
             backgroundColor: 'rgba(255, 99, 132, 0.5)',
         }
     ];
-    const MonthPieChartlabelsName = monthPieOrderID;
+    const MonthPieChartlabelsName = monthBarOrderID;
     const MonthPieChartDataset = [
         {
             label: 'OrderId',
-            data: monthlyPieValue,
+            data: monthlyBarValue,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -159,7 +128,7 @@ const Chart = (props) => {
             borderWidth: 1,
         },
     ];
-    const MonthRefChartlabelsName = monthRefOrderID;
+    const MonthRefChartlabelsName = monthBarOrderID;
     const MonthRefChartDataset = [
         {
             type: 'line',
@@ -167,13 +136,13 @@ const Chart = (props) => {
             borderColor: 'rgb(255, 99, 132)',
             borderWidth: 2,
             fill: false,
-            data: monthlyRefValue,
+            data: monthlyBarValue,
         },
         {
             type: 'bar',
             label: 'OrderId Bar',
             backgroundColor: 'rgb(75, 192, 192)',
-            data: monthlyRefValue,
+            data: monthlyBarValue,
             borderColor: 'white',
             borderWidth: 2,
         }
@@ -269,9 +238,8 @@ const Chart = (props) => {
     //----------------------------------------------------------------------------
 
     //================ For category name vs totalproducts chart ==================
-    const productId = ordersData?.map((prod) => prod.productIds);
+    const productId = currentBarMnthData?.map((prod) => prod.productID);
     let newArr = productId?.join(",").split(",");
-    console.log(newArr);
     const productURL = newArr?.map(
         (arr) => "/api/catalog/pvt/product/" + `${arr}`
     );
@@ -282,15 +250,13 @@ const Chart = (props) => {
             productURL?.map((url) => fetch(url).then((r) => r.json()))
         );
         const result2 = await result?.map((cat) => cat.CategoryId);
-        console.log(result2);
-
         const resCatname = await Promise.all(
             result2.map((catid) =>
                 fetch(`/api/catalog/pvt/category/${catid}`).then((res) => res.json())
             )
         );
         const catNameRes = await resCatname?.map((category) => category.Name);
-        console.log("catNameRes", catNameRes);
+        console.log("## catNameRes", catNameRes);
         CategoryArr.push(...catNameRes);
     }
 
@@ -299,12 +265,9 @@ const Chart = (props) => {
             CategoryArr.forEach((element) => {
                 CatCount[element] = (CatCount[element] || 0) + 1;
             });
-        console.log("CatCount", CatCount);
-
         for (const char in CatCount) {
             newCatArrData.push({ name: `${char}`, products: CatCount[char] });
         }
-        console.log("newCatArrData", newCatArrData);
 
         if (newCatArrData.length > 0) {
             console.log("setdata", newCatArrData);
@@ -321,6 +284,7 @@ const Chart = (props) => {
     async function datahandler() {
         await fetchAll();
         await processFetchedData();
+        CatArr.length > 0 && setLoadingCat(false);
     }
 
     datahandler();
@@ -470,7 +434,6 @@ const Chart = (props) => {
                 <div className={styles.reactChartRow}>
                     <div className={styles.reactMonthChartOuterCol}>
                         <div>
-                            <h3 className={styles.reactChartHeadings}>Bar Chart</h3>
                             <span>Filter By Year and Month : </span>
                             <select name="orderYear" id="orderYear" value={currentBarYear}
                                 onChange={selectBarYearHandler} className={styles.reactDropdownContainer} >
@@ -499,213 +462,115 @@ const Chart = (props) => {
                                 <span style={{ "font-weight": "bold", "text-decoration": "underline", "text-decoration-color": "red" }}>{currentBarMonth} - {currentBarYear}</span> !!
                             </h2>
                         )}
-                        {currentBarMnthData?.length !== 0 && (
+                        {currentBarMnthData?.length !== 0 && CatArr.length > 0 ? (
                             <div>
                                 <div className={styles.reactChartRow}>
-                                    <div className={styles.reactMonthChartCol}>
+                                    <div className={styles.reactChartCol}>
+                                        <h3 className={styles.reactChartHeadings}>Bar Chart</h3>
                                         <props.BarChart className={styles.BarChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={MonthBarChartDataset}
                                             titleText="Echidna Sales Bar Chart" labelsName={MonthBarChartlabelsName} ></props.BarChart>
                                     </div>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                    <div className={styles.reactMonthChartOuterCol}>
-                        <div>
-                            <h3 className={styles.reactChartHeadings}>Customer Orders</h3>
-                            <span>Filter By Year and Month : </span>
-                            <select name="orderYear" id="orderYear" value={currentLineYear}
-                                onChange={selectLineYearHandler} className={styles.reactDropdownContainer} >
-                                {yearNames.map((year, i) => {
-                                    return (
-                                        <option key={i} value={year}>
-                                            {year}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                            <select name="orderMonth" id="orderMonth" value={currentLineMonth}
-                                onChange={selectLineMnthHandler} className={styles.reactDropdownContainer} >
-                                {monthNames.map((month, i) => {
-                                    return (
-                                        <option key={i} value={month}>
-                                            {month}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                        </div>
-                        {currentLineMnthData?.length == 0 && (
-                            <h2 className={styles.reactWarningStatus} >
-                                Sorry, there are no orders in {" "}
-                                <span style={{ "font-weight": "bold", "text-decoration": "underline", "text-decoration-color": "red" }}>{currentLineMonth} - {currentLineYear}</span> !!
-                            </h2>
-                        )}
-                        {currentLineMnthData?.length !== 0 && (
-                            <div>
-                                <div className={styles.reactChartRow}>
-                                    <div className={styles.reactMonthChartCol}>
+                                    <div className={styles.reactChartCol}>
+                                        <h3 className={styles.reactChartHeadings}>Line Chart</h3>
                                         <props.LineChart className={styles.LineChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={MonthLineChartDataset}
                                             titleText="Echidna Sales Line Chart" labelsName={MonthLineChartlabelsName} ></props.LineChart>
                                     </div>
                                 </div>
-                            </div>
-                        )}
-                    </div>
-                </div>
-                <div className={styles.reactChartRow}>
-                    <div className={styles.reactMonthChartOuterCol}>
-                        <div>
-                            <h3 className={styles.reactChartHeadings}>Ref Chart</h3>
-                            <span>Filter By Year and Month : </span>
-                            <select name="orderYear" id="orderYear" value={currentRefYear}
-                                onChange={selectRefYearHandler} className={styles.reactDropdownContainer} >
-                                {yearNames.map((year, i) => {
-                                    return (
-                                        <option key={i} value={year}>
-                                            {year}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                            <select name="orderMonth" id="orderMonth" value={currentRefMonth}
-                                onChange={selectRefMnthHandler} className={styles.reactDropdownContainer} >
-                                {monthNames.map((month, i) => {
-                                    return (
-                                        <option key={i} value={month}>
-                                            {month}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                        </div>
-                        {currentRefMnthData?.length == 0 && (
-                            <h2 className={styles.reactWarningStatus} >
-                                Sorry, there are no orders in {" "}
-                                <span style={{ "font-weight": "bold", "text-decoration": "underline", "text-decoration-color": "red" }}>{currentRefMonth} - {currentRefYear}</span> !!
-                            </h2>
-                        )}
-                        {currentRefMnthData?.length !== 0 && (
-                            <div>
                                 <div className={styles.reactChartRow}>
-                                    <div className={styles.reactMonthChartCol}>
+                                    <div className={styles.reactChartCol}>
+                                        <h3 className={styles.reactChartHeadings}>Ref Chart</h3>
                                         <props.ChartRef className={styles.ChartRef} legendPosition="bottom" responsive="true" displayTitle="true" dataset={MonthRefChartDataset}
                                             titleText="Echidna Sales Ref Chart" labelsName={MonthRefChartlabelsName} ></props.ChartRef>
                                     </div>
+                                    <div className={styles.reactChartCol}>
+                                        <h3 className={styles.reactChartHeadings}>Product Category Bar Chart</h3>
+                                        <props.BarChart className={styles.BarChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={CatBarChartDataset}
+                                            titleText="Echidna Sales Bar Chart" labelsName={CatBarChartlabelsName} ></props.BarChart>
+                                    </div>
                                 </div>
-                            </div>
-                        )}
-                    </div>
-                    <div className={styles.reactMonthChartOuterCol}>
-                        <div>
-                            <h3 className={styles.reactChartHeadings}>Order ID Pie Chart</h3>
-                            <span>Filter By Year and Month : </span>
-                            <select name="orderYear" id="orderYear" value={currentPieYear}
-                                onChange={selectPieYearHandler} className={styles.reactDropdownContainer} >
-                                {yearNames.map((year, i) => {
-                                    return (
-                                        <option key={i} value={year}>
-                                            {year}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                            <select name="orderMonth" id="orderMonth" value={currentPieMonth}
-                                onChange={selectPieMnthHandler} className={styles.reactDropdownContainer} >
-                                {monthNames.map((month, i) => {
-                                    return (
-                                        <option key={i} value={month}>
-                                            {month}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                        </div>
-                        {currentPieMnthData?.length == 0 && (
-                            <h2 className={styles.reactWarningStatus} >
-                                Sorry, there are no orders in {" "}
-                                <span style={{ "font-weight": "bold", "text-decoration": "underline", "text-decoration-color": "red" }}>{currentPieMonth} - {currentPieYear}</span> !!
-                            </h2>
-                        )}
-                        {currentPieMnthData?.length !== 0 && (
-                            <div>
                                 <div className={styles.reactChartRow}>
-                                    <div className={styles.reactMonthChartCol}>
+                                <div className={styles.reactPieChartCol}>
+                                        <h3 className={styles.reactChartHeadings}>Order ID Pie Chart</h3>
                                         <props.PieChart className={styles.PieChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={MonthPieChartDataset}
                                             titleText="Echidna Sales Pie Chart" labelsName={MonthPieChartlabelsName} ></props.PieChart>
                                     </div>
                                 </div>
                             </div>
+                        ) : (
+                            currentBarMnthData?.length !== 0 && (
+                                <div>
+                                    <h2 style={{ color: "red" }}>
+                                        Please wait, while the data is Loading...
+                                    </h2>
+                                </div>
+                            )
                         )}
                     </div>
                 </div>
                 <div className={styles.reactChartRow}>
-                    <div className={styles.reactCategoryChartCol}>
-                        <h3 className={styles.reactChartHeadings}>Product Category Bar Chart</h3>
-                        <props.BarChart className={styles.BarChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={CatBarChartDataset}
-                            titleText="Echidna Sales Bar Chart" labelsName={CatBarChartlabelsName} ></props.BarChart>
+                    <div className={styles.reactMonthChartOuterCol}>
+                        <select name="orderMonth" id="orderMonth" value={currentStatus} onChange={statusHandler} className={styles.reactDropdownContainer} >
+                            {orderStatus.map((orderData, i) => {
+                                return (
+                                    <option key={i} value={orderData} className={styles.reactOption} >
+                                        {orderData}
+                                    </option>
+                                );
+                            })}
+                        </select>
+                        {selectedStatus?.length == 0 ? (
+                            <div className={styles.reactWarningStatus}>
+                                {" "}
+                                <h2>
+                                    Sorry, there are no orders in{" "}
+                                    <span style={{ "font-weight": "bold", "text-decoration": "underline", "text-decoration-color": "red" }}>"{currentStatus}"</span> status !!
+                                </h2>
+                            </div>
+                        ) : (
+                            <div>
+                                <div className={styles.reactChartRow}>
+                                    <div className={styles.reactChartCol}>
+                                        <h3 className={styles.reactChartHeadings}>Bar Chart</h3>
+                                        <props.BarChart className={styles.BarChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={BarChartDataset}
+                                            titleText="Echidna Sales Bar Chart" labelsName={BarChartlabelsName} ></props.BarChart>
+                                    </div>
+                                    <div className={styles.reactChartCol}>
+                                        <h3 className={styles.reactChartHeadings}>Line Chart</h3>
+                                        <props.LineChart className={styles.LineChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={LineChartDataset}
+                                            titleText="Echidna Sales Line Chart" labelsName={LineChartlabelsName} ></props.LineChart>
+                                    </div>
+                                    <div className={styles.reactChartCol}>
+                                        <h3 className={styles.reactChartHeadings}>Ref Chart</h3>
+                                        <props.ChartRef className={styles.ChartRef} legendPosition="bottom" responsive="true" displayTitle="true" dataset={RefChartDataset}
+                                            titleText="Echidna Sales Ref Chart" labelsName={RefChartlabelsName} ></props.ChartRef>
+                                    </div>
+                                </div>
+                                <div className={styles.reactChartRow}>
+                                    <div className={styles.reactPieChartCol}>
+                                        <h3 className={styles.reactChartHeadings}>Order Status Pie Chart</h3>
+                                        <props.PieChart className={styles.PieChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={StatusPieChartDataset}
+                                            titleText="Echidna Sales Pie Chart" labelsName={StatusPieChartlabelsName} ></props.PieChart>
+                                    </div>
+                                    <div className={styles.reactPieChartCol}>
+                                        <h3 className={styles.reactChartHeadings}>Order ID Pie Chart</h3>
+                                        <props.PieChart className={styles.PieChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={PieChartDataset}
+                                            titleText="Echidna Sales Pie Chart" labelsName={PieChartlabelsName} ></props.PieChart>
+                                    </div>
+                                </div>
+                                <div className={styles.reactChartRow}>
+                                    <div className={styles.reactChartCol}>
+                                        <h3 className={styles.reactChartHeadings}>Scatter Chart</h3>
+                                        <props.ScatterChart className={styles.ScatterChart} beginAtZero="true" dataset={ScatterChartDataset} ></props.ScatterChart>
+                                    </div>
+                                    <div className={styles.reactChartCol}>
+                                        <h3 className={styles.reactChartHeadings}>Bubble Chart</h3>
+                                        <props.BubbleChart className={styles.BubbleChart} beginAtZero="true" dataset={BubbleChartDataset} ></props.BubbleChart>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
-                <select name="orderMonth" id="orderMonth" value={currentStatus} onChange={statusHandler} className={styles.reactDropdownContainer} >
-                    {orderStatus.map((orderData, i) => {
-                        return (
-                            <option key={i} value={orderData} className={styles.reactOption} >
-                                {orderData}
-                            </option>
-                        );
-                    })}
-                </select>
-                {selectedStatus?.length == 0 ? (
-                    <div className={styles.reactWarningStatus}>
-                        {" "}
-                        <h2>
-                            Sorry, there are no orders in{" "}
-                            <span style={{ "font-weight": "bold", "text-decoration": "underline", "text-decoration-color": "red" }}>"{currentStatus}"</span> status !!
-                        </h2>
-                    </div>
-                ) : (
-                    <div>
-                        <div className={styles.reactChartRow}>
-                            <div className={styles.reactChartCol}>
-                                <h3 className={styles.reactChartHeadings}>Bar Chart</h3>
-                                <props.BarChart className={styles.BarChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={BarChartDataset}
-                                    titleText="Echidna Sales Bar Chart" labelsName={BarChartlabelsName} ></props.BarChart>
-                            </div>
-                            <div className={styles.reactChartCol}>
-                                <h3 className={styles.reactChartHeadings}>Line Chart</h3>
-                                <props.LineChart className={styles.LineChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={LineChartDataset}
-                                    titleText="Echidna Sales Line Chart" labelsName={LineChartlabelsName} ></props.LineChart>
-                            </div>
-                            <div className={styles.reactChartCol}>
-                                <h3 className={styles.reactChartHeadings}>Ref Chart</h3>
-                                <props.ChartRef className={styles.ChartRef} legendPosition="bottom" responsive="true" displayTitle="true" dataset={RefChartDataset}
-                                    titleText="Echidna Sales Ref Chart" labelsName={RefChartlabelsName} ></props.ChartRef>
-                            </div>
-                        </div>
-                        <div className={styles.reactChartRow}>
-                            <div className={styles.reactChartCol}>
-                                <h3 className={styles.reactChartHeadings}>Order Status Pie Chart</h3>
-                                <props.PieChart className={styles.PieChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={StatusPieChartDataset}
-                                    titleText="Echidna Sales Pie Chart" labelsName={StatusPieChartlabelsName} ></props.PieChart>
-                            </div>
-                            <div className={styles.reactChartCol}>
-                                <h3 className={styles.reactChartHeadings}>Order ID Pie Chart</h3>
-                                <props.PieChart className={styles.PieChart} legendPosition="bottom" responsive="true" displayTitle="true" dataset={PieChartDataset}
-                                    titleText="Echidna Sales Pie Chart" labelsName={PieChartlabelsName} ></props.PieChart>
-                            </div>
-                        </div>
-                        <div className={styles.reactChartRow}>
-                            <div className={styles.reactChartCol}>
-                                <h3 className={styles.reactChartHeadings}>Scatter Chart</h3>
-                                <props.ScatterChart className={styles.ScatterChart} beginAtZero="true" dataset={ScatterChartDataset} ></props.ScatterChart>
-                            </div>
-                            <div className={styles.reactChartCol}>
-                                <h3 className={styles.reactChartHeadings}>Bubble Chart</h3>
-                                <props.BubbleChart className={styles.BubbleChart} beginAtZero="true" dataset={BubbleChartDataset} ></props.BubbleChart>
-                            </div>
-                        </div>
-                    </div>
-                )}
             </div>
         </React.Fragment >
     )

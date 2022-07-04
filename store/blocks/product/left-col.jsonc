@@ -1,6 +1,10 @@
 {
   "flex-layout.col#left-col": {
+<<<<<<< HEAD
     "children": ["product-images#desktop", "upload-file"],
+=======
+    "children": ["image-hotspot"],
+>>>>>>> b2b_org
     "props": {
       "blockClass": "left-col"
     }

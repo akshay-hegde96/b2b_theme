@@ -1,0 +1,11 @@
+query getOrderGroup($orderGroup: String) {
+  orderGroup(orderGroup: $orderGroup) {
+orders{
+      customData{
+        customApps{
+          fields
+        }
+      }
+    }
+  }
+  }

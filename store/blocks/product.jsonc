@@ -21,7 +21,7 @@
       "flex-layout.row#description-and-gallery",
       "flex-layout.row#features",
       "flex-layout.row#specification",
-      "challenge-permission#sticky-buy",
+      "check-permission#sticky-buy",
       "flex-layout.row#reviews-and-ratings",
       "flex-layout.row#alsoView"
     ]
@@ -46,6 +46,9 @@
       "flex-layout.row#questions-and-answers"
 
     ]
+  },
+  "flex-layout.row#productHighlight":{
+"children":["product-highlight-by-vtex-segment"]
   },
   "flex-layout.row#questions-and-answers":{
     "children": ["flex-layout.col#questions-and-answers"]
