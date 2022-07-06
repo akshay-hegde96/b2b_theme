@@ -35,22 +35,19 @@
   "chart-data": {
     "component": "ChartData"
   },
-<<<<<<< HEAD
   "analytics": {
     "component": "AnalyticsReports"
   },
-
   "upload-file": {
     "component": "FileUploadWrapper"
-=======
-  "analytics":{
-    "component":"AnalyticsReports"
   },
-  "image-hotspot":{
-    "component":"ImageHotspotWrapper"
+  "image-hotspot": {
+    "component": "ImageHotspotWrapper"
   },
-  "po-number":{
-    "component":"POnumber"
->>>>>>> b2b_org
+  "po-number": {
+    "component": "POnumber"
+  },
+  "search-by-filter": {
+    "component": "SearchByFilterWrapper"
   }
 }
