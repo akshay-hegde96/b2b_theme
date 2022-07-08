@@ -43,9 +43,26 @@
       "flex-layout.row#features",
       "flex-layout.row#specification",
       "flex-layout.row#reviews-and-ratings",
-      "flex-layout.row#questions-and-answers"
+      "flex-layout.row#questions-and-answers",
+      "flex-layout.row#buy-together"
 
     ]
+  },
+  "flex-layout.row#buy-together": {
+    "children": ["recommendation-buy-together"]
+  },
+  "recommendation-buy-together": {
+    "blocks": ["buy-together"],
+    "props": {
+      "strategy": "BOUGHT_TOGETHER",
+      "secondaryStrategy": "ORDER_HISTORY",
+      "recommendation": {
+        "count": {
+          "minimum": 5,
+          "recommendations": 20
+        }
+      }
+    }
   },
   "flex-layout.row#productHighlight":{
 "children":["product-highlight-by-vtex-segment"]
