@@ -1,0 +1,5 @@
+{
+  "store.custom#searchFilter": {
+    "children": ["search-by-filter"]
+  }
+}

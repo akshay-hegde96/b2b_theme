@@ -1,13 +1,9 @@
 {
   "store.search.product-comparison": {
-    "around": [
-      "comparison-context-wrapper"
-    ]
+    "around": ["comparison-context-wrapper"]
   },
   "store.custom.product-comparison": {
-    "around": [
-      "comparison-context-wrapper"
-    ]
+    "around": ["comparison-context-wrapper"]
   },
   "b2b-department": {
     "component": "B2BDepartment"
@@ -24,29 +20,35 @@
   "blogsSEO": {
     "component": "BlogSEO"
   },
-  "orderConfigForm":{
-    "component":"OrderConfig"
+  "orderConfigForm": {
+    "component": "OrderConfig"
   },
-  "mychart":{
-    "component":"Chart"
+  "mychart": {
+    "component": "Chart"
   },
-  "questions-answers-storage":{
-    "component":"QnaStorage"
+  "questions-answers-storage": {
+    "component": "QnaStorage"
   },
-  "localeSwitcherApp":{
-    "component":"LocaleSwitcher"
+  "localeSwitcherApp": {
+    "component": "LocaleSwitcher"
   },
-  "chart-data":{
-    "component":"ChartData"
+  "chart-data": {
+    "component": "ChartData"
   },
-  "analytics":{
-    "component":"AnalyticsReports"
+  "analytics": {
+    "component": "AnalyticsReports"
   },
-  "image-hotspot":{
-    "component":"ImageHotspotWrapper"
+  "upload-file": {
+    "component": "FileUploadWrapper"
   },
-  "po-number":{
-    "component":"POnumber"
+  "image-hotspot": {
+    "component": "ImageHotspotWrapper"
+  },
+  "po-number": {
+    "component": "POnumber"
+  },
+  "search-by-filter": {
+    "component": "SearchByFilterWrapper"
   },
   "my-orders-extra-actions.show-id-button": {
     "component": "ShowIdButton"
