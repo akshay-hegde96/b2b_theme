@@ -13,7 +13,8 @@
   "flex-layout.col#text--gift-cards": {
     "children": [
       "rich-text#title--gift-cards",
-      "rich-text#institutional-placeholder"
+      "rich-text#institutional-placeholder",
+      "new-window-button"
     ],
     "props": {
       "blockclass": "textColumn",
@@ -25,6 +26,16 @@
     "props": {
       "text": "# Gift Cards",
       "blockClass": "title"
+    }
+  },
+
+  "new-window-button": {
+    "props": {
+      "buttonTitle": "Contact Us For More Details",
+      "url": "/contact",
+      "height": "580",
+      "width": "480",
+      "buttonVariation": "secondary"
     }
   }
 }
