@@ -829,3 +829,6 @@
   border: 1px solid #ccdff7;
   border-radius: 10px;
 }
+.flexColChild--left-col{
+  padding-right:75px;
+}
