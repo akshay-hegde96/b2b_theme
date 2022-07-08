@@ -14,10 +14,10 @@ const { data } = useQuery(getOrderGroup, {
   },
 })
 
-const orderData = data?.orderGroup?.orders?.map((cdata)=> cdata.customData).map((capp)=>capp.customApps[0])
-const POfields = orderData?.map((po)=>po.fields).map((p)=>p.purchaseOrderNumber)
+const orderData = data?.orderGroup?.orders?.map((cdata)=> cdata.customData)?.map((capp)=>capp.customApps[0])
+ const POfields = orderData?.map((po)=>po.fields)?.map((p)=>p.purchaseOrderNumber)
 
-console.log(POfields)
+// console.log(POfields)
 return(
   <div>
    <h3>Purchase Order: {POfields}</h3>

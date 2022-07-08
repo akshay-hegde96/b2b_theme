@@ -35,18 +35,23 @@ const urls = productContextValue?.product?.items?.map((products)=>products.image
 const url= urls[0].map((products)=>products.imageUrl);
 // console.log("aaaaa",productContextValue?.product?.items)
 
-// const [scale,setScale] = useState(1);
-// const zoomIn = () => {
-//  setScale(scale*2)
-// }
+const [scale,setScale] = useState(1);
+const zoomIn = () => {
+  if(scale<1.2){
+    setScale(scale+0.2)
+  }
+}
 
-// const zoomOut = () => {
-//  setScale(scale/2)
-// }
+const zoomOut = () => {
+  if(scale>1){
+    setScale(scale-0.2)
+  }
+}
+
     return (
       <React.Fragment>
-       <div  className={styles.imgHotspotContainer}>
-         {/* <div style={{transform:`scale(${scale})`, overflow:'scroll'}}> */}
+       <div  className={styles.imgHotspotContainer}  style={{transform:`scale(${scale})`}}>
+         {/* <div style={{transform:`scale(${scale})`}}> */}
            <ImageHotspots
               src={url[0]}
               alt='Product Image'
@@ -56,9 +61,9 @@ const url= urls[0].map((products)=>products.imageUrl);
               hideMinimap={true}
             />
          {/* </div> */}
-         <div>
-         {/* <button onClick={()=>zoomIn()}>Zoom in</button>
-          <button onClick={()=>zoomOut()}>Zoom out</button> */}
+         <div className={styles.buttonGroup}>
+         <button className={styles.zoomInButton} onClick={()=>zoomIn()}>+</button>
+         <button className={styles.zoomOutButton} onClick={()=>zoomOut()}>-</button>
          </div>
             {hotSpotText ?  <div className={styles.textContainer}>
             {hotSpotText}
@@ -66,9 +71,8 @@ const url= urls[0].map((products)=>products.imageUrl);
             :
           null
           }
- </div>
-
-       </React.Fragment>
+      </div>
+</React.Fragment>
     )
 
 }
