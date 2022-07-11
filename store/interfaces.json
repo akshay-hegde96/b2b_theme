@@ -52,5 +52,8 @@
   },
   "my-orders-extra-actions.show-id-button": {
     "component": "ShowIdButton"
+  },
+  "new-window-button": {
+    "component": "NewWindowButton"
   }
 }
