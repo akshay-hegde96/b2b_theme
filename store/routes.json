@@ -94,5 +94,9 @@
   },
   "store.custom#videoLibrary":{
     "path":"/videoLibrary"
+  },
+
+  "store.custom#SearchUI":{
+    "path":"/SearchUI"
   }
 }

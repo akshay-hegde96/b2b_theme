@@ -50,5 +50,9 @@
   },
   "my-orders-extra-actions.show-id-button": {
     "component": "ShowIdButton"
+  },
+
+  "SearchUI":{
+    "component": "SearchUI"
   }
 }
