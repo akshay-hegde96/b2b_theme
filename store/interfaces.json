@@ -56,5 +56,9 @@
 
   "SearchUI":{
     "component": "SearchUI"
+},
+  "new-window-button": {
+    "component": "NewWindowButton"
+
   }
 }

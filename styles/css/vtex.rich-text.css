@@ -713,3 +713,10 @@ color: white;
   border: 5px double #597298;
   padding: 25px;
 }
+
+.heading--titleQuickorder{
+  position: relative;
+    left: 200%;
+    margin-left: 100px;
+    padding: 13px 10px 14px 3px;
+}
