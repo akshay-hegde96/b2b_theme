@@ -83,13 +83,25 @@
   "store.custom#blog-listing-page": {
     "path": "/blogs"
   },
-  "store.custom#qnaStorage":{
+  "store.custom#qnaStorage": {
     "path": "/qnaStorage"
   },
-  "store.custom#dashboard":{
+  "store.custom#dashboard": {
     "path": "/dashboard"
   },
-  "store.custom#analyticsReports":{
+  "store.custom#analyticsReports": {
     "path": "/analytics"
+  },
+
+  "store.custom#SearchUI":{
+    "path":"/SearchUI"
+    },
+
+  "store.custom#videoLibrary": {
+    "path": "/videoLibrary"
+  },
+  "store.custom#searchFilter": {
+    "path": "/searchFilter"
+
   }
 }

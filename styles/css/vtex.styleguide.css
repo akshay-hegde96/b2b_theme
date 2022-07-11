@@ -29,3 +29,8 @@
 .dropdown {
   margin-right: 32px;
 }
+.jsFocusVisible{
+  border: 1px solid black;
+    padding: 16px 0px 35px 20px;
+    margin-bottom: 12px;
+}

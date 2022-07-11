@@ -18,3 +18,13 @@
     margin: 0;
   }
 }
+
+
+.downloadLink{
+  margin-right: 75px;
+  padding: 22px 22px 22px 1px;
+}
+.categoryButtonAdd{
+  padding-top: 5px;
+    margin-bottom: 30px;
+}
