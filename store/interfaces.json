@@ -41,5 +41,8 @@
   },
   "analytics":{
     "component":"AnalyticsReports"
+  },
+  "notification":{
+    "component":"Notification"
   }
 }

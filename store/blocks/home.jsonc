@@ -4,6 +4,8 @@
   },
   "responsive-layout.desktop": {
     "children": [
+      "notification#header",
+      "notification#promotions",
       "flex-layout.row#imageList",
       "__fold__.experimentalLazyAssets",
       "flex-layout.row#shopByCategory",
@@ -21,6 +23,19 @@
        "parent": {
            "challenge": "challenge.trade-policy-condition"
          }
+  },
+  "notification#promotions":{
+    "props":{
+      "type": "success",
+      "title": "Get Up To",
+      "message": "25% Off."
+    }
+  },
+  "notification#header":{
+    "props":{
+      "type": "header",
+      "message": "FREE SHIPPING: Applies to USA orders over $2000+ | excluding HI, PR, AK, and CAN."
+    }
   },
   "challenge.trade-policy-condition": {
     "props": {
