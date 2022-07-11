@@ -1,0 +1,25 @@
+.mainCotainer {
+  height: 100vh;
+  width: 100%;
+
+}
+
+.searchContainer {
+
+  width: 65%;
+  margin-left: 15%;
+}
+
+.cardsContainer {
+
+  /* padding: 5px;
+  margin-left: 10px;
+  display: grid;
+  grid: 160px / auto auto auto;
+  grid-gap: 20px; */
+margin-top: 10px;
+  display: flex;
+justify-content: center;
+}
+
+
