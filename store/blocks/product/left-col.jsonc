@@ -1,6 +1,6 @@
 {
   "flex-layout.col#left-col": {
-    "children": ["image-hotspot"],
+    "children": ["image-hotspot", "upload-file"],
     "props": {
       "blockClass": "left-col"
     }
