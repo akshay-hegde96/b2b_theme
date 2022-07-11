@@ -86,7 +86,10 @@
     }
   },
   "flex-layout.col#categories": {
-    "children": ["quickorder-categories"]
+    "children": ["quickorder-categories"],
+    "props":{
+      "blockClass":"quickorder-categ"
+    }
   },
   "quickorder-categories": {
     "props": {
