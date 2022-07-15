@@ -35,8 +35,11 @@
   "chart-data": {
     "component": "ChartData"
   },
-  "analytics": {
-    "component": "AnalyticsReports"
+  "analytics":{
+    "component":"AnalyticsReports"
+  },
+  "notification":{
+    "component":"Notification"
   },
   "upload-file": {
     "component": "FileUploadWrapper"
@@ -53,12 +56,10 @@
   "my-orders-extra-actions.show-id-button": {
     "component": "ShowIdButton"
   },
-
   "SearchUI":{
     "component": "SearchUI"
-},
+  },
   "new-window-button": {
     "component": "NewWindowButton"
-
   }
 }
