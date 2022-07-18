@@ -20,6 +20,39 @@
 margin-top: 10px;
   display: flex;
 justify-content: center;
+align-items: center;
 }
 
+.filterContainer{
+  margin-top: 20px;
+  height: 60%;
 
+}
+
+.filters{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* margin-left: 20px; */
+  margin-bottom: 5px;
+}
+
+.Otherfilters{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+}
+
+.datefilter{
+  padding: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.datefilter div {
+  margin-top: 5px;
+
+}
