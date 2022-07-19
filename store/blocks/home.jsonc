@@ -4,6 +4,9 @@
   },
   "responsive-layout.desktop": {
     "children": [
+      "notification#header",
+      "notification#promotions",
+      "check-permission#promotion",
       "flex-layout.row#imageList",
       "__fold__.experimentalLazyAssets",
       "flex-layout.row#shopByCategory",
@@ -23,6 +26,53 @@
        "parent": {
            "challenge": "challenge.trade-policy-condition"
          }
+  },
+  "notification#promotions":{
+    "props":{
+      "type": "success",
+      "title": "Get Up To",
+      "message": "25% Off."
+    }
+  },
+  "notification#header":{
+    "props":{
+      "type": "header",
+      "message": "FREE SHIPPING: Applies to USA orders over $2000+ | excluding HI, PR, AK, and CAN."
+    }
+  },
+  "check-permission#promotion": {
+    "props": {
+      "roles": [
+        "store-admin",
+        "sales-admin"
+      ]
+    },
+    "blocks": [
+      "allowed-content#promotion",
+      "disallowed-content#promotion"
+    ]
+  },
+  "allowed-content#promotion": {
+    "children": [
+      "promotion#allowed"
+    ]
+  },
+  "disallowed-content#promotion": {
+    "children": [
+      "promotion#disallowed"
+    ]
+  },
+  "promotion#allowed": {
+    "props": {
+      "heading": "Congratulations !!",
+      "subHeading": "Special offer unlocked for you : Get 50% OFF on shopping above 15000$"
+    }
+  },
+  "promotion#disallowed": {
+    "props": {
+      "heading": "Hello There !!",
+      "subHeading": "Please login to see exclusive offers and shipping charges"
+    }
   },
   "challenge.trade-policy-condition": {
     "props": {

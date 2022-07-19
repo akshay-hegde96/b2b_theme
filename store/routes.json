@@ -92,10 +92,16 @@
   "store.custom#analyticsReports": {
     "path": "/analytics"
   },
+
+  "store.custom#SearchUI":{
+    "path":"/SearchUI"
+    },
+
   "store.custom#videoLibrary": {
     "path": "/videoLibrary"
   },
   "store.custom#searchFilter": {
     "path": "/searchFilter"
+
   }
 }
