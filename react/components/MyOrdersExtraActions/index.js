@@ -11,7 +11,7 @@ const [userName, setUserName] = useState();
         "api/oms/pvt/orders/" + `${orderId}`,
         "GET"
       );
-      const getPO = data?.customData?.customApps[0]?.fields?.purchaseOrderNumber;
+      const getPO = data?.customData?.customApps[0]?.fields?.poNumber;
       setPoNumber(getPO);
 
       const userData = data?.clientProfileData?.firstName
