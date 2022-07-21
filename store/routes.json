@@ -103,5 +103,10 @@
   "store.custom#searchFilter": {
     "path": "/searchFilter"
 
+  },
+
+  "store.custom#myFleet": {
+    "path": "/myFleet"
+
   }
 }
