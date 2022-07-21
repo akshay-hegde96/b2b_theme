@@ -4,11 +4,11 @@ import styles from "./MyFleet.css";
 import { makeAPICall } from "../../Utils/httpCall";
 import CardPaginate from "./CardPaginate";
 
-
 const SearchUI = () => {
   const [state, setState] = useState({ value: "" });
   const [allData, setAllData] = useState();
   const [dropdown, setDropDown] = useState({ selected: "" });
+  const [err, setErr] = useState(false);
   // const [jobData, setJobData] = useState();
   // const [workOrderData, setWorkOrderData] = useState();
 
@@ -19,9 +19,9 @@ const SearchUI = () => {
   const getDataByJob = `${getData}&_where=Job="${state.value}"`;
   const getWorkOrder = `${getData}&_where=WorkOrder="${state.value}"`;
   const getSalesman = `${getData}&_where=SalesmanName=*${state.value}*`;
-  const getDealerNumber = `${getData}&_where=DealerNumber="${state.value}"`
-  const getState = `${getData}&_where=State="${state.value}"`
-  const getCity = `${getData}&_where=City=*${state.value}*`
+  const getDealerNumber = `${getData}&_where=DealerNumber="${state.value}"`;
+  const getState = `${getData}&_where=State="${state.value}"`;
+  const getCity = `${getData}&_where=City=*${state.value}*`;
 
   const options = [
     { value: "All Records", label: "All Records" },
@@ -30,8 +30,7 @@ const SearchUI = () => {
     { value: "State", label: "State" },
     { value: "City", label: "City" },
     { value: "Salesman", label: "Sales Man Name" },
-    { value: "DealerNumber", label: "DealerNumber" }
-
+    { value: "DealerNumber", label: "DealerNumber" },
   ];
 
   // API call funtions
@@ -95,12 +94,10 @@ const SearchUI = () => {
     if (value == "DealerNumber") {
       getDealerNumberHandler();
     }
-    if(value == "State")
-    {
+    if (value == "State") {
       getStateHandler();
     }
-    if(value == "City")
-    {
+    if (value == "City") {
       getCityHandler();
     }
   };
@@ -111,32 +108,30 @@ const SearchUI = () => {
         <h1>Search in Master Data</h1>
       </div>
 
-
-<div className={styles.main}>
-      <div className={styles.mainCotainer}>
-      <div className={styles.Searchdropdown}>
-          <Dropdown
-          size="large"
-            options={options}
-            value={dropdown.selected}
-            onChange={(e) => setDropDown({ selected: e.target.value })}
-            onFocus={() => console.log("onFocus fired!")}
-            onBlur={() => console.log("onBlur fired!")}
-            onMouseEnter={() => console.log("onMouseEnter fired!")}
-            onMouseLeave={() => console.log("onMouseLeave fired!")}
-          />
-
-      </div>
-        <div className={styles.searchContainer}>
-          <InputSearch
-            placeholder="Search..."
-            value={state.value}
-            // label="Large"
-            size="large"
-            onChange={(e) => setState({ value: e.target.value })}
-            onSubmit={handleInput}
-          />
-        </div>
+      <div className={styles.main}>
+        <div className={styles.mainCotainer}>
+          <div className={styles.Searchdropdown}>
+            <Dropdown
+              size="large"
+              options={options}
+              value={dropdown.selected}
+              onChange={(e) => setDropDown({ selected: e.target.value })}
+              onFocus={() => console.log("onFocus fired!")}
+              onBlur={() => console.log("onBlur fired!")}
+              onMouseEnter={() => console.log("onMouseEnter fired!")}
+              onMouseLeave={() => console.log("onMouseLeave fired!")}
+            />
+          </div>
+          <div className={styles.searchContainer}>
+            <InputSearch
+              placeholder="Search..."
+              value={state.value}
+              // label="Large"
+              size="large"
+              onChange={(e) => setState({ value: e.target.value })}
+              onSubmit={handleInput}
+            />
+          </div>
         </div>
         {/* <div className={styles.cardsContainer}>
           {allData?.map((data) => (
@@ -159,11 +154,9 @@ const SearchUI = () => {
             </div>
           ))}
         </div> */}
-        </div>
-<div>
-  {allData? <CardPaginate data={allData}/> : null}
+      </div>
 
-</div>
+      <div>{allData ? <CardPaginate data={allData} /> : null}</div>
     </>
   );
 };

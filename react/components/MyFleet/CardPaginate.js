@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import ReactPaginate from 'react-paginate'
+import React, { useEffect, useState } from "react";
+import ReactPaginate from "react-paginate";
 import { Card } from "vtex.styleguide";
 import styles from "./MyFleet.css";
 
-export default function CardPaginate(props){
-  const {data} = props;
+export default function CardPaginate(props) {
+  const { data } = props;
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
@@ -20,16 +20,14 @@ export default function CardPaginate(props){
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % data?.length;
-    // console.log(
-    //   `User requested page number ${event.selected}, which is offset ${newOffset}`
-    // );
     setItemOffset(newOffset);
   };
 
   return (
     <>
-    <div className={styles.cardsContainer}>
-          {currentItems?.map((data) => (
+      <div className={styles.cardsContainer}>
+        {currentItems.length > 0 ? (
+          currentItems.map((data) => (
             <div style={{ padding: "10px", width: "500px" }}>
               <Card>
                 <p> Job# : {data.Job}</p>
@@ -48,8 +46,13 @@ export default function CardPaginate(props){
                 <p> Country : {data.Country}</p>
               </Card>
             </div>
-          ))}
-        </div>
+          ))
+        ) : (
+          <span style={{ color: "red", fontSize: "3rem" }}>
+            No Data Found! Search Again...
+          </span>
+        )}
+      </div>
 
       <ReactPaginate
         breakLabel="..."
@@ -67,5 +70,4 @@ export default function CardPaginate(props){
       />
     </>
   );
-
 }
