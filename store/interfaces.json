@@ -61,5 +61,8 @@
   },
   "new-window-button": {
     "component": "NewWindowButton"
+  },
+  "myFleetUI":{
+    "component":"MyFleet"
   }
 }

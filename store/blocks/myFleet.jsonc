@@ -1,0 +1,7 @@
+{
+  "store.custom#myFleet":{
+    "children":[
+      "myFleetUI"
+    ]
+  }
+}
