@@ -101,7 +101,9 @@
     "vtex.sandbox": "0.x",
     "vtex.orders-graphql": "0.x",
     "vtex.store-media": "0.x",
-    "vtex.order-placed-graphql": "1.x"
+    "vtex.order-placed-graphql": "1.x",
+    "vtex.recommendation-shelf": "1.x",
+    "vtex.shelf-components": "0.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

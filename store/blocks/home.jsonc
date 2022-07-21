@@ -18,6 +18,8 @@
       "flex-layout.row#singleBanner",
       "flex-layout.row#popular",
       "flex-layout.row#trending",
+      "flex-layout.row#recommendation-shelf",
+      "flex-layout.row#recommendation-refresh",
       "flex-layout.row#benefits",
       "flex-layout.row#newsletter"
     ],
@@ -77,6 +79,40 @@
       "redirectPath": "/login"
     }
   },
+  // ========Recommendation shelf===========
+  "flex-layout.row#recommendation-shelf": {
+    "children": ["recommendation-shelf"]
+  },
+  "recommendation-shelf": {
+    "blocks": ["default-shelf"],
+    "props": {
+      "strategy": "NAVIGATION_HISTORY",
+      "secondaryStrategy": "MOST_POPULAR",
+      "recommendation": {
+        "count": {
+          "minimum": 5,
+          "recommendations": 20
+        }
+      }
+    }
+  },
+  "flex-layout.row#recommendation-refresh": {
+    "children": ["recommendation-refresh"]
+  },
+  "recommendation-refresh": {
+    "blocks": ["refresh-shelf"],
+    "props": {
+      "strategy": "ORDER_HISTORY",
+      "secondaryStrategy": "BEST_SELLERS",
+      "recommendation": {
+        "count": {
+          "minimum": 5,
+          "recommendations": 20
+        }
+      }
+    }
+  },
+  // ========================================
   "flex-layout.row#imageList": {
     "props": {
       "blockClass": "full-banner"
