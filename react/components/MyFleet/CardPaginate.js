@@ -5,6 +5,7 @@ import styles from "./MyFleet.css";
 
 export default function CardPaginate(props) {
   const { data } = props;
+  //const {searchTerm} = props;
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
@@ -36,6 +37,8 @@ export default function CardPaginate(props) {
                 <p> Sales Man Name : {data.SalesmanName}</p>
                 <p> Dealer Number : {data.DealerNumber}</p>
                 <p> Dealer Name : {data.DealerName}</p>
+                <p> Customer Name : {data.CustomerName}</p>
+                <p> Customer Number : {data.CustomerNumber}</p>
                 <p> Contract Admin Name : {data.ContractAdministratorName}</p>
                 <p>
                   Address : {data.Address1} - {data.Address4}
@@ -44,6 +47,7 @@ export default function CardPaginate(props) {
                 <p> State : {data.State}</p>
                 <p> Zip : {data.Zip}</p>
                 <p> Country : {data.Country}</p>
+                <p> Warranty Start Date : {data.WarrantyStartDate}</p>
               </Card>
             </div>
           ))
