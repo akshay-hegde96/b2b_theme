@@ -72,6 +72,7 @@
 
   },
 
+
   "homeDealer":{
     "component":"HomeDealer"
   },
@@ -80,5 +81,14 @@
   },
   "myReturns":{
     "component":"MyReturns"
+    },
+
+  "quick-order-link": {
+    "component": "QuickOrderHeaderLink"
+
+  },
+  "parallelogram-shape":{
+    "component":"Parallelogram"
+
   }
 }

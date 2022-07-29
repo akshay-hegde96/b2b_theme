@@ -28,46 +28,65 @@ export default function CardPaginate(props) {
       <div className={styles.cardsContainer}>
         {currentItems.length > 0 ? (
           currentItems.map((data) => (
-            <div style={{ padding: "10px", width: "500px" }}>
+            <div>
               <Card>
+                <div className={styles.eachCards}>
+                <div>
                 <p> Job# : {data.Job}</p>
                 <p> Work Order : {data.WorkOrder}</p>
                 <p> Unit : {data.Unit}</p>
+                </div>
+                <div>
                 <p> Sales Man Name : {data.SalesmanName}</p>
                 <p> Dealer Number : {data.DealerNumber}</p>
                 <p> Dealer Name : {data.DealerName}</p>
+                </div>
+                <div>
                 <p> Contract Admin Name : {data.ContractAdministratorName}</p>
                 <p>
                   Address : {data.Address1} - {data.Address4}
                 </p>
                 <p> City : {data.City}</p>
+                </div>
+                <div>
                 <p> State : {data.State}</p>
                 <p> Zip : {data.Zip}</p>
                 <p> Country : {data.Country}</p>
+                </div>
+
+                </div>
               </Card>
+
             </div>
+
+
           ))
         ) : (
-          <span style={{ color: "red", fontSize: "3rem" }}>
+
+          <Card>
+            <div className={styles.noDataMsg}>
             No Data Found! Search Again...
-          </span>
+            </div>
+          </Card>
+
         )}
+               <ReactPaginate
+                   breakLabel="..."
+                   nextLabel="next"
+                   onPageChange={handlePageClick}
+                   pageRangeDisplayed={2}
+                   pageCount={pageCount}
+                   previousLabel="previous"
+                   renderOnZeroPageCount={null}
+                   containerClassName={styles.pagination}
+                   pageLinkClassName={styles.pageNum}
+                   previousLinkClassName={styles.pageNum}
+                   nextLinkClassName={styles.pageNum}
+                   activeLinkClassName={styles.active}
+                 />
       </div>
 
-      <ReactPaginate
-        breakLabel="..."
-        nextLabel="next"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={2}
-        pageCount={pageCount}
-        previousLabel="previous"
-        renderOnZeroPageCount={null}
-        containerClassName={styles.pagination}
-        pageLinkClassName={styles.pageNum}
-        previousLinkClassName={styles.pageNum}
-        nextLinkClassName={styles.pageNum}
-        activeLinkClassName={styles.active}
-      />
+
     </>
   );
 }

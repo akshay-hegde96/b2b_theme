@@ -720,3 +720,13 @@ color: white;
     margin-left: 100px;
     padding: 13px 10px 14px 3px;
 }
+
+/* ========Pierce============ */
+.paragraph--pierceHeader{
+  color: white;
+  font-size: 22px;
+  font-weight: 900;
+  border-right: 2px solid #979797;
+  padding-right: 65px;
+
+}
