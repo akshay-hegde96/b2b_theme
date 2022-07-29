@@ -1,10 +1,12 @@
 {
-  "search-bar": {
+  "search-bar#header": {
     "blocks": [
       "autocomplete-result-list.v2"
     ],
     "props": {
-      "openAutocompleteOnFocus": true
+      "openAutocompleteOnFocus": true,
+      "displayMode":"search-and-clear-buttons",
+      "blockClass":"pierce-searchbar"
     }
   },
   "autocomplete-result-list.v2": {

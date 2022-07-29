@@ -8,51 +8,160 @@
   },
 
   "header-layout.desktop": {
-    "children": ["flex-layout.row#0-desktop","sticky-layout#desktop"]
-  },
-  "flex-layout.row#0-desktop": {
-    "children": ["b2b-user-widget"],
-    "props": {
-      "fullWidth": true
-    }
+    "children": ["sticky-layout#desktop"]
   },
   "sticky-layout#desktop": {
     "props": {
-      "blockClass": "sticky-header"
+      "blockClass": "sticky-header-pierce"
     },
     "children": [
-      "flex-layout.row#telemarketing",
-      "flex-layout.row#desktop",
-      "flex-layout.row#headerStripe"
+      "flex-layout.row#desktop1",
+      "flex-layout.row#desktop2"
     ]
   },
-
-  "flex-layout.row#telemarketing": {
-    "children": ["telemarketing"],
+  "flex-layout.row#desktop1": {
     "props": {
-      "blockClass": ["bg-blue-medium"],
-      "fullWidth": true
-    }
-  },
-
-  "flex-layout.row#desktop": {
-    "props": {
-      "verticalAlign": "center",
-      "blockClass": "header",
+      "blockClass": "header-pierce",
       "colGap": 7,
-      "colSizing": "auto"
+      "colSizing": "auto",
+      "preventHorizontalStretch":true
     },
     "children": [
-      "drawer",
-      "flex-layout.col#logo-desktop",
-      "flex-layout.col#search-bar",
+      "logo#desktop",
+      "rich-text#pierceHeader",
+      "vtex.menu@2.x:menu#main-menu-static",
+      "flex-layout.col#spacer",
       "login",
+      "quick-order-link",      //React Component
       "minicart.v2"
     ]
   },
+  "logo#desktop": {
+    "props": {
+      "title": "Logo",
+      "href": "/",
+      "url": "assets/icons/pierce-logo.png",
+      "blockClass":"pierce-logo"
+    }
+  },
+  "rich-text#pierceHeader":{
+"props":{
+  "text":"PARTS & SERVICE",
+  "blockClass":"pierceHeader"
+}
+  },
+  "vtex.menu@2.x:menu#main-menu-static": {
+    "props": {
+      "experimentalOptimizeRendering": true,
+      "blockClass":"pierce-menu-container"
+    },
+    "children": [
+      "menu-item#resources",
+      "menu-item#customerSupport"
+    ]
+  },
+  "menu-item#resources": {
+    "props": {
+      "id": "resources",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/resources",
+        "noFollow": false,
+        "tagTitle": "resources",
+        "text": "Resources"
+      },
+      "iconProps": {
+        "id": "nav-caret--down",
+        "size": 12,
+        "viewBox": "0 0 16 16",
+        "activeClassName": "black",
+        "mutedClassName": "c-action-primary"
+      },
+      "iconPosition": "right",
 
+      "blockClass": "pierce-menu-link"
+    }
+  },
+  "menu-item#customerSupport": {
+    "props": {
+      "id": "customer-support",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/customer-support",
+        "noFollow": false,
+        "tagTitle": "customer support",
+        "text": "Customer Support"
+      },
+      "iconProps": {
+        "id": "nav-caret--down",
+        "size": 12,
+        "viewBox": "0 0 16 16",
+        "activeClassName": "black",
+        "mutedClassName": "c-action-primary"
+      },
+      "iconPosition": "right",
+
+      "blockClass": "pierce-menu-link"
+    }
+  },
+  "login": {
+    "props": {
+      "iconLabel": "Hello, Sign in",
+     "showIconProfile":true,
+     "blockClass":"pierce-login"
+    }
+  },
+// ==============ROW2======================
+  "flex-layout.row#desktop2": {
+    "props": {
+      "blockClass": "header-pierce-row2",
+      "colGap": 7,
+      "colSizing": "auto",
+      "preventHorizontalStretch":true
+    },
+    "children": [
+     "drawer",
+     "flex-layout.row#searchBarMyFleet",
+     "parallelogram-shape"
+    ]
+  },
+
+  "flex-layout.row#searchBarMyFleet":{
+    "props":{
+      "width":"grow",
+      "blockClass":"searchBarMyFleet",
+      "preventHorizontalStretch":true
+      },
+      "children":[
+        "image#dashboard",
+        "link#headerDashboard",
+        "myFleetUI"
+
+      ]
+  },
+
+  "image#dashboard": {
+    "props": {
+      "src": "assets/icons/home-icon.png",
+      "maxHeight": 40
+    }
+  },
+  "link#headerDashboard": {
+    "props": {
+      "label": "DASHBOARD",
+      "href": "/dashboard",
+      "blockClass": "header-dashboard"
+    }
+  },
+  // ===================================================
   "flex-layout.col#search-bar": {
-    "children": ["search-bar"],
+    "children": ["search-bar#header"],
     "props": {
       "paddingLeft": 8,
       "width": "grow"
@@ -181,21 +290,7 @@
 
   //========== Order Configuration Ends============
 
-  "flex-layout.col#logo-desktop": {
-    "props": {
-      "verticalAlign": "middle"
-    },
-    "children": ["logo"]
-  },
 
-  "logo": {
-    "props": {
-      "title": "Logo",
-      "href": "/",
-      "url": "assets/icons/logoB2B.svg",
-      "width": "123"
-    }
-  },
 
   "header-layout.mobile": {
     "children": ["sticky-layout#mobile"]
@@ -282,11 +377,6 @@
     }
   },
 
-  "login": {
-    "props": {
-      "iconLabel": "Hello, Sign in"
-    }
-  },
 
   "login#mobile": {
     "props": {

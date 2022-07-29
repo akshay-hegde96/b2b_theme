@@ -73,3 +73,13 @@
     border: none;
   }
 }
+
+/* ======PIERCE============ */
+.styledLinkContent--pierce-menu-link{
+  color: white;
+  font-weight: 700;
+}
+/* .menuContainerNav--pierce-menu-container{
+  position: relative;
+  top: 14px;
+} */

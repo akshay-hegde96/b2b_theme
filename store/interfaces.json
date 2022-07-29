@@ -70,5 +70,12 @@
   "promotion": {
     "component": "promotionBlock"
 
+  },
+  "quick-order-link": {
+    "component": "QuickOrderHeaderLink"
+
+  },
+  "parallelogram-shape":{
+    "component":"Parallelogram"
   }
 }

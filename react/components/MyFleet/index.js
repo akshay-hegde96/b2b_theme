@@ -103,16 +103,58 @@ const SearchUI = () => {
   };
 
   return (
-    <>
-      <div style={{ marginLeft: "35%" }}>
-        <h1>Search in Master Data</h1>
-      </div>
+    // <>
+    //   <div style={{ marginLeft: "35%" }}>
+    //     <h1>Search in Master Data</h1>
+    //   </div>
 
-      <div className={styles.main}>
-        <div className={styles.mainCotainer}>
-          <div className={styles.Searchdropdown}>
-            <Dropdown
-              size="large"
+    //   <div className={styles.main}>
+    //     <div className={styles.mainCotainer}>
+    //       <div className={styles.Searchdropdown}>
+    //         <Dropdown
+    //           size="large"
+    //           options={options}
+    //           value={dropdown.selected}
+    //           onChange={(e) => setDropDown({ selected: e.target.value })}
+    //           onFocus={() => console.log("onFocus fired!")}
+    //           onBlur={() => console.log("onBlur fired!")}
+    //           onMouseEnter={() => console.log("onMouseEnter fired!")}
+    //           onMouseLeave={() => console.log("onMouseLeave fired!")}
+    //         />
+    //       </div>
+    //       <div className={styles.searchContainer}>
+    //         <InputSearch
+    //           placeholder="Search..."
+    //           value={state.value}
+    //           // label="Large"
+    //           size="large"
+    //           onChange={(e) => setState({ value: e.target.value })}
+    //           onSubmit={handleInput}
+    //         />
+    //       </div>
+    //     </div>
+    //   </div>
+
+    //   <div>{allData ? <CardPaginate data={allData} /> : null}</div>
+    // </>
+    <React.Fragment>
+      <div className={styles.peirceSearchBarContainer}>
+      <div className={styles.sarchText}>Search</div>
+      <div className={styles.myFleetText}>My Fleet</div>
+      <div className={styles.resourcesText}>Resources</div>
+      <div className={styles.searchBar}>
+              <InputSearch
+              placeholder="Enter Job ID, VIN, Customer Name"
+              value={state.value}
+              size="regular"
+              onChange={(e) => setState({ value: e.target.value })}
+              onSubmit={handleInput}
+             />
+             </div>
+             <div className={styles.advancedDropdown}>
+                  <Dropdown
+              placeholder="Advanced"
+              size="regular"
               options={options}
               value={dropdown.selected}
               onChange={(e) => setDropDown({ selected: e.target.value })}
@@ -121,43 +163,12 @@ const SearchUI = () => {
               onMouseEnter={() => console.log("onMouseEnter fired!")}
               onMouseLeave={() => console.log("onMouseLeave fired!")}
             />
-          </div>
-          <div className={styles.searchContainer}>
-            <InputSearch
-              placeholder="Search..."
-              value={state.value}
-              // label="Large"
-              size="large"
-              onChange={(e) => setState({ value: e.target.value })}
-              onSubmit={handleInput}
-            />
-          </div>
-        </div>
-        {/* <div className={styles.cardsContainer}>
-          {allData?.map((data) => (
-            <div style={{ padding: "10px", width: "500px" }}>
-              <Card>
-                <p> Job# : {data.Job}</p>
-                <p> Work Order : {data.WorkOrder}</p>
-                <p> Unit : {data.Unit}</p>
-                <p> Sales Man Name : {data.SalesmanName}</p>
-                <p> Dealer Number : {data.DealerNumber}</p>
-                <p> Dealer Name : {data.DealerName}</p>
-                <p> Contract Admin Name : {data.ContractAdministratorName}</p>
-                <p>
-                  Address : {data.Address1} - {data.Address4}
-                </p>
-                <p> State : {data.State}</p>
-                <p> Zip : {data.Zip}</p>
-                <p> Country : {data.Country}</p>
-              </Card>
-            </div>
-          ))}
-        </div> */}
-      </div>
 
-      <div>{allData ? <CardPaginate data={allData} /> : null}</div>
-    </>
+             </div>
+
+      </div>
+      <div className={styles.searchResult}>{allData ? <CardPaginate data={allData} /> : null}</div>
+    </React.Fragment>
   );
 };
 
