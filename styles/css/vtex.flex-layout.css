@@ -832,3 +832,30 @@
 .flexColChild--left-col{
   padding-right:75px;
 }
+
+/* ==================== Pierce Header ======= */
+.flexRow--header-pierce{
+  background-color: #313131;
+}
+.flexRowContent--header-pierce{
+  justify-content: flex-start !important;
+  align-items: center !important;
+}
+
+.flexRowContent--header-pierce-row2{
+  align-items: center;
+}
+.flexRowContent--searchBarMyFleet{
+  align-items: center;
+}
+.flexRow--header-pierce-row2{
+  background-color: #313131;
+  height: 80px;
+}
+.flexRow--searchBarMyFleet{
+ background-color: white;
+ /* padding: 13px 13px; */
+ padding: 13px 35px 13px 10px;
+ border-top-left-radius: 13px;
+}
+

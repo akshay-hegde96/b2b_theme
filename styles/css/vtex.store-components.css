@@ -1,11 +1,11 @@
-.container {
+/* .container {
   max-width: 1440px;
   width: 100%;
   padding: 0px 32px;
   margin: 0px auto;
-}
+} */
 
-.logoLink {
+/* .logoLink {
   display: block;
   transform: none !important;
 }
@@ -14,7 +14,7 @@
   display: block;
   height: 28px;
   width: auto;
-}
+} */
 
 .searchBarContainer :global(.vtex-input-prefix__group) {
   height: 48px;
@@ -759,4 +759,13 @@
 .shippingNoMessage {
   color: var(--black-medium);
   text-align: center;
+}
+
+/* =========== Pierce =========== */
+/* .logoContainer--pierce-logo{
+  position: relative;
+  top: 15px;
+} */
+.imageElement--quick-order-icon{
+  background-color: #717786;
 }
