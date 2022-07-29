@@ -108,5 +108,8 @@
   "store.custom#myFleet": {
     "path": "/myFleet"
 
+  },
+  "store.custom#homedealer":{
+    "path":"/homedealer"
   }
 }

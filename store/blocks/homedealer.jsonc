@@ -1,0 +1,138 @@
+{
+ "store.custom#homedealer": {
+    "blocks":[
+      "tab-layout#homedealer"
+          ]
+  },
+
+  "tab-layout#homedealer":{
+    "children":[
+      "tab-list#homedealer",
+      "tab-content#homedealer"
+    ]
+  },
+
+  "tab-list#homedealer":{
+    "children": [
+         "tab-list.item#homedealer1",
+           "tab-list.item#homedealer2",
+           "tab-list.item#homedealer3"
+         ],
+         "props":{
+          "blockClass":"tab-item-mainhomedealer"
+         }
+
+  },
+  "tab-list.item#homedealer1": {
+       "props": {
+         "tabId": "recentOrder",
+         "label": "Recent Orders",
+         "defaultActiveTab": true,
+         "blockClass":"tab-item-homedealer"
+       }
+     },
+     "tab-list.item#homedealer2": {
+      "props": {
+        "tabId": "recentQuotes",
+        "label": "Recent Quotes",
+        "blockClass":"tab-item-homedealer"
+      }
+    },
+    "tab-list.item#homedealer3": {
+      "props": {
+        "tabId": "myreturns",
+        "label": "My Returns",
+        "blockClass":"tab-item-homedealer"
+      }
+    },
+
+    "tab-content#homedealer":{
+      "children": [
+             "tab-content.item#home1",
+             "tab-content.item#home2",
+             "tab-content.item#home3"
+           ]
+    },
+
+    "tab-content.item#home1": {
+         "children": [
+          "homeDealer"
+         ],
+         "props": {
+           "tabId": "recentOrder"
+         }
+       },
+
+       "tab-content.item#home2": {
+        "children": [
+          "recentQuote"
+        ],
+        "props": {
+          "tabId": "recentQuotes"
+        }
+      },
+      "tab-content.item#home3": {
+        "children": [
+         "myReturns"
+        ],
+        "props": {
+          "tabId": "myreturns"
+
+        }
+      }
+      // "info-card#home1": {
+      //   "props": {
+      //     "id": "info-card-example",
+      //     "isFullModeStyle": false,
+      //     "textPosition": "right",
+      //     "headline": "Aerial Platform Parts Manual(non-Multiplex)",
+      //     "imageUrl": "assets/pdficon.png",
+      //     "callToActionUrl": "/sale/d",
+      //     "blockClass": "info-card-example",
+      //     "textAlignment": "center"
+      //   }
+      // },
+      // "info-card#home2": {
+      //   "props": {
+      //     "id": "info-card-example",
+      //     "isFullModeStyle": false,
+      //     "textPosition": "right",
+      //     "headline": "Aerial Platform Parts Manual(non-Multiplex)",
+      //     "imageUrl": "assets/pdficon.png",
+      //     "callToActionUrl": "/sale/d",
+      //     "blockClass": "info-card-example",
+      //     "textAlignment": "center"
+      //   }
+      // },
+      // "info-card#home3": {
+      //   "props": {
+      //     "id": "info-card-example",
+      //     "isFullModeStyle": false,
+      //     "textPosition": "right",
+      //     "headline": "Aerial Platform Parts Manual(non-Multiplex)",
+      //     "imageUrl": "assets/pdficon.png",
+      //     "callToActionUrl": "/sale/d",
+      //     "blockClass": "info-card-example",
+      //     "textAlignment": "center"
+      //   }
+      // },
+      // "info-card#home4": {
+      //   "props": {
+      //     "id": "info-card-example",
+      //     "isFullModeStyle": false,
+      //     "textPosition": "right",
+      //     "headline": "Aerial Platform Parts Manual(non-Multiplex)",
+      //     "imageUrl": "assets/pdficon.png",
+      //     "callToActionUrl": "/sale/d",
+      //     "blockClass": "info-card-example",
+      //     "textAlignment": "center"
+      //   }
+      // }
+      }
+
+
+
+
+
+
+
