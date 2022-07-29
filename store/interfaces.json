@@ -70,5 +70,15 @@
   "promotion": {
     "component": "promotionBlock"
 
+  },
+
+  "homeDealer":{
+    "component":"HomeDealer"
+  },
+  "recentQuote":{
+    "component":"RecentQuote"
+  },
+  "myReturns":{
+    "component":"MyReturns"
   }
 }
