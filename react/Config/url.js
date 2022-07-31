@@ -29,3 +29,5 @@ export const blogSEOAPI =
 
 export const saveFileAPI =
   "/api/dataentities/EA/documents/9315a89d-73a0-11ec-82ac-0e267c8c99af/attachments/attachments";
+
+  export const allOrders = "api/oms/pvt/orders?orderBy=creationDate,desc"

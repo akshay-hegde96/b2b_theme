@@ -1,0 +1,127 @@
+.topContainer{
+  display: flex;
+}
+
+.letside{
+  max-height: max-content;
+  width: 70%;
+
+  border: 2px solid #f1f2f3;
+  border-radius: 5px;
+  margin-left: 15px;
+}
+.rightSide{
+  height: 647px;;
+  width: 30%;
+  border: 2px solid #f1f2f3;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-left: 25px;
+}
+
+.myorders {
+  font-size: 18px;
+  color: red;
+  font-weight: 600;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainTable {
+  width: 97%;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin-left: 10px;
+}
+
+.mainTable td {
+  text-align: left;
+  padding: 12px;
+  margin-left: 5px;
+  border-bottom: 2px solid #f1f2f3;
+}
+
+.mainTable th{
+  padding: 12px;
+  background-color: #dddddd;
+}
+
+.bulletins{
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #f1f2f3;
+
+}
+.bulletinsFirst{
+  height: max-content;
+  margin: 10px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #f1f2f3; ;
+}
+
+.bulletinsFirst p{
+  font-size: 13px;
+  color: #b3b3b3;
+}
+.myTicketsContainer{
+  margin-top: 10px;
+  height: 15rem;
+  border: 1px solid #f1f2f3;
+}
+.myTicket{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.myTicket p {
+  color: red;
+  font-weight: 600;
+}
+
+.myTicketTable{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin-left: 10px;
+}
+
+.bottommain{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+}
+.myAssests{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 11px;
+  padding: 0px 5px;
+
+}
+
+.dealerBottom{
+width: 18rem;
+  height: 7rem;
+  border: 2px solid #f1f2f3;
+  border-radius: 5px;
+  justify-content: space-between;
+  padding-right: 15px;
+  align-items: center;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.rightSideDealer{
+  font-size: 13px;
+padding: 5px;
+margin-left: 10px;
+}
