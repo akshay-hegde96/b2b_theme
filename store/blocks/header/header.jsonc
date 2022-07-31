@@ -15,16 +15,25 @@
       "blockClass": "sticky-header-pierce"
     },
     "children": [
+      "notification.bar#header",
       "flex-layout.row#desktop1",
       "flex-layout.row#desktop2"
     ]
   },
+  "notification.bar#header":{
+"props":{
+  "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua… Learn More",
+  "blockClass":"topbarHeader"
+
+}
+  },
   "flex-layout.row#desktop1": {
     "props": {
       "blockClass": "header-pierce",
-      "colGap": 7,
+      "colGap": 4,
       "colSizing": "auto",
-      "preventHorizontalStretch":true
+      "preventHorizontalStretch":true,
+      "preventVerticalStretch":true
     },
     "children": [
       "logo#desktop",
@@ -33,7 +42,9 @@
       "flex-layout.col#spacer",
       "login",
       "quick-order-link",      //React Component
-      "minicart.v2"
+      "minicart.v2",
+      "rich-text#cartTotal"  //static for demo
+      // "rich-text#jobsFromCart"
     ]
   },
   "logo#desktop": {
@@ -117,26 +128,42 @@
      "blockClass":"pierce-login"
     }
   },
+  "rich-text#cartTotal":{
+"props":{
+  "text":"Cart Total",
+  "textColor":"c-on-emphasis",
+  "blockClass":"cartTotalText"
+}
+  },
+  "rich-text#jobsFromCart":{
+    "props":{
+      "text":"items From This Job",
+      "textColor":"c-on-emphasis"
+    }
+      },
 // ==============ROW2======================
   "flex-layout.row#desktop2": {
     "props": {
       "blockClass": "header-pierce-row2",
-      "colGap": 7,
+      "colGap": 4,
       "colSizing": "auto",
-      "preventHorizontalStretch":true
+      "preventHorizontalStretch":true,
+      "preventVerticalStretch":true
     },
     "children": [
      "drawer",
-     "flex-layout.row#searchBarMyFleet",
-     "parallelogram-shape"
+     "flex-layout.row#searchBarMyFleet"
+    //  "parallelogram-shape"
     ]
   },
 
   "flex-layout.row#searchBarMyFleet":{
     "props":{
+      "colGap":4,
       "width":"grow",
       "blockClass":"searchBarMyFleet",
-      "preventHorizontalStretch":true
+      "preventHorizontalStretch":true,
+      "preventVerticalStretch":true
       },
       "children":[
         "image#dashboard",
@@ -149,7 +176,8 @@
   "image#dashboard": {
     "props": {
       "src": "assets/icons/home-icon.png",
-      "maxHeight": 40
+      "maxHeight": 25,
+      "blockClass":"pierce-home-icon"
     }
   },
   "link#headerDashboard": {
@@ -159,7 +187,7 @@
       "blockClass": "header-dashboard"
     }
   },
-  // ===================================================
+  // ======================= Old theme codes============================
   "flex-layout.col#search-bar": {
     "children": ["search-bar#header"],
     "props": {

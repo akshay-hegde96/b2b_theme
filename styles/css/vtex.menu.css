@@ -77,9 +77,7 @@
 /* ======PIERCE============ */
 .styledLinkContent--pierce-menu-link{
   color: white;
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 14px;
 }
-/* .menuContainerNav--pierce-menu-container{
-  position: relative;
-  top: 14px;
-} */
+
