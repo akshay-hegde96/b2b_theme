@@ -190,9 +190,9 @@
 /* BEGIN - Footer */
 
 .flexRowContent--footer-row-1 {
-  padding-bottom: 40px;
+   padding-bottom: 40px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 }
 
 .flexRow--footerStripe {
@@ -832,3 +832,17 @@
 .flexColChild--left-col{
   padding-right:75px;
 }
+.flexCol--footer-2{
+  margin-left: 120px;
+  margin-right: 18px;
+}
+
+.flexCol--footer-3{
+  margin-left: 50px;
+}
+
+:global(.vtex-flex-layout-0-x-flexRow--copyrightContainer){
+  background-color: #000;
+  padding: 10px;
+}
+

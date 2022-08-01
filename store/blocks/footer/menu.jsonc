@@ -105,7 +105,7 @@
       "experimentalOptimizeRendering": true,
       "items": [
         {
-          "id": "footerItem-ourcompnay",
+          "id": "footerItem-Stock",
           "type": "custom",
           "iconId": null,
           "highlight": false,
@@ -114,7 +114,7 @@
             "href": "/company",
             "noFollow": false,
             "tagTitle": "about-us",
-            "text": "Our Company"
+            "text": "Stock Parts Catalogs"
           }
         },
         {
@@ -127,85 +127,7 @@
             "href": "/careers",
             "noFollow": false,
             "tagTitle": "about-us",
-            "text": "Careers"
-          }
-        },
-        {
-          "id": "footerItem-Sellwithvtex",
-          "type": "custom",
-          "iconId": null,
-          "highlight": false,
-          "itemProps": {
-            "type": "internal",
-            "href": "/sell",
-            "noFollow": false,
-            "tagTitle": "about-us",
-            "text": "Sell With VTEX"
-          }
-        },
-        {
-          "id": "footerItem-investerRelations",
-          "type": "custom",
-          "iconId": null,
-          "highlight": false,
-          "itemProps": {
-            "type": "internal",
-            "href": "/investors",
-            "noFollow": false,
-            "tagTitle": "about-us",
-            "text": "Invester Relations"
-          }
-        },
-        {
-          "id": "footerItem-advertisewithus",
-          "type": "custom",
-          "iconId": null,
-          "highlight": false,
-          "itemProps": {
-            "type": "internal",
-            "href": "/advertise",
-            "noFollow": false,
-            "tagTitle": "about-us",
-            "text": "Advertise with us"
-          }
-        },
-        {
-          "id": "footerItem-locations",
-          "type": "custom",
-          "iconId": null,
-          "highlight": false,
-          "itemProps": {
-            "type": "internal",
-            "href": "/locations",
-            "noFollow": false,
-            "tagTitle": "about-us",
-            "text": "Locations"
-          }
-        },
-        {
-          "id": "footerItem-dashboard",
-          "type": "custom",
-          "iconId": null,
-          "highlight": false,
-          "itemProps": {
-            "type": "internal",
-            "href": "/dashboard",
-            "noFollow": false,
-            "tagTitle": "DashBoard",
-            "text": "DashBoard"
-          }
-        },
-        {
-          "id": "footerItem-echidnaDashboard",
-          "type": "custom",
-          "iconId": null,
-          "highlight": false,
-          "itemProps": {
-            "type": "internal",
-            "href": "/echidnadashboard",
-            "noFollow": false,
-            "tagTitle": "EchidnaDashBoard",
-            "text": "EchidnaDashBoard"
+            "text": "All Pierce Catalogs"
           }
         }
       ]
@@ -226,7 +148,7 @@
             "href": "/help-center",
             "noFollow": false,
             "tagTitle": "Help Center",
-            "text": "Help Center"
+            "text": "Find a Dealer"
           }
         },
         {
@@ -239,7 +161,7 @@
             "href": "/returns",
             "noFollow": false,
             "tagTitle": "Returns",
-            "text": "Returns"
+            "text": "One Year Warranty Login"
           }
         },
         {
@@ -252,7 +174,7 @@
             "href": "/recalls",
             "noFollow": false,
             "tagTitle": "Product Recalls",
-            "text": "Product Recalls"
+            "text": "Pierce Resource Center Login"
           }
         },
         {
@@ -265,62 +187,9 @@
             "href": "/accessibility",
             "noFollow": false,
             "tagTitle": "Accessibility",
-            "text": "Accessibility"
+            "text": "Training Videos"
           }
-        },
-        {
-          "id": "footerItem-contact",
-          "type": "custom",
-          "iconId": null,
-          "highlight": false,
-          "itemProps": {
-            "type": "internal",
-            "href": "/contact",
-            "noFollow": false,
-            "tagTitle": "Contact Us",
-            "text": "Contact Us"
-          }
-        },
-        {
-          "id": "footerItem-pickup",
-          "type": "custom",
-          "iconId": null,
-          "highlight": false,
-          "itemProps": {
-            "type": "internal",
-            // "href": "/pickup",
-            "href": "/stores",
-            "noFollow": false,
-            "tagTitle": "Store Pickup",
-            "text": "Store Pickup"
-          }
-        },
-        {
-          "id": "qna-storage",
-          "type": "custom",
-          "iconId": null,
-          "highlight": false,
-          "itemProps": {
-            "type": "internal",
-            "href": "/qnaStorage",
-            "noFollow": false,
-            "tagTitle": "Questions & Answers",
-            "text": "Questions & Answers"
-          }
-        },
-        {
-        "id": "g-analytics",
-        "type": "custom",
-        "iconId": null,
-        "highlight": false,
-        "itemProps": {
-          "type": "internal",
-          "href": "/analytics",
-          "noFollow": false,
-          "tagTitle": "Analytics Reports",
-          "text": "Analytics Reports"
         }
-      }
       ]
     }
   }
