@@ -92,7 +92,7 @@ const HomeDealer = () => {
                 <td>{item.job}</td>
                 <td>{item.createdTime}</td>
                 <td>|</td>
-                <td><a>{item.status}</a></td>
+                <td><a href="#">{item.status}</a></td>
                 </tr>
                );
               })}
