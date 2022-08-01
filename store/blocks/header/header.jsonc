@@ -8,51 +8,188 @@
   },
 
   "header-layout.desktop": {
-    "children": ["flex-layout.row#0-desktop","sticky-layout#desktop"]
-  },
-  "flex-layout.row#0-desktop": {
-    "children": ["b2b-user-widget"],
-    "props": {
-      "fullWidth": true
-    }
+    "children": ["sticky-layout#desktop"]
   },
   "sticky-layout#desktop": {
     "props": {
-      "blockClass": "sticky-header"
+      "blockClass": "sticky-header-pierce"
     },
     "children": [
-      "flex-layout.row#telemarketing",
-      "flex-layout.row#desktop",
-      "flex-layout.row#headerStripe"
+      "notification.bar#header",
+      "flex-layout.row#desktop1",
+      "flex-layout.row#desktop2"
     ]
   },
+  "notification.bar#header":{
+"props":{
+  "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua… Learn More",
+  "blockClass":"topbarHeader"
 
-  "flex-layout.row#telemarketing": {
-    "children": ["telemarketing"],
+}
+  },
+  "flex-layout.row#desktop1": {
     "props": {
-      "blockClass": ["bg-blue-medium"],
-      "fullWidth": true
+      "blockClass": "header-pierce",
+      "colGap": 4,
+      "colSizing": "auto",
+      "preventHorizontalStretch":true,
+      "preventVerticalStretch":true
+    },
+    "children": [
+      "logo#desktop",
+      "rich-text#pierceHeader",
+      "vtex.menu@2.x:menu#main-menu-static",
+      "flex-layout.col#spacer",
+      "login",
+      "quick-order-link",      //React Component
+      "minicart.v2",
+      "rich-text#cartTotal"  //static for demo
+      // "rich-text#jobsFromCart"
+    ]
+  },
+  "logo#desktop": {
+    "props": {
+      "title": "Logo",
+      "href": "/",
+      "url": "assets/icons/pierce-logo.png",
+      "blockClass":"pierce-logo"
     }
   },
-
-  "flex-layout.row#desktop": {
+  "rich-text#pierceHeader":{
+"props":{
+  "text":"PARTS & SERVICE",
+  "blockClass":"pierceHeader"
+}
+  },
+  "vtex.menu@2.x:menu#main-menu-static": {
     "props": {
-      "verticalAlign": "center",
-      "blockClass": "header",
-      "colGap": 7,
-      "colSizing": "auto"
+      "experimentalOptimizeRendering": true,
+      "blockClass":"pierce-menu-container"
     },
     "children": [
-      "drawer",
-      "flex-layout.col#logo-desktop",
-      "flex-layout.col#search-bar",
-      "login",
-      "minicart.v2"
+      "menu-item#resources",
+      "menu-item#customerSupport"
+    ]
+  },
+  "menu-item#resources": {
+    "props": {
+      "id": "resources",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/resources",
+        "noFollow": false,
+        "tagTitle": "resources",
+        "text": "Resources"
+      },
+      "iconProps": {
+        "id": "nav-caret--down",
+        "size": 12,
+        "viewBox": "0 0 16 16",
+        "activeClassName": "black",
+        "mutedClassName": "c-action-primary"
+      },
+      "iconPosition": "right",
+
+      "blockClass": "pierce-menu-link"
+    }
+  },
+  "menu-item#customerSupport": {
+    "props": {
+      "id": "customer-support",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/customer-support",
+        "noFollow": false,
+        "tagTitle": "customer support",
+        "text": "Customer Support"
+      },
+      "iconProps": {
+        "id": "nav-caret--down",
+        "size": 12,
+        "viewBox": "0 0 16 16",
+        "activeClassName": "black",
+        "mutedClassName": "c-action-primary"
+      },
+      "iconPosition": "right",
+
+      "blockClass": "pierce-menu-link"
+    }
+  },
+  "login": {
+    "props": {
+      "iconLabel": "Hello, Sign in",
+     "showIconProfile":true,
+     "blockClass":"pierce-login"
+    }
+  },
+  "rich-text#cartTotal":{
+"props":{
+  "text":"Cart Total",
+  "textColor":"c-on-emphasis",
+  "blockClass":"cartTotalText"
+}
+  },
+  "rich-text#jobsFromCart":{
+    "props":{
+      "text":"items From This Job",
+      "textColor":"c-on-emphasis"
+    }
+      },
+// ==============ROW2======================
+  "flex-layout.row#desktop2": {
+    "props": {
+      "blockClass": "header-pierce-row2",
+      "colGap": 4,
+      "colSizing": "auto",
+      "preventHorizontalStretch":true,
+      "preventVerticalStretch":true
+    },
+    "children": [
+     "drawer",
+     "flex-layout.row#searchBarMyFleet"
+    //  "parallelogram-shape"
     ]
   },
 
+  "flex-layout.row#searchBarMyFleet":{
+    "props":{
+      "colGap":4,
+      "width":"grow",
+      "blockClass":"searchBarMyFleet",
+      "preventHorizontalStretch":true,
+      "preventVerticalStretch":true
+      },
+      "children":[
+        "image#dashboard",
+        "link#headerDashboard",
+        "myFleetUI"
+
+      ]
+  },
+
+  "image#dashboard": {
+    "props": {
+      "src": "assets/icons/home-icon.png",
+      "maxHeight": 25,
+      "blockClass":"pierce-home-icon"
+    }
+  },
+  "link#headerDashboard": {
+    "props": {
+      "label": "DASHBOARD",
+      "href": "/dashboard",
+      "blockClass": "header-dashboard"
+    }
+  },
+  // ======================= Old theme codes============================
   "flex-layout.col#search-bar": {
-    "children": ["search-bar"],
+    "children": ["search-bar#header"],
     "props": {
       "paddingLeft": 8,
       "width": "grow"
@@ -341,21 +478,7 @@
 
   //========== Order Configuration Ends============
 
-  "flex-layout.col#logo-desktop": {
-    "props": {
-      "verticalAlign": "middle"
-    },
-    "children": ["logo"]
-  },
 
-  "logo": {
-    "props": {
-      "title": "Logo",
-      "href": "/",
-      "url": "assets/icons/logoB2B.svg",
-      "width": "123"
-    }
-  },
 
   "header-layout.mobile": {
     "children": ["sticky-layout#mobile"]
@@ -443,11 +566,6 @@
     }
   },
 
-  "login": {
-    "props": {
-      "iconLabel": "Hello, Sign in"
-    }
-  },
 
   "login#mobile": {
     "props": {

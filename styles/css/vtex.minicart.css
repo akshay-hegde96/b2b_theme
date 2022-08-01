@@ -4,6 +4,7 @@
 
 .minicartIconContainer {
   color: #fff;
+
 }
 
 .closeIconContainer::before {
@@ -33,6 +34,7 @@
 
 .openIconContainer {
   padding: 0;
+  border-left: 1px solid gray;
 }
 
 .openIconContainer :global(.vtex-button) {

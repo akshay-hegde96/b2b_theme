@@ -217,3 +217,14 @@
     justify-content: center;
   }
 }
+/* ==============Pierce========== */
+.label--header-dashboard{
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  /* position: relative; */
+    /* right: 25px; */
+}
+.link--header-dashboard{
+  text-decoration: none;
+}

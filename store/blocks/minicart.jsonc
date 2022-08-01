@@ -3,7 +3,8 @@
     "children": ["minicart-base-content"],
     "props": {
       "customPixelEventId": "add-to-cart-button",
-      "MinicartIcon": "icon-cart#minicart-icon"
+      "MinicartIcon": "icon-cart#minicart-icon",
+      "quantityDisplay":"always"
     }
   },
 

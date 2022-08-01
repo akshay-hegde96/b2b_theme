@@ -70,5 +70,25 @@
   "promotion": {
     "component": "promotionBlock"
 
+  },
+
+
+  "homeDealer":{
+    "component":"HomeDealer"
+  },
+  "recentQuote":{
+    "component":"RecentQuote"
+  },
+  "myReturns":{
+    "component":"MyReturns"
+    },
+
+  "quick-order-link": {
+    "component": "QuickOrderHeaderLink"
+
+  },
+  "parallelogram-shape":{
+    "component":"Parallelogram"
+
   }
 }

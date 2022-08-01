@@ -5,7 +5,7 @@
   margin: 0px auto;
 }
 
-.logoLink {
+/* .logoLink {
   display: block;
   transform: none !important;
 }
@@ -14,7 +14,7 @@
   display: block;
   height: 28px;
   width: auto;
-}
+} */
 
 .searchBarContainer :global(.vtex-input-prefix__group) {
   height: 48px;
@@ -759,4 +759,33 @@
 .shippingNoMessage {
   color: var(--black-medium);
   text-align: center;
+}
+
+
+
+
+/* =========== Pierce =========== */
+.imageElement--pierce-home-icon{
+  padding-left: 15px;
+}
+.imageElement--quick-order-icon{
+  background-color: #717786;
+}
+.notificationBarContainer--topbarHeader{
+  background-color: #e61e26;
+  height: 25px;
+  font-size: 12px;
+}
+.notificationBarContainer--topbarHeader::after{
+  background: rgb(49 49 49);
+  content: "";
+  height: 25px;
+  position: absolute;
+  left: -10px;
+  top: 0px;
+  transform: skew(30deg);
+  width: 215px;
+}
+.notificationBarInner--topbarHeader{
+  min-height: 0px;
 }

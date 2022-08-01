@@ -722,5 +722,18 @@ color: white;
 }
 
 .paragraph--followTitle{
-  color: #fff;
+  color: #fff;}
+/* ========Pierce============ */
+.paragraph--pierceHeader{
+  color: white;
+  font-size: 16px;
+  font-weight: 900;
+  border-right: 1px solid #979797;
+  padding-right: 40px;
+  /* position: relative;
+    right: 20px; */
+
+}
+.paragraph--cartTotalText{
+  font-size: 10px;
 }

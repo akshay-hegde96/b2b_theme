@@ -1,0 +1,20 @@
+.contentItem--infoCardDealer{
+   display: flex !important;
+  justify-content: space-between;
+margin-top: 200px;
+  margin: 10px;
+}
+
+.listContainer--tab-item-mainhomedealer{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 10px;
+}
+
+/* .listItemActive--tab-item-homedealer{
+  border-radius: 0 !important;
+  background-color: black !important
+} */
+
+
