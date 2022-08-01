@@ -213,6 +213,7 @@
     },
     "children": [
       "shopper-location",
+      "main-menu#Demo",
       "rich-text#headStripe1",
       "rich-text#headStripe2",
       "rich-text#headStripe3",
@@ -225,6 +226,165 @@
 
     ]
   },
+
+
+"main-menu#Demo": {
+    "children": [
+      "main-menu-item#PRODUCTS"
+    ],
+    "props": {
+      "blockClass": "main-menu"
+    }
+  },
+
+  "main-menu-item#PRODUCTS": {
+    "props": {
+      "menuTitle": "Resources",
+      "menuLink": "/Resources",
+      "menuid": 1,
+      "submenu": [
+ [
+        {
+          "submenuL1Title": "Component Catalog",
+          "submenuL1TitleLink": "/componentCatalogs",
+          "submenuL1Content": [
+            // { "name": "Technical Support Forms", "link": "/running" },
+            // { "name": "Government Forms", "link": "/running" },
+            // { "name": "Governments Parts Forms", "link": "/running" },
+            // { "name": "Parts Forms", "link": "/running" }
+          ]
+        },
+
+        {
+          "submenuL1Title": "Electrical Schematics",
+          "submenuL1TitleLink": "/componentCatalogs",
+          "submenuL1Content": [
+            // { "name": "Technical Support Forms", "link": "/running" },
+            // { "name": "Government Forms", "link": "/running" },
+            // { "name": "Governments Parts Forms", "link": "/running" },
+            // { "name": "Parts Forms", "link": "/running" }
+          ]
+        },
+
+        {
+          "submenuL1Title": "Forms",
+          "submenuL1TitleLink": "/componentCatalogs",
+          "submenuL1Content": [
+            { "name": "Technical Support Forms", "link": "/running" },
+            { "name": "Government Forms", "link": "/running" },
+            { "name": "Governments Parts Forms", "link": "/running" },
+            { "name": "Parts Forms", "link": "/running" }
+          ]
+        },
+        {
+          "submenuL1Title": "Guidelines & Statements",
+          "submenuL1TitleLink": "/multisport-triathlon",
+          "submenuL1Content": [
+            { "name": "Parts Identification Guides", "link": "/multisport" },
+            { "name": "After Market Guideliness", "link": "/multisport" },
+            { "name": "Spare Parts Warrenty Statements", "link": "/multisport" },
+            { "name": "Corrosion Information", "link": "/multisport" }
+          ]
+        }
+      ],
+
+        [{
+          "submenuL1Title": "Kits & Cross References",
+          "submenuL1TitleLink": "/multisport-triathlon",
+          "submenuL1Content": [
+            // { "name": "Parts Identification Guides", "link": "/multisport" },
+            // { "name": "After Market Guideliness", "link": "/multisport" },
+            // { "name": "Spare Parts Warrenty Statements", "link": "/multisport" },
+            // { "name": "Corrosion Information", "link": "/multisport" }
+          ]
+        },
+        {
+          "submenuL1Title": "Manuals",
+          "submenuL1TitleLink": "/Multisport-Triathlon",
+          "submenuL1Content": [
+            { "name": "Legacy Parts Manuals", "link": "/Polara" },
+            { "name": "Operator Manuals", "link": "/Polarb" },
+            { "name": "Service Manuals", "link": "/Polarac" }
+
+          ]
+        },
+        {
+          "submenuL1Title": "Prices Files",
+          "submenuL1TitleLink": "/multisport-triathlon",
+          "submenuL1Content": [
+            // { "name": "Parts Identification Guides", "link": "/multisport" },
+            // { "name": "After Market Guideliness", "link": "/multisport" },
+            // { "name": "Spare Parts Warrenty Statements", "link": "/multisport" },
+            // { "name": "Corrosion Information", "link": "/multisport" }
+          ]
+        },
+        {
+          "submenuL1Title": "Work Instructions",
+          "submenuL1TitleLink": "/multisport-triathlon",
+          "submenuL1Content": [
+            // { "name": "Parts Identification Guides", "link": "/multisport" },
+            // { "name": "After Market Guideliness", "link": "/multisport" },
+            // { "name": "Spare Parts Warrenty Statements", "link": "/multisport" },
+            // { "name": "Corrosion Information", "link": "/multisport" }
+          ]
+        }
+      ],
+        [{
+          "submenuL1Title": "Bulletins",
+          "submenuL1TitleLink": "/Multisport-Triathlon",
+          "submenuL1Content": [
+            { "name": "Parts Bulletins", "link": "/Polara" },
+            { "name": "Service Bulletins", "link": "/Polarb" },
+            { "name": "Warrenty Bulletins", "link": "/Polarac" }
+
+          ]
+        },
+        {
+          "submenuL1Title": "Campaigns & Upgrades",
+          "submenuL1TitleLink": "/Multisport-Triathlon",
+          "submenuL1Content": [
+            { "name": "Remedy Instructions", "link": "/Polara" },
+            { "name": "Dealer Letters", "link": "/Polarb" },
+            { "name": "Customer Letters", "link": "/Polarac" },
+            { "name": "Supplier Letters", "link": "/Polarac" }
+          ]
+        },
+        {
+          "submenuL1Title": "News & Articles",
+          "submenuL1TitleLink": "/Multisport-Triathlon",
+          "submenuL1Content": [
+            { "name": "After Market Business News", "link": "/Polara" }
+          ]
+        }],
+        [{
+          "submenuL1Title": "Training & Learning",
+          "submenuL1TitleLink": "/Multisport-Triathlon",
+          "submenuL1Content": [
+            { "name": "Training Modules", "link": "/Polara" },
+            { "name": "Aerial Learning Modules", "link": "/Polarb" },
+            { "name": "Body & Chasis Learning Modules", "link": "/Polarac" },
+            { "name": "Electrical Learning Modules", "link": "/Polarac" },
+            { "name": "Pump Learning Modules", "link": "/Polarb" },
+            { "name": "Job Aids Learning Modules", "link": "/Polarac" },
+            { "name": "Tips & Tricks Learning Modules", "link": "/Polarac" },
+            { "name": "Common Terms & Abbreviations Learning Modules", "link": "/Polarac" }
+          ]
+        },
+        {
+          "submenuL1Title": "Software",
+          "submenuL1TitleLink": "/multisport-triathlon",
+          "submenuL1Content": [
+            // { "name": "Parts Identification Guides", "link": "/multisport" },
+            // { "name": "After Market Guideliness", "link": "/multisport" },
+            // { "name": "Spare Parts Warrenty Statements", "link": "/multisport" },
+            // { "name": "Corrosion Information", "link": "/multisport" }
+          ]
+        }
+      ]
+      ]
+    }
+  },
+
 
   "rich-text#headStripe1": {
     "props": {
@@ -348,6 +508,7 @@
       "fullWidth": true
     },
     "children": [
+      "main-menu#Demo",
       "rich-text#headStripe1",
       "rich-text#headStripe2",
       "rich-text#headStripe3",
