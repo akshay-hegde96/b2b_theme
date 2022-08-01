@@ -1,7 +1,8 @@
 .footerLayout {
-  background: var(--b2b-blue-darkest);
+  /* background: var(--b2b-blue-darkest); */
   padding-top: 40px;
   padding-bottom: 0px;
+  background-color: #3b3c40;
 }
 
 .footerLayout--relative {
@@ -22,3 +23,4 @@
     padding-bottom: 32px;
   }
 }
+
