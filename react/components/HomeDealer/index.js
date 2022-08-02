@@ -16,7 +16,7 @@ const HomeDealer = () => {
   useEffect(() => {
     const getAllOrders = async () => {
       const response = await makeAPICall(allOrders, "GET");
-      //  console.log(response);
+      // console.log(response);
       setOrders(response["list"]);
     };
 
