@@ -29,7 +29,7 @@
     "vtexarg.product-highlight-by-vtex-segment": "0.x"
   },
   "dependencies": {
-    "echidna.main-menu":"0.x",
+    "echidna.main-menu": "0.x",
     "vtex.store": "2.x",
     "vtex.store-header": "2.x",
     "vtex.product-summary": "2.x",
