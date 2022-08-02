@@ -1,0 +1,105 @@
+.mainContext {
+    padding-left: 30px;
+    justify-content: left;
+    width: 1000px;
+    background-color: white;
+}
+
+.catBox {
+    display: flex;
+}
+
+.ul {
+    list-style-type: none;
+}
+
+.dropdown {
+    display: flex;
+}
+
+.select {
+    margin: 10px;
+    height: 30px;
+    width: 100px;
+}
+
+.image {
+    width: 30px;
+    height: 30px;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+}
+
+.sort {
+    display: flex;
+    flex-direction: row;
+}
+
+.sort p {
+    font-size: 20px;
+    width: 400px;
+    height: 24px;
+    font-weight: 400;
+}
+
+.sortBy {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 400px;
+    width: 200px;
+    align-items: center;
+}
+
+.contentRow {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(241, 241, 241);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+    height: 92px;
+    border-radius: 4px;
+}
+
+.contentText {
+    width: 550px;
+    line-height: 0px;
+    margin-left: 20px;
+}
+
+.vertical {
+    border-left: 2px solid lightgray;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100px;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.article {
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.viewImage {
+    width: 18.45px;
+    height: 15px;
+}
+
+.button {
+    width: 180px;
+    height: 44px;
+    margin-left: 408px;
+}

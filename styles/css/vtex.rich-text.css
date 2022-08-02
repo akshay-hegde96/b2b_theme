@@ -610,3 +610,7 @@
 .wrapper--product-summary-price-message {
   width: 100%;
 }
+
+.headingLevel1--titleResource {
+  font-size: 32px;
+}
