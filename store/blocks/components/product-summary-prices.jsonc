@@ -1,19 +1,8 @@
 {
   "check-permission#product-summary-price": {
-    "props": {
-      "roles": [
-        "store-admin",
-        "sales-admin",
-        "sales-manager",
-        "sales-representative",
-        "customer-admin",
-        "customer-approver",
-        "customer-buyer"
-      ]
-    },
     "blocks": [
-      "allowed-content#product-price",
-      "disallowed-content#product-price"
+      "allowed-content#product-summary-price",
+      "disallowed-content#product-summary-price"
     ]
   },
   "allowed-content#product-summary-price": {

@@ -1,0 +1,26 @@
+.layoutContainer{
+    padding: 5px;
+    background-color: lightsalmon;
+  }
+  .row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 50%;
+  }
+  .heading{
+    display: flex;
+    justify-content: center;
+  }
+  .subHeading{
+    display: flex;
+    justify-content: center;
+  }
+  
+  /*==== mobile ===== */
+  @media only screen and (max-width:480px){
+    .row {
+      display: block;
+    }
+  }

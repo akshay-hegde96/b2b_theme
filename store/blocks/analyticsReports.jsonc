@@ -1,0 +1,7 @@
+{
+  "store.custom#analyticsReports": {
+    "blocks": [
+      "analytics"
+    ]
+  }
+}

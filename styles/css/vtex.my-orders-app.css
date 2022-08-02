@@ -1,0 +1,15 @@
+.orderHeader {
+  background-color: #1b3255;
+  color: white;
+}
+
+.orderHeaderLabel,
+.orderHeaderValue,
+.orderId {
+  color: white;
+}
+
+.collapsedOrder {
+  background-color: rgb(152, 185, 201);
+  border-radius: 25px;
+}

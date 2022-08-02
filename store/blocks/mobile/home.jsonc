@@ -2,6 +2,7 @@
   "responsive-layout.mobile": {
     "children": [
       "flex-layout.row#imageList--mobile",
+      "__fold__.mobile",
       "flex-layout.row#shopByCategory",
       // Deprecated
       // "flex-layout.row#shopByBrandMobile",

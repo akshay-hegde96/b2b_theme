@@ -9,6 +9,10 @@
   align-items: center;
 }
 
+.flexRowContent--blog {
+  display: flex;
+  justify-content: space-around;
+}
 .flexRow--headerStripe {
   background: var(--b2b-blue-darkest);
 }
@@ -186,9 +190,9 @@
 /* BEGIN - Footer */
 
 .flexRowContent--footer-row-1 {
-  padding-bottom: 40px;
+   padding-bottom: 40px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 }
 
 .flexRow--footerStripe {
@@ -252,9 +256,6 @@
   margin-bottom: 32px;
 }
 
-.flexCol--blogSEO {
-  width: 264px;
-}
 
 .flexRow--blog {
   padding-top: 48px;
@@ -441,9 +442,9 @@
   outline: 0;
 }
 
-.flexColChild--assembly-options {
-  /* max-width: 80%; */
-}
+/* .flexColChild--assembly-options {
+   max-width: 80%; s
+} */
 
 .flexColChild--assembly-options :first-child {
   font-size: 14px;
@@ -727,4 +728,172 @@
   background-color: rgb(241, 241, 241);
   padding-top: 40px;
   padding-bottom: 40px;
+}
+/* -------------------------Contact Us Page--------------------------------- */
+
+.flexRow--contact-us-form {
+  justify-content: center;
+  align-items: center;
+}
+
+.flexRowContent--contact-us-form {
+  font-family: inherit, sans-serif !important;
+  box-sizing: border-box;
+  box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin: 2rem auto;
+  padding: 0 3rem 2rem 3rem;
+  width: 500px;
+}
+
+.flexCol--contact-form {
+  background-color: #fafafa;
+}
+
+@media only screen and (max-width: 580px) {
+  .flexRowContent--contact-us-form {
+    padding: 1rem;
+    padding-top: 0;
+    width: 390px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .flexRowContent--contact-us-form {
+    padding: 1rem;
+    padding-top: 0;
+    width: 100%;
+  }
+}
+
+/* Sales Page---------------------------------------------- */
+
+.flexRow--banner {
+  margin-bottom: 3rem;
+  background: #101723;
+}
+
+.flexRowContent--combo-discount {
+  justify-content: space-around !important;
+  align-items: center !important;
+}
+
+.flexRowContent--combo-discount .stretchChildrenWidth {
+  width: 330px !important;
+}
+.flexColChild--combo-discount-list1,
+.flexColChild--combo-discount-list2 {
+  width: 330px !important;
+}
+
+@media screen and (max-width: 680px) {
+  .flexRow--banner {
+    margin-bottom: 2rem;
+  }
+  .flexRow--combo-discount {
+    display: block;
+    justify-content: center;
+  }
+  .flexRowContent--combo-discount .stretchChildrenWidth {
+    justify-content: center;
+  }
+  .flexColChild--combo-discount-list1,
+  .flexColChild--combo-discount-list2 {
+    width: 380px !important;
+  }
+}
+
+.flexCol--blogSEO{
+  margin-top: 15px;
+}
+
+.flexCol--blogList{
+  width: 500px;
+}
+/* ---------------------------------- */
+
+.flexColChild--priceListDetails {
+  text-align: initial;
+  color: red;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.flexColChild--listView-img{
+  width: 300px;
+    height: 300px;
+    padding: 0 50px;
+}
+.flexRowContent--listViewDivision{
+  justify-content: inherit !important;
+}
+
+.flexCol--productNameCol{
+  margin: 50px 100px;
+}
+
+.flexColChild--wishlist{
+  align-items: center;
+}
+.flexColChild--QnA{
+  background-color: #f3f9ff;
+  border: 1px solid #ccdff7;
+  border-radius: 10px;
+}
+.flexColChild--left-col{
+  padding-right:75px;
+}
+.flexCol--footer-2{
+  margin-left: 120px;
+  margin-right: 18px;
+}
+
+.flexCol--footer-3{
+  margin-left: 50px;
+}
+
+:global(.vtex-flex-layout-0-x-flexRow--copyrightContainer){
+  background-color: #000;
+  padding: 10px;
+}
+
+
+/* ==================== Pierce Header ======= */
+.flexRow--header-pierce{
+  background-color: #313131;
+}
+.flexRowContent--header-pierce{
+  justify-content: flex-start !important;
+  align-items: center !important;
+}
+
+.flexRowContent--header-pierce-row2{
+  align-items: center;
+}
+.flexRowContent--searchBarMyFleet{
+  align-items: center;
+}
+.flexRow--header-pierce-row2{
+  background-color: #313131;
+  height: 65px;
+}
+.flexRow--searchBarMyFleet{
+  background-color: white;
+  border-top-left-radius: 13px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 5px;
+}
+.flexRow--searchBarMyFleet::after{
+  background: #fff;
+  content: "";
+  height: 60px;
+  position: relative;
+  right: -13px;
+  top: 0px;
+  -webkit-transform: skew(20deg);
+  -moz-transform: skew(20deg);
+  transform: skew(20deg);
+  width: 30px;
 }

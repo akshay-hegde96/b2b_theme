@@ -87,7 +87,7 @@
   padding: 0px 20px;
   border-radius: 4px;
   max-width: 280px;
-  width: 100%;
+  width: 85%;
 }
 
 .childrenContainer--linkCall {
@@ -172,10 +172,11 @@
   color: #000;
   font-weight: 500;
   margin: 0;
-  margin-bottom: 4px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   margin-top: 15px;
+  padding-left: 30px;
 }
 
 .link--orderQuote,
@@ -215,4 +216,15 @@
     align-items: center;
     justify-content: center;
   }
+}
+/* ==============Pierce========== */
+.label--header-dashboard{
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  /* position: relative; */
+    /* right: 25px; */
+}
+.link--header-dashboard{
+  text-decoration: none;
 }

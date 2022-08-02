@@ -1,0 +1,59 @@
+
+
+.listContainer--tab-item-mainhomedealer{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 10px;
+  margin-left: 8px;
+}
+
+.listItem--tab-item-homedealer{
+
+  box-sizing: border-box;
+  background-color: #f1f2f3;
+  height: 52px;
+  position: relative;
+  width: 251px;
+  margin: 0px;
+  padding-left: 48px;
+
+}
+
+.listItem--tab-item-homedealer::after{
+  background: #f1f2f3;
+border-right: 2px solid #d1d1d1;
+
+  content: "";
+  height: 52px;
+  position: absolute;
+  z-index: 99;
+  right: -20px;
+  top: 0;
+  -webkit-transform: skew(40deg);
+  -moz-transform: skew(40deg);
+  transform: skew(40deg);
+  width: 40px;
+}
+
+.listItemActive--tab-item-homedealer::after{
+ background-color: #4E4E4E;
+ border-right: 2px solid #d1d1d1;
+
+   content: "";
+   height: 52px;
+   position: absolute;
+   z-index: 99;
+   right: -20px;
+   top: 0;
+   -webkit-transform: skew(40deg);
+   -moz-transform: skew(40deg);
+   transform: skew(40deg);
+   width: 40px;
+}
+
+.listItemActive--tab-item-homedealer{
+  background-color: #4E4E4E !important;
+}
+
+

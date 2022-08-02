@@ -3,9 +3,14 @@
     "children": [
       "flex-layout.row#brand-and-rating",
       "flex-layout.row#product-name",
+
       "flex-layout.row#product-identifier",
+      // "flex-layout.row#sku-selector",
       "condition-layout.product#sku-selector-or-list",
-      "flex-layout.row#assembly-options"
+      "flex-layout.row#assembly-options",
+      //"location-context"
+      "condition-layout.product#availability",
+      "product-specification-group#table"
       // "flex-layout.row#link-seller"
     ],
     "props": {
@@ -18,7 +23,8 @@
     "children": [
       "vtex.store-components:product-brand#brand-and-rating",
       "flex-layout.col#spacer",
-      "product-rating-summary"
+      //"product-rating-summary",
+      "product-rating-inline"
     ],
     "props": {
       "blockClass": ["items-center", "brand-and-rating"],
@@ -53,5 +59,47 @@
     "props": {
       "blockClass": ["product-identifier"]
     }
+  },
+  "location-context": {
+    "children": [
+      "modal-trigger#location-availability",
+      "flex-layout.row#location-availability"
+    ]
+  },
+  "flex-layout.row#location-availability": {
+    "children": [
+      "product-location-pickup-options",
+      "product-location-shipping-options"
+    ]
+  },
+  "modal-trigger#location-availability": {
+    "children": ["product-location-availability-header", "modal-layout#address"]
+  },
+  "product-location-availability-header": {
+    "props": {
+      "styleAsLink": true
+    }
+  },
+  "condition-layout.product#availability": {
+    "props": {
+      "blockClass": "availability",
+      "conditions": [
+        {
+          "subject": "isProductAvailable"
+        }
+      ],
+      "Then": "location-context",
+      "Else": "flex-layout.row#availability"
+    }
+  },
+  "flex-layout.row#availability": {
+    "props": {
+      "blockClass": "message-availability"
+    },
+    "children": [
+      //"availability-subscriber",
+      "availability-notify"
+
+    ]
   }
 }

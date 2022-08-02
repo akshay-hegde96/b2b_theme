@@ -1,6 +1,6 @@
 {
   "flex-layout.row#blog": {
-    "children": ["flex-layout.col#blogSEO", "flex-layout.col#blogPosts"],
+    "children": ["flex-layout.col#blogpost", "flex-layout.col#blogSEO"],
     "props": {
       "blockClass": "blog",
       "colSizing": "auto",
@@ -10,7 +10,7 @@
   },
 
   "flex-layout.col#blogSEO": {
-    "children": ["search-title.v2", "rich-text#blogSEO"],
+    "children": ["search-title.v2", "blogsSEO"/*"rich-text#blogSEO"*/],
     "props": {
       "blockClass": "blogSEO",
       "preventVerticalStretch": true
@@ -24,12 +24,32 @@
     }
   },
 
-  "flex-layout.col#blogPosts": {
-    "children": ["blog-category-preview.wordpress-category-preview"],
-    "props": {
-      "width": "grow"
+  "flex-layout.col#blogpost": {
+    // "children": ["blog-category-preview.wordpress-category-preview"],
+    // "props": {
+    //   "width": "grow"
+    // }
+     "children": ["blogsList"],
+     "props": {
+      "blockClass": "blogList"
     }
   },
+
+  "blogsList" : {
+    "props": {
+      "blockClass": "blogList"
+    }
+  },
+
+  "custom-blog-listing": {
+    "props": {
+        "width": "grow",
+        "accountName": "echidna",
+        "entityIdAcronym": "CB",
+        "schemaName": "CustomBlog"
+    }
+  },
+
 
   "blog-category-preview.wordpress-category-preview": {
     "props": {
@@ -53,7 +73,8 @@
       "search-title.v2",
       "rich-text#blogSEO",
       "rich-text#blogSecondarySEO",
-      "blog-category-preview.wordpress-category-preview#mobile"
+      "blog-category-preview.wordpress-category-preview#mobile",
+      "blogsList"
     ]
   },
 

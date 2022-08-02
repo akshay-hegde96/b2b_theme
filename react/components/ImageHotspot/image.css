@@ -1,0 +1,52 @@
+.imgHotspotContainer img+div {
+  width: 450px;
+  height: 300px;
+  top: 0;
+}
+
+.hotSpot{
+  padding:10px;
+  cursor: pointer;
+  background-color: rgb(152, 250, 152);
+  border: 1px solid black;
+  border-radius: 36%;
+}
+.textContainer{
+  border: 1px solid black;
+  padding: 15px;
+  margin: 10px;
+  background: #1b3255;
+  color: white;
+  border-radius: 20px;
+  z-index: 5;
+}
+/* ===== */
+.imgHotspotContainer{
+  width: 450px;
+}
+
+.buttonGroup{
+  float:right;
+  position: relative;
+  bottom: 100px;
+}
+.zoomInButton{
+  display: block;
+    font-size: 20px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid;
+    margin: 2px;
+}
+.zoomOutButton{
+  display: block;
+  font-size: 20px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid;
+  margin: 2px;
+  width: 25px;
+}
+img{
+  max-width: 94%;
+}

@@ -1,16 +1,16 @@
-// WARNING: THE USAGE OF CUSTOM SCRIPTS IS NOT SUPPORTED. VTEX IS NOT LIABLE FOR ANY DAMAGES THIS MAY CAUSE. THIS MAY BREAK YOUR STORE AND STOP SALES. IN CASE OF ERRORS, PLEASE DELETE THE CONTENT OF THIS SCRIPT.
+// // WARNING: THE USAGE OF CUSTOM SCRIPTS IS NOT SUPPORTED. VTEX IS NOT LIABLE FOR ANY DAMAGES THIS MAY CAUSE. THIS MAY BREAK YOUR STORE AND STOP SALES. IN CASE OF ERRORS, PLEASE DELETE THE CONTENT OF THIS SCRIPT.
 !(function (window, jQuery) {
   jQuery(function ($) {
-    var disablePersonalInfoEditButton = {
-      init: function init() {
-        util.waitElement($("#edit-profile-data"), function () {
-          $(
-            ".accordion-toggle.collapsed .link-box-edit.btn.btn-small"
-          ).remove();
-          $("#is-not-me").remove();
-        });
-      },
-    };
+    // var disablePersonalInfoEditButton = {
+    //   init: function init() {
+    //     util.waitElement($("#edit-profile-data"), function () {
+    //       $(
+    //         ".accordion-toggle.collapsed .link-box-edit.btn.btn-small"
+    //       ).remove();
+    //       $("#is-not-me").remove();
+    //     });
+    //   },
+    // };
 
     var poNumberFeature = {
       showInputOnPOSection: false,
@@ -43,7 +43,7 @@
       },
       buildButton: function buildButton() {
         return $(
-          '<button class="jsSubmitFakeButton btn btn-success btn-large btn-block">\n        <i class="icon-lock"></i>\n        <i class="icon-spinner icon-spin" style="display: none;"></i>\n        <span>Complete Order</span>\n      </button>'
+          '<button class="jsSubmitFakeButton btn btn-success btn-large btn-block">       <i class="icon-lock"></i>       <i class="icon-spinner icon-spin" style="display: none;"></i>       <span>Complete Order</span>     </button>'
         );
       },
       hideLoadingAndResetButton: function hideLoadingAndResetButton() {
@@ -80,7 +80,7 @@
       },
       buildInput: function buildInput() {
         return $(
-          '\n        <div style="\n          padding-right: 15px;\n          margin-bottom: 10px;\n        " id="poWrap">\n        <label> Purchase Order Number: (optional) </label>\n          <input \n            type="text"\n            id="poNumberInput" style="\n            font-size: 20px;\n            height: 36px;\n            line-height: 34px;\n            width: 100%;" \n            name="poNumber">\n          <span class="help error feedback" style="display: none">This field is required.</span>\n        </div>'
+          '<div style="padding-right: 15px;margin-bottom: 10px;" id="poWrap"><label><b> Purchase Order Number :</b></label><input type="text" id="poNumberInput" style="font-size: 20px;height: 36px;line-height: 34px;width: 100%;"name="poNumber"><span class="help error feedback" style="display: none">This field is required.</span></div>'
         );
       },
       showError: function showError() {
@@ -131,12 +131,15 @@
         }, 200);
       },
     };
-
+// Checking empty state of PO field and making PUT request.
     var theCheckout = {
       submit: function submit() {
         $("#payment-data-submit").click();
       },
       handleSubmit: function handleSubmit() {
+        if ($('#poNumberInput').val().length === 0) {
+         poNumberInput.handleEmpty();
+      }else{
         var poNumber = {
           value: $("#poNumberInput")[0].value,
         };
@@ -162,6 +165,7 @@
             theCheckout.submit();
           }
         });
+      }
       },
     };
 
@@ -173,6 +177,13 @@
     });
 
     poNumberFeature.init();
-    disablePersonalInfoEditButton.init();
+    // disablePersonalInfoEditButton.init();
   });
 })(window, window.jQuery);
+
+$( document ).ready(function checkoutCustoms(){
+  var $quoteButton = $('<div class="createQuoteButton"><a href="/b2b-quotes/create">Create Quote</a></div>');
+  // $quoteButton.insertAfter($(".payment-submit-wrap"));
+  $quoteButton.insertAfter($("#cart-to-orderform"));
+}
+);

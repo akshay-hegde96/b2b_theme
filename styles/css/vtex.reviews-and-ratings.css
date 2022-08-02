@@ -21,6 +21,7 @@
   display: flex;
   align-items: center;
   padding-right: 8px;
+  justify-content: center;
 }
 
 .summaryContainer .stars {
@@ -115,3 +116,24 @@
   border-width: 1px;
   color: var(--black-medium);
 }
+.summaryContainer{
+  display: block;
+    width: 100%;
+}
+
+.summaryTotalReviews{
+  margin-top: 8px;
+}
+.summaryButtonContainer{
+  margin-top: 5px;
+}
+:global(.vtex-reviews-and-ratings-2-x-summaryButtonContainer) .vtex-button{
+  width: 100%;
+}
+
+/* .stars{
+  position: absolute;
+  padding-left: 56px
+} */
+
+ 

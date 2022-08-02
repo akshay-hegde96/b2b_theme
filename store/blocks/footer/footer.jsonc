@@ -5,9 +5,9 @@
   },
   "footer-layout.desktop": {
     "children": [
-      "flex-layout.row#footerDesktop",
-      "flex-layout.row#copyright",
-      "flex-layout.row#footerStripe"
+       "flex-layout.row#footerDesktop",
+      "flex-layout.row#copyright"
+      // "flex-layout.row#footerStripe"
     ],
     "props": {
       "blockClass": ["relative", "z-998"]
@@ -37,62 +37,145 @@
       "flex-layout.col#footer-2-desktop",
       "flex-layout.col#footer-3-desktop",
       "flex-layout.col#footer-4-desktop"
+      // "flex-layout.col#footer-5-desktop"
     ]
   },
   "flex-layout.col#footer-1-desktop": {
-    "children": ["rich-text#footerTitle1", "vtex.menu@2.x:menu#about"]
+    "children": ["rich-text#footerTitle11","rich-text#footerTitle1","image#pierce"] //"vtex.menu@2.x:menu#shops"
   },
   "flex-layout.col#footer-2-desktop": {
-    "children": ["rich-text#footerTitle2", "vtex.menu@2.x:menu#costumer"]
+     "children": ["rich-text#footerTitle2","flex-layout.col#catalogs" ],
+     "props": {
+      "preventVerticalStretch": true,
+      "blockClass":"footer-2"
+    }
   },
+
+  "flex-layout.col#catalogs":{
+    "children":[
+      "rich-text#col-2",
+      "rich-text#col-21"
+    ]
+  },
+
   "flex-layout.col#footer-3-desktop": {
+    "children": ["rich-text#footerTitle3", "vtex.menu@2.x:menu#costumer"],
+    "props": {
+      "preventVerticalStretch": true,
+      "blockClass":"footer-3"
+    }
+  },
+
+  "flex-layout.col#footer-4-desktop": {
     "props": {
       "preventVerticalStretch": true
     },
-    "children": ["rich-text#footerTitle3", "link#call", "link#mail"]
+    "children": ["rich-text#footerTitle4", "flex-layout.col#cusSupport"]  //"link#call", "link#mail"
   },
-  "flex-layout.col#footer-4-desktop": {
-    "children": [
-      "rich-text#footerTitle4",
-      "flex-layout.row#paymentImagesDesktop",
-      "rich-text#followTitle",
-      "flex-layout.row#networks"
-    ],
+
+  "flex-layout.col#cusSupport":{
+    "children":[
+      "rich-text#col-4",
+      "rich-text#col-41",
+      "rich-text#col-42"
+    ]
+  },
+
+  // "flex-layout.col#footer-5-desktop": {
+  //   "children": [
+  //     "rich-text#footerTitle5",
+  //     "flex-layout.row#paymentImagesDesktop",
+  //     "rich-text#followTitle",
+  //     "flex-layout.row#networks"
+  //   ],
+  //   "props": {
+  //     "blockClass":"paymentContainer",
+  //     "preventVerticalStretch": true,
+  //     "preventHorizontalStretch": true
+  //   }
+  // },
+  // "rich-text#followTitle": {
+  //   "props": {
+  //     "text": "Follow us",
+  //     "blockClass": "followTitle"
+  //   }
+  // },
+
+  "rich-text#footerTitle11":{
     "props": {
-      "preventVerticalStretch": true,
-      "preventHorizontalStretch": true
-    }
-  },
-  "rich-text#followTitle": {
-    "props": {
-      "text": "Follow us",
-      "blockClass": "followTitle"
-    }
-  },
+      "text": "About Pierce Parts & Services",
+      "blockClass": "footerTitle"
+  }
+},
+
   "rich-text#footerTitle1": {
     "props": {
-      "text": "About us",
+      "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
       "blockClass": "footerTitle"
+    }
+  },
+  "image#pierce":{
+    "props": {
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2p_NOi7Ro0TEc2HjFsNIM2dfFn4_MriSfql4RPvrD5LwOpuTHlia-ur6s-K4WyOrN4g&usqp=CAU",
+      "blockClass": "peirce-footer"
     }
   },
   "rich-text#footerTitle2": {
     "props": {
-      "text": "Costumer Service",
+      "text": "Catalogs",
       "blockClass": "footerTitle"
     }
   },
+
+  "rich-text#col-2": {
+    "props": {
+      "text": "Stock Parts Catalogs",
+      "blockClass": "followTitle"
+    }
+  },
+  "rich-text#col-21": {
+    "props": {
+      "text": "All Pierce Catalogs",
+      "blockClass": "followTitle"
+    }
+  },
+
   "rich-text#footerTitle3": {
     "props": {
-      "text": "Contact Us",
+      "text": "Usefull Links",
       "blockClass": "footerTitle"
     }
   },
   "rich-text#footerTitle4": {
     "props": {
-      "text": "Pay with credit card",
+      "text": "Customer Support",
       "blockClass": "footerTitle"
     }
   },
+  "rich-text#col-4": {
+    "props": {
+      "text": "FAQs",
+      "blockClass": "followTitle"
+    }
+  },
+  "rich-text#col-41": {
+    "props": {
+      "text": "Tips & Tricks",
+      "blockClass": "followTitle"
+    }
+  },
+  "rich-text#col-42": {
+    "props": {
+      "text": "Contact us",
+      "blockClass": "followTitle"
+    }
+  },
+  // "rich-text#footerTitle5": {
+  //   "props": {
+  //     "text": "Pay with credit card",
+  //     "blockClass": "footerTitle"
+  //   }
+  // },
   "link#call": {
     "children": ["image#phoneIcon", "rich-text#call"],
     "props": {
@@ -133,18 +216,30 @@
   },
   "flex-layout.row#copyright": {
     "props": {
-      "colSizing": "auto",
+      "colSizing": "equal",
       "blockClass": "copyrightContainer"
     },
     "children": [
       "flex-layout.col#copyright",
-      "flex-layout.col#spacer"
+      // "flex-layout.col#spacer",
+      "flex-layout.row#osh-copyright2"
+
       // Deprecated
       // "vtex.menu@2.x:menu#currency"
       // "locale-switcher"
     ]
   },
 
+  "flex-layout.row#osh-copyright2":{
+    "children":[
+     "flex-layout.col#osh-col2",
+     "flex-layout.col#osh-col3"
+    ],
+    "props": {
+      "colSizing": "equal",
+       "blockClass": "copyrightContainer-2"
+    }
+  },
   // Deprecated
   // "vtex.menu@2.x:menu#currency": {
   //   "children": ["menu-item#currency"],
@@ -219,32 +314,58 @@
 
   "flex-layout.col#copyright": {
     "props": {},
-    "children": ["flex-layout.row#vtexLogo"]
+    "children": ["rich-text#rights"]
   },
-  "flex-layout.row#vtexLogo": {
-    "props": {
-      "preventHorizontalStretch": true
-    },
-    "children": ["image#vtexLogo", "rich-text#rights"]
-  },
-  "image#vtexLogo": {
-    "props": {
-      "blockClass": "vtexLogo",
-      "src": "assets/placeholders/vtexLogo.png"
-    }
-  },
+  // "flex-layout.row#vtexLogo": {
+  //   "props": {
+  //     "preventHorizontalStretch": true
+  //   },
+  //   "children": ["rich-text#rights"]
+  // },
+  // "image#vtexLogo": {
+  //   "props": {
+  //     "blockClass": "vtexLogo",
+  //     "src": "assets/placeholders/vtexLogo.png"
+  //   }
+  // },
   "rich-text#rights": {
     "props": {
-      "text": "2020 @ All Right Reserved to VTEX",
+      "text": "Terms Of User | Privacy Policy | Site Map",
       "blockClass": "footerRights"
     }
   },
+  "flex-layout.col#osh-col2":{
+    "children":[
+      "rich-text#oshText"
+    ]
+  },
+
+  "rich-text#oshText": {
+    "props": {
+      "text": "An Oshkosh Corporation Company",
+      "blockClass": "footerRights"
+    }
+  },
+
+  "flex-layout.col#osh-col3":{
+    "children":[
+      "rich-text#col-3"
+    ]
+  },
+
+  "rich-text#col-3": {
+    "props": {
+      "text": "&#169; Copyright 2022 Pierce Manufacturin Inc.",
+      "blockClass": "footerRights"
+    }
+  },
+
   "flex-layout.row#footerMobile": {
     "children": [
       "flex-layout.row#footerMenu",
       "flex-layout.col#payment",
       // "flex-layout.row#currency",
-      "flex-layout.row#networks",
+      // "flex-layout.row#networks",
       "rich-text#copyrightMobile",
       "rich-text#footerTextMobile",
       "image#vtexLogoMobile"
@@ -274,42 +395,42 @@
   },
   "link#footerLink1": {
     "props": {
-      "href": "/about",
+      "href": "/company",
       "label": "About us",
       "blockClass": "footerLink"
     }
   },
   "link#footerLink2": {
     "props": {
-      "href": "/policy",
+      "href": "/returns",
       "label": "Return Policy",
       "blockClass": "footerLink"
     }
   },
   "link#footerLink3": {
     "props": {
-      "href": "/orders",
+      "href": "/account#/orders",
       "label": "Your orders",
       "blockClass": "footerLink"
     }
   },
   "link#footerLink4": {
     "props": {
-      "href": "/service",
+      "href": "/contact",
       "label": "Costumer service",
       "blockClass": "footerLink"
     }
   },
   "link#footerLink5": {
     "props": {
-      "href": "/shipping",
+      "href": "/account#/addresses",
       "label": "Shipping info",
       "blockClass": "footerLink"
     }
   },
   "link#footerLink6": {
     "props": {
-      "href": "/support",
+      "href": "/contact",
       "label": "Contact & Support",
       "blockClass": "footerLink"
     }
@@ -326,19 +447,19 @@
       "blockClass": "paymentLabel"
     }
   },
-  "flex-layout.row#paymentImagesDesktop": {
-    "children": [
-      "image#visa",
-      "image#mastercard",
-      "image#express",
-      "image#elo",
-      "image#dinners"
-    ],
-    "props": {
-      "colSizing": "auto",
-      "blockClass": "paymentImages"
-    }
-  },
+  // "flex-layout.row#paymentImagesDesktop": {
+  //   "children": [
+  //     "image#visa",
+  //     "image#mastercard",
+  //     "image#express",
+  //     "image#elo",
+  //     "image#dinners"
+  //   ],
+  //   "props": {
+  //     "colSizing": "auto",
+  //     "blockClass": "paymentImages"
+  //   }
+  // },
   "flex-layout.row#paymentImages": {
     "children": [
       "image#visa",
@@ -399,59 +520,59 @@
       "src": "assets/placeholders/vtexLogo.png",
       "blockClass": "vtexLogo"
     }
-  },
-  "flex-layout.row#networks": {
-    "children": ["link#facebook", "link#instagram", "link#twitter"],
-    "props": {
-      "blockClass": "networks",
-      "horizontalAlign": "center",
-      "preserveLayoutOnMobile": true,
-      "preventHorizontalStretch": true,
-      "colGap": 3,
-      "colSizing": "auto",
-      "fullWidth": false
-    }
-  },
-  "link#facebook": {
-    "children": ["image#facebook"],
-    "props": {
-      "href": "//facebook.com",
-      "target": "_blank",
-      "blockClass": "networkLink"
-    }
-  },
-  "link#instagram": {
-    "children": ["image#instagram"],
-    "props": {
-      "href": "//instagram.com",
-      "target": "_blank",
-      "blockClass": "networkLink"
-    }
-  },
-  "link#twitter": {
-    "children": ["image#twitter"],
-    "props": {
-      "href": "//twitter.com",
-      "target": "_blank",
-      "blockClass": "networkLink"
-    }
-  },
-  "image#facebook": {
-    "props": {
-      "src": "assets/placeholders/facebookIcon.png",
-      "blockClass": "networkImage"
-    }
-  },
-  "image#instagram": {
-    "props": {
-      "src": "assets/placeholders/instagramIcon.png",
-      "blockClass": "networkImage"
-    }
-  },
-  "image#twitter": {
-    "props": {
-      "src": "assets/placeholders/twitterIcon.png",
-      "blockClass": "networkImage"
-    }
   }
-}
+//  "flex-layout.row#networks" : {
+//     "children": ["link#facebook", "link#instagram", "link#twitter"],
+//     "props": {
+//       "blockClass": "networks",
+//       "horizontalAlign": "center",
+//       "preserveLayoutOnMobile": true,
+//       "preventHorizontalStretch": true,
+//       "colGap": 3,
+//       "colSizing": "auto",
+//       "fullWidth": false
+//     }
+//   },
+  // "link#facebook": {
+  //   "children": ["image#facebook"],
+  //   "props": {
+  //     "href": "//facebook.com",
+  //     "target": "_blank",
+  //     "blockClass": "networkLink"
+  //   }
+  // },
+  // "link#instagram": {
+  //   "children": ["image#instagram"],
+  //   "props": {
+  //     "href": "//instagram.com",
+  //     "target": "_blank",
+  //     "blockClass": "networkLink"
+  //   }
+  // },
+  // "link#twitter": {
+  //   "children": ["image#twitter"],
+  //   "props": {
+  //     "href": "//twitter.com",
+  //     "target": "_blank",
+  //     "blockClass": "networkLink"
+  //   }
+  // },
+  // "image#facebook": {
+  //   "props": {
+  //     "src": "assets/placeholders/facebookIcon.png",
+  //     "blockClass": "networkImage"
+  //   }
+  // },
+  // "image#instagram": {
+  //   "props": {
+  //     "src": "assets/placeholders/instagramIcon.png",
+  //     "blockClass": "networkImage"
+  //   }
+  // },
+  // "image#twitter": {
+  //   "props": {
+  //     "src": "assets/placeholders/twitterIcon.png",
+  //     "blockClass": "networkImage"
+  //   }
+  // }
+  }

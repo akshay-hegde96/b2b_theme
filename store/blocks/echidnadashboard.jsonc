@@ -1,0 +1,52 @@
+{
+  "store.custom#echidnadashboard": {
+    "blocks": [
+      "check-permission#dashboard2"
+    ]
+  },
+  // =============Charts========================
+  "check-permission#dashboard2": {
+    "props": {
+      "roles": [
+        "store-admin",
+        "sales-admin",
+        "sales-manager",
+        "sales-representative",
+        "customer-admin",
+        "customer-approver",
+        "customer-buyer"
+      ]
+    },
+    "blocks": ["allowed-content#dashboard2", "disallowed-content#dashboard2"]
+  },
+  "allowed-content#dashboard2": {
+    "children": ["rich-text#dashboard2","mychart"]
+  },
+  "disallowed-content#dashboard2": {
+    "children": ["rich-text#dashboardmsg2"]
+  },
+  "rich-text#dashboardmsg2": {
+    "props": {
+      "blockClass":"qna-disallowed-msg" ,
+      "text": "## Log in or sign up to view  Dashboard"
+    }
+  },
+
+  // =========== With dynamic data through React comp ===========
+  "rich-text#dashboard2": {
+    "props": {
+      "text": "##  Echidna DashBoard",
+      "blockClass": "dashboard-heading"
+    }
+  },
+  "mychart": {
+    "props": {
+      "BarChart": "BarChart",
+      "LineChart": "LineChart",
+      "PieChart": "PieChart",
+      "ChartRef": "ChartRef",
+      "ScatterChart": "ScatterChart",
+      "BubbleChart": "BubbleChart"
+    }
+  }
+}

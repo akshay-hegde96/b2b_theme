@@ -10,47 +10,196 @@
   "header-layout.desktop": {
     "children": ["sticky-layout#desktop"]
   },
-
   "sticky-layout#desktop": {
     "props": {
-      "blockClass": "sticky-header"
+      "blockClass": "sticky-header-pierce"
     },
     "children": [
-      "flex-layout.row#telemarketing",
-      "flex-layout.row#desktop",
-      "flex-layout.row#headerStripe"
+      "notification.bar#header",
+      "flex-layout.row#desktop1",
+      "flex-layout.row#desktop2"
     ]
   },
+  "notification.bar#header":{
+"props":{
+  "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua… Learn More",
+  "blockClass":"topbarHeader"
 
-  "flex-layout.row#telemarketing": {
-    "children": ["telemarketing"],
+}
+  },
+  "flex-layout.row#desktop1": {
     "props": {
-      "blockClass": ["bg-blue-medium"],
-      "fullWidth": true
+      "blockClass": "header-pierce",
+      "colGap": 4,
+      "colSizing": "auto",
+      "preventHorizontalStretch":true,
+      "preventVerticalStretch":true
+    },
+    "children": [
+      "logo#desktop",
+      "rich-text#pierceHeader",
+      "vtex.menu@2.x:menu#main-menu-static",
+      "flex-layout.col#spacer",
+      "login",
+      "quick-order-link",      //React Component
+      "minicart.v2",
+      "rich-text#cartTotal"  //static for demo
+      // "rich-text#jobsFromCart"
+    ]
+  },
+  "logo#desktop": {
+    "props": {
+      "title": "Logo",
+      "href": "/",
+      "url": "assets/icons/pierce-logo.png",
+      "blockClass":"pierce-logo"
     }
   },
-
-  "flex-layout.row#desktop": {
+  "rich-text#pierceHeader":{
+"props":{
+  "text":"PARTS & SERVICE",
+  "blockClass":"pierceHeader"
+}
+  },
+  "vtex.menu@2.x:menu#main-menu-static": {
     "props": {
-      "verticalAlign": "center",
-      "blockClass": "header",
-      "colGap": 7,
-      "colSizing": "auto"
+      "experimentalOptimizeRendering": true,
+      "blockClass":"pierce-menu-container"
     },
     "children": [
-      "drawer",
-      "flex-layout.col#logo-desktop",
-      "flex-layout.col#search-bar",
-      "login",
-      "minicart.v2"
+      "menu-item#resources",
+      "menu-item#customerSupport"
+    ]
+  },
+  "menu-item#resources": {
+    "props": {
+      "id": "resources",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/resources",
+        "noFollow": false,
+        "tagTitle": "resources",
+        "text": "Resources"
+      },
+      "iconProps": {
+        "id": "nav-caret--down",
+        "size": 12,
+        "viewBox": "0 0 16 16",
+        "activeClassName": "black",
+        "mutedClassName": "c-action-primary"
+      },
+      "iconPosition": "right",
+
+      "blockClass": "pierce-menu-link"
+    }
+  },
+  "menu-item#customerSupport": {
+    "props": {
+      "id": "customer-support",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/customer-support",
+        "noFollow": false,
+        "tagTitle": "customer support",
+        "text": "Customer Support"
+      },
+      "iconProps": {
+        "id": "nav-caret--down",
+        "size": 12,
+        "viewBox": "0 0 16 16",
+        "activeClassName": "black",
+        "mutedClassName": "c-action-primary"
+      },
+      "iconPosition": "right",
+
+      "blockClass": "pierce-menu-link"
+    }
+  },
+  "login": {
+    "props": {
+      "iconLabel": "Hello, Sign in",
+     "showIconProfile":true,
+     "blockClass":"pierce-login"
+    }
+  },
+  "rich-text#cartTotal":{
+"props":{
+  "text":"Cart Total",
+  "textColor":"c-on-emphasis",
+  "blockClass":"cartTotalText"
+}
+  },
+  "rich-text#jobsFromCart":{
+    "props":{
+      "text":"items From This Job",
+      "textColor":"c-on-emphasis"
+    }
+      },
+// ==============ROW2======================
+  "flex-layout.row#desktop2": {
+    "props": {
+      "blockClass": "header-pierce-row2",
+      "colGap": 4,
+      "colSizing": "auto",
+      "preventHorizontalStretch":true,
+      "preventVerticalStretch":true
+    },
+    "children": [
+     "drawer",
+     "flex-layout.row#searchBarMyFleet"
+    //  "parallelogram-shape"
     ]
   },
 
+  "flex-layout.row#searchBarMyFleet":{
+    "props":{
+      "colGap":4,
+      "width":"grow",
+      "blockClass":"searchBarMyFleet",
+      "preventHorizontalStretch":true,
+      "preventVerticalStretch":true
+      },
+      "children":[
+        "image#dashboard",
+        "link#headerDashboard",
+        "myFleetUI"
+
+      ]
+  },
+
+  "image#dashboard": {
+    "props": {
+      "src": "assets/icons/home-icon.png",
+      "maxHeight": 25,
+      "blockClass":"pierce-home-icon"
+    }
+  },
+  "link#headerDashboard": {
+    "props": {
+      "label": "DASHBOARD",
+      "href": "/dashboard",
+      "blockClass": "header-dashboard"
+    }
+  },
+  // ======================= Old theme codes============================
   "flex-layout.col#search-bar": {
-    "children": ["search-bar"],
+    "children": ["search-bar#header"],
     "props": {
       "paddingLeft": 8,
       "width": "grow"
+    }
+  },
+
+  "search-bar#desktop":{
+    "props": {
+      "openAutocompleteOnFocus": true,
+      "blockClass": "searchMobile"
     }
   },
 
@@ -64,15 +213,178 @@
     },
     "children": [
       "shopper-location",
+      "main-menu#Demo",
       "rich-text#headStripe1",
       "rich-text#headStripe2",
       "rich-text#headStripe3",
       "rich-text#headStripe4",
       "rich-text#headStripe5",
+      "flex-layout.col#orderConfig",
       "flex-layout.col#spacer",
-      "check-permission#reseller"
+      "check-permission#reseller",
+      "localeSwitcherApp"
+
     ]
   },
+
+
+"main-menu#Demo": {
+    "children": [
+      "main-menu-item#PRODUCTS"
+    ],
+    "props": {
+      "blockClass": "main-menu"
+    }
+  },
+
+  "main-menu-item#PRODUCTS": {
+    "props": {
+      "menuTitle": "Resources",
+      "menuLink": "/Resources",
+      "menuid": 1,
+      "submenu": [
+ [
+        {
+          "submenuL1Title": "Component Catalog",
+          "submenuL1TitleLink": "/componentCatalogs",
+          "submenuL1Content": [
+            // { "name": "Technical Support Forms", "link": "/running" },
+            // { "name": "Government Forms", "link": "/running" },
+            // { "name": "Governments Parts Forms", "link": "/running" },
+            // { "name": "Parts Forms", "link": "/running" }
+          ]
+        },
+
+        {
+          "submenuL1Title": "Electrical Schematics",
+          "submenuL1TitleLink": "/componentCatalogs",
+          "submenuL1Content": [
+            // { "name": "Technical Support Forms", "link": "/running" },
+            // { "name": "Government Forms", "link": "/running" },
+            // { "name": "Governments Parts Forms", "link": "/running" },
+            // { "name": "Parts Forms", "link": "/running" }
+          ]
+        },
+
+        {
+          "submenuL1Title": "Forms",
+          "submenuL1TitleLink": "/componentCatalogs",
+          "submenuL1Content": [
+            { "name": "Technical Support Forms", "link": "/running" },
+            { "name": "Government Forms", "link": "/running" },
+            { "name": "Governments Parts Forms", "link": "/running" },
+            { "name": "Parts Forms", "link": "/running" }
+          ]
+        },
+        {
+          "submenuL1Title": "Guidelines & Statements",
+          "submenuL1TitleLink": "/multisport-triathlon",
+          "submenuL1Content": [
+            { "name": "Parts Identification Guides", "link": "/multisport" },
+            { "name": "After Market Guideliness", "link": "/multisport" },
+            { "name": "Spare Parts Warrenty Statements", "link": "/multisport" },
+            { "name": "Corrosion Information", "link": "/multisport" }
+          ]
+        }
+      ],
+
+        [{
+          "submenuL1Title": "Kits & Cross References",
+          "submenuL1TitleLink": "/multisport-triathlon",
+          "submenuL1Content": [
+            // { "name": "Parts Identification Guides", "link": "/multisport" },
+            // { "name": "After Market Guideliness", "link": "/multisport" },
+            // { "name": "Spare Parts Warrenty Statements", "link": "/multisport" },
+            // { "name": "Corrosion Information", "link": "/multisport" }
+          ]
+        },
+        {
+          "submenuL1Title": "Manuals",
+          "submenuL1TitleLink": "/Multisport-Triathlon",
+          "submenuL1Content": [
+            { "name": "Legacy Parts Manuals", "link": "/Polara" },
+            { "name": "Operator Manuals", "link": "/Polarb" },
+            { "name": "Service Manuals", "link": "/Polarac" }
+
+          ]
+        },
+        {
+          "submenuL1Title": "Prices Files",
+          "submenuL1TitleLink": "/multisport-triathlon",
+          "submenuL1Content": [
+            // { "name": "Parts Identification Guides", "link": "/multisport" },
+            // { "name": "After Market Guideliness", "link": "/multisport" },
+            // { "name": "Spare Parts Warrenty Statements", "link": "/multisport" },
+            // { "name": "Corrosion Information", "link": "/multisport" }
+          ]
+        },
+        {
+          "submenuL1Title": "Work Instructions",
+          "submenuL1TitleLink": "/multisport-triathlon",
+          "submenuL1Content": [
+            // { "name": "Parts Identification Guides", "link": "/multisport" },
+            // { "name": "After Market Guideliness", "link": "/multisport" },
+            // { "name": "Spare Parts Warrenty Statements", "link": "/multisport" },
+            // { "name": "Corrosion Information", "link": "/multisport" }
+          ]
+        }
+      ],
+        [{
+          "submenuL1Title": "Bulletins",
+          "submenuL1TitleLink": "/Multisport-Triathlon",
+          "submenuL1Content": [
+            { "name": "Parts Bulletins", "link": "/Polara" },
+            { "name": "Service Bulletins", "link": "/Polarb" },
+            { "name": "Warrenty Bulletins", "link": "/Polarac" }
+
+          ]
+        },
+        {
+          "submenuL1Title": "Campaigns & Upgrades",
+          "submenuL1TitleLink": "/Multisport-Triathlon",
+          "submenuL1Content": [
+            { "name": "Remedy Instructions", "link": "/Polara" },
+            { "name": "Dealer Letters", "link": "/Polarb" },
+            { "name": "Customer Letters", "link": "/Polarac" },
+            { "name": "Supplier Letters", "link": "/Polarac" }
+          ]
+        },
+        {
+          "submenuL1Title": "News & Articles",
+          "submenuL1TitleLink": "/Multisport-Triathlon",
+          "submenuL1Content": [
+            { "name": "After Market Business News", "link": "/Polara" }
+          ]
+        }],
+        [{
+          "submenuL1Title": "Training & Learning",
+          "submenuL1TitleLink": "/Multisport-Triathlon",
+          "submenuL1Content": [
+            { "name": "Training Modules", "link": "/Polara" },
+            { "name": "Aerial Learning Modules", "link": "/Polarb" },
+            { "name": "Body & Chasis Learning Modules", "link": "/Polarac" },
+            { "name": "Electrical Learning Modules", "link": "/Polarac" },
+            { "name": "Pump Learning Modules", "link": "/Polarb" },
+            { "name": "Job Aids Learning Modules", "link": "/Polarac" },
+            { "name": "Tips & Tricks Learning Modules", "link": "/Polarac" },
+            { "name": "Common Terms & Abbreviations Learning Modules", "link": "/Polarac" }
+          ]
+        },
+        {
+          "submenuL1Title": "Software",
+          "submenuL1TitleLink": "/multisport-triathlon",
+          "submenuL1Content": [
+            // { "name": "Parts Identification Guides", "link": "/multisport" },
+            // { "name": "After Market Guideliness", "link": "/multisport" },
+            // { "name": "Spare Parts Warrenty Statements", "link": "/multisport" },
+            // { "name": "Corrosion Information", "link": "/multisport" }
+          ]
+        }
+      ]
+      ]
+    }
+  },
+
 
   "rich-text#headStripe1": {
     "props": {
@@ -109,21 +421,64 @@
     }
   },
 
-  "flex-layout.col#logo-desktop": {
-    "props": {
-      "verticalAlign": "middle"
-    },
-    "children": ["logo"]
-  },
+  //============== Order Configuration Starts =============
 
-  "logo": {
+  "flex-layout.col#orderConfig": {
+    "children": ["order-config#header"],
     "props": {
-      "title": "Logo",
-      "href": "/",
-      "url": "assets/icons/logoB2B.svg",
-      "width": "123"
+      "blockClass": "orderConfig"
     }
   },
+
+  "order-config#header": {
+    "children": ["order-config.title#header", "order-config.modal#header"],
+    "props": {
+      "showInTitle": false,
+      "formFields": [
+        {
+          "name": "orderType",
+          "type": "string",
+          "fieldType": "radio",
+          "label": "Order Type",
+          "defaultValue": "resale",
+          "options": [
+            {
+              "label": "Resale",
+              "value": "resale"
+            },
+            {
+              "label": "Consumption",
+              "value": "consumption"
+            }
+          ]
+        }
+
+
+      ]
+    }
+  },
+
+  "order-config.title#header": {
+    "props": {
+      "formTitle": "Order Configuration",
+      "blockClass": "orderConfig-title"
+    }
+  },
+
+  "order-config.modal#header": {
+    "children": ["order-config.form"]
+
+  },
+
+  "order-config.form":{
+    "children":[
+         "orderConfigForm"
+         ]
+  },
+
+  //========== Order Configuration Ends============
+
+
 
   "header-layout.mobile": {
     "children": ["sticky-layout#mobile"]
@@ -153,6 +508,7 @@
       "fullWidth": true
     },
     "children": [
+      "main-menu#Demo",
       "rich-text#headStripe1",
       "rich-text#headStripe2",
       "rich-text#headStripe3",
@@ -181,6 +537,7 @@
   "link#orderQuote": {
     "props": {
       "label": "My Quotes",
+      // "href": "/orderquote",
       "href": "/b2b-quotes",
       "blockClass": "orderQuote"
     }
@@ -209,11 +566,6 @@
     }
   },
 
-  "login": {
-    "props": {
-      "iconLabel": "Hello, Sign in"
-    }
-  },
 
   "login#mobile": {
     "props": {

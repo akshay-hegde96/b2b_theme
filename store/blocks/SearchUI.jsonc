@@ -1,0 +1,7 @@
+{
+  "store.custom#SearchUI":{
+    "children":[
+      "SearchUI"
+    ]
+  }
+}

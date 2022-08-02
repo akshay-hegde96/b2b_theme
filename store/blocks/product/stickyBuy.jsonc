@@ -11,9 +11,7 @@
         "customer-buyer"
       ]
     },
-    "blocks": [
-      "allowed-content#sticky-buy"
-    ]
+    "blocks": ["allowed-content#sticky-buy"]
   },
   "allowed-content#sticky-buy": {
     "children": ["sticky-layout#stickyBuy"]

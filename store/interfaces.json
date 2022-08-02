@@ -5,6 +5,12 @@
   "store.custom.product-comparison": {
     "around": ["comparison-context-wrapper"]
   },
+  "b2b-department": {
+    "component": "B2BDepartment"
+  },
+  "dropdown-button": {
+    "component": "DropdownButtonWrapper"
+  },
   "search-result-layout.desktop.product-comparison": {
     "allowed": ["product-comparison-drawer"]
   },
@@ -13,5 +19,82 @@
   },
   "main-context": {
     "component": "mainContext"
+  },
+  "blogsList": {
+    "component": "BlogsListing"
+  },
+  "blogsSEO": {
+    "component": "BlogSEO"
+  },
+  "orderConfigForm": {
+    "component": "OrderConfig"
+  },
+  "mychart": {
+    "component": "Chart"
+  },
+  "questions-answers-storage": {
+    "component": "QnaStorage"
+  },
+  "localeSwitcherApp": {
+    "component": "LocaleSwitcher"
+  },
+  "chart-data": {
+    "component": "ChartData"
+  },
+  "analytics":{
+    "component":"AnalyticsReports"
+  },
+  "notification":{
+    "component":"Notification"
+  },
+  "upload-file": {
+    "component": "FileUploadWrapper"
+  },
+  "image-hotspot": {
+    "component": "ImageHotspotWrapper"
+  },
+  "po-number": {
+    "component": "POnumber"
+  },
+  "search-by-filter": {
+    "component": "SearchByFilterWrapper"
+  },
+  "my-orders-extra-actions.show-id-button": {
+    "component": "ShowIdButton"
+  },
+  "SearchUI":{
+    "component": "SearchUI"
+  },
+  "new-window-button": {
+    "component": "NewWindowButton"
+  },
+
+  "myFleetUI":{
+    "component":"MyFleet"
+},
+
+  "promotion": {
+    "component": "promotionBlock"
+
+  },
+
+
+  "homeDealer":{
+    "component":"HomeDealer"
+  },
+  "recentQuote":{
+    "component":"RecentQuote"
+  },
+  "myReturns":{
+    "component":"MyReturns"
+    },
+
+  "quick-order-link": {
+    "component": "QuickOrderHeaderLink"
+
+  },
+  "parallelogram-shape":{
+    "component":"Parallelogram"
+
   }
 }

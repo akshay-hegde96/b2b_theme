@@ -1,0 +1,53 @@
+{
+  "store.custom#dashboard": {
+    "blocks": [
+      "check-permission#dashboard"
+    ]
+  },
+   // =============Charts========================
+   "check-permission#dashboard": {
+    "props": {
+      "roles": [
+        "store-admin",
+        "sales-admin",
+        "sales-manager",
+        "sales-representative",
+        "customer-admin",
+        "customer-approver",
+        "customer-buyer"
+      ]
+    },
+    "blocks": ["allowed-content#dashboard", "disallowed-content#dashboard"]
+  },
+  "allowed-content#dashboard": {
+    "children": ["rich-text#dashboard","chart-data"]
+  },
+  "disallowed-content#dashboard": {
+    "children": ["rich-text#dashboardmsg"]
+  },
+  "rich-text#dashboardmsg": {
+    "props": {
+      "blockClass":"qna-disallowed-msg" ,
+      "text": "## Log in or sign up to view  Dashboard"
+    }
+  },
+  // =========== With dynamic data through React comp ===========
+  "chart-data":{
+    "props":{
+      "LineChartApp":"line-chart",
+      "BarChartApp":"bar-chart",
+      "PieChartApp":"pie-chart",
+      "TreeMapApp":"tree-map",
+      "AreaChartApp":"area-chart",
+      "ComposedChartApp":"composed-chart"
+    }
+  },
+  "rich-text#dashboard": {
+    "props": {
+      "text": "## My DashBoard",
+      "blockClass": "dashboard-heading"
+    }
+  }
+
+  // =========Charts end============================
+}

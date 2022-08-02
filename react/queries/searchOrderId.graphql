@@ -1,0 +1,12 @@
+query GetcustomerOrderDetails{
+  customerOrders(page:1 perPage:5000) {
+    list{
+      orderId,
+      value,
+      status,
+      creationDate,
+      totalItems,
+      productIds,
+    }
+  }
+}

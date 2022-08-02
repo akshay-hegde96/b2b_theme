@@ -3,7 +3,8 @@
     "children": ["minicart-base-content"],
     "props": {
       "customPixelEventId": "add-to-cart-button",
-      "MinicartIcon": "icon-cart#minicart-icon"
+      "MinicartIcon": "icon-cart#minicart-icon",
+      "quantityDisplay":"always"
     }
   },
 
@@ -115,27 +116,20 @@
         "customer-approver"
       ]
     },
-    "blocks": [
-      "allowed-content#minicart",
-      "disallowed-content#minicart"
-    ]
+    "blocks": ["allowed-content#minicart", "disallowed-content#minicart"]
   },
   "allowed-content#minicart": {
-    "children": [
-      "minicart-checkout-button",
-      "link#quote"
-    ]
+    "children": ["minicart-checkout-button", "link#quote"]
   },
   "disallowed-content#minicart": {
-    "children": [
-      "link#quote"
-    ]
+    "children": ["link#quote"]
   },
   "link#quote": {
     "props": {
-      "label": "Create a Quote",
+      "label": "Create Quote",
       "displayMode": "button",
-      "blockClass": ["vtex-button","order-quote"],
+      "blockClass": ["vtex-button", "order-quote"],
+      // "href": "/orderquote/create"
       "href": "/b2b-quotes/create"
     }
   },

@@ -1,6 +1,6 @@
 .container--summaryComplete {
   position: relative;
-  max-width: 240px;
+  max-width: 100% !important;
   border: 1px solid transparent;
   border-radius: 8px;
   padding: 20px;
@@ -42,14 +42,12 @@
   border-radius: 4px;
 }
 
-.priceContainer {
-  align-items: flex-start;
-}
+
 
 .nameWrapper,
 .price_sellingPriceContainer,
 .price_listPriceContainer {
-  text-align: left;
+  text-align: center;
   padding-bottom: 0;
   margin-bottom: 4px;
 }
@@ -72,7 +70,7 @@
   color: #0067c7;
   font-weight: 500;
   line-height: 20px;
-  text-align: left;
+  text-align: center;
 }
 
 .container--summaryComplete .nameContainer {
@@ -80,7 +78,7 @@
 }
 
 .container--summaryComplete .productNameContainer {
-  text-align: left;
+  text-align: center;
   font-size: 16px;
   line-height: 22px;
   color: #000;
@@ -111,7 +109,7 @@
 }
 
 .element--summaryComplete .priceContainer {
-  align-items: flex-start;
+  align-items: center;
   padding: 0;
 }
 
@@ -254,7 +252,7 @@
 }
 
 .element--summarySearch .productBrandContainer {
-  text-align: left;
+  text-align: center;
 }
 
 .element--summarySearch .productBrandContainer .productBrandName {
@@ -294,7 +292,7 @@
   }
 
   .element--minimumSummary .priceContainer {
-    align-items: flex-start;
+    align-items: center;
   }
 
   .element--summaryComplete .price_sellingPrice {
@@ -304,3 +302,29 @@
     font-weight: 500;
   }
 }
+
+.productNameContainer.nameWrapper {
+  margin-bottom: 0;
+}
+
+.nameContainer--summaryListDesktop{
+  padding-right: 33px;
+}
+.brandName--summaryListDesktop{
+  font-weight: bold;
+}
+.clearLink--searchSummaryCard{
+  margin: 0px 20px;
+}
+
+.containerNormal--searchSummaryCard:hover{
+  box-shadow: 0px 0px 10px 0px grey;
+}
+
+.nameContainer--productSummaryName{
+  padding: 0;
+
+}
+
+
+

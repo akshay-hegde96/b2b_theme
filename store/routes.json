@@ -62,6 +62,9 @@
   "store.custom#help-center": {
     "path": "/help-center"
   },
+  "store.custom#category-landing-page": {
+    "path": "/clp/:clp_id"
+  },
   "store.custom#pickup": {
     "path": "/pickup"
   },
@@ -73,5 +76,43 @@
   },
   "store.custom#resource": {
     "path": "/resource"
+  },
+  "store.custom#sales-page": {
+    "path": "/sales"
+  },
+  "store.custom#echidnadashboard": {
+    "path": "/echidnadashboard"
+  },
+  "store.custom#blog-listing-page": {
+    "path": "/blogs"
+  },
+  "store.custom#qnaStorage": {
+    "path": "/qnaStorage"
+  },
+  "store.custom#dashboard": {
+    "path": "/dashboard"
+  },
+  "store.custom#analyticsReports": {
+    "path": "/analytics"
+  },
+
+  "store.custom#SearchUI":{
+    "path":"/SearchUI"
+    },
+
+  "store.custom#videoLibrary": {
+    "path": "/videoLibrary"
+  },
+  "store.custom#searchFilter": {
+    "path": "/searchFilter"
+
+  },
+
+  "store.custom#myFleet": {
+    "path": "/myFleet"
+
+  },
+  "store.custom#homedealer":{
+    "path":"/homedealer"
   }
 }
