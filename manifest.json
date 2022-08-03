@@ -87,9 +87,7 @@
     "vtex.seller-selector": "0.x",
     "vtex.store-newsletter": "1.x",
     "vtex.challenge-tp-condition": "0.x",
-<<<<<<< HEAD
-    "vtex.category-menu": "2.x"
-=======
+    "vtex.category-menu": "2.x",
     "vtex.shopper-location": "0.x",
     "vtex.order-configuration": "2.x",
     "echidna.custom-blog-listing": "0.x",
@@ -109,7 +107,6 @@
     "vtex.recommendation-shelf": "1.x",
     "vtex.shelf-components": "0.x",
     "echidna.two-col-layout": "0.x"
->>>>>>> pmi
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }
