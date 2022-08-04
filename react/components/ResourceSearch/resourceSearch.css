@@ -1,9 +1,7 @@
 .resContainer{
   display: flex;
   background-color: #fff;
-  height: 100vh;
-
-}
+  }
 
 .resSearchBar {
   width: 540px;
