@@ -67,6 +67,10 @@
     "component":"MyFleet"
 },
 
+"resourceSearchUI":{
+  "component":"ResourceSearch"
+},
+
   "promotion": {
     "component": "promotionBlock"
 

@@ -111,5 +111,9 @@
   },
   "store.custom#homedealer":{
     "path":"/homedealer"
+  },
+
+  "store.custom#resource":{
+    "path":"/resource"
   }
 }

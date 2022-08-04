@@ -1,0 +1,7 @@
+{
+  "store.custom#resource":{
+    "children":[
+      "resourceSearchUI"
+    ]
+  }
+}
