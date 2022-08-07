@@ -1,0 +1,36 @@
+.historyJobRight{
+  display: flex;
+  align-items: center;
+  /* position: absolute; */
+  /* right: 1px; */
+  z-index: 3;
+  background-color: #ededed;
+  /* width: 246px; */
+  position: relative;
+  left: 30px;
+}
+.historyJobRight::after{
+  background: rgb(237, 237, 237);
+  content: "";
+  height: 65px;
+  position: relative;
+  right: 180px;
+  top: 0px;
+  transform: skew(25deg);
+  width: 50px;
+  border-left: 1px solid;
+  z-index: -3;
+}
+.jobNumberHeaderHistory{
+  font-size: 16px;
+  font-weight: 700;
+  }
+  .workorderHeaderHistory{
+  font-size: 12px;
+  font-weight: 400;
+  color: #313131;
+  }
+  .cityNameHeaderHistory{
+  font-size: 11px;
+  font-weight: 700;
+  }

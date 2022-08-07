@@ -17,8 +17,18 @@
     "children": [
       "notification.bar#header",
       "flex-layout.row#desktop1",
-      "flex-layout.row#desktop2"
+      "flex-layout.row#reactHeader"
+      // "flex-layout.row#desktop2"
     ]
+  },
+  "flex-layout.row#reactHeader":{
+"props":{
+"blockClass":"pierce-reactHeader",
+"fullWidth":true
+},
+"children":[
+  "pierce-header"
+]
   },
   "notification.bar#header":{
 "props":{
@@ -325,7 +335,7 @@
   },
 
   "sticky-layout#mobile": {
-    "children": ["flex-layout.row#mobileHeader", "slider-layout#menuLinks"],
+    "children": ["flex-layout.row#mobileHeader"],
     "props": {
       "blockClass": "headerMobile"
     }
@@ -357,14 +367,14 @@
   },
 
   "flex-layout.col#mobileHeader": {
-    "children": ["flex-layout.row#mobile", "flex-layout.row#mobileSearch"],
+    "children": ["flex-layout.row#mobile"],
     "props": {
       "blockClass": "main-header-mobile"
     }
   },
 
   "flex-layout.row#mobile": {
-    "children": ["drawer", "logo", "check-permission#login", "minicart.v2"],
+    "children": ["drawer","drawer", "logo#desktop", "quick-order-link", "minicart.v2"],
     "props": {
       "preventHorizontalStretch": true,
       "preserveLayoutOnMobile": true,
