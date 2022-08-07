@@ -10,13 +10,14 @@
   border-radius: 5px;
   margin-left: 15px;
 }
-.rightSide{
+.rightSideBulletins{
   height: 647px;;
   width: 30%;
   border: 2px solid #f1f2f3;
   border-radius: 5px;
   margin-right: 10px;
   margin-left: 25px;
+
 }
 
 .myorders {
@@ -39,7 +40,7 @@
 }
 
 .mainTable td {
-  text-align: left;
+  text-align: center;
   padding: 12px;
   margin-left: 5px;
   border-bottom: 2px solid #f1f2f3;
@@ -125,3 +126,5 @@ width: 18rem;
 padding: 5px;
 margin-left: 10px;
 }
+
+

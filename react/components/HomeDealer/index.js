@@ -3,17 +3,23 @@ import { makeAPICall } from "../../Utils/httpCall";
 import { allOrders } from "../../Config/url";
 import styles from "./HomeDealer.css";
 import img from '../../../assets/pdficon.png'
+import {DealerData} from './DealerData'
+
 
 
 const HomeDealer = () => {
   const [orders, setOrders] = useState([]);
+  const [tickets,setTickets] = useState(DealerData)
+
+  console.log(tickets)
 
   useEffect(() => {
     const getAllOrders = async () => {
       const response = await makeAPICall(allOrders, "GET");
-      //  console.log(response);
+      // console.log(response);
       setOrders(response["list"]);
     };
+
     getAllOrders();
   }, []);
 
@@ -27,7 +33,7 @@ const HomeDealer = () => {
           </div>
           <table className={styles.mainTable}>
             <tr>
-              <th style={{ borderRadius: "3px" }}>Date Order</th>
+              <th style={{ borderRadius: "3px 0px 0px 3px" }}>Date Order</th>
               <th>Purchase Order #</th>
               <th>Incident #</th>
               <th>Total</th>
@@ -35,7 +41,7 @@ const HomeDealer = () => {
               <th>Est Ship Date</th>
               <th>Status</th>
               <th>|</th>
-              <th style={{ borderRadius: "3px" }}>Action</th>
+              <th style={{ borderRadius: "0px 3px 3px 0px"}}>Action</th>
             </tr>
             {orders &&
               orders.slice(0, 8).map((item) => {
@@ -67,35 +73,33 @@ const HomeDealer = () => {
             </div>
             <table className={styles.mainTable}>
               <tr>
-                <th style={{ borderRadius: "3px" }}>Refrence #</th>
+                <th style={{ borderRadius: "3px 0px 0px 3px" }}>Refrence #</th>
                 <th>Ticket Type</th>
                 <th>Subject</th>
                 <th>Job #</th>
                 <th>Created Time</th>
                 <th>|</th>
-                <th style={{ borderRadius: "3px" }} >Status</th>
+                <th style={{ borderRadius: "0px 3px 3px 0px" }} >Status</th>
 
               </tr>
-              {orders &&
-              orders.slice(0, 3).map((item) => {
+              {tickets &&
+              tickets.map((item) => {
                 return (
               <tr>
-                <td>XXXXXXX</td>
-                <td>Lorem Ipsum Unum</td>
-                <td>{item.statusDescription}</td>
-                <td>XXXXXXX</td>
-                <td>July 14, 12:00:00pm</td>
+                <td>{item.refrence}</td>
+                <td>{item.ticketType}</td>
+                <td>{item.subject}</td>
+                <td>{item.job}</td>
+                <td>{item.createdTime}</td>
                 <td>|</td>
-                <td>
-                  <a href="#">Loren Ipsum</a>
-                </td>
-              </tr>
+                <td><a href="#">{item.status}</a></td>
+                </tr>
                );
               })}
             </table>
           </div>
         </div>
-        <div className={styles.rightSide}>
+        <div className={styles.rightSideBulletins}>
           <div className={styles.bulletins}>
             <p
               style={{
