@@ -1,0 +1,125 @@
+.resContainer{
+  display: flex;
+  position: relative;
+  }
+
+.resSearchBar {
+  width: 450px;
+  margin-left: 5px;
+}
+
+.resSearchBar div {
+  height: 32px;
+}
+.resSearchBar input{
+  font-size: 12px;
+  font-weight: 500;
+}
+.resAdvancedDropdown{
+  position: absolute;
+  right: 50px;
+  width: 140px;
+}
+
+.resAdvancedDropdown div{
+  height: 32px;
+  margin: 0px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.resSearchResults {
+  /* height: max-content;
+  width: 450px;
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  top: 182px;
+  overflow-y: hidden ;
+  left: 1rem;
+  box-shadow: 0px 0px 7px rgba(151,151,151, 0.5); */
+  width: 547px;
+  height: 400px;
+  background-color: white;
+  color: #000;
+  padding: 20px;
+  position: absolute;
+  box-shadow: 0px 0px 7px 0px #979797;
+
+}
+.resSearchResults.resArrowTop {
+  margin-top: 15px;
+}
+.resSearchResults.resArrowTop:after {
+  content: " ";
+  position: absolute;
+  left: 7px;
+  top: -15px;
+  border-top: none;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid white;
+}
+.ressearchSuggests {
+  /* height: 65px;
+  width: 547px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #535353; */
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px solid #dfd9d9;
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+
+ }
+ .ressearchSuggests:hover{
+  background-color: #ededed;
+  cursor: pointer;
+ }
+
+
+.resleftSide{
+    padding-left: 25px;
+}
+
+/* .resrightSide{
+  padding-right: 30px;
+  background-color: transparent;
+} */
+
+.ressuggestBottom{
+  /* width: 547px; */
+  /* box-shadow: rgb(0 0 0 / 35%) 0px 0px 6px; */
+  border-top: 1px solid #535353;
+  padding: 15px 3px;
+}
+
+.resleftBottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.resrightBottom{
+  border: 1.5px solid black;
+  margin-left: 72px;
+  padding: 10px;
+  height: 37px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.notfount{
+  height: 88px;
+  border-bottom: 1px solid #535353;
+}

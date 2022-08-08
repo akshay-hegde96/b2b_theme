@@ -90,5 +90,8 @@
   "parallelogram-shape":{
     "component":"Parallelogram"
 
+  },
+  "pierce-header":{
+    "component":"Header"
   }
 }

@@ -1,0 +1,59 @@
+.PartsSearchWrapper{
+  display: flex;
+  align-items: center;
+}
+.activityJobLeft{
+  display: flex;
+  align-items: center;
+}
+.jobNumberHeader{
+font-size: 16px;
+font-weight: 700;
+}
+.workorderHeader{
+font-size: 12px;
+font-weight: 400;
+color: #313131;
+}
+.cityNameHeader{
+font-size: 12px;
+font-weight: 700;
+}
+.partsSearchTabsWrapper{
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: #EDEDED;
+  margin-left: 2rem;
+  padding: 0px 10px;
+  border-radius: 7px;
+  /* margin-right: 15px; */
+}
+.partsSearchText{
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0px 10px;
+}
+.partsSearchBarContainer{
+  display: flex;
+  position: relative;
+}
+.partsSearchBar{
+  width: 480px;
+  margin-left: 5px;
+
+}
+.partsSearchBar div{
+  height: 32px;
+}
+.partsSearchBar input{
+  font-size: 12px;
+  font-weight: 500;
+}
+.partsText{
+  background-color: white;
+    padding: 6px 20px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 500;
+}

@@ -887,3 +887,9 @@
   transform: skew(20deg);
   width: 30px;
 }
+.flexRow--pierce-reactHeader{
+  background-color:#313131;
+}
+.flexCol--main-header-mobile{
+  background-color:#313131;
+}
