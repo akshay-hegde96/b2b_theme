@@ -14,6 +14,12 @@
   "search-result-layout.desktop.product-comparison": {
     "allowed": ["product-comparison-drawer"]
   },
+  "sideBar": {
+    "component": "sidebar"
+  },
+  "main-context": {
+    "component": "mainContext"
+  },
   "blogsList": {
     "component": "BlogsListing"
   },

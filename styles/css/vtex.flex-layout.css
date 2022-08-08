@@ -719,6 +719,16 @@
   color: #fff;
 }
 
+.flexRowContent--resourceRow {
+  display: flex;
+  justify-items: left;
+}
+
+.flexRow--resourceRow {
+  background-color: rgb(241, 241, 241);
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 /* -------------------------Contact Us Page--------------------------------- */
 
 .flexRow--contact-us-form {

@@ -1,0 +1,35 @@
+.catContainer {
+    padding-left: 30px;
+    background-color: rgb(241, 241, 241);
+    width: 300px;
+}
+
+.catContainer h2 {
+    font-size: 18px;
+}
+
+.catBox {
+    display: flex;
+}
+
+.ul {
+    list-style-type: none;
+    padding-left: 0pt;
+    font-size: 14px;
+}
+
+.form {
+    font-size: 14px;
+}
+
+.dropdown {
+    display: flex;
+}
+
+.selectDropdown {
+    margin-top: 30px;
+    margin-left: 60px;
+    height: 10px;
+    border: 0ch;
+    padding-right: 0pt;
+}

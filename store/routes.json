@@ -74,6 +74,9 @@
   "store.custom#returns": {
     "path": "/returns"
   },
+  "store.custom#resource": {
+    "path": "/resource"
+  },
   "store.custom#sales-page": {
     "path": "/sales"
   },

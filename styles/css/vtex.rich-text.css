@@ -611,6 +611,9 @@
   width: 100%;
 }
 
+.headingLevel1--titleResource {
+  font-size: 32px;
+}
 /* --------------------------------------Contact-Us page----------------------------- */
 .container--contact-us {
   font-weight: bold;
